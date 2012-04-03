@@ -23,8 +23,8 @@ namespace Obsidian
         string server;
         string channel;
         System.Net.Sockets.Socket sock;
-        System.IO.TextReader input;
-        System.IO.TextWriter output;
+        
+        int greetnumber; 
 
         public Form1()
         {
@@ -49,48 +49,15 @@ namespace Obsidian
             send("NICK " + nick);
             send("USER " + nick + " 0 * :FervorBot");
             send("JOIN " + channel);
-            send("MODE " + nick + " +B");
+            send("MODE " + nick + " +B");;
             timer1.Enabled = true;
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            if (System.IO.File.Exists("IRCInfo.bin") == true)
-            {
-                System.IO.StreamReader IRCInfoRead = new System.IO.StreamReader("IRCInfo.bin");
-                string IRCInfo = IRCInfoRead.ReadToEnd();
-                string[] IRCInfoSplit = IRCInfo.Split('|');
-                textBox1.Text = IRCInfoSplit[0];
-                textBox2.Text = IRCInfoSplit[1];
-                textBox3.Text = IRCInfoSplit[2];
-                textBox4.Text = IRCInfoSplit[3];
-                IRCInfoRead.Close();
-
-            }
-            if (System.IO.File.Exists("!rss.txt") == false)
-            {
-                StreamWriter sw = new StreamWriter("!rss.txt");
-                sw.Write("RSS feed not set!");
-                sw.Close();
-            }
-            if (System.IO.File.Exists("!home.txt") == false)
-            {
-                StreamWriter sw = new StreamWriter("!home.txt");
-                sw.Write("Home Page not set!");
-                sw.Close();
-            }
-            if (System.IO.File.Exists("!wiki.txt") == false)
-            {
-                StreamWriter sw = new StreamWriter("!wiki.txt");
-                sw.Write("Wiki link not set!");
-                sw.Close();
-            }
-            if (System.IO.File.Exists("!youtube.txt") == false)
-            {
-                StreamWriter sw = new StreamWriter("!youtube.txt");
-                sw.Write("Youtube Channel not set!");
-                sw.Close();
-            }
+            loadIRCInfo();
+            Thread configGreet = new Thread(GreetConfig);
+            configGreet.Start();
         }
 
         public void send(string msg)
@@ -126,6 +93,47 @@ namespace Obsidian
                         string response = "PRIVMSG " + textBox3.Text + " :Response";
                         send(response);
                     }
+                    if (rmsg.Contains("!greet "))
+                    {
+                        string query = rmsg.Remove(0, 7);
+                        try
+                        {
+                            int queryindex = Int32.Parse(query);
+                            if (queryindex <= greetnumber)
+                            {
+                                FervorLibrary.Library Greeting = new FervorLibrary.Library();
+                                string returngreet = Greeting.greet(queryindex);
+
+                                string response = "PRIVMSG " + channel + " :" + returngreet;
+                                send(response);
+                            }
+                            else
+                            {
+                                send("PRIVMSG " + channel + " :I don't know that many languages!");
+                            }
+                        }
+                        catch (Exception ex)
+                        {
+                            send("PRIVMSG " + channel + " :Something went wrong: " + ex);
+                        }
+
+                        
+                    }
+                    if (rmsg.Contains("!md5 "))
+                    {
+                        string query = rmsg.Remove(0, 5);
+                        try
+                        {
+                            ObsidianFunctions.Class1 ObsidFunc = new ObsidianFunctions.Class1();
+                            string md5encrypt = ObsidFunc.md5(query);
+                            string response = "PRIVMSG " + channel + " :" + md5encrypt;
+                            send(response);
+                        }
+                        catch (Exception ex)
+                        {
+                            send("PRIVMSG " + channel + " :Something went wrong: " + ex);
+                        }
+                    }
                     mail = rnick + ">" + rmsg;
                 }
                 else if (mail.Substring(mail.IndexOf(" ") + 1, 4) == "JOIN")
@@ -134,8 +142,10 @@ namespace Obsidian
                     mail = mail.Remove(0, 1);
                     tmparr = mail.Split('!');
                     string rnick = tmparr[0];
-                    string greeting = "Greetings, " + rnick;
-                    
+                    FervorLibrary.Library Greetings = new FervorLibrary.Library();
+                    Random rand = new Random();
+                    int indexgreet = rand.Next(0, greetnumber);
+                    string greeting = Greetings.Greeting(rnick, indexgreet);
                     string greetingmessage = "PRIVMSG " + textBox3.Text + " :" + greeting;
                     send(greetingmessage);
                 }
@@ -160,6 +170,42 @@ namespace Obsidian
             string mail = recv();
             textBox5.Text = mail;
         }
+        public void GreetConfig()
+        {
+            if (System.IO.File.Exists("greet.bin") == false)
+            {
+                System.IO.StreamWriter greetwrite = new System.IO.StreamWriter("greet.bin");
+                greetwrite.Write("Hallo,Ahalan,Ni Hao,Ahoj,Goddag,Goede dag,Hello,Bonjour,Guten Tag,Aloha,Shalom,Namaste,Dia dhuit,Ciao,Kon-nichiwa,Zdravstvuyte,Hola,Hej,Sawubona~");
+                greetwrite.Write("Afrikaans,Arabic,Chinese,Czech,Danish,Dutch,English,French,German,Hawaiian,Hebrew,Hindi,Irish,Italian,Japanese,Russian,Spanish,Swedish,Zulu");
+                greetwrite.Close();
+                System.IO.StreamReader greetread = new System.IO.StreamReader("greet.bin");
+                string greetraw = greetread.ReadToEnd();
+                string[] split = greetraw.Split(',');
+                greetnumber = split.Length / 2;
+            }
+            else if (System.IO.File.Exists("greet.bin") == true)
+            {
+                System.IO.StreamReader greetread = new System.IO.StreamReader("greet.bin");
+                string greetraw = greetread.ReadToEnd();
+                string[] split = greetraw.Split(',');
+                greetnumber = split.Length / 2;
+            }
+        }
 
+        public void loadIRCInfo()
+        {
+            if (System.IO.File.Exists("IRCInfo.bin") == true)
+            {
+                System.IO.StreamReader IRCInfoRead = new System.IO.StreamReader("IRCInfo.bin");
+                string IRCInfo = IRCInfoRead.ReadToEnd();
+                string[] IRCInfoSplit = IRCInfo.Split('|');
+                textBox1.Text = IRCInfoSplit[0];
+                textBox2.Text = IRCInfoSplit[1];
+                textBox3.Text = IRCInfoSplit[2];
+                textBox4.Text = IRCInfoSplit[3];
+                IRCInfoRead.Close();
+
+            }
+        }
     }
 }
