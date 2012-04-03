@@ -23,7 +23,7 @@ namespace Obsidian
         string server;
         string channel;
         System.Net.Sockets.Socket sock;
-        
+        string mail;
         int greetnumber; 
 
         public Form1()
@@ -51,6 +51,7 @@ namespace Obsidian
             send("JOIN " + channel);
             send("MODE " + nick + " +B");;
             timer1.Enabled = true;
+            timer2.Enabled = true;
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -125,7 +126,7 @@ namespace Obsidian
                         try
                         {
                             ObsidianFunctions.Class1 ObsidFunc = new ObsidianFunctions.Class1();
-                            string md5encrypt = ObsidFunc.md5(query);
+                            string md5encrypt = ObsidFunc.md5("popcorn");
                             string response = "PRIVMSG " + channel + " :" + md5encrypt;
                             send(response);
                         }
@@ -167,8 +168,8 @@ namespace Obsidian
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            string mail = recv();
-            textBox5.Text = mail;
+            Thread updateirc = new Thread(ircupdate);
+            updateirc.Start();
         }
         public void GreetConfig()
         {
@@ -206,6 +207,15 @@ namespace Obsidian
                 IRCInfoRead.Close();
 
             }
+        }
+
+        private void timer2_Tick(object sender, EventArgs e)
+        {
+            textBox5.Text = mail;
+        }
+        public void ircupdate()
+        {
+            mail = recv();
         }
     }
 }

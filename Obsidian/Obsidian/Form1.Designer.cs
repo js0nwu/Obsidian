@@ -40,6 +40,7 @@
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.textBox5 = new System.Windows.Forms.TextBox();
+            this.timer2 = new System.Windows.Forms.Timer(this.components);
             this.SuspendLayout();
             // 
             // button1
@@ -129,6 +130,11 @@
             this.textBox5.Size = new System.Drawing.Size(361, 96);
             this.textBox5.TabIndex = 10;
             // 
+            // timer2
+            // 
+            this.timer2.Interval = 2000;
+            this.timer2.Tick += new System.EventHandler(this.timer2_Tick);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -167,6 +173,7 @@
         private System.Windows.Forms.TextBox textBox4;
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.Timer timer2;
     }
 }
 
