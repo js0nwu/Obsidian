@@ -1,0 +1,5 @@
+C:\Users\PillyBuilt7\Documents\Visual Studio 2010\Projects\FervorLibrary\FervorLibrary\bin\Release\FervorLibrary.dll
+C:\Users\PillyBuilt7\Documents\Visual Studio 2010\Projects\FervorLibrary\FervorLibrary\bin\Release\FervorLibrary.pdb
+C:\Users\PillyBuilt7\Documents\Visual Studio 2010\Projects\FervorLibrary\FervorLibrary\obj\Release\ResolveAssemblyReference.cache
+C:\Users\PillyBuilt7\Documents\Visual Studio 2010\Projects\FervorLibrary\FervorLibrary\obj\Release\FervorLibrary.dll
+C:\Users\PillyBuilt7\Documents\Visual Studio 2010\Projects\FervorLibrary\FervorLibrary\obj\Release\FervorLibrary.pdb

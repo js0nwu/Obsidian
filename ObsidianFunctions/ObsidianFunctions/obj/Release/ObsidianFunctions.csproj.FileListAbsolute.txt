@@ -1,0 +1,5 @@
+C:\Users\PillyBuilt7\AppData\Local\Temporary Projects\ObsidianFunctions\bin\Release\ObsidianFunctions.dll
+C:\Users\PillyBuilt7\AppData\Local\Temporary Projects\ObsidianFunctions\bin\Release\ObsidianFunctions.pdb
+C:\Users\PillyBuilt7\AppData\Local\Temporary Projects\ObsidianFunctions\obj\Release\ResolveAssemblyReference.cache
+C:\Users\PillyBuilt7\AppData\Local\Temporary Projects\ObsidianFunctions\obj\Release\ObsidianFunctions.dll
+C:\Users\PillyBuilt7\AppData\Local\Temporary Projects\ObsidianFunctions\obj\Release\ObsidianFunctions.pdb
