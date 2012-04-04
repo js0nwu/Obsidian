@@ -24,8 +24,8 @@ namespace Obsidian
         string channel;
         System.Net.Sockets.Socket sock;
         string mail;
-        int greetnumber; 
-
+        int greetnumber;
+        string rmsg;
         public Form1()
         {
             InitializeComponent();
@@ -88,7 +88,7 @@ namespace Obsidian
                     tmparr = mail.Split('!');
                     string rnick = tmparr[0];
                     tmparr = mail.Split(':');
-                    string rmsg = tmparr[1];
+                    rmsg = tmparr[1];
                     if (rmsg.Contains("!respond") == true)
                     {
                         string response = "PRIVMSG " + textBox3.Text + " :Response";
@@ -122,20 +122,9 @@ namespace Obsidian
                     }
                     if (rmsg.Contains("!md5 "))
                     {
-                        string query = rmsg.Remove(0, 5);
-                        try
-                        {
-                            ObsidianFunctions.Class1 ObsidFunc = new ObsidianFunctions.Class1();
-                            string md5encrypt = ObsidFunc.md5("popcorn");
-                            string response = "PRIVMSG " + channel + " :" + md5encrypt;
-                            send(response);
-                        }
-                        catch (Exception ex)
-                        {
-                            send("PRIVMSG " + channel + " :Something went wrong: " + ex);
-                        }
+                        Thread md5calc = new Thread(generateMD5message);
+                        md5calc.Start();
                     }
-                    mail = rnick + ">" + rmsg;
                 }
                 else if (mail.Substring(mail.IndexOf(" ") + 1, 4) == "JOIN")
                 {
@@ -216,6 +205,25 @@ namespace Obsidian
         public void ircupdate()
         {
             mail = recv();
+        }
+        public void generateMD5message()
+        {
+            string query = rmsg.Remove(0, 5).Replace("\0", "").Trim();
+            try
+            {
+                ObsidianFunctions.Functions ObsidFunc = new ObsidianFunctions.Functions();
+                string md5encrypt = ObsidFunc.md5calc(query.ToString()).ToLower();
+                StreamWriter sw = new StreamWriter("debug.bin");
+                
+                string response = "PRIVMSG " + channel + " :" + md5encrypt;
+                sw.Write("|" + query + "|" + md5encrypt + "|" + response + "|");
+                sw.Close();
+                send(response);
+            }
+            catch (Exception ex)
+            {
+                send("PRIVMSG " + channel + " :Something went wrong: " + ex);
+            }
         }
     }
 }

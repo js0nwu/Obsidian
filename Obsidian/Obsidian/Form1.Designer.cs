@@ -127,6 +127,8 @@
             this.textBox5.Location = new System.Drawing.Point(11, 125);
             this.textBox5.Multiline = true;
             this.textBox5.Name = "textBox5";
+            this.textBox5.ReadOnly = true;
+            this.textBox5.ScrollBars = System.Windows.Forms.ScrollBars.Both;
             this.textBox5.Size = new System.Drawing.Size(361, 96);
             this.textBox5.TabIndex = 10;
             // 
