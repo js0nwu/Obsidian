@@ -41,6 +41,9 @@
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.textBox5 = new System.Windows.Forms.TextBox();
             this.timer2 = new System.Windows.Forms.Timer(this.components);
+            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.timer3 = new System.Windows.Forms.Timer(this.components);
             this.SuspendLayout();
             // 
             // button1
@@ -124,24 +127,48 @@
             // 
             // textBox5
             // 
-            this.textBox5.Location = new System.Drawing.Point(11, 125);
+            this.textBox5.Location = new System.Drawing.Point(11, 151);
             this.textBox5.Multiline = true;
             this.textBox5.Name = "textBox5";
             this.textBox5.ReadOnly = true;
             this.textBox5.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.textBox5.Size = new System.Drawing.Size(361, 96);
-            this.textBox5.TabIndex = 10;
+            this.textBox5.Size = new System.Drawing.Size(361, 70);
+            this.textBox5.TabIndex = 11;
             // 
             // timer2
             // 
             this.timer2.Interval = 2000;
             this.timer2.Tick += new System.EventHandler(this.timer2_Tick);
             // 
+            // textBox6
+            // 
+            this.textBox6.Location = new System.Drawing.Point(61, 125);
+            this.textBox6.Name = "textBox6";
+            this.textBox6.PasswordChar = '*';
+            this.textBox6.Size = new System.Drawing.Size(312, 20);
+            this.textBox6.TabIndex = 10;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(9, 128);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(53, 13);
+            this.label5.TabIndex = 12;
+            this.label5.Text = "Password";
+            // 
+            // timer3
+            // 
+            this.timer3.Interval = 4000;
+            this.timer3.Tick += new System.EventHandler(this.timer3_Tick);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(384, 262);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.textBox6);
             this.Controls.Add(this.textBox5);
             this.Controls.Add(this.textBox4);
             this.Controls.Add(this.label4);
@@ -176,6 +203,9 @@
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.TextBox textBox5;
         private System.Windows.Forms.Timer timer2;
+        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Timer timer3;
     }
 }
 

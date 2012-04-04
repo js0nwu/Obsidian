@@ -27,6 +27,8 @@ namespace Obsidian
         int greetnumber;
         string rmsg;
         int farewellnumber;
+        string password; 
+
         public Form1()
         {
             InitializeComponent();
@@ -34,7 +36,8 @@ namespace Obsidian
 
         private void button1_Click(object sender, EventArgs e)
         {
-            string IRCInfo = textBox1.Text + "|" + textBox2.Text + "|" + textBox3.Text + "|" + textBox4.Text;
+
+            string IRCInfo = textBox1.Text + "|" + textBox2.Text + "|" + textBox3.Text + "|" + textBox4.Text + "|" + textBox6.Text;
             System.IO.StreamWriter IRCInfoWrite = new System.IO.StreamWriter("IRCInfo.bin");
             IRCInfoWrite.Write(IRCInfo);
             IRCInfoWrite.Close();
@@ -42,6 +45,7 @@ namespace Obsidian
             server = textBox1.Text;
             channel = textBox3.Text;
             nick = textBox4.Text;
+            password = textBox6.Text;
             owner = "Obsidian";
             System.Net.IPHostEntry ipHostInfo = System.Net.Dns.GetHostEntry(server);
             System.Net.IPEndPoint EP = new System.Net.IPEndPoint(ipHostInfo.AddressList[0], port);
@@ -53,6 +57,10 @@ namespace Obsidian
             send("MODE " + nick + " +B");;
             timer1.Enabled = true;
             timer2.Enabled = true;
+            if (textBox6.Text != null)
+            {
+                timer3.Enabled = true;
+            }
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -62,6 +70,11 @@ namespace Obsidian
             configGreet.Start();
             Thread configFarewell = new Thread(FarewellConfig);
             configFarewell.Start();
+            if (System.IO.File.Exists("users.bin") == false | System.IO.File.Exists("passwords.bin") == false)
+            {
+                Thread configUser = new Thread(startUserList);
+                configUser.Start();
+            }
         }
 
         public void send(string msg)
@@ -150,6 +163,10 @@ namespace Obsidian
                     {
                         Thread md5calc = new Thread(generateMD5message);
                         md5calc.Start();
+                    }
+                    if (rmsg.Contains("!testwhisp"))
+                    {
+                        send("PRIVMSG " + "JWP" + " :test");
                     }
                 }
                 else if (mail.Substring(mail.IndexOf(" ") + 1, 4) == "JOIN")
@@ -241,6 +258,7 @@ namespace Obsidian
                 textBox2.Text = IRCInfoSplit[1];
                 textBox3.Text = IRCInfoSplit[2];
                 textBox4.Text = IRCInfoSplit[3];
+                textBox6.Text = IRCInfoSplit[4];
                 IRCInfoRead.Close();
 
             }
@@ -268,6 +286,19 @@ namespace Obsidian
             {
                 send("PRIVMSG " + channel + " :Something went wrong: " + ex);
             }
+        }
+        public void startUserList()
+        {
+            StreamWriter sw1 = new StreamWriter("users.bin");
+            sw1.Close();
+            StreamWriter sw2 = new StreamWriter("passwords.bin");
+            sw2.Close();
+        }
+
+        private void timer3_Tick(object sender, EventArgs e)
+        {
+            send("PRIVMSG " + "NickServ" + " :IDENTIFY " + textBox6.Text);
+            timer3.Enabled = false;
         }
     }
 }
