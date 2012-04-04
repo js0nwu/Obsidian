@@ -26,6 +26,7 @@ namespace Obsidian
         string mail;
         int greetnumber;
         string rmsg;
+        int farewellnumber;
         public Form1()
         {
             InitializeComponent();
@@ -59,6 +60,8 @@ namespace Obsidian
             loadIRCInfo();
             Thread configGreet = new Thread(GreetConfig);
             configGreet.Start();
+            Thread configFarewell = new Thread(FarewellConfig);
+            configFarewell.Start();
         }
 
         public void send(string msg)
@@ -120,6 +123,29 @@ namespace Obsidian
 
                         
                     }
+                    if (rmsg.Contains("!farewell "))
+                    {
+                        string query = rmsg.Remove(0, 10);
+                        try
+                        {
+                            int queryindex = Int32.Parse(query);
+                            if (queryindex <= greetnumber)
+                            {
+                                FervorLibrary.Library Farewelling = new FervorLibrary.Library();
+                                string returnfarewell = Farewelling.farewell(queryindex);
+                                string response = "PRIVMSG " + channel + " :" + returnfarewell;
+                                send(response);
+                            }
+                            else
+                            {
+                                send("PRIVMSG " + channel + " :I don't know that many languages!");
+                            }
+                        }
+                        catch (Exception ex)
+                        {
+                            send("PRIVMSG " + channel + " :Something went wrong: " + ex);
+                        }
+                    }
                     if (rmsg.Contains("!md5 "))
                     {
                         Thread md5calc = new Thread(generateMD5message);
@@ -145,8 +171,10 @@ namespace Obsidian
                     mail = mail.Remove(0, 1);
                     tmparr = mail.Split('!');
                     string rnick = tmparr[0];
-                    string farewell = "Farewell, " + rnick;
-                    
+                    FervorLibrary.Library Farewells = new FervorLibrary.Library();
+                    Random rand = new Random();
+                    int indexfarewell = rand.Next(0, farewellnumber);
+                    string farewell = Farewells.Farewell(rnick, indexfarewell);
                     string farewellmessage = "PRIVMSG " + textBox3.Text + " :" + farewell;
                     send(farewellmessage);
                 }
@@ -181,7 +209,27 @@ namespace Obsidian
                 greetnumber = split.Length / 2;
             }
         }
-
+        public void FarewellConfig()
+        {
+            if (System.IO.File.Exists("farewell.bin") == false)
+            {
+                System.IO.StreamWriter farewellwrite = new System.IO.StreamWriter("farewell.bin");
+                farewellwrite.Write("Tosiens,Ma'a as-salaama,Zai Jian,Sbohem,Farvel,Afscheid,Goodbye,Au revoir,Aurf Wiedersehen,Aloha,Kol Tuv,Ach-ha,Slan agat,Addio,Sayonara,Pa-ka,Adios,Adjo,Hamba kahle~");
+                farewellwrite.Write("Afrikaans,Arabic,Chinese,Czech,Danish,Dutch,English,French,German,Hawaiian,Hebrew,Hindi,Irish,Italian,Japanese,Russian,Spanish,Swedish,Zulu");
+                farewellwrite.Close();
+                System.IO.StreamReader farewellread = new System.IO.StreamReader("farewell.bin");
+                string farewellraw = farewellread.ReadToEnd();
+                string[] split = farewellraw.Split(',');
+                farewellnumber = split.Length / 2;
+            }
+            else if (System.IO.File.Exists("farewell.bin") == true)
+            {
+                System.IO.StreamReader farewellread = new System.IO.StreamReader("farewell.bin");
+                string farewellraw = farewellread.ReadToEnd();
+                string[] split = farewellraw.Split(',');
+                farewellnumber = split.Length / 2;
+            }
+        }
         public void loadIRCInfo()
         {
             if (System.IO.File.Exists("IRCInfo.bin") == true)
@@ -213,11 +261,7 @@ namespace Obsidian
             {
                 ObsidianFunctions.Functions ObsidFunc = new ObsidianFunctions.Functions();
                 string md5encrypt = ObsidFunc.md5calc(query.ToString()).ToLower();
-                StreamWriter sw = new StreamWriter("debug.bin");
-                
                 string response = "PRIVMSG " + channel + " :" + md5encrypt;
-                sw.Write("|" + query + "|" + md5encrypt + "|" + response + "|");
-                sw.Close();
                 send(response);
             }
             catch (Exception ex)

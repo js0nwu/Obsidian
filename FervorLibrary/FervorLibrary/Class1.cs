@@ -22,7 +22,19 @@ namespace FervorLibrary
             return greetlang;
 
         }
-
+        public string Farewell(string name, int index)
+        {
+            System.IO.StreamReader farewellreader = new System.IO.StreamReader("farewell.bin");
+            string[] list = farewellreader.ReadToEnd().Split('~');
+            string farewellslist = list[0];
+            string languageslist = list[1];
+            string[] farewells = farewellslist.Split(',');
+            string[] languages = languageslist.Split(',');
+            int farewellslength = farewells.Length;
+            int languageslength = languages.Length;
+            string farewelllang = farewells[index] + " " + name + "! You learned how to say goodbye in " + languages[index];
+            return farewelllang;
+        }
         public string greet(int index)
         {
             
@@ -37,10 +49,20 @@ namespace FervorLibrary
                 int languageslength = languages.Length;
                 string greetlang = greets[index] + "! You learned how to greet in " + languages[index];
                 return greetlang;
-            
-            
         }
-
+        public string farewell(int index)
+        {
+            System.IO.StreamReader farewellreader = new System.IO.StreamReader("farewell.bin");
+            string[] list = farewellreader.ReadToEnd().Split('~');
+            string farewelllist = list[0];
+            string languageslist = list[1];
+            string[] farewells = farewelllist.Split(',');
+            string[] languages = languageslist.Split(',');
+            int farewellslist = farewells.Length;
+            int languageslength = languages.Length;
+            string farewelllang = farewells[index] + "! You learned how to say goodbye in " + languages[index];
+            return farewelllang;
+        }
 
     }
 }
