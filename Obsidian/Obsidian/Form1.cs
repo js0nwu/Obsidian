@@ -30,6 +30,8 @@ namespace Obsidian
         string password;
         bool isregistered;
         string rnick;
+        string old;
+
         public Form1()
         {
             InitializeComponent();
@@ -187,7 +189,30 @@ namespace Obsidian
                         Thread activate = new Thread(activateUser);
                         activate.Start();
                     }
+                    if (rmsg.Contains("!deactivate"))
+                    {
+                        Thread deactive = new Thread(deactivateUser);
+                        deactive.Start();
+                    }
+                    if (rmsg.Contains("!adduser "))
+                    {
+                        System.IO.StreamReader sr = new StreamReader(".activeusers");
+                        string[] users = sr.ReadToEnd().Split(':');
+                        sr.Close();
+                        foreach (string x in users)
+                        {
+                            if (x.Contains(rnick))
+                            {
+                                string query = rmsg.Remove(0, 9);
+                                ObsidianFunctions.Functions obsidfunc = new ObsidianFunctions.Functions();
+                                string list = obsidfunc.addUser(query);
+                                send("PRIVMSG " + channel + " :" + list);
 
+                            }
+
+                        }
+                        
+                    }
                 }
                 else if (mail.Substring(mail.IndexOf(" ") + 1, 4) == "JOIN")
                 {
@@ -214,6 +239,8 @@ namespace Obsidian
                     string farewell = Farewells.Farewell(rnick, indexfarewell);
                     string farewellmessage = "PRIVMSG " + textBox3.Text + " :" + farewell;
                     send(farewellmessage);
+                    Thread deactive = new Thread(deactivateUser);
+                    deactive.Start();
                 }
             }
             
@@ -350,6 +377,7 @@ namespace Obsidian
                     send("PRIVMSG " + channel + " :" + usernames);
                     
                 }
+                
             }
         }
         public void clearregs()
@@ -367,16 +395,13 @@ namespace Obsidian
                     sw.Close();
                     send("PRIVMSG " + channel + " :Cleared!");
                 }
-                else
-                {
-                    send("PRIVMSG " + rnick + " :You don't have sufficient privileges!");
-                }
+                
             }
         }
         public void activateUser()
         {
             StreamReader sr2 = new StreamReader(".activeusers");
-            string old = sr2.ReadToEnd();
+            old = sr2.ReadToEnd();
             sr2.Close();
             System.IO.StreamReader sr = new StreamReader("users.bin");
             string[] registeredusers = sr.ReadToEnd().Split(':');
@@ -395,13 +420,38 @@ namespace Obsidian
                         sw.Write(old + rnick + ":");
                         send("PRIVMSG " + rnick + " :Success! You are logged in!");
                     }
-                    else
-                    {
-                        send("PRIVMSG " + rnick + " :Incorrect credentials!");
-                    }
+                    
                     sw.Close();
                 }
             }
         }
+        public void deactivateUser()
+        {
+            StreamReader sr = new StreamReader(".activeusers");
+            string[] listofactiveusers = sr.ReadToEnd().Split(':');
+            sr.Close();
+            foreach (string x in listofactiveusers)
+            {
+                if (x.Contains(rnick))
+                {
+                    listofactiveusers = listofactiveusers.Where(val => val != rnick).ToArray();
+                    string listuser = null;
+                    foreach (string y in listofactiveusers)
+                    {
+                        listuser = listuser + y + ":";
+                    }
+                    StreamWriter sw = new StreamWriter(".activeusers");
+                    sw.Write(listuser);
+                    sw.Close();
+                    send("PRIVMSG " + channel + " :User has been deactivated!");
+                }
+            }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Environment.Exit(0);
+        }
+        
     }
 }
