@@ -27,8 +27,9 @@ namespace Obsidian
         int greetnumber;
         string rmsg;
         int farewellnumber;
-        string password; 
-
+        string password;
+        bool isregistered;
+        string rnick;
         public Form1()
         {
             InitializeComponent();
@@ -70,11 +71,13 @@ namespace Obsidian
             configGreet.Start();
             Thread configFarewell = new Thread(FarewellConfig);
             configFarewell.Start();
-            if (System.IO.File.Exists("users.bin") == false | System.IO.File.Exists("passwords.bin") == false)
+            if (System.IO.File.Exists("users.bin") == false | System.IO.File.Exists("passwords.bin") == false | System.IO.File.Exists("registers.bin") == false | System.IO.File.Exists(".activeusers") == false)
             {
                 Thread configUser = new Thread(startUserList);
                 configUser.Start();
             }
+            StreamWriter sw = new StreamWriter(".activeusers");
+            sw.Close();
         }
 
         public void send(string msg)
@@ -102,7 +105,7 @@ namespace Obsidian
                     string[] tmparr = null;
                     mail = mail.Remove(0, 1);
                     tmparr = mail.Split('!');
-                    string rnick = tmparr[0];
+                    rnick = tmparr[0];
                     tmparr = mail.Split(':');
                     rmsg = tmparr[1];
                     if (rmsg.Contains("!respond") == true)
@@ -164,10 +167,27 @@ namespace Obsidian
                         Thread md5calc = new Thread(generateMD5message);
                         md5calc.Start();
                     }
-                    if (rmsg.Contains("!testwhisp"))
+                    if (rmsg.Contains("!register "))
                     {
-                        send("PRIVMSG " + "JWP" + " :test");
+                        Thread requestregistration = new Thread(reqreguser);
+                        requestregistration.Start();
                     }
+                    if (rmsg.Contains("!registerlist"))
+                    {
+                        Thread listreg = new Thread(listregs);
+                        listreg.Start();
+                    }
+                    if (rmsg.Contains("!clearregisterlist"))
+                    {
+                        Thread clearreg = new Thread(clearregs);
+                        clearreg.Start();
+                    }
+                    if (rmsg.Contains("!active "))
+                    {
+                        Thread activate = new Thread(activateUser);
+                        activate.Start();
+                    }
+
                 }
                 else if (mail.Substring(mail.IndexOf(" ") + 1, 4) == "JOIN")
                 {
@@ -274,7 +294,7 @@ namespace Obsidian
         }
         public void generateMD5message()
         {
-            string query = rmsg.Remove(0, 5).Replace("\0", "").Trim();
+            string query = rmsg.Remove(0, 5);
             try
             {
                 ObsidianFunctions.Functions ObsidFunc = new ObsidianFunctions.Functions();
@@ -293,12 +313,95 @@ namespace Obsidian
             sw1.Close();
             StreamWriter sw2 = new StreamWriter("passwords.bin");
             sw2.Close();
+            StreamWriter sw3 = new StreamWriter("registers.bin");
+            sw3.Write("|");
+            sw3.Close();
+            StreamWriter sw4 = new StreamWriter(".activeusers");
+            sw4.Close();
         }
 
         private void timer3_Tick(object sender, EventArgs e)
         {
             send("PRIVMSG " + "NickServ" + " :IDENTIFY " + textBox6.Text);
+            isregistered = true;
             timer3.Enabled = false;
+        }
+        public void reqreguser()
+        {
+            string query = rmsg.Remove(0, 10);
+            ObsidianFunctions.Functions requestreg = new ObsidianFunctions.Functions();
+            string pass = requestreg.reqreguser(rnick, query);
+            send("PRIVMSG " + rnick + " :You have been requested registration - user=" + rnick + " password=" + pass + " (hashed)");
+        }
+        public void listregs()
+        {
+            System.IO.StreamReader sr = new StreamReader(".activeusers");
+            string[] users = sr.ReadToEnd().Split(':');
+            sr.Close();
+            foreach (string x in users)
+            {
+                if (x.Contains(rnick))
+                {
+                    StreamReader sr2 = new StreamReader("registers.bin");
+                    string[] registered = sr2.ReadToEnd().Split('|');
+                    string usernames = registered[0];
+                    sr2.Close();
+                    
+                    send("PRIVMSG " + channel + " :" + usernames);
+                    
+                }
+            }
+        }
+        public void clearregs()
+        {
+            System.IO.StreamReader sr = new StreamReader(".activeusers");
+            string[] users = sr.ReadToEnd().Split(':');
+            sr.Close();
+            foreach (string x in users)
+            {
+                if (x.Contains(rnick))
+                {
+                    System.IO.File.Delete("registers.bin");
+                    System.IO.StreamWriter sw = new StreamWriter("registers.bin");
+                    sw.Write("|");
+                    sw.Close();
+                    send("PRIVMSG " + channel + " :Cleared!");
+                }
+                else
+                {
+                    send("PRIVMSG " + rnick + " :You don't have sufficient privileges!");
+                }
+            }
+        }
+        public void activateUser()
+        {
+            StreamReader sr2 = new StreamReader(".activeusers");
+            string old = sr2.ReadToEnd();
+            sr2.Close();
+            System.IO.StreamReader sr = new StreamReader("users.bin");
+            string[] registeredusers = sr.ReadToEnd().Split(':');
+            sr.Close();
+            foreach (string x in registeredusers)
+            {
+                if (x.Contains(rnick))
+                {
+                    string query = rmsg.Remove(0, 8);
+                    int indexuser = Array.IndexOf(registeredusers, rnick);
+                    ObsidianFunctions.Functions obsidfunc = new ObsidianFunctions.Functions();
+                    bool passcorrect = obsidfunc.isVerified(indexuser, query);
+                    StreamWriter sw = new StreamWriter(".activeusers");
+                    if (passcorrect == true)
+                    {
+                        sw.Write(old + rnick + ":");
+                        send("PRIVMSG " + rnick + " :Success! You are logged in!");
+                    }
+                    else
+                    {
+                        send("PRIVMSG " + rnick + " :Incorrect credentials!");
+                    }
+                    sw.Close();
+                }
+            }
         }
     }
 }
