@@ -96,7 +96,38 @@ namespace ObsidianFunctions
             string newregusers = sr3.ReadToEnd();
             sr3.Close();
             return newregusers;
-
+        }
+        public string removeUser(string nickname)
+        {
+            nickname = nickname.Replace("\0", "").Trim();
+            StreamReader sr = new StreamReader("users.bin");
+            string[] userlist = sr.ReadToEnd().Split(':');
+            sr.Close();
+            StreamReader sr2 = new StreamReader("passwords.bin");
+            string[] passwordlist = sr2.ReadToEnd().Split(':');
+            sr2.Close();
+            foreach (string x in userlist)
+            {
+                if (x.Contains(nickname))
+                {
+                    int userregIndex = Array.IndexOf(userlist, nickname);
+                    userlist = userlist.Where(val => val != nickname).ToArray();
+                    passwordlist = passwordlist.Where(val => val != passwordlist[userregIndex]).ToArray();
+                    string newuserlist = String.Join(":", userlist);
+                    string newpasslist = string.Join(":", passwordlist);
+                    StreamWriter newsw1 = new StreamWriter("users.bin");
+                    newsw1.Write(newuserlist);
+                    newsw1.Close();
+                    StreamWriter newsw2 = new StreamWriter("passwords.bin");
+                    newsw2.Write(newpasslist);
+                    newsw2.Close();
+                    
+                }
+            }
+            StreamReader newuserread = new StreamReader("users.bin");
+            string updateuser = newuserread.ReadToEnd();
+            newuserread.Close();
+            return updateuser;
         }
     }
 }

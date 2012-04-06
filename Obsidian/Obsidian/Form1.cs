@@ -207,11 +207,44 @@ namespace Obsidian
                                 ObsidianFunctions.Functions obsidfunc = new ObsidianFunctions.Functions();
                                 string list = obsidfunc.addUser(query);
                                 send("PRIVMSG " + channel + " :" + list);
+                            }
+                        }
+                    }
+                    if (rmsg.Contains("!removeuser "))
+                    {
+                        System.IO.StreamReader sr = new StreamReader(".activeusers");
+                        string[] users = sr.ReadToEnd().Split(':');
+                        sr.Close();
+                        foreach (string x in users)
+                        {
+                            if (x.Contains(rnick))
+                            {
+                                string query = rmsg.Remove(0, 12);
+                                ObsidianFunctions.Functions obsidfunc = new ObsidianFunctions.Functions();
+                                string list = obsidfunc.removeUser(query);
+                                send("PRIVMSG " + channel + " :" + list);
+                            }
+                        }
+                    }
+                    if (rmsg.Contains("!userlist"))
+                    {
+                        System.IO.StreamReader sr = new StreamReader(".activeusers");
+                        string[] users = sr.ReadToEnd().Split(':');
+                        sr.Close();
+                        foreach (string x in users)
+                        {
+                            if (x.Contains(rnick))
+                            {
+                                StreamReader sr2 = new StreamReader("users.bin");
+                                string currentusers = sr2.ReadToEnd();
+                                
+                                sr2.Close();
+
+                                send("PRIVMSG " + channel + " :" + currentusers);
 
                             }
 
                         }
-                        
                     }
                 }
                 else if (mail.Substring(mail.IndexOf(" ") + 1, 4) == "JOIN")
