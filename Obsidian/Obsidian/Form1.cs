@@ -12,7 +12,6 @@ using System.Security.Cryptography;
 using ObsidianFunctions;
 using FervorLibrary; 
 
-
 namespace Obsidian
 {
     public partial class Form1 : Form
@@ -33,6 +32,7 @@ namespace Obsidian
         string rnick;
         string old;
         bool isOperator;
+        string ownernick;
 
         public Form1()
         {
@@ -83,6 +83,14 @@ namespace Obsidian
             }
             StreamWriter sw = new StreamWriter(".activeusers");
             sw.Close();
+            if (System.IO.File.Exists("owner.bin") == false)
+            {
+                ownerConfiguration();
+            }
+            else
+            {
+                setOwner();
+            }
         }
 
         public void send(string msg)
@@ -252,6 +260,45 @@ namespace Obsidian
                         if (nickisuser == true)
                         {
                             send("QUIT");
+                        }
+                        else
+                        {
+                            send("PRIVMSG " + channel + " :Insufficient permissions!");
+                        }
+                    }
+                    else if (rmsg.Contains("!addops "))
+                    {
+                        string query = rmsg.Remove(0, 8);
+                        bool nickisuser = isActiveUser(rnick);
+                        if (nickisuser == true)
+                        {
+                            send("MODE " + channel + " +o " + query);
+                        }
+                        else
+                        {
+                            send("PRIVMSG " + channel + " :Insufficient permissions!");
+                        }
+                    }
+                    else if (rmsg.Contains("!removeops "))
+                    {
+                        string query = rmsg.Remove(0, 11);
+                        bool nickisuser = isActiveUser(rnick);
+                        if (nickisuser == true)
+                        {
+                            send("MODE " + channel + " -o " + query);
+                        }
+                        else
+                        {
+                            send("PRIVMSG " + channel + " :Insufficient permissions!");
+                        }
+                    }
+                    else if (rmsg.Contains("!kick "))
+                    {
+                        string query = rmsg.Remove(0, 6);
+                        bool nickuser = isActiveUser(rnick);
+                        if (nickuser == true)
+                        {
+                            send("KICK " + channel + " " + query + " :" + rnick);
                         }
                         else
                         {
@@ -528,6 +575,17 @@ namespace Obsidian
                 }
             }
             return userbool;
+        }
+        public void ownerConfiguration()
+        {
+            ownerConfig form2 = new ownerConfig();
+            form2.Show();
+        }
+        public void setOwner()
+        {
+            StreamReader sr = new StreamReader("owner.bin");
+            ownernick = sr.ReadToEnd();
+
         }
     }
 }
