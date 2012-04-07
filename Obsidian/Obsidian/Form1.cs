@@ -31,6 +31,7 @@ namespace Obsidian
         bool isregistered;
         string rnick;
         string old;
+        bool isOperator;
 
         public Form1()
         {
@@ -69,6 +70,7 @@ namespace Obsidian
         private void Form1_Load(object sender, EventArgs e)
         {
             loadIRCInfo();
+            isOperator = false;
             Thread configGreet = new Thread(GreetConfig);
             configGreet.Start();
             Thread configFarewell = new Thread(FarewellConfig);
@@ -115,7 +117,7 @@ namespace Obsidian
                         string response = "PRIVMSG " + textBox3.Text + " :Response";
                         send(response);
                     }
-                    if (rmsg.Contains("!greet "))
+                    else if (rmsg.Contains("!greet "))
                     {
                         string query = rmsg.Remove(0, 7);
                         try
@@ -141,7 +143,7 @@ namespace Obsidian
 
                         
                     }
-                    if (rmsg.Contains("!farewell "))
+                    else if (rmsg.Contains("!farewell "))
                     {
                         string query = rmsg.Remove(0, 10);
                         try
@@ -164,37 +166,37 @@ namespace Obsidian
                             send("PRIVMSG " + channel + " :Something went wrong: " + ex);
                         }
                     }
-                    if (rmsg.Contains("!md5 "))
+                    else if (rmsg.Contains("!md5 "))
                     {
                         Thread md5calc = new Thread(generateMD5message);
                         md5calc.Start();
                     }
-                    if (rmsg.Contains("!register "))
+                    else if (rmsg.Contains("!register "))
                     {
                         Thread requestregistration = new Thread(reqreguser);
                         requestregistration.Start();
                     }
-                    if (rmsg.Contains("!registerlist"))
+                    else if (rmsg.Contains("!registerlist"))
                     {
                         Thread listreg = new Thread(listregs);
                         listreg.Start();
                     }
-                    if (rmsg.Contains("!clearregisterlist"))
+                    else if (rmsg.Contains("!clearregisterlist"))
                     {
                         Thread clearreg = new Thread(clearregs);
                         clearreg.Start();
                     }
-                    if (rmsg.Contains("!active "))
+                    else if (rmsg.Contains("!active "))
                     {
                         Thread activate = new Thread(activateUser);
                         activate.Start();
                     }
-                    if (rmsg.Contains("!deactivate"))
+                    else if (rmsg.Contains("!deactivate"))
                     {
                         Thread deactive = new Thread(deactivateUser);
                         deactive.Start();
                     }
-                    if (rmsg.Contains("!adduser "))
+                    else if (rmsg.Contains("!adduser "))
                     {
                         System.IO.StreamReader sr = new StreamReader(".activeusers");
                         string[] users = sr.ReadToEnd().Split(':');
@@ -210,7 +212,8 @@ namespace Obsidian
                             }
                         }
                     }
-                    if (rmsg.Contains("!removeuser "))
+
+                    else if (rmsg.Contains("!removeuser "))
                     {
                         System.IO.StreamReader sr = new StreamReader(".activeusers");
                         string[] users = sr.ReadToEnd().Split(':');
@@ -226,7 +229,7 @@ namespace Obsidian
                             }
                         }
                     }
-                    if (rmsg.Contains("!userlist"))
+                    else if (rmsg.Contains("!userlist"))
                     {
                         System.IO.StreamReader sr = new StreamReader(".activeusers");
                         string[] users = sr.ReadToEnd().Split(':');
@@ -237,13 +240,21 @@ namespace Obsidian
                             {
                                 StreamReader sr2 = new StreamReader("users.bin");
                                 string currentusers = sr2.ReadToEnd();
-                                
                                 sr2.Close();
-
                                 send("PRIVMSG " + channel + " :" + currentusers);
-
                             }
-
+                        }
+                    }
+                    else if (rmsg.Contains("!botquit"))
+                    {
+                        bool nickisuser = isActiveUser(rnick);
+                        if (nickisuser == true)
+                        {
+                            send("QUIT");
+                        }
+                        else
+                        {
+                            send("PRIVMSG " + channel + " :Insufficient permissions!");
                         }
                     }
                 }
@@ -274,6 +285,23 @@ namespace Obsidian
                     send(farewellmessage);
                     Thread deactive = new Thread(deactivateUser);
                     deactive.Start();
+                }
+                else if (mail.Substring(mail.IndexOf(" ") + 1, 4) == "MODE")
+                {
+                    mail = mail.Replace("\0", "").Trim();
+                    int nameopslength = nick.Length + 3;
+                    string action = mail.Substring(mail.Length - nameopslength);
+                    if (action.StartsWith("+o") | action.StartsWith("+r"))
+                    {
+                        isOperator = true;
+                        send("PRIVMSG " + channel + " :isOperator = true");
+
+                    }
+                    else if (action.StartsWith("-o") | action.StartsWith("-r"))
+                    {
+                        isOperator = false;
+                        send("PRIVMSG " + channel + " :isOperator = false");
+                    }
                 }
             }
             
@@ -350,7 +378,7 @@ namespace Obsidian
         }
         public void ircupdate()
         {
-            mail = recv();
+            mail = recv().Replace("\0", "").Trim();
         }
         public void generateMD5message()
         {
@@ -485,6 +513,20 @@ namespace Obsidian
         {
             Environment.Exit(0);
         }
-        
+        public bool isActiveUser(string nickname)
+        {
+            StreamReader sr = new StreamReader(".activeusers");
+            string[] listofactiveusers = sr.ReadToEnd().Split(':');
+            sr.Close();
+            bool userbool = false;
+            foreach (string x in listofactiveusers)
+            {
+                if (x.Contains(nickname))
+                {
+                    userbool = true;
+                }
+            }
+            return userbool;
+        }
     }
 }
