@@ -33,6 +33,8 @@ namespace Obsidian
         string old;
         bool isOperator;
         string ownernick;
+        string oldmail;
+        int spamcount; 
 
         public Form1()
         {
@@ -70,6 +72,7 @@ namespace Obsidian
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            spamcount = 0;
             loadIRCInfo();
             isOperator = false;
             Thread configGreet = new Thread(GreetConfig);
@@ -268,43 +271,54 @@ namespace Obsidian
                     }
                     else if (rmsg.Contains("!addops "))
                     {
-                        string query = rmsg.Remove(0, 8);
-                        bool nickisuser = isActiveUser(rnick);
-                        if (nickisuser == true)
+                        if (isOperator == true)
                         {
-                            send("MODE " + channel + " +o " + query);
-                        }
-                        else
-                        {
-                            send("PRIVMSG " + channel + " :Insufficient permissions!");
+                            string query = rmsg.Remove(0, 8);
+                            bool nickisuser = isActiveUser(rnick);
+                            if (nickisuser == true)
+                            {
+                                send("MODE " + channel + " +o " + query);
+                            }
+                            else
+                            {
+                                send("PRIVMSG " + channel + " :Insufficient permissions!");
+                            }
                         }
                     }
                     else if (rmsg.Contains("!removeops "))
                     {
-                        string query = rmsg.Remove(0, 11);
-                        bool nickisuser = isActiveUser(rnick);
-                        if (nickisuser == true)
+                        if (isOperator == true)
                         {
-                            send("MODE " + channel + " -o " + query);
-                        }
-                        else
-                        {
-                            send("PRIVMSG " + channel + " :Insufficient permissions!");
+                            string query = rmsg.Remove(0, 11);
+                            bool nickisuser = isActiveUser(rnick);
+                            if (nickisuser == true)
+                            {
+                                send("MODE " + channel + " -o " + query);
+                            }
+                            else
+                            {
+                                send("PRIVMSG " + channel + " :Insufficient permissions!");
+                            }
                         }
                     }
                     else if (rmsg.Contains("!kick "))
                     {
-                        string query = rmsg.Remove(0, 6);
-                        bool nickuser = isActiveUser(rnick);
-                        if (nickuser == true)
+                        if (isOperator == true)
                         {
-                            send("KICK " + channel + " " + query + " :" + rnick);
-                        }
-                        else
-                        {
-                            send("PRIVMSG " + channel + " :Insufficient permissions!");
+                            string query = rmsg.Remove(0, 6);
+                            bool nickuser = isActiveUser(rnick);
+                            if (nickuser == true)
+                            {
+                                send("KICK " + channel + " " + query + " User-requested kick");
+                            }
+                            else
+                            {
+                                send("PRIVMSG " + channel + " :Insufficient permissions!");
+                            }
                         }
                     }
+
+                    
                 }
                 else if (mail.Substring(mail.IndexOf(" ") + 1, 4) == "JOIN")
                 {
@@ -350,10 +364,11 @@ namespace Obsidian
                         isOperator = false;
                         send("PRIVMSG " + channel + " :isOperator = false");
                     }
+
                 }
             }
-            
             return mail;
+            
         }
 
         private void timer1_Tick(object sender, EventArgs e)
@@ -427,6 +442,26 @@ namespace Obsidian
         public void ircupdate()
         {
             mail = recv().Replace("\0", "").Trim();
+
+            if (mail == oldmail)
+            {
+                spamcount++;
+                if (spamcount >= 4)
+                {
+                    if (isOperator == true)
+                    {
+                        send("KICK " + channel + " " + rnick + " No Spamming or Repeating one's self");
+                        spamcount = 0;
+                    }
+                    else
+                    {
+                        send("PRIVMSG " + channel + " :Try not to spam or excessively repeat yourself");
+                        spamcount = 0;
+                    }
+                }
+                
+            }
+            oldmail = mail;
         }
         public void generateMD5message()
         {
@@ -527,7 +562,7 @@ namespace Obsidian
                     if (passcorrect == true)
                     {
                         sw.Write(old + rnick + ":");
-                        send("PRIVMSG " + rnick + " :Success! You are logged in!");
+                        send("PRIVMSG " + channel + " :Success! You are logged in!");
                     }
                     
                     sw.Close();
