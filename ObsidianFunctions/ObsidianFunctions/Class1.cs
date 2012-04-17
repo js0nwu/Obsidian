@@ -130,5 +130,6 @@ namespace ObsidianFunctions
             newuserread.Close();
             return updateuser;
         }
+        
     }
 }

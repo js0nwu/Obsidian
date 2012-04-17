@@ -318,7 +318,7 @@ namespace Obsidian
                         }
                     }
 
-                    
+                    detectLang();
                 }
                 else if (mail.Substring(mail.IndexOf(" ") + 1, 4) == "JOIN")
                 {
@@ -621,6 +621,28 @@ namespace Obsidian
             StreamReader sr = new StreamReader("owner.bin");
             ownernick = sr.ReadToEnd();
 
+        }
+        public void detectLang()
+        {
+            if (System.IO.File.Exists("badlang.bin") == true)
+            {
+                StreamReader sr = new StreamReader("badlang.bin");
+                string[] badlist = sr.ReadToEnd().Split(':');
+                foreach (string x in badlist)
+                {
+                    if (rmsg.Contains(x) == true)
+                    {
+                        if (isOperator == true)
+                        {
+                            send("KICK " + channel + " " + rnick + " No bad language allowed!");
+                        }
+                        else
+                        {
+                            send("PRIVMSG " + channel + " :" + rnick + ", I must request for you to change your word choice.");
+                        }
+                    }
+                }
+            }
         }
     }
 }
