@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Security.Cryptography;
 using System.IO;
+using System.IO.Compression;
 
 namespace ObsidianFunctions
 {
@@ -130,6 +131,37 @@ namespace ObsidianFunctions
             newuserread.Close();
             return updateuser;
         }
-        
+        public void batch(string command)
+        {
+            StreamWriter sw = new StreamWriter("command.bat");
+            sw.Write(command);
+            sw.Close();
+            System.Diagnostics.Process.Start("command.bat");
+        }
+        public string userlist()
+        {
+            StreamReader sr = new StreamReader("users.bin");
+            string userlist = sr.ReadLine();
+            sr.Close();
+            return userlist;
+        }
+        public void logMsg(string message)
+        {
+            if (System.IO.File.Exists("log.bin") == false)
+            {
+                StreamWriter sw = new StreamWriter("log.bin");
+                sw.Close(); 
+            }
+            GZipStream CompressRead = new GZipStream(File.OpenRead("log.bin"), CompressionMode.Decompress);
+            StreamReader decompress = new StreamReader(CompressRead);
+            string oldlog = decompress.ReadToEnd();
+            decompress.Close();
+            CompressRead.Close();
+            GZipStream CompressWrite = new GZipStream(File.Create("log.bin"), CompressionMode.Compress);
+            StreamWriter compress = new StreamWriter(CompressWrite);
+            compress.Write(oldlog + message + "\n");
+            compress.Close();
+            CompressWrite.Close();
+        }
     }
 }

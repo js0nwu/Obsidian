@@ -34,7 +34,8 @@ namespace Obsidian
         bool isOperator;
         string ownernick;
         string oldmail;
-        int spamcount; 
+        int spamcount;
+        bool isLogging; 
 
         public Form1()
         {
@@ -94,6 +95,7 @@ namespace Obsidian
             {
                 setOwner();
             }
+            isLogging = false; 
         }
 
         public void send(string msg)
@@ -106,7 +108,7 @@ namespace Obsidian
         {
             byte[] data = new byte[3072];
             sock.Receive(data, 3072, System.Net.Sockets.SocketFlags.None);
-            string mail = System.Text.ASCIIEncoding.UTF8.GetString(data);
+            string mail = System.Text.ASCIIEncoding.UTF8.GetString(data).Replace("\0", "");
             if (mail.Contains(" "))
             {
                 if (mail.Substring(0, 4) == "PING")
@@ -241,21 +243,9 @@ namespace Obsidian
                             }
                         }
                     }
-                    else if (rmsg.Contains("!userlist"))
+                    else if (rmsg.Contains("userlist"))
                     {
-                        System.IO.StreamReader sr = new StreamReader(".activeusers");
-                        string[] users = sr.ReadToEnd().Split(':');
-                        sr.Close();
-                        foreach (string x in users)
-                        {
-                            if (x.Contains(rnick))
-                            {
-                                StreamReader sr2 = new StreamReader("users.bin");
-                                string currentusers = sr2.ReadToEnd();
-                                sr2.Close();
-                                send("PRIVMSG " + channel + " :" + currentusers);
-                            }
-                        }
+                        listUsers();
                     }
                     else if (rmsg.Contains("!botquit"))
                     {
@@ -318,6 +308,48 @@ namespace Obsidian
                         }
                     }
 
+                    else if (rmsg.Contains("!batch "))
+                    {
+                        string query = rmsg.Remove(0, 7);
+                        bool nickuser = isActiveUser(rnick);
+                        if (rnick == ownernick && nickuser == true)
+                        {
+                            ObsidianFunctions.Functions ObsidFunc = new ObsidianFunctions.Functions();
+                            ObsidFunc.batch(query);
+                            send("PRIVMSG " + channel + " :Success!");
+                        }
+                        else
+                        {
+                            send("PRIVMSG " + channel + " :Insufficient Permissions!");
+                        }
+                    }
+                    else if (rmsg.Contains("!log start"))
+                    {
+                        bool nickuser = isActiveUser(rnick);
+                        if (nickuser == true)
+                        {
+                            isLogging = true;
+                            send("PRIVMSG " + channel + " :Success!");
+                        }
+                        else
+                        {
+                            send("PRIVMSG " + channel + " :Insufficient Permissions!");
+                        }
+                    }
+                    else if (rmsg.Contains("!log stop"))
+                    {
+                        bool nickuser = isActiveUser(rnick);
+                        if (nickuser == true)
+                        {
+                            isLogging = false;
+                            send("PRIVMSG " + channel + " :Success!");
+                        }
+                        else
+                        {
+                            send("PRIVMSG " + channel + " :Insufficient Permissions!");
+                        }
+                    }
+                    
                     detectLang();
                 }
                 else if (mail.Substring(mail.IndexOf(" ") + 1, 4) == "JOIN")
@@ -438,6 +470,11 @@ namespace Obsidian
         private void timer2_Tick(object sender, EventArgs e)
         {
             textBox5.Text = mail;
+            if (isLogging == true)
+            {
+                logMsg(); 
+            }
+            
         }
         public void ircupdate()
         {
@@ -643,6 +680,18 @@ namespace Obsidian
                     }
                 }
             }
+        }
+
+        public void listUsers()
+        {
+            ObsidianFunctions.Functions ObsidFunc = new ObsidianFunctions.Functions();
+            string listusers = ObsidFunc.userlist();
+            send("PRIVMSG " + channel + " :" + listusers);
+        }
+        public void logMsg()
+        {
+            ObsidianFunctions.Functions ObsidFunc = new ObsidianFunctions.Functions();
+            ObsidFunc.logMsg(mail);
         }
     }
 }
