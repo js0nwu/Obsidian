@@ -472,7 +472,8 @@ namespace Obsidian
             textBox5.Text = mail;
             if (isLogging == true)
             {
-                logMsg(); 
+                Thread messagelog = new Thread(logMsg);
+                messagelog.Start();
             }
             
         }
