@@ -19,7 +19,7 @@ namespace ObsidianFunctions
             StringBuilder sb = new StringBuilder();
             for (int i = 0; i < hash.Length; i++)
             {
-                sb.Append(hash[i].ToString("X2"));
+                sb.Append(hash[i].ToString("x2"));
             }
             return sb.ToString().ToLower();
         }
@@ -162,6 +162,38 @@ namespace ObsidianFunctions
             compress.Write(oldlog + message + "\n");
             compress.Close();
             CompressWrite.Close();
+        }
+        public float calc(string equation)
+        {
+            string[] rawsplit = equation.Split(')');
+            string sfirstterm = rawsplit[0].Remove(0, 1);
+            string ssecondterm = rawsplit[1].Remove(0, 2);
+            string soperator = rawsplit[1].Substring(0, 1);
+            float answer; 
+            float firstterm = float.Parse(sfirstterm);
+            float secondterm = float.Parse(ssecondterm);
+            char operation = soperator[0];
+            if (operation == '+')
+            {
+                answer = firstterm + secondterm;
+            }
+            else if (operation == '-')
+            {
+                answer = firstterm - secondterm;
+            }
+            else if (operation == '*' || operation == 'x')
+            {
+                answer = firstterm * secondterm;
+            }
+            else if (operation == '/')
+            {
+                answer = firstterm / secondterm;
+            }
+            else
+            {
+                answer = 9001.0F;
+            }
+            return answer; 
         }
     }
 }
