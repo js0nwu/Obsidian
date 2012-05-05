@@ -60,7 +60,7 @@ namespace Obsidian
             sock = new System.Net.Sockets.Socket(EP.Address.AddressFamily, System.Net.Sockets.SocketType.Stream, System.Net.Sockets.ProtocolType.Tcp);
             sock.Connect(server, port);
             send("NICK " + nick);
-            send("USER " + nick + " 0 * :FervorBot");
+            send("USER " + nick + " 0 * :ObsidianBot");
             send("JOIN " + channel);
             send("MODE " + nick + " +B");;
             timer1.Enabled = true;
@@ -356,7 +356,32 @@ namespace Obsidian
                         float answer = ObsidFunc.calc(query);
                         send("PRIVMSG " + channel + " :" + answer.ToString()); 
                     }
-
+                    else if (rmsg.Contains("!isOperator true"))
+                    {
+                        bool nickuser = isActiveUser(rnick);
+                        if (nickuser == true)
+                        {
+                            isOperator = true;
+                            send("PRIVMSG " + channel + " :isOperator = true");
+                        }
+                        else
+                        {
+                            send("PRIVMSG " + channel + " :Insufficient Permissions!");
+                        }
+                    }
+                    else if (rmsg.Contains("!isOperator false"))
+                    {
+                        bool nickuser = isActiveUser(rnick);
+                        if (nickuser == true)
+                        {
+                            isOperator = false;
+                            send("PRIVMSG " + channel + " :isOperator = false"); 
+                        }
+                        else
+                        {
+                            send("PRIVMSG " + channel + " :Insufficient Permissions!");
+                        }
+                    }
                     detectLang();
                 }
                 else if (mail.Substring(mail.IndexOf(" ") + 1, 4) == "JOIN")
