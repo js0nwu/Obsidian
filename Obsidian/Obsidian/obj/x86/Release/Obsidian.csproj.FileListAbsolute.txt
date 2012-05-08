@@ -12,3 +12,4 @@ C:\Users\PillyBuilt7\Documents\Visual Studio 2010\Projects\Obsidian\Obsidian\bin
 C:\Users\PillyBuilt7\documents\visual studio 2010\Projects\Obsidian\Obsidian\bin\Release\FervorLibrary.dll
 C:\Users\PillyBuilt7\documents\visual studio 2010\Projects\Obsidian\Obsidian\bin\Release\FervorLibrary.pdb
 C:\Users\PillyBuilt7\documents\visual studio 2010\Projects\Obsidian\Obsidian\obj\x86\Release\Obsidian.ownerConfig.resources
+C:\Users\PillyBuilt7\documents\visual studio 2010\Projects\Obsidian\Obsidian\bin\Release\AIMLbot.dll

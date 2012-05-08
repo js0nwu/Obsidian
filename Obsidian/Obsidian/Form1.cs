@@ -10,7 +10,9 @@ using System.IO;
 using System.Threading;
 using System.Security.Cryptography;
 using ObsidianFunctions;
-using FervorLibrary; 
+using FervorLibrary;
+using AIMLbot; 
+
 
 namespace Obsidian
 {
@@ -35,7 +37,10 @@ namespace Obsidian
         string ownernick;
         string oldmail;
         int spamcount;
-        bool isLogging; 
+        bool isLogging;
+        string talkingTo;
+        Bot chatBot;
+        User chatUser;
 
         public Form1()
         {
@@ -44,7 +49,6 @@ namespace Obsidian
 
         private void button1_Click(object sender, EventArgs e)
         {
-
             string IRCInfo = textBox1.Text + "|" + textBox2.Text + "|" + textBox3.Text + "|" + textBox4.Text + "|" + textBox6.Text;
             System.IO.StreamWriter IRCInfoWrite = new System.IO.StreamWriter("IRCInfo.bin");
             IRCInfoWrite.Write(IRCInfo);
@@ -95,7 +99,9 @@ namespace Obsidian
             {
                 setOwner();
             }
-            isLogging = false; 
+            isLogging = false;
+            talkingTo = "";
+            botChat(); 
         }
 
         public void send(string msg)
@@ -382,6 +388,39 @@ namespace Obsidian
                             send("PRIVMSG " + channel + " :Insufficient Permissions!");
                         }
                     }
+                    else if (rmsg.Contains("!botchat"))
+                    {
+                        if (talkingTo != "")
+                        {
+                            send("PRIVMSG " + rnick + " :Sorry, I'm already talking with someone");
+                        }
+                        else
+                        {
+                            talkingTo = rnick; 
+                            FervorLibrary.Library Greetings = new FervorLibrary.Library();
+                            Random rand = new Random();
+                            int indexgreet = rand.Next(0, greetnumber);
+                            string greeting = Greetings.Greeting(rnick, indexgreet);
+                            send("PRIVMSG " + rnick + " :" + greeting);
+                            botChat(); 
+                        }
+                        
+                    }
+                    else if (rmsg.Contains("quit"))
+                    {
+                        if (rnick == talkingTo)
+                        {
+                            talkingTo = ""; 
+                        }
+                    }
+                    else if (rnick == talkingTo)
+                    {
+
+                        Request r = new Request(rmsg, chatUser, chatBot);
+                        Result res = chatBot.Chat(r);
+                        send("PRIVMSG " + talkingTo + " :" + res.Output);
+
+                    }
                     detectLang();
                 }
                 else if (mail.Substring(mail.IndexOf(" ") + 1, 4) == "JOIN")
@@ -411,6 +450,10 @@ namespace Obsidian
                     send(farewellmessage);
                     Thread deactive = new Thread(deactivateUser);
                     deactive.Start();
+                    if (rnick == talkingTo)
+                    {
+                        talkingTo = ""; 
+                    }
                 }
                 else if (mail.Substring(mail.IndexOf(" ") + 1, 4) == "MODE")
                 {
@@ -439,6 +482,7 @@ namespace Obsidian
         {
             Thread updateirc = new Thread(ircupdate);
             updateirc.Start();
+            
         }
         public void GreetConfig()
         {
@@ -726,5 +770,21 @@ namespace Obsidian
             ObsidianFunctions.Functions ObsidFunc = new ObsidianFunctions.Functions();
             ObsidFunc.logMsg(mail);
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            send(textBox7.Text);
+            textBox7.Text = ""; 
+        }
+        public void botChat()
+        {
+            
+            chatBot = new Bot();
+            chatBot.loadSettings();
+            chatUser = new User(talkingTo, chatBot);
+            chatBot.loadAIMLFromFiles();
+            chatBot.isAcceptingUserInput = true;
+        }
+
     }
 }
