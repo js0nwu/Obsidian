@@ -100,7 +100,7 @@ namespace Obsidian
                 setOwner();
             }
             isLogging = false;
-            talkingTo = "";
+            talkingTo = "nobody";
             botChat(); 
         }
 
@@ -390,7 +390,7 @@ namespace Obsidian
                     }
                     else if (rmsg.Contains("!botchat"))
                     {
-                        if (talkingTo != "")
+                        if (talkingTo != "nobody")
                         {
                             send("PRIVMSG " + rnick + " :Sorry, I'm already talking with someone");
                         }
@@ -410,7 +410,7 @@ namespace Obsidian
                     {
                         if (rnick == talkingTo)
                         {
-                            talkingTo = ""; 
+                            talkingTo = "nobody"; 
                         }
                     }
                     else if (rnick == talkingTo)
@@ -452,7 +452,7 @@ namespace Obsidian
                     deactive.Start();
                     if (rnick == talkingTo)
                     {
-                        talkingTo = ""; 
+                        talkingTo = "nobody"; 
                     }
                 }
                 else if (mail.Substring(mail.IndexOf(" ") + 1, 4) == "MODE")
