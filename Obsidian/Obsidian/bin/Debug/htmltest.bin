@@ -1,30 +1,28 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html lang='en-US' xml:lang='en-US' xmlns='http://www.w3.org/1999/xhtml'>
 <head>
-<title>Urban Dictionary: your city</title>
+<title>Urban Dictionary: Elazar55</title>
 <script type='text/javascript'>
   //<![CDATA[
     var MobileDetector={redirect:function(b,a){if(b&&b.match(/(iPhone|iPod|Android)/)){this.go(a)}},go:function(a){window.location=a}};
-    MobileDetector.redirect(navigator.userAgent, "http://m.urbandictionary.com/#define?term=your%20city");
+    MobileDetector.redirect(navigator.userAgent, "http://m.urbandictionary.com/#define?term=Elazar55");
   //]]>
 </script>
 
 
 <!--[if (!IE)|(gte IE 8)]><!-->
-<link href="http://static3.urbandictionary.com/rel-2c71254/assets/base-datauri.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static2.urbandictionary.com/rel-2c71254/assets/base-datauri.css" media="screen" rel="stylesheet" type="text/css" />
 <!--<![endif]-->
 <!--[if lte IE 7]>
-<link href="http://static0.urbandictionary.com/rel-2c71254/assets/base.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static2.urbandictionary.com/rel-2c71254/assets/base.css" media="screen" rel="stylesheet" type="text/css" />
 <![endif]-->
 <link href="http://feeds.urbandictionary.com/UrbanWordOfTheDay" rel="alternate" title="Urban Word of the Day" type="application/rss+xml" />
-<link href="http://static2.urbandictionary.com/rel-2c71254/favicon.ico" rel="shortcut icon" /><link href="http://static2.urbandictionary.com/rel-2c71254/favicon.ico" rel="icon" />
+<link href="http://static3.urbandictionary.com/rel-2c71254/favicon.ico" rel="shortcut icon" /><link href="http://static3.urbandictionary.com/rel-2c71254/favicon.ico" rel="icon" />
 
 
-<link href='http://static1.urbandictionary.com/rel-2c71254/osd.xml' rel='search' title='Urban Dictionary Search' type='application/opensearchdescription+xml' />
-<meta content='Something Urban Dictionary keeps bugging us to look up.' name='Description' />
-<meta content='Something Urban Dictionary keeps bugging us to look up.' property='og:description' />
-<meta content='your city' property='og:title' />
-<meta content="http://static3.urbandictionary.com/rel-2c71254/images/og_image.png" property="og:image" />
+<link href='http://static0.urbandictionary.com/rel-2c71254/osd.xml' rel='search' title='Urban Dictionary Search' type='application/opensearchdescription+xml' />
+<meta content='Elazar55' property='og:title' />
+<meta content="http://static1.urbandictionary.com/rel-2c71254/images/og_image.png" property="og:image" />
 <meta content='Urban Dictionary' property='og:site_name' />
 </head>
 <body class='define_controller'>
@@ -32,7 +30,7 @@
 <div id='header_background'>
 <div id='header_width'>
 <div id='header'>
-<a href="/" id="logo_anchor"><img alt="" id="logo" src="http://static0.urbandictionary.com/rel-2c71254/images/logo-holiday.png" /></a>
+<a href="/" id="logo_anchor"><img alt="" id="logo" src="http://static1.urbandictionary.com/rel-2c71254/images/logo-holiday.png" /></a>
 <div id='like_button'>
 <iframe src="http://www.facebook.com/plugins/like.php?href=http%3A%2F%2Ffacebook.com%2Furbandictionary&amp;send=false&amp;layout=button_count&amp;width=100&amp;show_faces=false&amp;action=like&amp;colorscheme=light&amp;font&amp;height=21" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:100px; height:21px;" allowTransparency="true"></iframe>
 </div>
@@ -40,10 +38,10 @@
 <form action="/define.php" method="get">
 <table>
 <tr>
-<td class='look_up'>look up anything, like <a href="/local.php">your city</a>:</td>
+<td class='look_up'>look up any word:</td>
 </tr>
 <tr>
-<td><input id="term" name="term" tabindex="1" type="text" value="your city" /></td>
+<td><input id="term" name="term" tabindex="1" type="text" value="Elazar55" /></td>
 <td>
 <input type='submit' value='search' />
 </td>
@@ -61,188 +59,38 @@
 <div id='outer'>
 <div class='' id='whole'>
 <div class='innernav' id='subnav'>
-<a accesskey="1" href="/random.php">random</a> <a href="/popular.php?character=A">A</a> <a href="/popular.php?character=B">B</a> <a href="/popular.php?character=C">C</a> <a href="/popular.php?character=D">D</a> <a href="/popular.php?character=E">E</a> <a href="/popular.php?character=F">F</a> <a href="/popular.php?character=G">G</a> <a href="/popular.php?character=H">H</a> <a href="/popular.php?character=I">I</a> <a href="/popular.php?character=J">J</a> <a href="/popular.php?character=K">K</a> <a href="/popular.php?character=L">L</a> <a href="/popular.php?character=M">M</a> <a href="/popular.php?character=N">N</a> <a href="/popular.php?character=O">O</a> <a href="/popular.php?character=P">P</a> <a href="/popular.php?character=Q">Q</a> <a href="/popular.php?character=R">R</a> <a href="/popular.php?character=S">S</a> <a href="/popular.php?character=T">T</a> <a href="/popular.php?character=U">U</a> <a href="/popular.php?character=V">V</a> <a href="/popular.php?character=W">W</a> <a href="/popular.php?character=X">X</a> <a class="active" href="/browse.php?word=your+city">Y</a> <a href="/popular.php?character=Z">Z</a> <a href="/browse.php?character=%2A">#</a> <a href="/yesterday.php?date=2012-05-17">new</a> <a href="/favorites.php">favorites</a> <a href="http://urbandictionary.tv/" target="_blank">tv</a>
+<a accesskey="1" href="/random.php">random</a> <a href="/popular.php?character=A">A</a> <a href="/popular.php?character=B">B</a> <a href="/popular.php?character=C">C</a> <a href="/popular.php?character=D">D</a> <a class="active" href="/browse.php?word=Elazar55">E</a> <a href="/popular.php?character=F">F</a> <a href="/popular.php?character=G">G</a> <a href="/popular.php?character=H">H</a> <a href="/popular.php?character=I">I</a> <a href="/popular.php?character=J">J</a> <a href="/popular.php?character=K">K</a> <a href="/popular.php?character=L">L</a> <a href="/popular.php?character=M">M</a> <a href="/popular.php?character=N">N</a> <a href="/popular.php?character=O">O</a> <a href="/popular.php?character=P">P</a> <a href="/popular.php?character=Q">Q</a> <a href="/popular.php?character=R">R</a> <a href="/popular.php?character=S">S</a> <a href="/popular.php?character=T">T</a> <a href="/popular.php?character=U">U</a> <a href="/popular.php?character=V">V</a> <a href="/popular.php?character=W">W</a> <a href="/popular.php?character=X">X</a> <a href="/popular.php?character=Y">Y</a> <a href="/popular.php?character=Z">Z</a> <a href="/browse.php?character=%2A">#</a> <a href="/yesterday.php?date=2012-05-18">new</a> <a href="/favorites.php">favorites</a> <a href="http://urbandictionary.tv/" target="_blank">tv</a>
 </div>
 <table cellpadding='0' cellspacing='0' id='tablist'>
 <tr>
 <td id='leftist'>
 <div class='prev_next_buttons'>
-<a href="#" id="prev_titles" onclick="nearby.go('prev'); return false;" onmouseout="$('img', this).attr('src', &quot;http://static3.urbandictionary.com/rel-2c71254/images/uparrow.gif&quot;)" onmouseover="$('img', this).attr('src', &quot;http://static1.urbandictionary.com/rel-2c71254/images/uparrow_dark.gif&quot;)"><img src="http://static3.urbandictionary.com/rel-2c71254/images/uparrow.gif" /></a>
-<a href="#" id="next_titles" onclick="nearby.go('next'); return false;" onmouseout="$('img', this).attr('src', &quot;http://static2.urbandictionary.com/rel-2c71254/images/downarrow.gif&quot;)" onmouseover="$('img', this).attr('src', &quot;http://static3.urbandictionary.com/rel-2c71254/images/downarrow_dark.gif&quot;)"><img src="http://static2.urbandictionary.com/rel-2c71254/images/downarrow.gif" /></a>
+<a href="#" id="prev_titles" onclick="nearby.go('prev'); return false;" onmouseout="$('img', this).attr('src', &quot;http://static2.urbandictionary.com/rel-2c71254/images/uparrow.gif&quot;)" onmouseover="$('img', this).attr('src', &quot;http://static1.urbandictionary.com/rel-2c71254/images/uparrow_dark.gif&quot;)"><img src="http://static2.urbandictionary.com/rel-2c71254/images/uparrow.gif" /></a>
+<a href="#" id="next_titles" onclick="nearby.go('next'); return false;" onmouseout="$('img', this).attr('src', &quot;http://static3.urbandictionary.com/rel-2c71254/images/downarrow.gif&quot;)" onmouseover="$('img', this).attr('src', &quot;http://static2.urbandictionary.com/rel-2c71254/images/downarrow_dark.gif&quot;)"><img src="http://static3.urbandictionary.com/rel-2c71254/images/downarrow.gif" /></a>
 </div>
 <ul id='nearby_titles'>
-<li><a href="/define.php?term=your%20bright-eyed%20and%20bushy%20tailed">your bright-eyed and bushy tailed</a></li><li><a href="/define.php?term=Your%20brittney">Your brittney</a></li><li><a href="/define.php?term=%22your%20brother%22">&quot;your brother&quot;</a></li><li><a href="/define.php?term=your%20bum">your bum</a></li><li><a href="/define.php?term=your%20bummed">your bummed</a></li><li><a href="/define.php?term=Your%20Burden">Your Burden</a></li><li><a href="/define.php?term=your%20burnt">your burnt</a></li><li><a href="/define.php?term=your%20busting%20my%20drive">your busting my drive</a></li><li><a href="/define.php?term=Your%20butt">Your butt</a></li><li><a href="/define.php?term=your%20butthole">your butthole</a></li><li><a href="/define.php?term=your%20cake">your cake</a></li><li><a href="/define.php?term=your%20call">your call</a></li><li><a href="/define.php?term=your%20call%20is%20important%20to%20us">your call is important to us</a></li><li><a href="/define.php?term=your%20carla%20is%20showing">your carla is showing</a></li><li><a href="/define.php?term=your%20choad">your choad</a></li><li class="active"><b>your city</b></li><li><b><a href="/define.php?term=Your%20City">Your City</a></b></li><li><a href="/define.php?term=your%20coming%20off%20sako">your coming off sako</a></li><li><a href="/define.php?term=your%20complaintmentally%20copy">your complaintmentally copy</a></li><li><a href="/define.php?term=your%20concern%20is%20noted">your concern is noted</a></li><li><a href="/define.php?term=Your%20connection%20sucks%21">Your connection sucks!</a></li><li><a href="/define.php?term=your%20cool">your cool</a></li><li><a href="/define.php?term=your%20couch">your couch</a></li><li><a href="/define.php?term=your%20country%20needs%20you">your country needs you</a></li><li><a href="/define.php?term=your%20cousin">your cousin</a></li><li><a href="/define.php?term=Your%20Cow">Your Cow</a></li><li><a href="/define.php?term=Your%20Cup%20is%20Crying">Your Cup is Crying</a></li><li><a href="/define.php?term=Your%20curtains%20don%27t%20match%20your%20carpet">Your curtains don't match your carpet</a></li><li><a href="/define.php?term=Yourcusting">Yourcusting</a></li><li><a href="/define.php?term=your%20cut">your cut</a></li><li><b><a href="/define.php?term=your%20dad">your dad</a></b></li><li><a href="/define.php?term=YourDad">YourDad</a></li><li><a href="/define.php?term=your%20daddy">your daddy</a></li><li><a href="/author.php?author=your%20daddy">author your daddy</a></li><li><a href="/author.php?author=your%20daddy">author your daddy</a></li><li><a href="/define.php?term=Your%20daddy%20don%27t%20even%20know">Your daddy don't even know</a></li><li><a href="/define.php?term=your%20dad%20says%20no">your dad says no</a></li><li><a href="/define.php?term=Your%20Dad%27s%20friend">Your Dad's friend</a></li><li><a href="/define.php?term=your%20dad%27s%20glasses">your dad's glasses</a></li><li><a href="/define.php?term=your%20dads%20husband">your dads husband</a></li><li><a href="/define.php?term=your%20date%27s%20here">your date's here</a></li>
+<li><a href="/define.php?term=Elaun">Elaun</a></li><li><a href="/define.php?term=elaunophobia">elaunophobia</a></li><li><a href="/define.php?term=Elaura">Elaura</a></li><li><a href="/define.php?term=elava">elava</a></li><li><a href="/define.php?term=Elavator">Elavator</a></li><li><a href="/define.php?term=ELAVE">ELAVE</a></li><li><a href="/define.php?term=El%20awesomeo">El awesomeo</a></li><li><a href="/define.php?term=elaxing">elaxing</a></li><li><a href="/define.php?term=elay">elay</a></li><li><a href="/define.php?term=e-Lay">e-Lay</a></li><li><a href="/define.php?term=Elayna">Elayna</a></li><li><a href="/define.php?term=Elayne">Elayne</a></li><li><a href="/define.php?term=E-lay%20%28Net-lay%29">E-lay (Net-lay)</a></li><li><a href="/define.php?term=elaynna">elaynna</a></li><li><a href="/define.php?term=Elaynostomy">Elaynostomy</a></li><li class="active"><b>Elazar55</b></li><li><a href="/define.php?term=Elazazy">Elazazy</a></li><li><a href="/define.php?term=El%20Azteco">El Azteco</a></li><li><a href="/define.php?term=Elazzi">Elazzi</a></li><li><a href="/define.php?term=Elb">Elb</a></li><li><a href="/define.php?term=Elba">Elba</a></li><li><a href="/define.php?term=Elba%20Breakfast">Elba Breakfast</a></li><li><a href="/define.php?term=El%20Back-o">El Back-o</a></li><li><a href="/define.php?term=elbaffa">elbaffa</a></li><li><a href="/define.php?term=el%20baggo%20doucho">el baggo doucho</a></li><li><a href="/define.php?term=El%20Bago">El Bago</a></li><li><a href="/define.php?term=Elba%20Larios">Elba Larios</a></li><li><a href="/define.php?term=el%20bandito">el bandito</a></li><li><a href="/define.php?term=El%20Bandito%20Bajo">El Bandito Bajo</a></li><li><a href="/define.php?term=elbando">elbando</a></li><li><a href="/define.php?term=El%20ba%C3%B1o">El baÃ±o</a></li><li><a href="/define.php?term=el%20banzeen%20fi%20el%20tank%20we%20el%20millyoun%20fi%20el%20bank">el banzeen fi el tank we el millyoun ...</a></li><li><a href="/define.php?term=El%20Bar">El Bar</a></li><li><a href="/define.php?term=elbaroda">elbaroda</a></li><li><a href="/define.php?term=El%20Barrio">El Barrio</a></li><li><a href="/define.php?term=elbarto">elbarto</a></li><li><a href="/author.php?author=el%20barto">author el barto</a></li><li><a href="/define.php?term=El%20Barto">El Barto</a></li><li><a href="/define.php?term=Elbarto997">Elbarto997</a></li><li><a href="/define.php?term=el%20barto%27d">el barto'd</a></li><li><a href="/define.php?term=Elbasan">Elbasan</a></li>
 </ul>
 <script type='text/javascript'>
   //<![CDATA[
     window.onDomLoaded = window.onDomLoaded || [];
     window.onDomLoaded.push(function() {
-      window.nearby = new Nearby(new NearbyView(), "your bright-eyed and bushy tailed", "your date's here");
+      window.nearby = new Nearby(new NearbyView(), "Elaun", "Elbasan");
     });
   //]]>
 </script>
 
 <div class='prev_next_buttons'>
-<a href="#" id="prev_titles_bottom" onclick="nearby.go('prev'); return false;" onmouseout="$('img', this).attr('src', &quot;http://static3.urbandictionary.com/rel-2c71254/images/uparrow.gif&quot;)" onmouseover="$('img', this).attr('src', &quot;http://static1.urbandictionary.com/rel-2c71254/images/uparrow_dark.gif&quot;)"><img src="http://static3.urbandictionary.com/rel-2c71254/images/uparrow.gif" /></a>
-<a href="#" id="next_titles_bottom" onclick="nearby.go('next'); return false;" onmouseout="$('img', this).attr('src', &quot;http://static2.urbandictionary.com/rel-2c71254/images/downarrow.gif&quot;)" onmouseover="$('img', this).attr('src', &quot;http://static3.urbandictionary.com/rel-2c71254/images/downarrow_dark.gif&quot;)"><img src="http://static2.urbandictionary.com/rel-2c71254/images/downarrow.gif" /></a>
+<a href="#" id="prev_titles_bottom" onclick="nearby.go('prev'); return false;" onmouseout="$('img', this).attr('src', &quot;http://static2.urbandictionary.com/rel-2c71254/images/uparrow.gif&quot;)" onmouseover="$('img', this).attr('src', &quot;http://static1.urbandictionary.com/rel-2c71254/images/uparrow_dark.gif&quot;)"><img src="http://static2.urbandictionary.com/rel-2c71254/images/uparrow.gif" /></a>
+<a href="#" id="next_titles_bottom" onclick="nearby.go('next'); return false;" onmouseout="$('img', this).attr('src', &quot;http://static3.urbandictionary.com/rel-2c71254/images/downarrow.gif&quot;)" onmouseover="$('img', this).attr('src', &quot;http://static2.urbandictionary.com/rel-2c71254/images/downarrow_dark.gif&quot;)"><img src="http://static3.urbandictionary.com/rel-2c71254/images/downarrow.gif" /></a>
 </div>
 
 </td>
 <td>
-<div id='content'><!-- google_ad_section_start --><style>
-.related_words { padding: 9px; border: 1px solid #F9C365; margin-bottom: 12px; }
-</style>
-
-<table id='entries'>
-<tr>
-<td class='index'>
-<a href="http://your-city.urbanup.com/5407755">1.</a>
-</td>
-<td class='word'>
-Your City
-</td>
-<td class='tools' id='tools_5407755'>
-<span class='status'></span>
-<span class='thumbs'></span>
-</td>
-</tr>
-<tr>
-<td></td>
-<td class='text' colspan='2' id='entry_5407755'>
-<div class="definition">Something Urban Dictionary keeps bugging us to look up.</div><div class="example">There, now you can look up your city. Happy?</div>
-<div class="zazzle_links"><a href="/products.php?term=Your%20City&amp;defid=5407755"><span class="zazzle_link_text">buy your city mugs & shirts</span></a></div>
-<div class='greenery'>
-<a href="/define.php?term=my%20city">my city</a>
-<a href="/define.php?term=ud">ud</a>
-<a href="/define.php?term=urban%20dictionary">urban dictionary</a>
-<a href="/define.php?term=your%20city">your city</a>
-<a href="/define.php?term=city">city</a>
-<br />
-by <a href="/author.php?author=Lucio+Soph" class="author">Lucio Soph</a>
-<span class='date'>
-Dec  4, 2010
-</span>
-<a href="#" id="share_this_5407755" onclick="emailer.toggle($(&quot;#share_this_5407755&quot;), &quot;http://your-city.urbanup.com/5407755&quot;, &quot;Entry&quot;, 5407755, &quot;http://twitter.com/share?text=Your%20City%20-%20Something%20Urban%20Dictionary%20keeps%20bugging%20us%20to%20look%20up.\u0026url=http%3A%2F%2Furbanup.com%2F5407755\u0026via=urbandictionary&quot;); return false;">share this</a>
-<a href="/video.php?defid=5407755&amp;word=Your+City">add a video</a>
+<div id='content'><div id='not_defined_yet'>
+<i>Elazar55</i> isn't defined <a href="/add.php?word=Elazar55">yet</a>.
 </div>
-</td>
-</tr>
-
-<tr>
-<td class='index'>
-<a href="http://your-city.urbanup.com/5561791">2.</a>
-</td>
-<td class='word'>
-Your City
-</td>
-<td class='tools' id='tools_5561791'>
-<span class='status'></span>
-<span class='thumbs'></span>
-</td>
-</tr>
-<tr>
-<td></td>
-<td class='text' colspan='2' id='entry_5561791'>
-<div class="definition">at the top of the search box where it says &quot;look up anything, like your city&quot; you click the underlined part and it takes your location and gives you the urban dictionary's definitions for your area, like the city your in, the stae and/or your area code</div><div class="example"><a href="/define.php?term=columbus">columbus</a> <a href="/define.php?term=ohio">ohio</a> <a href="/define.php?term=arizona">arizona</a> <a href="/define.php?term=614">614</a> <a href="/define.php?term=your%20city">your city</a></div>
-<div class="zazzle_links"><a href="/products.php?term=Your%20City&amp;defid=5561791"><span class="zazzle_link_text">buy your city mugs & shirts</span></a></div>
-<div class='greenery'>
-<a href="/define.php?term=your%20city">your city</a>
-<a href="/define.php?term=my%20city">my city</a>
-<a href="/define.php?term=the%20city">the city</a>
-<a href="/define.php?term=a%20city">a city</a>
-<a href="/define.php?term=our%20city">our city</a>
-<br />
-by <a href="/author.php?author=Marrionette+Sixx+Gontier" class="author">Marrionette Sixx Gontier</a>
-<span class='date'>
-Feb  1, 2011
-</span>
-<a href="#" id="share_this_5561791" onclick="emailer.toggle($(&quot;#share_this_5561791&quot;), &quot;http://your-city.urbanup.com/5561791&quot;, &quot;Entry&quot;, 5561791, &quot;http://twitter.com/share?text=Your%20City%20-%20at%20the%20top%20of%20the%20search%20box%20where%20it%20says%20%22look%20up%20anything%2C%20like%20your%20city%22%20you%20cl...\u0026url=http%3A%2F%2Furbanup.com%2F5561791\u0026via=urbandictionary&quot;); return false;">share this</a>
-<a href="/video.php?defid=5561791&amp;word=Your+City">add a video</a>
-</div>
-</td>
-</tr>
-
-</table>
-<div id='paginator'>
-
-</div>
-<!-- google_ad_section_end --><div id='email_pane' style='display: none'>
-<form action='javascript:void(0)' onsubmit='emailer.sendEmail(); return false'>
-<table cellpadding='0' cellspacing='0'>
-<tr>
-<th>
-<label for='permalink'>permalink:</label>
-</th>
-<td>
-<input id='permalink' name='permalink' onclick='this.focus(); this.select()' type='text' />
-<input id='shared_id' name='share[shared_id]' type='hidden' />
-<input id='shared_type' name='share[shared_type]' type='hidden' value='Entry' />
-</td>
-</tr>
-<tr>
-<td></td>
-<td>
-Share on
-<span id='share_links'></span>
-</td>
-</tr>
-<tr id='sendtoafriend'>
-<td></td>
-<td>
-<label for='yours'>Send to a friend</label>
-</td>
-</tr>
-<tr>
-<th>
-<label for='yours'>your email:</label>
-</th>
-<td>
-<input id='yours' name='share[yours]' type='text' />
-</td>
-</tr>
-<tr>
-<th>
-<label for='theirs'>their email:</label>
-</th>
-<td>
-<input id='theirs' name='share[theirs]' type='text' />
-</td>
-</tr>
-<tr>
-<th>
-<label for='comment'>comment:</label>
-</th>
-<td>
-<textarea id="comment" name="share[comment]" rows="3"></textarea>
-</td>
-</tr>
-<tr>
-<td></td>
-<td>
-<input id='subscribe' name='subscribe' type='checkbox' />
-<label for='subscribe'> send me the word of the day (it's free)</label>
-</td>
-</tr>
-<tr id='submit'>
-<td></td>
-<td>
-<table>
-<tr>
-<td>
-<input type='submit' value='Send message' />
-</td>
-<td id='status'></td>
-</tr>
-</table>
-</td>
-</tr>
-</table>
-</form>
-</div>
-
-</div>
-</td>
-<td id='rightist'>
+<div style='margin: 50px auto 0 auto; width: 300px; height: 250px'>
 <script type="text/javascript">
 //<![CDATA[
 var googletag = googletag || {};
@@ -273,7 +121,16 @@ googletag.cmd.push(function() {
 })();
 
 //]]>
-</script><div id="dfp_skyscraper" style="width: 160px; height: 600px"><script type="text/javascript">
+</script><div id="dfp_define_rectangle" style="width: 300px; height: 250px"><script type="text/javascript">
+//<![CDATA[
+googletag.cmd.push(function() { googletag.display('dfp_define_rectangle'); });
+//]]>
+</script></div>
+</div>
+</div>
+</td>
+<td id='rightist'>
+<div id="dfp_skyscraper" style="width: 160px; height: 600px"><script type="text/javascript">
 //<![CDATA[
 googletag.cmd.push(function() { googletag.display('dfp_skyscraper'); });
 //]]>
@@ -367,11 +224,11 @@ search ud
 
 </div>
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
-<script src="http://static3.urbandictionary.com/rel-2c71254/assets/base.js" type="text/javascript"></script>
+<script src="http://static0.urbandictionary.com/rel-2c71254/assets/base.js" type="text/javascript"></script>
 <script type='text/javascript'>
   //<![CDATA[
     var host_env = new HostEnv(document.location.hostname);
-    Uncacheable.instance.load([5407755,5561791]);
+    Uncacheable.instance.load([]);
   //]]>
 </script>
 
