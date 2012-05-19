@@ -195,5 +195,26 @@ namespace ObsidianFunctions
             }
             return answer; 
         }
+        public string uDefine(string term)
+        {
+            term = term.Replace(" ", "+"); 
+            string uDictionaryURL = "http://www.urbandictionary.com/define.php?term=" + term;
+            System.Net.WebClient webClient = new System.Net.WebClient();
+            string webSource = webClient.DownloadString(uDictionaryURL);
+            webClient.Dispose();
+            webSource = webSource.Trim().Replace("\0", "");
+            StreamWriter sw = new StreamWriter("htmltest.bin");
+            sw.Write(webSource);
+            sw.Close(); 
+            string firstDelimiter = "<div class=\"definition\">";
+            string[] firstSplit = webSource.Split(new string[] { firstDelimiter }, StringSplitOptions.None);
+            string secondDelimiter = "</div>";
+            string[] secondSplit = firstSplit[1].Split(new string[] { secondDelimiter }, StringSplitOptions.None);
+            StreamWriter sw2 = new StreamWriter("htmltestresult.bin");
+            sw2.Write(secondSplit[0]);
+            sw2.Close();
+            return secondSplit[0]; 
+        }
+        
     }
 }
