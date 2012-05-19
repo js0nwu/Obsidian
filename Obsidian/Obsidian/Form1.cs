@@ -113,8 +113,8 @@ namespace Obsidian
         }
         public string recv()
         {
-            byte[] data = new byte[3072];
-            sock.Receive(data, 3072, System.Net.Sockets.SocketFlags.None);
+            byte[] data = new byte[2048];
+            sock.Receive(data, 2048, System.Net.Sockets.SocketFlags.None);
             string mail = System.Text.ASCIIEncoding.UTF8.GetString(data).Replace("\0", "");
             if (mail.Contains(" "))
             {
@@ -589,7 +589,8 @@ namespace Obsidian
                 }
                 
             }
-            oldmail = mail; 
+            oldmail = mail;
+            updateirc.Abort(); 
         }
         public void generateMD5message()
         {
