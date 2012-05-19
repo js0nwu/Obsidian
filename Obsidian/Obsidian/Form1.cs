@@ -41,6 +41,7 @@ namespace Obsidian
         string talkingTo;
         Bot chatBot;
         User chatUser;
+        Thread updateirc; 
 
         public Form1()
         {
@@ -428,6 +429,13 @@ namespace Obsidian
                         string definition = ObsidFunc.uDefine(query);
                         send("PRIVMSG " + channel + " :" + definition); 
                     }
+                    else if (rmsg.Contains("!ddefine "))
+                    {
+                        string query = rmsg.Remove(0, 9);
+                        ObsidianFunctions.Functions ObsidFunc = new ObsidianFunctions.Functions();
+                        string definition = ObsidFunc.dDefine(query);
+                        send("PRIVMSG " + channel + " :" + definition); 
+                    }
                     detectLang();
                 }
                 else if (mail.Substring(mail.IndexOf(" ") + 1, 4) == "JOIN")
@@ -487,9 +495,8 @@ namespace Obsidian
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            Thread updateirc = new Thread(ircupdate);
+            updateirc = new Thread(ircupdate);
             updateirc.Start();
-            
         }
         public void GreetConfig()
         {
@@ -582,7 +589,7 @@ namespace Obsidian
                 }
                 
             }
-            oldmail = mail;
+            oldmail = mail; 
         }
         public void generateMD5message()
         {
