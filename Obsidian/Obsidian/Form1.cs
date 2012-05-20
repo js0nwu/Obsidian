@@ -618,7 +618,7 @@ namespace Obsidian
                     }
                     else
                     {
-                        send("PRIVMSG " + channel + " :Try not to spam or excessively repeat yourself");
+                        send("PRIVMSG " + rnick + " :Try not to spam or excessively repeat yourself");
                         spamcount = 0;
                     }
                 }
