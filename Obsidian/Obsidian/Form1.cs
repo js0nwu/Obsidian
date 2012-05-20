@@ -42,6 +42,7 @@ namespace Obsidian
         Bot chatBot;
         User chatUser;
         System.Timers.Timer updatetmr;
+        bool canGreet; 
 
         public Form1()
         {
@@ -106,7 +107,7 @@ namespace Obsidian
             updatetmr = new System.Timers.Timer(1000);
             updatetmr.Elapsed += new System.Timers.ElapsedEventHandler(ircupdate);
             updatetmr.Interval = 1000;
-
+            canGreet = true; 
         }
 
         public void send(string msg)
@@ -440,38 +441,78 @@ namespace Obsidian
                         string definition = ObsidFunc.dDefine(query);
                         send("PRIVMSG " + channel + " :" + definition); 
                     }
+                    else if (rmsg.Contains("!canGreet true"))
+                    {
+                        bool nickuser = isActiveUser(rnick);
+                        if (nickuser == true)
+                        {
+                            canGreet = true;
+                        }
+                        else
+                        {
+                            send("PRIVMSG " + channel + " :Insufficient permissions!");
+                        }
+                    }
+                    else if (rmsg.Contains("!canGreet false"))
+                    {
+                        bool nickuser = isActiveUser(rnick);
+                        if (nickuser == true)
+                        {
+                            canGreet = false; 
+                        }
+                        else
+                        {
+                            send("PRIVMSG " + channel + " :Insufficient permissions!");
+                        }
+                    }
                     detectLang();
                 }
                 else if (mail.Substring(mail.IndexOf(" ") + 1, 4) == "JOIN")
                 {
-                    string[] tmparr = null;
-                    mail = mail.Remove(0, 1);
-                    tmparr = mail.Split('!');
-                    string rnick = tmparr[0];
-                    FervorLibrary.Library Greetings = new FervorLibrary.Library();
-                    Random rand = new Random();
-                    int indexgreet = rand.Next(0, greetnumber);
-                    string greeting = Greetings.Greeting(rnick, indexgreet);
-                    string greetingmessage = "PRIVMSG " + textBox3.Text + " :" + greeting;
-                    send(greetingmessage);
+                    if (canGreet == true)
+                    {
+                        string[] tmparr = null;
+                        mail = mail.Remove(0, 1);
+                        tmparr = mail.Split('!');
+                        string rnick = tmparr[0];
+                        FervorLibrary.Library Greetings = new FervorLibrary.Library();
+                        Random rand = new Random();
+                        int indexgreet = rand.Next(0, greetnumber);
+                        string greeting = Greetings.Greeting(rnick, indexgreet);
+                        string greetingmessage = "PRIVMSG " + textBox3.Text + " :" + greeting;
+                        send(greetingmessage);
+                    }
                 }
                 else if (mail.Substring(mail.IndexOf(" ") + 1, 4) == "PART" | mail.Substring(mail.IndexOf(" ") + 1, 4) == "QUIT")
                 {
-                    string[] tmparr = null;
-                    mail = mail.Remove(0, 1);
-                    tmparr = mail.Split('!');
-                    string rnick = tmparr[0];
-                    FervorLibrary.Library Farewells = new FervorLibrary.Library();
-                    Random rand = new Random();
-                    int indexfarewell = rand.Next(0, farewellnumber);
-                    string farewell = Farewells.Farewell(rnick, indexfarewell);
-                    string farewellmessage = "PRIVMSG " + textBox3.Text + " :" + farewell;
-                    send(farewellmessage);
-                    Thread deactive = new Thread(deactivateUser);
-                    deactive.Start();
-                    if (rnick == talkingTo)
+                    if (canGreet == true)
                     {
-                        talkingTo = "nobody"; 
+                        string[] tmparr = null;
+                        mail = mail.Remove(0, 1);
+                        tmparr = mail.Split('!');
+                        string rnick = tmparr[0];
+                        FervorLibrary.Library Farewells = new FervorLibrary.Library();
+                        Random rand = new Random();
+                        int indexfarewell = rand.Next(0, farewellnumber);
+                        string farewell = Farewells.Farewell(rnick, indexfarewell);
+                        string farewellmessage = "PRIVMSG " + textBox3.Text + " :" + farewell;
+                        send(farewellmessage);
+
+                        Thread deactive = new Thread(deactivateUser);
+                        deactive.Start();
+                        if (rnick == talkingTo)
+                        {
+                            talkingTo = "nobody";
+                        }
+                    }
+                    else
+                    {
+                        Thread deactive = new Thread(deactivateUser);
+                        deactive.Start();
+                        if (rnick == talkingTo)
+                        {
+                            talkingTo = "nobody";
+                        }
                     }
                 }
                 else if (mail.Substring(mail.IndexOf(" ") + 1, 4) == "MODE")
