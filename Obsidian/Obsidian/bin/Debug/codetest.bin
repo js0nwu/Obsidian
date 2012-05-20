@@ -1,98 +1,119 @@
+<div class="rbox">
+<div class="rboxborder">
+<div class="hd">Related Searches</div>
+<div id="narrow">
+<div id="sM">
+<div id="s0" class="eD dC"><a class="ey dC" href="http://ask.reference.com/related/Free+Chat+Chat+Rooms?qsrc=2892&l=dir&o=10601" >Free chat chat rooms</a></div>
+<div id="s1" class="eD dC"><a class="ey dC" href="http://ask.reference.com/related/AOL+People+Chat+Rooms?qsrc=2892&l=dir&o=10601" >Aol people chat room...</a></div>
+<div id="s2" class="eD dC"><a class="ey dC" href="http://ask.reference.com/related/Free+Live+Chat+Rooms?qsrc=2892&l=dir&o=10601" >Free live chat rooms</a></div>
+<div id="s3" class="eD dC"><a class="ey dC" href="http://ask.reference.com/related/Free+Chat+Rooms?qsrc=2892&l=dir&o=10601" >Free chat rooms</a></div>
+<div id="s4" class="eD dC"><a class="ey dC" href="http://ask.reference.com/related/Free+Chat+Rooms+for+Adults?qsrc=2892&l=dir&o=10601" >Free chat rooms for ...</a></div>
+<div id="s5" class="eD dC"><a class="ey dC" href="http://ask.reference.com/related/Free+Chat+Room+for+Kids?qsrc=2892&l=dir&o=10601" >Free chat room for k...</a></div>
+<div id="s6" class="eD dC"><a class="ey dC" href="http://ask.reference.com/related/Chat+Avenue?qsrc=2892&l=dir&o=10601" >Chat avenue</a></div>
+<div id="s7" class="eD dC"><a class="ey dC" href="http://ask.reference.com/related/Chat+Now?qsrc=2892&l=dir&o=10601" >Chat now</a></div>
+</div>
+</div>
+</div>
+</div>
 <script >
-function askFormSubmit(){
-if(document.forms['lraskform']){
-document.forms['lraskform'].submit();
-}
-}
+pklogRelated("sM",{en:'drs',io:'7',b:'rr08',tp:'d',ec:'28'},"s");
 </script>
-<center id="hptoNewV4">
-<div class="dc dw" id="cntntxt">
-<div class="srs">
-<div class="sr sw" id="ss_slf">
-
-<div class="rc">
-<div class="rh"><span>Related Searches</span></div>
-<div class="ric">
-<div id="sM" class="ric cD">
-<div id="s0"><a href="http://ask.reference.com/related/Apri+Birth+Control?qsrc=2892&l=dir&o=10601" >Apri birth control</a></div>
-<div id="s1"><a href="http://ask.reference.com/related/Apri+Side+Effects?qsrc=2892&l=dir&o=10601" >Apri side effects</a></div>
-</div>
-<script>pklogRelated("sM",{en:'drs',io:'1',b:'rr02',tp:'d',ec:'2'},"s");</script>
-<div id="aM" class="ric cD">
-<div id="a0"><a href="http://ask.reference.com/related/AKC?qsrc=2892&l=dir&o=10601" >Akc</a></div>
-<div id="a1"><a href="http://ask.reference.com/related/Reclipsen?qsrc=2892&l=dir&o=10601" >Reclipsen</a></div>
-<div id="a2"><a href="http://ask.reference.com/related/Desogen?qsrc=2892&l=dir&o=10601" >Desogen</a></div>
-<div id="a3"><a href="http://ask.reference.com/related/CKC?qsrc=2892&l=dir&o=10601" >Ckc</a></div>
-<div id="a4"><a href="http://ask.reference.com/related/Aca?qsrc=2892&l=dir&o=10601" >Aca</a></div>
-<div id="a5"><a href="http://ask.reference.com/related/Birth+Control+Pill+Comparison+Chart?qsrc=2892&l=dir&o=10601" >Birth control pill c...</a></div>
-<div id="a6"><a href="http://ask.reference.com/related/Ukc?qsrc=2892&l=dir&o=10601" >Ukc</a></div>
-<div id="a7"><a href="http://ask.reference.com/related/Desogestrel?qsrc=2892&l=dir&o=10601" >Desogestrel</a></div>
-<div id="a8"><a href="http://ask.reference.com/related/Apria+Healthcare?qsrc=2892&l=dir&o=10601" >Apria healthcare</a></div>
-<div id="a9"><a href="http://ask.reference.com/related/NKC?qsrc=2892&l=dir&o=10601" >Nkc</a></div>
-</div>
-<script>pklogRelated("aM",{en:'r1',io:'9',b:'rr06',tp:'d',ec:'31'},"a");</script>
-</div>
-</div>
 
 <div class="nbox ">
 <div class="hd"><span >Nearby Words</span></div>
-<div class="pt10"><img class="scrImg" onclick="ask.dict.nearby.scrollUp()" src="http://static.sfdict.com/en/i/dictionary/dic_nearby_up.png" onmousedown="this.src='http://static.sfdict.com/en/i/dictionary/nearby_up_depress.png';" onmouseup="this.src='http://static.sfdict.com/en/i/dictionary/dic_nearby_up.png';" width="177" height="15"/></div>
-<div class="padnearby" id="nBL" >
-<div id="nB0" class="eD "><a href="/browse/apres-ski?qsrc=2446" class="ey dicColor" >apres-ski</a></div>
-<div id="nB1" class="eD "><a href="/browse/apresmidi+d%27un+faune?qsrc=2446" class="ey dicColor" >apresmidi d'un ...</a></div>
-<div id="nB2" class="eD "><a href="/browse/apresmidi+dun+faune?qsrc=2446" class="ey dicColor" >apresmidi dun f...</a></div>
-<div id="nB3" class="eD "><a href="/browse/apresoline?qsrc=2446" class="ey dicColor" >apresoline</a></div>
-<div id="nB4" class="eD "><a href="/browse/apresski?qsrc=2446" class="ey dicColor" >apresski</a></div>
-<div id="nB5" class="eD "><a href="/browse/apricate?qsrc=2446" class="ey dicColor" >apricate</a></div>
-<div id="nB6" class="eD "><a href="/browse/aprication?qsrc=2446" class="ey dicColor" >aprication</a></div>
-<div id="nB7" class="eD "><a href="/browse/apricot?qsrc=2446" class="ey dicColor" >apricot</a></div>
-<div id="nB8" class="eD "><a href="/browse/apricot+bar?qsrc=2446" class="ey dicColor" >apricot bar</a></div>
-<div id="nB9" class="eD "><a href="/browse/apricot+sauce?qsrc=2446" class="ey dicColor" >apricot sauce</a></div>
-<div id="nB10" class="eD "><a href="/browse/apricot+tree?qsrc=2446" class="ey dicColor" >apricot tree</a></div>
-<div id="nB11" class="eD "><a href="/browse/april?qsrc=2446" class="ey dicColor" >april</a></div>
-<div id="nB12" class="eD "><a href="/browse/april+14?qsrc=2446" class="ey dicColor" >april 14</a></div>
-<div id="nB13" class="eD "><a href="/browse/april+fool?qsrc=2446" class="ey dicColor" >april fool</a></div>
-<div id="nB14" class="eD "><a href="/browse/april+fool%27s+joke?qsrc=2446" class="ey dicColor" >april fool's jo...</a></div>
-<div id="nB15" class="eD "><a href="/browse/april+fools+day?qsrc=2446" class="ey dicColor" >april fools day</a></div>
-<div id="nB16" class="eD "><a href="/browse/april+fools%27+day?qsrc=2446" class="ey dicColor" >april fools' da...</a></div>
-<div id="nB17" class="eD "><a href="/browse/april+showers+bring+may+flowers?qsrc=2446" class="ey dicColor" >april showers b...</a></div>
-<div id="nB18" class="eD "><a href="/browse/april-fool?qsrc=2446" class="ey dicColor" >april-fool</a></div>
-<div id="nB19" class="eD "><a href="/browse/apriorism?qsrc=2446" class="ey dicColor" >apriorism</a></div>
-<div id="nB20" class="eD "><a href="/browse/apriorist?qsrc=2446" class="nearByCurr dicColor" >apriorist</a></div>
-<div id="nB21" class="eD "><a href="/browse/aprioristic?qsrc=2446" class="ey dicColor" >aprioristic</a></div>
-<div id="nB22" class="eD "><a href="/browse/aprioristically?qsrc=2446" class="ey dicColor" >aprioristically</a></div>
-<div id="nB23" class="eD "><a href="/browse/apriority?qsrc=2446" class="ey dicColor" >apriority</a></div>
-<div id="nB24" class="eD "><a href="/browse/aprocta?qsrc=2446" class="ey dicColor" >aprocta</a></div>
-<div id="nB25" class="eD "><a href="/browse/aproctia?qsrc=2446" class="ey dicColor" >aproctia</a></div>
-<div id="nB26" class="eD "><a href="/browse/aproctous?qsrc=2446" class="ey dicColor" >aproctous</a></div>
-<div id="nB27" class="eD "><a href="/browse/apron?qsrc=2446" class="ey dicColor" >apron</a></div>
-<div id="nB28" class="eD "><a href="/browse/apron+man?qsrc=2446" class="ey dicColor" >apron man</a></div>
-<div id="nB29" class="eD "><a href="/browse/apron+piece?qsrc=2446" class="ey dicColor" >apron piece</a></div>
-<div id="nB30" class="eD "><a href="/browse/apron+stage?qsrc=2446" class="ey dicColor" >apron stage</a></div>
-<div id="nB31" class="eD "><a href="/browse/apron+string?qsrc=2446" class="ey dicColor" >apron string</a></div>
-<div id="nB32" class="eD "><a href="/browse/apron-piece?qsrc=2446" class="ey dicColor" >apron-piece</a></div>
-<div id="nB33" class="eD "><a href="/browse/apronful?qsrc=2446" class="ey dicColor" >apronful</a></div>
-<div id="nB34" class="eD "><a href="/browse/apronless?qsrc=2446" class="ey dicColor" >apronless</a></div>
-<div id="nB35" class="eD "><a href="/browse/apronlike?qsrc=2446" class="ey dicColor" >apronlike</a></div>
-<div id="nB36" class="eD "><a href="/browse/apropos?qsrc=2446" class="ey dicColor" >apropos</a></div>
-<div id="nB37" class="eD "><a href="/browse/apropos+of?qsrc=2446" class="ey dicColor" >apropos of</a></div>
-<div id="nB38" class="eD "><a href="/browse/aprosopia?qsrc=2446" class="ey dicColor" >aprosopia</a></div>
-<div id="nB39" class="eD "><a href="/browse/aprosos?qsrc=2446" class="ey dicColor" >aprosos</a></div>
-<div id="nB40" class="eD "><a href="/browse/aprotic?qsrc=2446" class="ey dicColor" >aprotic</a></div>
+<div class="pt10" onclick="ask.dict.nearby.scrollUp()">
+</div>
+<div id="nBL">
+<div id="nB0" class="eD"><a href="/browse/chassidic?qsrc=2446" >chassidic</a></div>
+<div id="nB1" class="eD"><a href="/browse/chassidim?qsrc=2446" >chassidim</a></div>
+<div id="nB2" class="eD"><a href="/browse/chassidism?qsrc=2446" >chassidism</a></div>
+<div id="nB3" class="eD"><a href="/browse/chassis?qsrc=2446" >chassis</a></div>
+<div id="nB4" class="eD"><a href="/browse/chast?qsrc=2446" >chast</a></div>
+<div id="nB5" class="eD"><a href="/browse/chaste?qsrc=2446" >chaste</a></div>
+<div id="nB6" class="eD"><a href="/browse/chaste+tree?qsrc=2446" >chaste tree</a></div>
+<div id="nB7" class="eD"><a href="/browse/chaste-tree?qsrc=2446" >chaste-tree</a></div>
+<div id="nB8" class="eD"><a href="/browse/chastellain%2C+georges?qsrc=2446" >chastellain, ge...</a></div>
+<div id="nB9" class="eD"><a href="/browse/chasten?qsrc=2446" >chasten</a></div>
+<div id="nB10" class="eD"><a href="/browse/chastest?qsrc=2446" >chastest</a></div>
+<div id="nB11" class="eD"><a href="/browse/chastisable?qsrc=2446" >chastisable</a></div>
+<div id="nB12" class="eD"><a href="/browse/chastise?qsrc=2446" >chastise</a></div>
+<div id="nB13" class="eD"><a href="/browse/chastity?qsrc=2446" >chastity</a></div>
+<div id="nB14" class="eD"><a href="/browse/chastity+belt?qsrc=2446" >chastity belt</a></div>
+<div id="nB15" class="eD"><a href="/browse/chastity+ring?qsrc=2446" >chastity ring</a></div>
+<div id="nB16" class="eD"><a href="/browse/chastity-belt?qsrc=2446" >chastity-belt</a></div>
+<div id="nB17" class="eD"><a href="/browse/chastize?qsrc=2446" >chastize</a></div>
+<div id="nB18" class="eD"><a href="/browse/chastushka?qsrc=2446" >chastushka</a></div>
+<div id="nB19" class="eD"><a href="/browse/chasuble?qsrc=2446" >chasuble</a></div>
+<div id="nB20" class="eD "><a href="/browse/chat?qsrc=2446" class="nearByCurr dicColor" >chat</a></div>
+<div id="nB21" class="eD"><a href="/browse/chat+group?qsrc=2446" >chat group</a></div>
+<div id="nB22" class="eD"><a href="/browse/chat+line?qsrc=2446" >chat line</a></div>
+<div id="nB23" class="eD"><a href="/browse/chat+room?qsrc=2446" >chat room</a></div>
+<div id="nB24" class="eD"><a href="/browse/chat+show?qsrc=2446" >chat show</a></div>
+<div id="nB25" class="eD"><a href="/browse/chat+table?qsrc=2446" >chat table</a></div>
+<div id="nB26" class="eD"><a href="/browse/chat+tier?qsrc=2446" >chat tier</a></div>
+<div id="nB27" class="eD"><a href="/browse/chat+up?qsrc=2446" >chat up</a></div>
+<div id="nB28" class="eD"><a href="/browse/chat-room?qsrc=2446" >chat-room</a></div>
+<div id="nB29" class="eD"><a href="/browse/chat-show?qsrc=2446" >chat-show</a></div>
+<div id="nB30" class="eD"><a href="/browse/chat-table?qsrc=2446" >chat-table</a></div>
+<div id="nB31" class="eD"><a href="/browse/chat-thrush?qsrc=2446" >chat-thrush</a></div>
+<div id="nB32" class="eD"><a href="/browse/chat-tier?qsrc=2446" >chat-tier</a></div>
+<div id="nB33" class="eD"><a href="/browse/chat.?qsrc=2446" >chat.</a></div>
+<div id="nB34" class="eD"><a href="/browse/chatbot?qsrc=2446" >chatbot</a></div>
+<div id="nB35" class="eD"><a href="/browse/chateau?qsrc=2446" >chateau</a></div>
+<div id="nB36" class="eD"><a href="/browse/chateau+bottled?qsrc=2446" >chateau bottled</a></div>
+<div id="nB37" class="eD"><a href="/browse/chateau+cardboard?qsrc=2446" >chateau cardboa...</a></div>
+<div id="nB38" class="eD"><a href="/browse/chateau+d%27eau?qsrc=2446" >chateau d'eau</a></div>
+<div id="nB39" class="eD"><a href="/browse/chateau+d%27yquem?qsrc=2446" >chateau d'yquem</a></div>
+<div id="nB40" class="eD"><a href="/browse/chateau+deau?qsrc=2446" >chateau deau</a></div>
 <script >
 ask.dict.nearby.totalItems=41;
 ask.dict.nearby.centerCurrent('20');
 pklog("nBL",{en:'dne',io:'0',b:'di1',tp:'d',ec:'41'},"nB")
 </script>
 </div>
-<div class="pt12"><img class="scrImg" onclick="ask.dict.nearby.scrollDown()" src="http://static.sfdict.com/en/i/dictionary/dic_nearby_down.png" onmousedown="this.src='http://static.sfdict.com/en/i/dictionary/nearby_down_depress.png';" onmouseup="this.src='http://static.sfdict.com/en/i/dictionary/dic_nearby_down.png';" width="177" height="15"/></div>
+<div class="pt12" onclick="ask.dict.nearby.scrollDown()">
+</div>
 </div>
 
-<div class="lre" ></div>
-<div id='dcomad_160x600' class='sykscraper-ad lra' >
+<div class="box sbox">
+<div class="hd">Synonyms</div>
+<div id="synonym">
+<div id="sY0" class="sE"><a class="ey dC" href="/browse/conversation">conversation</a></div>
+<div id="sY1" class="sE"><a class="ey dC" href="/browse/converse">converse</a></div>
+<div id="sY2" class="sE"><a class="ey dC" href="/browse/chatter">chatter</a></div>
+<div id="sY3" class="sE"><a class="ey dC" href="/browse/palaver">palaver</a></div>
+<div id="sY4" class="sE"><a class="ey dC" href="/browse/babble">babble</a></div>
+<div id="sY5" class="sE"><a class="ey dC" href="/browse/gossip">gossip</a></div>
+<div id="sY6" class="sE"><a class="ey dC" href="/browse/visit">visit</a></div>
+</div>
+<div>
+<span class= "synmr"><a class="nmore" href="http://thesaurus.com/browse/chat" onmousedown="return pk(this,{lk:'dict',en:'dict',io:'1',b:'di1',tp:'lrl',m:'dict'})">MORE</a></span>
+<a href="http://thesaurus.com/browse/chat" onmousedown="return pk(this,{lk:'dict',en:'dict',io:'1',b:'di1',tp:'lrl',m:'dict'})"><span class="slogo"></span></a>
+</div>
+</div>
+<script >
+pklog("synonym",{en:'dy',io:'6',b:'di1',tp:'d',ec:'7'},"sY");
+</script>
+<!--
+In-house ads Module
+-->
+<!--
+Sky ad Module
+-->
+
+<div class="rqbox">
+<div class="hd" style="padding-bottom:5px;">Related Questions</div>
+<div class="sE"><a class="ey" href="http://answers.reference.com/Digital/Misc/how_to_make_a_chat_room" onmousedown="return pk(this,{en:'rlqwm',io:'0',b:'rq',tp:'lrl',ec:'2'});">How to make a chat room?</a></div>
+<div class="sE"><a class="ey" href="http://answers.reference.com/Digital/Web/can_you_send_me_to_a_teen_chat_room" onmousedown="return pk(this,{en:'rlqwm',io:'1',b:'rq',tp:'lrl',ec:'2'});">Can you send me to a teen chat room?</a></div>
+</div>
+<div id="ltm"></div>
+<div id="results">
+<div id="diduno"></div>
+<div id="contentResults">
+<div id='dcomad_728x90_0' class='banner-ad ' >
 </div>
 <script type="text/javascript">
-var queryURLEncoded = escape("Apri-rice");
+var queryURLEncoded = escape("chat");
 var adpath = "5480.iac.dictionary/search";
 var uag = "";
 var uoc = "Other";
@@ -100,476 +121,386 @@ var uge = "";
 var category = "";
 var site = "5480.iac.dictionary";
 </script>
-<div class="lre" ></div>
+<div id="Headserp" class="Headserp">
+<span><h1 id="query_h1" class="query_h1">chat</h1></span>
+<span id="pronsetspell"><span class="pronsetspell" style="display:inline;"><span class="prondelim">[</span><span class="pron">chat</span><span class="prondelim">]</span> <a class="questionmark" href="/help/luna/Spell_pron_key.html" target="_blank"></a> </span></span></span><span id="aud" class="aud" title="Listen to the pronunciation of chat"><span class="speaker" audio="http://static.sfdict.com/dictstatic/dictionary/audio/luna/C03/C0346300.mp3" default="http://dictionary.reference.com/audio.html/lunaWAV/C03/C0346300"><noscript><a onmousedown="spk(this,{lk:'nx1fkx',en:'wotdau',io:'0',b:'wotd',tp:'lrl',m:'wotdau'})" href="#"></a><a target="_blank" href="http://dictionary.reference.com/audio.html/lunaWAV/C03/C0346300"><img border="0" src="http://static.sfdict.com/dictstatic/g/d/speaker.gif"></a></noscript></span>â€‚</span>
+<span title="Add to Favorites">
+<span id="nonfav"></span>
+</span>
+<span id="fcimgh" class="fcimgh">
+<a class="examsent" href="#exsenttop" title="See Example Sentences" onclick="smoothscroll('exsenttop')" onmousedown="return spk(this,{lk:'dict',en:'dict',io:'1',b:'di1',tp:'lrl',m:'dict'})">Example Sentences</a>
+<a class="wordorglink" href="#wordorgtop" title="See Word Origin" onclick="smoothscroll('wordorgtop')" onmousedown="return spk(this,{lk:'dict',en:'dict',io:'1',b:'di1',tp:'lrl',m:'dict'})">Origin</a>
+</span>
+</div>
+<div id="midRail">
+<div id="rpane">
+
+<link rel="stylesheet" href="http://static.sfdict.com/dictstatic/css/gsl/dictionary/v2/splDicAds.css" type="text/css">
+<div class="spl_unshd" id="top">
+<a id="gg_0" href="http://www.google.com/aclk?sa=l&ai=CxSGsiD-4T4fbMai0iALkl-S3CY6TyvwBtvWI9ySn5aMHEAEgh9X3GCgEUM6L54AHYMmOw4fgo7QQoAGS7L_lA8gBAakCk4oxLcSDuj6qBBlP0NOC53ECpBx9hUjZnFcovmSYIFdZMYns&num=1&sig=AOD64_2d0wc8nQyh3z-5rPc5V4tMQDfFjA&adurl=http://17.xg4ken.com/media/redir.php%3Fprof%3D219%26camp%3D13580%26affcode%3Dkw8271%26cid%3D9826444446%26networkType%3Dsearch%26url%5B%5D%3Dhttp%253A%252F%252Fp.badoo.com%252Fl%252F5616192724493b81944770091641" rel="nofollow" onMouseDown="return pk(this,{lk:'hvmna',en:'gg',io:'0',b:'spl',tp:'top',m:'gslT'});" class="nu slA" style="display:block;"> <div class="slA"> <span class="slT">Free <b>Chat</b> Online</span> <span class="slB">www.badoo.com/Webcam_<b>Chat</b>_Online</span> <span class="slD">Online <b>Chat</b> With Local People Its Easy &amp; Fun With Badoo. Sign Up!</span> <div class="slL"></div> </div> </a>
+<a id="gg_1" href="http://www.google.com/aclk?sa=l&ai=Cs_0siD-4T4fbMai0iALkl-S3CbLn-6gDworeqj_vkcIFEAIgh9X3GCgEUKmE5bH8_____wFgyY7Dh-CjtBCgAfaPwuwDyAEBqQL_nRDjzW2wPqoEGE_Qo5LEcQGsHI2GdzSouIRM9uS4jYq4dg&num=2&sig=AOD64_1QoEWenStuDHJUPU7TXxZEjyeC9Q&adurl=http://alwaysdownloads.com/downloads/yahoo/%3Ft202id%3D655%26c1%3Dsegu%26t202kw%3DYahoo%2520Messenger" rel="nofollow" onMouseDown="return pk(this,{lk:'hvmna',en:'gg',io:'1',b:'spl',tp:'top',m:'gslT'});" class="nu slA" style="display:block;"> <div class="slA"> <span class="slT">Yahoo messenger</span> <span class="slB">yahoo.alwaysdownloads.com/</span> <span class="slD">Instant Download and Install Now. Free Latest Version 100% Guaranteed</span> <div class="slL"></div> </div> </a>
+<a id="gg_2" href="http://www.google.com/aclk?sa=L&ai=CRpuNiD-4T4fbMai0iALkl-S3CY3gzcQB7bOSphXluZHPRBADIIfV9xgoBFD5tvzRAWDJjsOH4KO0EMgBAaoEHE_Qo_jmcQCkHDWFr_8L4xV217dWB5zOlfQX7TQ&num=3&sig=AOD64_3vFrv6ursCsZZVroasaV6fn_w4dg&adurl=http://www.local.com/results.aspx%3Fkeyword%3DChat%26cid%3D8120" rel="nofollow" onMouseDown="return pk(this,{lk:'hvmna',en:'gg',io:'2',b:'spl',tp:'top',m:'gslT'});" class="nu slA" style="display:block;"> <div class="slA"> <span class="slT">Atlanta - <b>Chat</b></span> <span class="slB">www.local.com/</span> <span class="slD">Looking for <b>Chat</b> in Atlanta? Find it here!</span> <div class="slL">Ads</div> </div> </a>
 </div>
 
+
+<div>
+<div class="sep_top shd_hdr pb2">
+<div class="KonaBody" style="padding-left:0px;">
+<div class="lunatext results_content">
+<!-- google_ad_section_start --><div class="luna-Ent"><div class="header"><h2 class="me">chat</h2><sup></sup>â€‚ <span class="pronset"><span class="speaker" audio="http://static.sfdict.com/dictstatic/dictionary/audio/luna/C03/C0346300.mp3" default="http://dictionary.reference.com/audio.html/lunaWAV/C03/C0346300"><noscript><a onmousedown="spk(this,{lk:'nx1fkx',en:'wotdau',io:'0',b:'wotd',tp:'lrl',m:'wotdau'})" href="#"></a><a target="_blank" href="http://dictionary.reference.com/audio.html/lunaWAV/C03/C0346300"><img border="0" src="http://static.sfdict.com/dictstatic/g/d/speaker.gif"></a></noscript></span>â€‚<span class="show_ipapr" style="display:none;"><span class="prondelim">/</span><span class="pron">tÊƒÃ¦t</span><span class="prondelim">/</span> <a class="questionmark" href="/help/luna/IPA_pron_key.html" target="_blank"></a> <span class="pron_toggle" style="display:none;"><a class="pronlink" onclick="javascript:show_sp()" onmouseout="status='';return true;" onmouseover="status='Click to toggle pronunciation';return true;" alt="Toggle for Spelled" title="Click to show spelled">Show Spelled</a></span></span><span class="show_spellpr" style="display:inline;"><span class="prondelim">[</span><span class="pron">chat</span><span class="prondelim">]</span> <a class="questionmark" href="/help/luna/Spell_pron_key.html" target="_blank"></a> <span class="pron_toggle" style="display:none;"><a class="pronlink" onclick="javascript:show_ip()" onmouseout="status='';return true;" onmouseover="status='Click to toggle pronunciation';return true;" alt="Toggle for IPA" title="Click to show IPA">Show IPA</a></span></span></span> </div><div class="body"><div class="pbk"><span class="pg">verb (used without object), </span><span class="secondary-bf">chatÂ·ted, </span><span class="secondary-bf">chatÂ·ting.</span> <div class="luna-Ent"><span class="dnindex">1.</span><div class="dndata">to converse in a familiar or informal manner.</div></div><div class="luna-Ent"><span class="dnindex">2.</span><div class="dndata"><span class="labset"><span class="ital-inline">Digital Technology</span>. </span><div class="luna-Nested"><span class="dnindex">a.</span><div class="dndata">to participate with others, through the Internet, in a real-time conversation in a <span><a href="/browse/chat+room" style="font-style:normal; font-weight:normal;">chat room</a> </span> by typing one's contributions to the topics under discussion on one's computer and reading others' typed contributions on one's screen. </div></div><div class="luna-Nested"><span class="dnindex">b.</span><div class="dndata">to engage in such conversation with one other person, often to obtain live tech support or customer service from a vendor's site. </div></div></div></div></div>
+<link rel="stylesheet" href="http://static.sfdict.com/dictstatic/css/gsl/dictionary/v2/splDicAds.css" type="text/css">
+<div class="spl_unshd" style="border-top:solid 1px #E4E4E4;border-bottom:solid 1px #E4E4E4;padding-bottom:8px;padding-top:8px;margin-bottom:15px;" id="">
+<a id="gg_0" href="http://www.google.com/aclk?sa=l&ai=Cc9eXiD-4T4fbMai0iALkl-S3Ccnvi4cC8bqTqS6X4JkFEAQgh9X3GCgEUI6VpdX-_____wFgyY7Dh-CjtBCgAZnxxv4DyAEBqQL_nRDjzW2wPqoEE0_Q47DkcQekHGyED8F8v8I3KEU&num=4&sig=AOD64_33Stlrrrjy4_Cx1qkzdfj6EtClsw&adurl=http://whzon.com/whozon/talk/talkAboutThis.asp" rel="nofollow" onMouseDown="return (this,{lk:'61gh81',en:'gg',io:'0',b:'spl',tp:'mid1',m:'gslM1'});" class="nu slA" style="display:block;"> <div class="slA"> <span class="slT"><b>Chat</b> Online</span> <span class="slB">www.whzon.com/</span> <span class="slD"><b>Chat</b> With People Online <b>Chat</b> About Anything</span> <div class="slL">Ad</div> </div> </a>
+</div>
+<div class="pbk"><span class="pg">noun </span><div class="luna-Ent"><span class="dnindex">3.</span><div class="dndata">informal conversation: <span class="ital-inline">We had a pleasant chat. </span></div></div><div class="luna-Ent"><span class="dnindex">4.</span><div class="dndata"><span class="labset"><span class="ital-inline">Digital Technology</span>. </span>text-based communication in real time between two users over a <a onmousedown="return ct(this,53686)" href="/browse/network">network</a> or the Internet. <span>See also <a href="/browse/instant+messaging" style="font-style:normal; font-weight:normal;">instant messaging</a>, <a href="/browse/chat+room" style="font-style:normal; font-weight:normal;">chat room</a>.</span></div></div><div class="luna-Ent"><span class="dnindex">5.</span><div class="dndata">any of several small Old World thrushes, especially of the genus <span class="ital-inline">Saxicola,</span> having a <span><a href="/browse/chatter" style="font-style:normal; font-weight:normal;">chattering</a> </span> cry.</div></div><div class="luna-Ent"><span class="dnindex">6.</span><div class="dndata"><span><a href="/browse/yellow-breasted+chat" style="font-style:normal; font-weight:normal;">yellow-breasted chat.</a> </span></div></div></div>
 <style type="text/css">
-.hw{
-font-size:23px;
-font-family:times new roman;
-color:#000000;
-}
-.nr{
-font-size:17px;
-font-family:times new roman;
-color:#797979;
-}
-.Spellhdr{
-text-align:left;
-padding:0px;
-}
 </style>
-<div class="cr cw" id="ss_strt">
-<div id="diduno"></div>
-<div id='dcomad_728x90_0' class='banner-ad bnr' >
+<div id="topfcrds" style="display:block;height:2px;"></div>
+<div id="fcrds" >
+<div id="fctimer" >
+<p><span class="timer1 ">00:10</span></p>
+<p><span class="timer2 ">00:09</span></p>
+<p><span class="timer3 ">00:08</span></p>
+<p><span class="timer4 ">00:07</span></p>
+<p><span class="timer5 ">00:06</span></p>
+<p><span class="timer6 ">00:05</span></p>
+<p><span class="timer7 ">00:04</span></p>
+<p><span class="timer8 ">00:03</span></p>
+<p><span class="timer9 ">00:02</span></p>
+<p><span class="timer10 ">00:01</span></p>
 </div>
-<div class="con">
-<div class="Spellhdr">
-<h1 class="hw">Apri-rice</h1><span class="nr"> - no dictionary results</span>
+<div style="display:inline-block">
+<div class="fhdr">
 </div>
-<div class="conrs">
+<div id="fchead">
+<div class="txt1">
+<span class="frb">Chat</span>
+<span class="gc">is one of our favorite verbs.</span>
+</div>
+<div class="ftxt1" style="display:block;width:350px;">
+<span class="gc">So is <span class="fcnxt">lollygag</span>. Does it mean:</span>
+</div>
+<div class="stxt1" style="display:none;width:350px;">
+<span class="gc">So is <span class="fcnxt">yaff</span>. Does it mean:</span>
+</div>
+<div class="ttxt1" style="display:none;width:350px;">
+<span class="gc">So is <span class="fcnxt">fletcherise</span>. Does it mean:</span>
+</div>
+</div>
+</div>
+<div style="position:relative;bottom:5px;">
+<div id="fcont">
+<div id="incor" class="bdr2 ">
+<table style="margin-bottom:5px;">
+<tr><td><input type="radio" name="fcro" id="rincor" onmousedown="clicked = true;"/></td><td><span class="feincor" id="sincor" onmousedown="clicked = true;clickedCont=true;rbselect='rincor';">to chew (food) slowly and thoroughly.</span></td></tr>
+</table>
+</div>
+<div id="cor" class="bdr3 " >
+<table>
+<tr><td><input type="radio" id="rcor" name="fcro" onmousedown="clicked = true;"/></td><td><span class="fecor" id="scor" onmousedown="clicked = true;clickedCont=true;rbselect='rcor';">to spend time idly; loaf.</span></td></tr>
+</table>
+</div>
+</div>
+<div id="scont" style="display:none;">
+<div id="cor1" class="bdr2 ">
+<table style="margin-bottom:5px;">
+<tr><td><input type="radio" name="fcro" id="rcor1" onmousedown="clicked=true;"/></td><td><span class="fecor" id="scor1" onmousedown="clicked = true;clickedCont=true;rbselect='rcor1';">to bark; yelp.</span></td></tr>
+</table>
+</div>
+<div id="incor1" class="bdr3 " >
+<table>
+<tr><td><input type="radio" id="rincor1" name="fcro" onmousedown="clicked = true;"/></td><td><span class="feincor" id="sincor1" onmousedown="clicked = true;clickedCont=true;rbselect='rincor1';">chat, to converse</span></td></tr>
+</table>
+</div>
+</div>
+<div id="tcont" style="display:none;">
+<div id="cor2" class="bdr2 ">
+<table style="margin-bottom:5px;">
+<tr><td><input type="radio" name="fcro" id="rcor2" onmousedown="clicked = true;"/></td><td><span class="fecor" id="scor2" onmousedown="clicked = true;clickedCont=true;rbselect='rcor2';">to chew (food) slowly and thoroughly.</span></td></tr>
+</table>
+</div>
+<div id="incor2" class="bdr3 " >
+<table>
+<tr><td><input type="radio" id="rincor2" name="fcro" onmousedown="clicked = true;"/></td><td><span class="feincor" id="sincor2" onmousedown="clicked = true;clickedCont=true;rbselect='rincor2';">to introduce subtleties into or argue subtly about.</span></td></tr>
+</table>
+</div>
+</div>
+<div class="fcbot">
+<a id="fccl" onmousedown="return pk(this,{lk:'dict',en:'dict',io:'1',b:'di1',tp:'lrl',m:'dict'});" href="http://dynamo.dictionary.com/61520/a-few-remarkable-verbs-flashcards?mp_source=pxmmir" target="_blank">LEARN MORE FUN, UNUSUAL VERBS WITH WORD DYNAMO...</a>
+</div>
+</div>
+</div>
+<a href="http://dynamo.dictionary.com/61520/a-few-remarkable-verbs-flashcards?mp_source=pxmmir" onmousedown="return pk(this,{lk:'dict',en:'dict',io:'1',b:'di1',tp:'lrl',m:'dict'});" target="_blank" class= "fwcrp"><div id="closeMod" class= "fcwrp"></div></a>
+<span class="sectionLabel">Verb phrase</span><div class="luna-Ent"><span class="dnindex">7.</span><div class="dndata"><span class="secondary-bf">chat up, </span><span class="labset"><span class="ital-inline">Chiefly British</span>. </span><div class="luna-Nested"><span class="dnindex">a.</span><div class="dndata">to talk flirtatiously with.</div></div><div class="luna-Nested"><span class="dnindex">b.</span><div class="dndata">to talk to in a friendly, open way.</div></div></div></div></div><div class="tail"><hr class="ety"><div class="ety"><b><i>Origin: </i></b><br /><span class="rom-inline">1400â€“50; </span> <span class="rom-inline">late Middle English; </span> short for <span><a href="/browse/chatter" style="font-style:normal; font-weight:normal;">chatter</a></span></div><br /><span class="sectionLabel">Related forms</span><div class="roset"><span class="secondary-bf">chatÂ·taÂ·ble, </span><span class="pg">adjective </span></div><br /><div><span class="sectionLabel">Synonyms </span><br /><span class="secondary-bf"><span>1, 3.</span></span> talk, chitchat, gossip, visit.<br /><br /></div></div></div><!-- google_ad_section_end -->
+</div>
+</div>
+</div>
+<div id="exsenttop" style="display:block;height:5px;"></div>
+<div class="sentmodule" id="sentmodule">Example Sentences</div>
+<div class="firstsent">
+<ul class="exsent">
+<li class="exsentdata">The video <b>chat</b> is an open group area for all my students to talk to each other or me.</li>
+</ul>
+<ul class="exsent">
+<li class="exsentdata">But each <b>chat</b> makes you memorable, and encourages your fellow <b>chat</b>terers to see you as a pleasant individual with a life history.</li>
+</ul>
+<ul class="exsent">
+<li class="exsentdata">Then they arrested and prosecuted the violent ones, and invited the rest in for a <b>chat</b>.</li>
+</ul>
+</div><a class="more">EXPAND</a><div class="moresent" style="display:none;">
+<ul class="exsent">
+<li class="exsentdata">The video <b>chat</b> is an open group area for all my students to talk to each other or me.</li>
+</ul>
+<ul class="exsent">
+<li class="exsentdata">But each <b>chat</b> makes you memorable, and encourages your fellow <b>chat</b>terers to see you as a pleasant individual with a life history.</li>
+</ul>
+<ul class="exsent">
+<li class="exsentdata">Then they arrested and prosecuted the violent ones, and invited the rest in for a <b>chat</b>.</li>
+</ul>
+<ul class="exsent">
+<li class="exsentdata">Selecting a <b>chat</b> in the right window displays the full conversation in the center screen.</li>
+</ul>
+<ul class="exsent">
+<li class="exsentdata">Locals <b>chat</b> in teahouses and within hours the news is everywhere.</li>
+</ul>
+<ul class="exsent">
+<li class="exsentdata"><b>Chat</b> with an expert and learn what scientists around the world are doing to help protect parrots.</li>
+</ul>
+<ul class="exsent">
+<li class="exsentdata">Modern kids create new slang for e-mail and <b>chat</b> rooms.</li>
+</ul>
+<ul class="exsent">
+<li class="exsentdata">Have a <b>chat</b> with him, make sure he's not a sociopath, and then knock off some standard thing.</li>
+</ul>
+<ul class="exsent">
+<li class="exsentdata">Many brought their children along, or lingered after voting to <b>chat</b> with friends.</li>
+</ul>
+<ul class="exsent">
+<li class="exsentdata"><b>Chat</b> up the locals in small-town diners and cafÃ©s, and tell them you're looking for a farm to photograph.</li>
+</ul><a class="less">COLLAPSE</a></div>
+<div id="visual_the">
+</div>
+</div>
+<script>
+_init_luna();
+show_sp();
+</script>
+<script type="text/javascript">
+if($j){
+$j('#nonfav').append('<a id="fncyb" href="" ></a>');
+$j('#fncyb').attr("href","http://app.dictionary.com/popup?source=favorites&fnCallback=loginuser&callbackAction=addToFav&domaindest=reference.com") ;
+}
+</script>
+
+
+
+<div>
+<div class="sep_top shd_hdr pb2">
+<div class="shortsrcname">Dictionary.com Unabridged</div>
+<div class="KonaBody" style="">
+<div class="lunatext results_content">
+<!-- google_ad_section_start --><div class="luna-Ent"><div class="header"><h2 class="me">ChÃ¢t.</h2><sup></sup>â€‚ </div><div class="body"><div class="pbk"><div class="luna-Ent">(especially in Bordeaux wines) ChÃ¢teau.</div></div></div></div><!-- google_ad_section_end -->
+</div>
+</div>
+</div>
+<div class="rcr">
+Dictionary.com Unabridged<br />Based on the Random House Dictionary, &copy; Random House, Inc. 2012.
+<br/>
+<a href='/cite.html?qh=chat&ia=luna' >Cite This Source</a>
+<div id="link_to_div">|</div>
+<a id="link_to_style" onclick="return ask.dict.link_functionnewserp(this);">Link To <b></b></a>
+</div>
+<div class="sep_top shd_hdr ">
+<div class="shortsrcname">Collins</div>
+<div class="KonaBody" style="">
+<div class="lunatext results_content">
+<div class="dicTl">World English Dictionary</div>
+<table border="0" width="100%" cellspacing="4" cellpadding="3">
+<tr valign="top" class="tr1"><td colspan="2" class="td1"><b>chat</b><sup><b>1</b></sup> (tÊƒÃ¦t) <a class="questionmark" href="/help/luna/IPA_pron_key.html" target="_blank" target="_blank"></a></td></tr>
+<tr valign="top"><td colspan="2">&nbsp;</td></tr>
+<tr valign="top" class="tr2"><td colspan="2" class="td2">&mdash;<b><i>n</i></b> </td></tr>
+<tr valign="top" class="tr3"><td align="right" width="1%" class="td3n1">1.&nbsp;&nbsp;</td><td class="td3n2">informal conversation or talk conducted in an easy familiar manner</td></tr>
+<tr valign="top" class="tr3"><td align="right" width="1%" class="td3n1">2.&nbsp;&nbsp;</td><td class="td3n2">the exchange of messages in an internet or other network chatroom</td></tr>
+<tr valign="top" class="tr3"><td align="right" width="1%" class="td3n1">3.&nbsp;&nbsp;</td><td class="td3n2"><a href="http://dictionary.reference.com/browse/stonechat">stonechat</a> See also <a href="http://dictionary.reference.com/browse/whinchat">whinchat</a> any Old World songbird of the subfamily <i>Turdinae</i> (thrushes, etc) having a harsh chattering cry</td></tr>
+<tr valign="top" class="tr3"><td align="right" width="1%" class="td3n1">4.&nbsp;&nbsp;</td><td class="td3n2">any of various North American warblers, such as <i>Icteria virens</i> (<b>yellow-breasted chat</b>)</td></tr>
+<tr valign="top" class="tr3"><td align="right" width="1%" class="td3n1">5.&nbsp;&nbsp;</td><td class="td3n2">any of various Australian wrens (family <i>Muscicapidae</i>) of the genus <i>Ephthianura</i> and other genera</td></tr>
+<tr valign="top"><td colspan="2">&nbsp;</td></tr>
+<tr valign="top" class="tr2"><td colspan="2" class="td2">&mdash;<b><i>vb</i></b> , <b>chats</b>, <b>chatting</b>, <b>chatted</b></td></tr>
+<tr valign="top" class="tr3"><td align="right" width="1%" class="td3n1">6.&nbsp;&nbsp;</td><td class="td3n2">to talk in an easy familiar way</td></tr>
+<tr valign="top" class="tr3"><td align="right" width="1%" class="td3n1">7.&nbsp;&nbsp;</td><td class="td3n2">to exchange messages in a chatroom</td></tr>
+<tr valign="top"><td colspan="2">&nbsp;</td></tr>
+<tr valign="top" class="tr5"><td colspan="2" class="td5">[C16: short for <sc>chatter</sc>]</td></tr>
+</table>
+<br />
+</div>
+</div>
+</div>
+<div class="sep_top bottomAd" align="center">
+<div id='dcomad_bottom_300x249' class='box-ad ' >
+</div>
+</div>
+<div class="citesourceseperator"></div>
+<div class="sep_top1 shd_hdr1">
+<div class="KonaBody" style="">
+<div class="lunatext results_content">
+<table border="0" width="100%" cellspacing="4" cellpadding="3">
+<tr valign="top" class="tr1"><td colspan="2" class="td1"><b>chat</b><sup><b>2</b></sup> (tÊƒÃ¦t) <a class="questionmark" href="/help/luna/IPA_pron_key.html" target="_blank" target="_blank"></a></td></tr>
+<tr valign="top"><td colspan="2">&nbsp;</td></tr>
+<tr valign="top" class="tr2"><td colspan="2" class="td2">&mdash;<b><i>n</i></b> </td></tr>
+<tr valign="top" class="tr3"><td align="right" width="1%" class="td3n1"></td><td class="td3n2"><i>archaic</i>, <i>dialect</i> <i>or</i> a catkin, esp a willow catkin</td></tr>
+<tr valign="top"><td colspan="2">&nbsp;</td></tr>
+<tr valign="top" class="tr5"><td colspan="2" class="td5">[C15: from French <i>chat</i> cat, referring to the furry appearance]</td></tr>
+</table>
+<br />
+</div>
+</div>
+</div>
+<div class="rcr">
+Collins English Dictionary - Complete & Unabridged 10th Edition<br />2009 &copy; William Collins Sons & Co. Ltd. 1979, 1986 &copy; HarperCollins<br />Publishers 1998, 2000, 2003, 2005, 2006, 2007, 2009
+<br/>
+<a href='/cite.html?qh=chat&ia=ced' >Cite This Source</a>
+</div>
+<div id="wordorgtop"></div>
+<div class="sep_top shd_hdr ">
+<div class="shortsrcname">Etymonline</div>
+<div class="KonaBody" style="">
+<div class="lunatext results_content">
+<div class="dicTl">Word Origin & History</div>
+<br /><span class="me">chat</span><br /><div class="body">c.1440, short for chatter (q.v.). Chatty is first attested 1762.</div>
+</div>
+</div>
+</div>
+<div class="rcr">
+Online Etymology Dictionary, &copy; 2010 Douglas Harper
+<br/>
+<a href='/cite.html?qh=chat&ia=etymon' >Cite This Source</a>
+</div>
+<div class="sep_top shd_hdr ">
+<div class="shortsrcname">FOLDOC</div>
+<div class="KonaBody" style="">
+<div class="lunatext results_content">
+<div class="dicTl">Computing Dictionary</div>
+<p><h3><b>chat definition</b></h3> <span class="pg">chat, messaging</span><br /> Any system that allows any number of logged-in users to have a typed, real-time, on-line conversation via a <a href="http://dictionary.reference.com/browse/network">network</a>. <br />The medium of <a href="http://dictionary.reference.com/browse/chat">chat</a> is descended from <a href="http://dictionary.reference.com/browse/talk">talk</a>, but the terms (and the media) have been distinct since at least the early 1990s. <a href="http://dictionary.reference.com/browse/talk">talk</a> is prototypically for a small number of people, generally with no provision for <a href="http://dictionary.reference.com/browse/channels">channels</a>. In <a href="http://dictionary.reference.com/browse/chat">chat</a> systems, however, there are many <a href="http://dictionary.reference.com/browse/channels">channels</a> in which any number of people can talk; and users may send private (one-to-one) messages. <br />Some early chat systems (in use 1998) include <a href="http://dictionary.reference.com/browse/IRC">IRC</a>, <a href="http://dictionary.reference.com/browse/ICQ">ICQ</a> and <a href="http://dictionary.reference.com/browse/Palace">Palace</a>. More recent alternatives include <a href="http://dictionary.reference.com/browse/MSN+Messenger">MSN Messenger</a> and <a href="http://dictionary.reference.com/browse/Google+Talk">Google Talk</a>. <br />Chat systems have given rise to a distinctive style combining the immediacy of talking with all the precision (and verbosity) that written language entails. It is difficult to communicate inflection, though conventions have arisen to help with this. <br />The conventions of chat systems include special items of jargon, generally abbreviations meant to save typing, which are not used orally. E.g. <a href="http://dictionary.reference.com/browse/BCNU">BCNU</a>, <a href="http://dictionary.reference.com/browse/BBL">BBL</a>, <a href="http://dictionary.reference.com/browse/BTW">BTW</a>, <a href="http://dictionary.reference.com/browse/CUL">CUL</a>, <a href="http://dictionary.reference.com/browse/FWIW">FWIW</a>, <a href="http://dictionary.reference.com/browse/FYA">FYA</a>, <a href="http://dictionary.reference.com/browse/FYI">FYI</a>, <a href="http://dictionary.reference.com/browse/IMHO">IMHO</a>, <a href="http://dictionary.reference.com/browse/OT">OT</a>, <a href="http://dictionary.reference.com/browse/OTT">OTT</a>, <a href="http://dictionary.reference.com/browse/TNX">TNX</a>, <a href="http://dictionary.reference.com/browse/WRT">WRT</a>, <a href="http://dictionary.reference.com/browse/WTF">WTF</a>, <a href="http://dictionary.reference.com/browse/WTH">WTH</a>, <a href="http://dictionary.reference.com/browse/<g>"><g></a>, <a href="http://dictionary.reference.com/browse/<gr&d>"><gr&d></a>, <a href="http://dictionary.reference.com/browse/BBL">BBL</a>, <a href="http://dictionary.reference.com/browse/HHOK">HHOK</a>, <a href="http://dictionary.reference.com/browse/NHOH">NHOH</a>, <a href="http://dictionary.reference.com/browse/ROTFL">ROTFL</a>, <a href="http://dictionary.reference.com/browse/AFK">AFK</a>, <a href="http://dictionary.reference.com/browse/b4">b4</a>, <a href="http://dictionary.reference.com/browse/TTFN">TTFN</a>, <a href="http://dictionary.reference.com/browse/TTYL">TTYL</a>, <a href="http://dictionary.reference.com/browse/OIC">OIC</a>, <a href="http://dictionary.reference.com/browse/re">re</a>. <br />Much of the chat style is identical to (and probably derived from) <a href="http://dictionary.reference.com/browse/Morse+code">Morse code</a> jargon used by ham-radio amateurs since the 1920s, and there is, not surprisingly, some overlap with <a href="http://dictionary.reference.com/browse/TDD">TDD</a> jargon. Most of the jargon was in use in <a href="http://dictionary.reference.com/browse/talk">talk</a> systems. Many of these expressions are also common in <a href="http://dictionary.reference.com/browse/Usenet">Usenet</a> <a href="http://dictionary.reference.com/browse/news">news</a> and <a href="http://dictionary.reference.com/browse/electronic+mail">electronic mail</a> and some have seeped into popular culture, as with <a href="http://dictionary.reference.com/browse/emoticons">emoticons</a>. <br />The <a href="http://dictionary.reference.com/browse/MUD">MUD</a> community uses a mixture of <a href="http://dictionary.reference.com/browse/emoticons">emoticons</a>, a few of the more natural of the old-style <a href="http://dictionary.reference.com/browse/talk+mode">talk mode</a> abbreviations, and some of the "social" list above. In general, though, MUDders express a preference for typing things out in full rather than using abbreviations; this may be due to the relative youth of the MUD cultures, which tend to include many touch typists. Abbreviations specific to MUDs include: <a href="http://dictionary.reference.com/browse/FOAD">FOAD</a>, ppl (people), THX (thanks), UOK? (are you OK?). <br />Some <a href="http://dictionary.reference.com/browse/BIFF">BIFF</a>isms (notably the variant spelling "d00d") and aspects of <a href="http://dictionary.reference.com/browse/ASCIIbonics">ASCIIbonics</a> appear to be passing into wider use among some subgroups of MUDders and are already pandemic on <a href="http://dictionary.reference.com/browse/chat">chat</a> systems in general. <br />See also <a href="http://dictionary.reference.com/browse/hakspek">hakspek</a>. <br /><a href="http://dictionary.reference.com/browse/Suck+article+"Screaming in a Vacuum" (http://suck.com/daily/96/10/23/)">Suck article "Screaming in a Vacuum" (http://suck.com/daily/96/10/23/)</a>. <br />(2006-05-31) <br /></p>
+</div>
+</div>
+</div>
+<div class="rcr">
+The Free On-line Dictionary of Computing, &copy; Denis Howe 2010 <a href="http://foldoc.org" rel="nofollow">http://foldoc.org</a>
+<br/>
+<a href='/cite.html?qh=chat&ia=foldoc' >Cite This Source</a>
+</div>
+</div>
+<script>
+_init_luna();
+show_sp();
+</script>
+<script type="text/javascript">
+</script>
+
+<script type="text/javascript" language="JavaScript">
+_init_luna();
+show_sp();
+</script>
 
 
 <script type="text/javascript">
-function ss(w){window.status=w;return true;}
-function cs(){window.status='';}
+if(ask.dict.isHotWordEnabled){
+ask.dict.enableHotwordLogging = true;
+hotword();
+}
 </script>
-<link rel="stylesheet" href="http://static.sfdict.com/dictstatic/css/gsl/dictionary/v2/ncbm.css" type="text/css">
 <style type="text/css">
+/*This is done for enabling favorites on page load*/
+#fav,#nonfav{
+display:inline-block;
+}
+._vtad{
+border-top:1px solid #E4E4E4;
+}
+.slL {
+cursor: pointer;
+}
 </style>
-<script language="JavaScript" type="text/javascript">
-var daisyMatchArray = new Array();
-var modConstantArray = new Array();
-var linkConstantArray = new Array();
-modConstantArray['top']='afcT';modConstantArray['bot']='afcB';modConstantArray['mid']='afcM';modConstantArray['mid1']='afcM1';modConstantArray['mid2']='afcM2';modConstantArray['mid3']='afcM3';
-linkConstantArray['top']='oq6zwg';linkConstantArray['bot']='e8zuyk';linkConstantArray['mid']='tdkbd2';linkConstantArray['mid1']='svydps';linkConstantArray['mid2']='j6rvjh';linkConstantArray['mid3']='u3d5w0';
-function render_ads(position, num, startIdx, endIdx) {
-var s = '';
-if(!num && !window['ajsl_ads']) {
-return;
-}
-var top=true;
-if(position == 'top' || position.indexOf('mid')!=-1){
-top=true;
-}else if(position == 'bot'){
-top=false;
-}
-window['sponsoredResultText'] = '<div class="the_label"></div>'
-var prefix = '<div class="spl_unshd_NC" id="'+position+'">';
-window['spLabel'] = 'Ads';
-if(num==1){
-window['spLabel'] = 'Ad';
-}
-var suffix = '</div>';
-var template = '<div class="slANC" style="cursor:default;"> <a id="gg_{counter}" href="{url}" rel="nofollow" onMouseDown="{pickJavascript}" class="nu" style="width:250px"> <span class="slT">{title}</span> </a> <br> <a id="gg_{counter}" href="{url}" rel="nofollow" onMouseDown="{pickJavascript}" class="nu" style="width:250px"> <span class="slBNC">{visibleUrl}</span> </a> <br> <span class="slD">{abstract}</span> <div class="slL">{label}</div> </div>';
-s += prefix;
-var ads = window['google_ads'];
-var ajslAds=window['ajsl_ads'];
-var spnrAds=window['spnr_ads'];
-if(ajslAds){
-for(var i = 0; i < ajslAds.length;i++) {
-s += render_inhouse_ad(top,ajslAds , template,i)
-}
-}
-var ec=0;
-for(var i = startIdx, j=0; j<num && i <= endIdx;j++, i++) {
-s += render_ad(top, ads, template, startIdx, i, "gsl", num, 0,j,position);
-ec++;
-}
-if(position=='top' || position=='bot' || position.indexOf('mid')!=-1)
-daisyMatchArray[position]=num;
-window['ad_count_'+position]=ec;
-if(spnrAds){
-for(var i = 0; i < spnrAds.length;i++) {
-s += render_inhouse_ad(top,spnrAds ,template,i,true)
-}
-}
-//reset in house text ads to empty so that it will not be printed in the section where it is not required
-window['ajsl_ads']=null;
-window['spnr_ads']=null;
-s += suffix;
-document.write(s);
-if(false){
-document.getElementById('top').style.borderTop = "none";
-}
-}
-function render_ad(top, ads, template, offset, i, type, ec, set,j,position) {
-var fragment = template;
-var pickLog = "pk(this, {en:'{en}',io:'{io}',b:'spl',tp:'(position)',ec:'{ec}',ex:''}, '{ggid}')";
-if(window['spShadedLabel'] && offset == i && set == 0 ) {
-fragment = fragment.replace(/\{label\}/, spShadedLabel);
-} else if(window['spLabel'] && (offset+j == (ads.length - 1) || j == ec-1) && !(window['spnr_ads'] && window['spnr_ads'].length > 0 )){
-fragment = fragment.replace(/\{label\}/, spLabel);
-}else {
-fragment = fragment.replace(/\{label\}/,"");
-}
-for(var k=0;fragment.indexOf("{pickJavascript}")!= -1;k++){
-fragment = fragment.replace(/\{pickJavascript\}/,(ads[i].adType == 'ta')?ads[i].pickJavascript:pickLog);
-fragment = fragment.replace(/\(position\)/,position);
-fragment = fragment.replace(/\{counter\}/,(top?"t_":"b_") + (i+1));
-if(position.indexOf("mid")!=-1){
-fragment = fragment.replace(/\{io\}/,i-offset);
-}else {
-fragment = fragment.replace(/\{io\}/, offset ? offset+i : i);
-}
-}
-fragment = fragment.replace(/\{en\}/g, "gc");
-fragment = fragment.replace(/\{ggid\}/g, "gg_" + (top?"t_":"b_") + (i+1));
-if(_daisyClickTrackingEnabled==='true'){
-fragment = fragment.replace(/\{m\}/g,modConstantArray[position]);
-fragment = fragment.replace(/\{lk\}/g,linkConstantArray[position]);
-}else{
-fragment = fragment.replace(/\{ec\}/g, ec);
-}
-fragment = fragment.replace(/\{url\}/g, ads[i].url);
-fragment = fragment.replace(/\{visibleUrl\}/, ads[i].visible_url.length > 65 ? ads[i].visible_url.substring(0, 65) : ads[i].visible_url);
-if(true){
-fragment = fragment.replace(/\{ncbmwidth\}/,"width:px");
-fragment = fragment.replace(/\{ncbm1width\}/,"width:px");
-}
-ads[i].line1 = highlightQuery(ads[i].line1);
-var dbgInfo="";
-if(false){
-adt = 'afc';
-if(ads[i].adType != null && 'ta' == ads[i].adType){
-adt = 'ta';
-}
-dbgInfo="[id=" + ads[i].n +",type="+adt+"]";
-}
-fragment = fragment.replace(/\{title\}/, dbgInfo+ads[i].line1);
-ads[i].line2 = highlightQuery(ads[i].line2);
-ads[i].line3 = highlightQuery(ads[i].line3);
-fragment = fragment.replace(/\{abstract\}/, ads[i].line2 + " " + ads[i].line3);
-return fragment;
-}
-function render_inhouse_ad(top, ads, template,i,label) {
-if(!label){
-label= false;
-}
-var fragment = template;
-if( false){
-if(window['spShadedLabel'] && i==0) {
-fragment = fragment.replace(/\{label\}/, spShadedLabel);
-} else if(window['spLabel'] && i==0 ){
-fragment = fragment.replace(/\{label\}/, spLabel);
-}else {
-fragment = fragment.replace(/\{label\}/,"");
-}
-}else {
-if(window['spShadedLabel'] && i==window['ad_config_top']+ads.length-1) {
-fragment = fragment.replace(/\{label\}/, spShadedLabel);
-} else if((window['spLabel'] && i==window['ad_config_top']+ads.length-1 ) || label){
-fragment = fragment.replace(/\{label\}/, spLabel);
-}else {
-fragment = fragment.replace(/\{label\}/,"");
-}
-}
-for(var k=0;fragment.indexOf("{pickJavascript}")!= -1;k++){
-fragment = fragment.replace(/\{pickJavascript\}/,ads[i].pickJavascript);
-fragment = fragment.replace(/\(position\)/,"");
-fragment = fragment.replace(/\{counter\}/,"");
-fragment = fragment.replace(/\{io\}/, i);
-}
-fragment = fragment.replace(/\{en\}/g, ads[i].adType);
-fragment = fragment.replace('gg_', ads[i].adType+"_" + i);
-fragment = fragment.replace(/\{ec\}/g, ads.length);
-fragment = fragment.replace(/\{url\}/g, ads[i].url);
-fragment = fragment.replace(/\{visibleUrl\}/, ads[i].visible_url.length > 65 ? ads[i].visible_url.substring(0, 65) : ads[i].visible_url);
-if(true){
-fragment = fragment.replace(/\{ncbmwidth\}/,"width:px");
-fragment = fragment.replace(/\{ncbm1width\}/,"width:px");
-}
-ads[i].line1 = highlightQuery(ads[i].line1);
-var dbgInfo="";
-if(false){
-dbgInfo="[id=" + ads[i].n +",type="+ads[i].adType +"]";
-}
-fragment = fragment.replace(/\{title\}/, dbgInfo+ads[i].line1);
-ads[i].line2 = highlightQuery(ads[i].line2);
-ads[i].line3 = highlightQuery(ads[i].line3);
-fragment = fragment.replace(/\{abstract\}/, ads[i].line2 + " " + ads[i].line3);
-return fragment;
-}
-var ajslAds=new Array();
-var spnrAds=new Array();
-var repeatAds="true";
-function debug_info_update_render_ads(){
-if(document.getElementById('afc_ads_recieved')){
-var no_of_ads_debug_info = document.createTextNode(google_ads.length);
-document.getElementById('afc_ads_recieved').appendChild(no_of_ads_debug_info);
-}
-}
-function google_ad_request_done(google_ads) {
-debug_info_update_render_ads();
-window['google_ads'] = google_ads;
-inhouseAds = false;
-if(window['google_ads'].length < 3)
-{
-inhouseAds=true;
-}
-getInHouseAds();
-window['ajsl_ads']=ajslAds;
-window['spnr_ads']=spnrAds;
-if(google_ads.length != 0) {
-apply_ad_config(google_ads.length);
-render_ads('top', window['ad_config_top'],window['ad_config_top_startIdx'],window['ad_config_top_endIdx']);
-}
-}
-function InHouseAd() {
-this.url = "";
-this.visible_url = "";
-this.line1 = "";
-this.line2 = "";
-this.line3 = "";
-this.pickJavascript = "";
-this.adType = "";
-this.n = "";
-}
-function getInHouseAds()
-{
-if(inhouseAds){
-}
-}
-function apply_ad_config(num) {
-window['ad_config_top'] = Math.min(3, num);
-if(ajslAds.length >0 ){
-var maxTop=3-window['ajsl_ads'].length;
-maxTop=(maxTop)>0?maxTop:0;
-window['ad_config_top'] =Math.min(maxTop, window['ad_config_top']);
-}
-window['ad_config_top_endIdx'] = window['ad_config_top'];
-window['ad_config_bot'] = window['ad_config_top'];
-window['ad_config_bot_startIdx'] = window['ad_config_top_startIdx']=0;
-window['ad_config_bot_endIdx'] = window['ad_config_bot'];
-var midAdsCount = ((num-window['ad_config_bot'])>0)? num-window['ad_config_bot'] : 0;
-var midBlockIdx = 0;
-var midBlockAds=0;
-var numAds=3;
-if(numAds>5 && midAdsCount<3){
-midBlockAds=1;
-}
-for(var i=1; i<=midAdsCount ;i++){
-if(i%midBlockAds==0 || i==midAdsCount){
-var startIdx = window['ad_config_bot'] + (midBlockIdx * midBlockAds);
-var endIdx = (startIdx + midBlockAds)<=num?startIdx+midBlockAds:num;
-var engineId= 'ad_config_mid'+ ++midBlockIdx;
-window[engineId]=endIdx-startIdx;
-window[engineId+'_startIdx']=startIdx;
-window[engineId+'_endIdx']=endIdx;
-}
-}
-}
-if(false){
-google_ad_client = 'ca-aj-lexico-quot';
-google_ad_channel = 'channel-01';
-google_ad_output = 'js';
-google_max_num_ads = '3';
-google_page_url = '';
-google_num_ads_recieved= '';
-google_ad_type = 'text';
-google_image_size = '';
-google_language = '';
-google_country = '';
-google_encoding = 'utf8';
-google_safe = 'high';
-google_adtest = 'off';
-google_hints = '';
-google_kw = 'Apri-rice';
-google_kw_type = 'broad';
-google_ad_section = 'default';
-}else{
-google_ad_client = 'ca-aj-lexico-quot';
-google_ad_channel = 'channel-01';
-google_ad_output = 'js';
-google_ad_type = 'text';
-google_max_num_ads ='3';
-google_safe = 'high';
-google_encoding = 'utf8';
-google_hints = 'Apri-rice';
-google_ad_section='def';
-}
-var word_arr ;
-var word_arr_len ;
-function highlightQuery(input_str) {
-var queryTokenArray = "apri-rice,";
-var tok_arr = queryTokenArray.split(",");
-for(tok_arr_idx=0; tok_arr_idx < tok_arr.length-1; tok_arr_idx ++) {
-if(isCombinationWord(tok_arr[tok_arr_idx])){
-word_arr = tok_arr[tok_arr_idx].split("-");
-word_arr_len = word_arr.length;
-first_pos = input_str.toLowerCase().indexOf(word_arr[0],0);
-if(first_pos !=-1) {
-input_str = highlightCombinationWords(input_str,first_pos);
-}
-}
-else {
-first_pos = input_str.toLowerCase().indexOf(tok_arr[tok_arr_idx],0);
-if(first_pos != -1) {
-input_str = highlightSimpleWords(input_str,tok_arr[tok_arr_idx],first_pos);
-}
-}
-}
-return input_str;
-}
-function isCombinationWord(word){
-if(word.indexOf("-") != -1){
-return true;
-}else{
-return false;
-}
-}
-function isAlpha(ch) {
-if (ch != null && ch.match(/^[a-zA-Z0-9\<\>]+$/)){
-return true;
-}
-return false;
-}
-function isQueryinInput(firstindex, input_str, j){
-for(i=firstindex; i< input_str.length ; ++i) {
-var currindex = i;
-if(!isAlpha(input_str.charAt(i))) {
-if(firstindex == currindex) {/* 2 consecutive non-alpha characters */
-firstindex++;
-}
-else {
-if(word_arr[j] != input_str.substring(firstindex,currindex).toLowerCase())
-return -1;
-if (j == word_arr_len-1) return currindex;
-else return isQueryinInput(currindex+1,input_str,++j);
-}
-}
-}
-if(j < word_arr_len) {
-if(word_arr[j] != input_str.substring(firstindex,currindex+1).toLowerCase())
-return -1;
-}
-return (currindex + 1) ;
-}
-function highlightCombinationWords(input_str,first_pos) {
-exactmatch = isQueryinInput(first_pos+word_arr[0].length,input_str,1) ;
-if(exactmatch !=-1 ) {
-bold_str = "<b>" + input_str.substring(first_pos,exactmatch) + "</b>";
-input_str = input_str.substring(0,first_pos) + bold_str + input_str.substring(exactmatch);
-next_pos = input_str.toLowerCase().indexOf(word_arr[0],exactmatch+7);
-while(next_pos != -1) {
-return highlightCombinationWords(input_str,next_pos);
-}
-}
-return input_str;
-}
-function highlightSimpleWords(input_str,token, first_pos) {
-var end_pos = first_pos + token.length;
-if(!isAlpha(input_str.charAt(end_pos)) && !isAlpha(input_str.charAt(first_pos-1))){
-bold_str = "<b>" + input_str.substring(first_pos,end_pos) + "</b>";
-input_str = input_str.substring(0,first_pos) + bold_str + input_str.substring(end_pos);
-next_pos = input_str.toLowerCase().indexOf(token,end_pos+7);
-}
-else {
-next_pos = input_str.toLowerCase().indexOf(token,end_pos);
-}
-while(next_pos != -1) {
-return highlightSimpleWords(input_str,token,next_pos);
-}
-return input_str;
-}
-</script>
-<script type="text/javascript" language="JavaScript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js"></script>
-
-
-<script language="JavaScript">
-if(window['ad_config_bot']){
-render_ads('bot', window['ad_config_bot'],window['ad_config_bot_startIdx'],window['ad_config_bot_endIdx']);
-}
-function getXHR() {
-if (window.XMLHttpRequest) {
-return new XMLHttpRequest();
-} else if (window.ActiveXObject) {
-try {
-return new ActiveXObject("Msxml2.XMLHTTP");
-} catch (e) {
-try {
-return new ActiveXObject("Microsoft.XMLHTTP");
-} catch (E) {
-return null;
-}
-}
-}
-else {
-return null;
-}
-}
-function ajax_get(url, onsuccess, onerror) {
-var obj = getXHR();
-if(obj) {
-obj.onreadystatechange = function() {
-if(obj.readyState==4) {
-if (obj.status == 200 && typeof(onsuccess) == "function") {
-onsuccess(obj);
-} else if (typeof(onerror) == "function") {
-onerror(obj);
-}
-try {
-delete obj['onreadystatechange'];
-} catch(e) {}
-}
-};
-obj.open("GET", url, true, "", "");
-obj.send(null);
-return obj;
-} else {
-if(onerror) {
-onerror("Error creating XHR");
-} else {
-a10.debug("Error creating XHR");
-}
-return null;
-}
-};
-</script>
-
 </div>
 </div>
+
 <div id="rightRail">
+<!--
+word Dynamo Module
+-->
 <div id="rrbox">
 <div id="mr">
 <div class="smpo">
-<div class="hwl">Word Dynamo By Dictionary.com</div>
-<div style="display:inline-block;"><a href="http://dynamo.dictionary.com/?mp_source=dict" onmousedown="return pk(this,{lk:'dict',en:'dict',io:'1',b:'di1',tp:'lrl',m:'dict'})" id="up_right" style="float: left"></a>
+<div class="hwl">Word Dynamo Rating For <span style='font-weight:bold;'>Chat</span></div>
+<div style="display:inline-block;"><a href="http://dynamo.dictionary.com/?mp_source=6n2gf5" onmousedown="return pk(this,{lk:'dict',en:'dict',io:'1',b:'di1',tp:'lrl',m:'dict'})" id="up_right" style="float: left"></a>
 <div class="hdwrp">
-<div class="ah"><a href="http://dynamo.dictionary.com/?mp_source=dict" onmousedown="return pk(this,{lk:'dict',en:'dict',io:'1',b:'di1',tp:'lrl',m:'dict'})">Searching for <span style="font-weight:bold;">Apri-rice</span>? How many words do you actually know?</a></div>
-<div class="dynmr"><a class="nmore" href="http://dynamo.dictionary.com/?mp_source=dict" onmousedown="return pk(this,{lk:'dict',en:'dict',io:'1',b:'di1',tp:'lrl',m:'dict'})">FIND OUT</a></div>
+<div class="ah">
+<a href="http://dynamo.dictionary.com/?mp_source=73rhr4" onmousedown="return pk(this,{lk:'dict',en:'dict',io:'1',b:'di1',tp:'lrl',m:'dict'})">People who can define <span style="font-weight:bold;">Chat</span> may know <span style="font-weight:bold;">20,047</span> words,
+as many as a <span style="font-weight:bold;">7th grader.</span>
+</a>
+</div>
+<div class="dynmrscr"><a class="nmorescr" style="font-size:12px;" href="http://dynamo.dictionary.com/?mp_source=cgyhs" onmousedown="return pk(this,{lk:'dict',en:'dict',io:'1',b:'di1',tp:'lrl',m:'dict'})">How many words do you know?</a></div>
 </div>
 </div>
 </div>
 </div>
 </div>
-<div style="text-align:center;">
-<!--5min begin-->
-<!--5min end-->
+<!--
+Display ads1 rightrail Module
+-->
+<div style="margin-top:15px;text-align:center;">
 <div id='dcomad_top_300x250_1' class='box-ad ' >
 </div>
 </div>
-<div id="wrapserp" ><a id="serppremium" onmousedown="return pk(this,{en:'hrdprem',io:0,b:'prem',tp:'rr1',m:'hrdprem',ec:1,lk:'avtn99'})" href="http://app.dictionary.com/premium?logindest=http%3A%2F%2Fdictionary.reference.com%2Fbrowse%2FApri-rice">Upgrade to Ad-free Premium Membership!</a></div>
-<div id="tpms">
-<div class="tmtw">Top Misspelled This Week</div>
-<div class="mpl">
-<a class="rey" href="http://dictionary.reference.com/browse/weird" onmousedown="return pk(this,{lk:'dict',en:'dict',io:'1',b:'di1',tp:'lrl',m:'dict'},'',0)">Weird<b><i>&nbsp;&nbsp;or&nbsp;&nbsp;</i></b>wierd?</a>
-<a class="rey" href="http://dictionary.reference.com/browse/conscious" onmousedown="return pk(this,{lk:'dict',en:'dict',io:'1',b:'di1',tp:'lrl',m:'dict'},'',1)">Conscious<b><i>&nbsp;&nbsp;or&nbsp;&nbsp;</i></b>concious?</a>
-<a class="rey" href="http://dictionary.reference.com/browse/mischievous" onmousedown="return pk(this,{lk:'dict',en:'dict',io:'1',b:'di1',tp:'lrl',m:'dict'},'',2)">Mischievous<b><i>&nbsp;&nbsp;or&nbsp;&nbsp;</i></b>mischevious?</a>
-<a class="rey" href="http://dictionary.reference.com/browse/beginning" onmousedown="return pk(this,{lk:'dict',en:'dict',io:'1',b:'di1',tp:'lrl',m:'dict'},'',3)">Beginning<b><i>&nbsp;&nbsp;or&nbsp;&nbsp;</i></b>begining?</a>
-<a class="rey" href="http://dictionary.reference.com/browse/twelfth" onmousedown="return pk(this,{lk:'dict',en:'dict',io:'1',b:'di1',tp:'lrl',m:'dict'},'',4)">Twelfth<b><i>&nbsp;&nbsp;or&nbsp;&nbsp;</i></b>twelvth?</a>
-<a class="rey" href="http://dictionary.reference.com/browse/rhythm" onmousedown="return pk(this,{lk:'dict',en:'dict',io:'1',b:'di1',tp:'lrl',m:'dict'},'',5)">Rhythm<b><i>&nbsp;&nbsp;or&nbsp;&nbsp;</i></b>rhythm?</a>
-<a class="rey" href="http://dictionary.reference.com/browse/hygiene" onmousedown="return pk(this,{lk:'dict',en:'dict',io:'1',b:'di1',tp:'lrl',m:'dict'},'',6)">Hygiene<b><i>&nbsp;&nbsp;or&nbsp;&nbsp;</i></b>hygeine?</a>
+<!--
+Relatedwords Slang rightrail Module
+-->
+<div id="wrapserp" ><a id="serppremium" onmousedown="return pk(this,{en:'hrdprem',io:0,b:'prem',tp:'rr1',m:'hrdprem',ec:1,lk:'p78uj7'})" href="http://app.dictionary.com/premium?logindest=http%3A%2F%2Fdictionary.reference.com%2Fbrowse%2Fchat">Remove ads like these. Upgrade now!</a></div>
+<div id="relatedwords">
+<div class="rwh">Related Words</div>
+<div class="fla">
+<a class="rey" onmousedown="return pk(this,{en:'rlw12',io:'0',b:'rlwd',tp:'rr1',ec:'12'});" href="http://dictionary.reference.com/browse/chat room">chat room</a>
+<a class="rey" onmousedown="return pk(this,{en:'rlw12',io:'1',b:'rlwd',tp:'rr1',ec:'12'});" href="http://dictionary.reference.com/browse/chatty">chatty</a>
+<a class="rey" onmousedown="return pk(this,{en:'rlw12',io:'2',b:'rlwd',tp:'rr1',ec:'12'});" href="http://dictionary.reference.com/browse/coze">coze</a>
+<a class="rey" onmousedown="return pk(this,{en:'rlw12',io:'3',b:'rlwd',tp:'rr1',ec:'12'});" href="http://dictionary.reference.com/browse/pas de chat">pas de chat</a>
+<a class="rey" onmousedown="return pk(this,{en:'rlw12',io:'4',b:'rlwd',tp:'rr1',ec:'12'});" href="http://dictionary.reference.com/browse/visit">visit</a>
+<a class="rey" onmousedown="return pk(this,{en:'rlw12',io:'5',b:'rlwd',tp:'rr1',ec:'12'});" href="http://dictionary.reference.com/browse/backchat">backchat</a>
+</div>
+<div class="flav">
+<a class="rey" onmousedown="return pk(this,{en:'rlw12',io:'6',b:'rlwd',tp:'rr1',ec:'12'});" href="http://dictionary.reference.com/browse/breeze">breeze</a>
+<a class="rey" onmousedown="return pk(this,{en:'rlw12',io:'7',b:'rlwd',tp:'rr1',ec:'12'});" href="http://dictionary.reference.com/browse/cat's cry syndrome">cat's cry syndrome</a>
+<a class="rey" onmousedown="return pk(this,{en:'rlw12',io:'8',b:'rlwd',tp:'rr1',ec:'12'});" href="http://dictionary.reference.com/browse/causerie">causerie</a>
+<a class="rey" onmousedown="return pk(this,{en:'rlw12',io:'9',b:'rlwd',tp:'rr1',ec:'12'});" href="http://dictionary.reference.com/browse/chat show">chat show</a>
+<a class="rey" onmousedown="return pk(this,{en:'rlw12',io:'10',b:'rlwd',tp:'rr1',ec:'12'});" href="http://dictionary.reference.com/browse/Chatham">Chatham</a>
+<a class="rey" onmousedown="return pk(this,{en:'rlw12',io:'11',b:'rlwd',tp:'rr1',ec:'12'});" href="http://dictionary.reference.com/browse/chattel">chattel</a>
+</div>
+<div>
+<span class= "rlmr"><a class="nmore" onmousedown="return pk(this,{lk:'dict',en:'dict',io:'1',b:'di1',tp:'lrl',m:'dict'})" href="http://dictionary.reference.com/reverseresults?q=chat&db=reverse">MORE</a></span>
 </div>
 </div>
-<div id="SPR">
-<div class="sph">Spelling Humor</div>
-<div class="sper">
-<a href="http://ask.reference.com/related/misspelled+tattoos?o=10653" onmousedown="pk(this,{en:'scphumor',io:0,b:'splhumor',tp:'rr1',m:'scphumor',ec:1,lk:'1z77ia'})">Hilarious misspelled tattoos</a>
-<a href="http://ask.reference.com/related/misspelled+protest+signs?o=10653" onmousedown="pk(this,{en:'scphumor',io:1,b:'splhumor',tp:'rr1',m:'scphumor',ec:1,lk:'1z77ia'})">Misspelled road signs</a>
-<a href="http://ask.reference.com/related/bizarre+misspelled+billboards?o=10653" onmousedown="pk(this,{en:'scphumor',io:2,b:'splhumor',tp:'rr1',m:'scphumor',ec:1,lk:'1z77ia'})">Bizarre billboards</a>
-<a href="http://ask.reference.com/related/bizarre+misspelled+billboards?o=10653" onmousedown="pk(this,{en:'scphumor',io:3,b:'splhumor',tp:'rr1',m:'scphumor',ec:1,lk:'1z77ia'})">Misspelled protest signs</a>
-<a href="http://ask.reference.com/related/bizarre+misspelled+billboards?o=10653" onmousedown="pk(this,{en:'scphumor',io:4,b:'splhumor',tp:'rr1',m:'scphumor',ec:1,lk:'1z77ia'})">Funny typos, bad grammar</a>
+<!-- slang--->
+<!--
+Idioms rightrail Module
+-->
+<!--
+Images Slider Module
+-->
+<!--
+Quotes Module
+-->
+<div id="quotesbox">
+<div class="qbox">
+<div class="qhdr">Matching Quote</div>
+<div class="qquote">
+<a href="http://quotes.dictionary.com/Birds_which_are_the_same_color_as_the" onmousedown="return pk(this,{lk:'dict',en:'dict',io:'1',b:'di1',tp:'lrl',m:'dict'})">"Birds which are the same color as the foliage in which they nest are less likely to be disturbed by other birds who want to drop in and <b>chat</b>, and therefore last longer."</a>
+</div>
+<div class="qblw">
+<div>
+<span><a class="qtn" href="http://quotes.dictionary.com/author/Robert+Benchley" onmousedown="return pk(this,{lk:'dict',en:'dict',io:'1',b:'di1',tp:'lrl',m:'dict'})">-Robert Benchley</a></span>
+<span class="qautia"> </span>
+<div class= "qsnmr"><a class="nmore" href="http://quotes.dictionary.com/search/chat" onmousedown="return pk(this,{lk:'dict',en:'dict',io:'1',b:'di1',tp:'lrl',m:'dict'})">MORE</a></div>
+</div>
+</div>
 </div>
 </div>
 </div>
@@ -583,6 +514,7 @@ visualThesaurusOnclick();
 }
 </script>
 
+</div> <!--results-->
 </div> <!--dmain-->
 </center> <!--center that encloses dmain-->
 </div> <!--de-->
@@ -606,8 +538,6 @@ visualThesaurusOnclick();
 <a target="_top" rel="nofollow" href="http://dictionary.reference.com/mediakit" onmousedown="daisyPK(this,{lk:'bga8c7',en:'advtus',io:'0',b:'nav',tp:'bot',m:'advtus'});">Advertise with Us</a>
 <a onmousedown="daisyPK(this,{lk:'lnnyvs',en:'cnt',io:'0',b:'nav',tp:'bot',m:'cnt'});" target="_top" href="http://content.dictionary.com/about/contact">Contact Us</a>
 <a class="npr" target="_top" onmousedown="daisyPK(this,{lk:'ehy6lf',en:'help',io:'0',b:'nav',tp:'bot',m:'help'});" rel="nofollow" href="http://dictionary.reference.com/help">Help</a>
-</div>
-</div>
 </div>
 </div>
 </div>
@@ -652,8 +582,10 @@ $j('#bfpu').hide();
 </script>
 </div>
 <script>
-var didyouknow = '<div id="macnt" ><span class="wia">Did you know:</span><span class="wiac">"Pronunciation" actually tops the list of mispronounced words. <a class="lnktxt" href="http:\/\/dictionary.reference.com\/browse\/mispronunciation?qsrc=3086" onmousedown="daisyCT(this,53846,{en:\'amm\',io:0,b:\'di1\',tp:\'top\',m:\'alrtM\',ec:1,lk:\'jwc8dj\'})" onclick="closeThis(8,\'amm\')">What\'s correct?<\/a></span></div>' ;
+var didyouknow = '<div id="macnt" ><span class="wia">Did you know:</span><span class="wiac">Meow? If you love cats, shouldn\'t you <a class="lnktxt" href="http:\/\/dictionary.reference.com\/browse\/vibrissa?qsrc=3086" onmousedown="daisyCT(this,53784,{en:\'amm\',io:0,b:\'di1\',tp:\'top\',m:\'alrtM\',ec:1,lk:\'jwc8dj\'})" onclick="closeThis(15,\'amm\')">know the word for whiskers?<\/a></span></div>' ;
 if($j('#diduno')){$j('#diduno').html(didyouknow);}
+var linkrefer = '<div id="link_to_module" style="top:1558px;"><span class="link_text">Copy & paste this link to your blog or website to reference this page</span><input class="linkbox" onclick="this.select()" value="<a href=http://dictionary.reference.com/browse/ />"></div>';
+if($j('#ltm')){$j('#ltm').html(linkrefer);}
 $j(document).ready(function(){
 playaudio();
 });
@@ -714,72 +646,8 @@ _qevents.push( { qacct:"p-51zXP5Cc9sxvQ"} );
 <div style="display: none;"><img src="//pixel.quantserve.com/pixel/p-51zXP5Cc9sxvQ.gif" height="1" width="1" alt="Quantcast"/></div>
 </noscript>
 </span>
-<iframe src="http://spanids.dictionary.com?bid=T7gMPmFQqCYiW63W&asid=T7gMPmFQqCYL-4Rl&bidnew=1&asidnew=1&source=r" height="0px" width="0px" style="border:0 none;height:0px;width:0px;display:block;"></iframe>
+<iframe src="http://spanids.dictionary.com?bid=T7g_iGFQqCYb4XcW&asid=T7g_iGFQqCZDy9SX&bidnew=1&asidnew=1&source=r" height="0px" width="0px" style="border:0 none;height:0px;width:0px;display:block;"></iframe>
 <img height="1" width="1" src="http://tags.bluekai.com/site/5397" />
-<script>
-var btmConstantArray = new Array();
-btmConstantArray['top']='afcT';btmConstantArray['bot']='afcB';btmConstantArray['mid']='afcM';btmConstantArray['mid1']='afcM1';btmConstantArray['mid2']='afcM2';btmConstantArray['mid3']='afcM3';
-var DAISYCONST = {
-BLOCK : {key: 'block', value:'spl'},
-TEMPLATE: {key: 'template'},
-MODULES : {key: 'modules'},
-DISPLAY_COUNT : {key: 'displayCount'},
-COMMA_DELIMITER : {value:','},
-URL : {value:'/track/impressionClient'}
-};
-function getBlockTemplateModule(daisyMatchArray){
-var block = '';
-var template = '';
-var modules = '';
-var displayCount = 0;
-var btmArray = new Array();
-var count = 0;
-try{
-for (var i in daisyMatchArray) {
-if(count==0){
-block = DAISYCONST.BLOCK.value;
-template = i;
-displayCount = daisyMatchArray[i];
-modules = btmConstantArray[i];
-}else{
-block += DAISYCONST.COMMA_DELIMITER.value + DAISYCONST.BLOCK.value;
-template += DAISYCONST.COMMA_DELIMITER.value + i;
-modules += DAISYCONST.COMMA_DELIMITER.value + btmConstantArray[i];
-displayCount += DAISYCONST.COMMA_DELIMITER.value + daisyMatchArray[i];
-}
-count++;
-}
-btmArray[DAISYCONST.BLOCK.key]= block;
-btmArray[DAISYCONST.TEMPLATE.key]= template;
-btmArray[DAISYCONST.MODULES.key]= modules;
-btmArray[DAISYCONST.DISPLAY_COUNT.key]= displayCount;
-return btmArray;
-}catch(err){
-return new Array();
-}
-}
-function appendURLKeyAndValue(desgURL,key,value){
-if(null!=value && ''!=value){
-if(desgURL.indexOf("?")==-1)
-desgURL= desgURL+"?"+key+"="+value;
-else
-desgURL= desgURL+"&"+key+"="+value;
-}
-return desgURL;
-}
-function daisy_afc_match() {
-var _matchUrl= DAISYCONST.URL.value+"?site=dict&queryId=5F25DD607D9840333642724D9CF2DFB9&pageName=dic-spell&impressionId=T7gMP2FQqCY/SsA2&ldid=0";
-var btmArray = this.getBlockTemplateModule(daisyMatchArray);
-for (var i in btmArray) {
-_matchUrl = this.appendURLKeyAndValue(_matchUrl,i,btmArray[i]);
-}
-var urlPrefix = "http://app.reference.com";
-_matchUrl = urlPrefix + _matchUrl;
-(new Image()).src= _matchUrl;
-}
-//call to daisy afc match tracking
-daisy_afc_match();
-</script>
 <script type="text/javascript" src="http://static.sfdict.com/dictstatic/js/linktagger.js"></script>
 <script type="text/javascript">
 var linkTagger_new = new _olt("ga.js");
@@ -814,6 +682,30 @@ $j("#csPixel").renderscsPixel();
 });
 </script>
 </div>
+<script type="text/javascript">
+(function($){
+$.fn.rendervisualthesaurus = function(){
+ghostwriter(
+"visual_the",
+{
+insertType: "append",
+script: { text: "document.write('<scr"+"ipt src=\"http://syndication.visualthesaurus.com/ddc/related.js?lang=en&word=chat\"><\/scr"+"ipt>');" },
+done:function(){
+$j('#fancybox-left, #fancybox-right').css({'background-image':'url("http://static.sfdict.com/en/i/dictionary/newserp/fancybox_blank.gif")','background-color':'transparent'});
+var images = '';
+var imagesArray = images.split(',');
+$j('.smg').attr('src',imagesArray[0]);
+$j('#imr').css('display','block');
+$j('.qauti').attr('src','http://static.sfdict.com/en/i/dictionary/quotes/author_small/default_author.png');
+}
+}
+);
+}
+})(jQuery);
+jQuery(document).ready(function(){
+jQuery("div[id=visual_the]").rendervisualthesaurus();
+});
+</script>
 <div id="adshopscripts" style="display:none"> </div>
 <script>
 $j(document).ready(function(){
