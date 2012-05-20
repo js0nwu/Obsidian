@@ -38,7 +38,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.textBox4 = new System.Windows.Forms.TextBox();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.textBox5 = new System.Windows.Forms.TextBox();
             this.timer2 = new System.Windows.Forms.Timer(this.components);
             this.textBox6 = new System.Windows.Forms.TextBox();
@@ -122,11 +121,6 @@
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(312, 20);
             this.textBox4.TabIndex = 9;
-            // 
-            // timer1
-            // 
-            this.timer1.Interval = 1500;
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // textBox5
             // 
@@ -233,7 +227,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.TextBox textBox5;
         private System.Windows.Forms.Timer timer2;
         private System.Windows.Forms.TextBox textBox6;

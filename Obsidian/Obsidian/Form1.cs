@@ -41,7 +41,7 @@ namespace Obsidian
         string talkingTo;
         Bot chatBot;
         User chatUser;
-        Thread updateirc; 
+        System.Timers.Timer updatetmr;
 
         public Form1()
         {
@@ -67,8 +67,8 @@ namespace Obsidian
             send("NICK " + nick);
             send("USER " + nick + " 0 * :ObsidianBot");
             send("JOIN " + channel);
-            send("MODE " + nick + " +B");;
-            timer1.Enabled = true;
+            send("MODE " + nick + " +B");
+            updatetmr.Enabled = true; 
             timer2.Enabled = true;
             if (textBox6.Text != null)
             {
@@ -102,7 +102,11 @@ namespace Obsidian
             }
             isLogging = false;
             talkingTo = "nobody";
-            botChat(); 
+            botChat();
+            updatetmr = new System.Timers.Timer(1000);
+            updatetmr.Elapsed += new System.Timers.ElapsedEventHandler(ircupdate);
+            updatetmr.Interval = 1000;
+
         }
 
         public void send(string msg)
@@ -493,11 +497,6 @@ namespace Obsidian
             
         }
 
-        private void timer1_Tick(object sender, EventArgs e)
-        {
-            updateirc = new Thread(ircupdate);
-            updateirc.Start();
-        }
         public void GreetConfig()
         {
             if (System.IO.File.Exists("greet.bin") == false)
@@ -567,7 +566,7 @@ namespace Obsidian
             }
             
         }
-        public void ircupdate()
+        public void ircupdate(object source, System.Timers.ElapsedEventArgs e)
         {
             mail = recv().Replace("\0", "").Trim();
 
@@ -590,7 +589,6 @@ namespace Obsidian
                 
             }
             oldmail = mail;
-            updateirc.Abort(); 
         }
         public void generateMD5message()
         {
