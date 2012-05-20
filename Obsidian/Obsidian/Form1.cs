@@ -471,12 +471,13 @@ namespace Obsidian
                 }
                 else if (mail.Substring(mail.IndexOf(" ") + 1, 4) == "JOIN")
                 {
-                    if (canGreet == true)
-                    {
+                    
                         string[] tmparr = null;
                         mail = mail.Remove(0, 1);
                         tmparr = mail.Split('!');
                         string rnick = tmparr[0];
+                        if (canGreet == true)
+                        {
                         FervorLibrary.Library Greetings = new FervorLibrary.Library();
                         Random rand = new Random();
                         int indexgreet = rand.Next(0, greetnumber);
@@ -487,35 +488,27 @@ namespace Obsidian
                 }
                 else if (mail.Substring(mail.IndexOf(" ") + 1, 4) == "PART" | mail.Substring(mail.IndexOf(" ") + 1, 4) == "QUIT")
                 {
-                    if (canGreet == true)
-                    {
+                    
                         string[] tmparr = null;
                         mail = mail.Remove(0, 1);
                         tmparr = mail.Split('!');
                         string rnick = tmparr[0];
+                    if (canGreet == true)
+                    {
                         FervorLibrary.Library Farewells = new FervorLibrary.Library();
                         Random rand = new Random();
                         int indexfarewell = rand.Next(0, farewellnumber);
                         string farewell = Farewells.Farewell(rnick, indexfarewell);
                         string farewellmessage = "PRIVMSG " + textBox3.Text + " :" + farewell;
                         send(farewellmessage);
-
+                    }
                         Thread deactive = new Thread(deactivateUser);
                         deactive.Start();
                         if (rnick == talkingTo)
                         {
                             talkingTo = "nobody";
                         }
-                    }
-                    else
-                    {
-                        Thread deactive = new Thread(deactivateUser);
-                        deactive.Start();
-                        if (rnick == talkingTo)
-                        {
-                            talkingTo = "nobody";
-                        }
-                    }
+                    
                 }
                 else if (mail.Substring(mail.IndexOf(" ") + 1, 4) == "MODE")
                 {
