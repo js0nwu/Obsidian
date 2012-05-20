@@ -104,9 +104,9 @@ namespace Obsidian
             isLogging = false;
             talkingTo = "nobody";
             botChat();
-            updatetmr = new System.Timers.Timer(1000);
+            updatetmr = new System.Timers.Timer(500);
             updatetmr.Elapsed += new System.Timers.ElapsedEventHandler(ircupdate);
-            updatetmr.Interval = 1000;
+            updatetmr.Interval = 500;
             canGreet = true; 
         }
 
