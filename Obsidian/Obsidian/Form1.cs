@@ -447,6 +447,7 @@ namespace Obsidian
                         if (nickuser == true)
                         {
                             canGreet = true;
+                            send("PRIVMSG " + channel + " :Success!");
                         }
                         else
                         {
@@ -458,7 +459,8 @@ namespace Obsidian
                         bool nickuser = isActiveUser(rnick);
                         if (nickuser == true)
                         {
-                            canGreet = false; 
+                            canGreet = false;
+                            send("PRIVMSG " + channel + " :Success!");
                         }
                         else
                         {
