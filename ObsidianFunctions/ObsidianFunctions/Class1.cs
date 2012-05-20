@@ -204,7 +204,7 @@ namespace ObsidianFunctions
                 System.Net.WebClient webClient = new System.Net.WebClient();
                 string webSource = webClient.DownloadString(uDictionaryURL);
                 webClient.Dispose();
-                webSource = webSource.Trim().Replace("\0", "");
+                webSource = webSource.Trim().Replace("\0", "").Replace("\n", "");
                 string firstDelimiter = "<div class=\"definition\">";
                 string[] firstSplit = webSource.Split(new string[] { firstDelimiter }, StringSplitOptions.None);
                 string secondDelimiter = "</div>";
@@ -225,10 +225,7 @@ namespace ObsidianFunctions
                 System.Net.WebClient webClient = new System.Net.WebClient();
                 string webSource = webClient.DownloadString(dDictionaryURL);
                 webClient.Dispose();
-                webSource = webSource.Trim().Replace("\0", "");
-                StreamWriter sw2 = new StreamWriter("codetest.bin");
-                sw2.Write(webSource);
-                sw2.Close(); 
+                webSource = webSource.Trim().Replace("\0", "").Replace("\n", "");
                 string firstDelimiter = "<div class=\"luna-Ent\"><span class=\"dnindex\">";
                 string[] firstSplit = webSource.Split(new string[] { firstDelimiter }, StringSplitOptions.None);
                 string secondDelimiter = "<div class=\"luna-Ent\"><span class=\"dnindex\">";
@@ -240,6 +237,29 @@ namespace ObsidianFunctions
                 return ex.ToString(); 
             }
         }
-        
+        public string wDefine(string term)
+        {
+            try
+            {
+                term = term.Replace(" ", "_");
+                string wDictionaryURL = "http://en.wikipedia.org/wiki/" + term;
+                System.Net.WebClient webClient = new System.Net.WebClient();
+                webClient.Headers.Add("user-agent", "ObsidianBot");
+                string webSource = webClient.DownloadString(wDictionaryURL);
+                webClient.Dispose();
+                webSource = webSource.Trim().Replace("\0", "").Replace("\n", "");
+                string firstDelimiter = "</div><p>";
+                string[] firstSplit = webSource.Split(new string[] { firstDelimiter }, StringSplitOptions.None);
+                string secondDelimiter = ".";
+                string[] secondSplit = firstSplit[1].Split(new string[] { secondDelimiter }, StringSplitOptions.None);
+                string definition = System.Text.RegularExpressions.Regex.Replace(secondSplit[0], @"<[^>]*>", "");
+                return definition;
+            }
+            catch (Exception ex)
+            {
+                return ex.ToString(); 
+            }
+        }
+
     }
 }

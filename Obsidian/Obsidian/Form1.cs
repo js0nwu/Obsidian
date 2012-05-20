@@ -467,6 +467,13 @@ namespace Obsidian
                             send("PRIVMSG " + channel + " :Insufficient permissions!");
                         }
                     }
+                    else if (rmsg.Contains("!wdefine "))
+                    {
+                        string query = rmsg.Remove(0, 9);
+                        ObsidianFunctions.Functions ObsidFunc = new ObsidianFunctions.Functions();
+                        string definition = ObsidFunc.wDefine(query);
+                        send("PRIVMSG " + channel + " :" + definition); 
+                    }
                     detectLang();
                 }
                 else if (mail.Substring(mail.IndexOf(" ") + 1, 4) == "JOIN")
