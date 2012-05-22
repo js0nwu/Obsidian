@@ -167,24 +167,27 @@ namespace ObsidianFunctions
         }
         public string[] removeBlacklist(string nickname)
         {
+            string[] returnvalue = {"None"};
             nickname = nickname.Replace("\0", "").Trim();
             StreamReader sr = new StreamReader("blacklist.bin");
             string blacklist = sr.ReadToEnd();
             sr.Close();
-            string[] blacklistedusers = blacklist.Split(':');
-            string[] returnvalue = null;
-            foreach (string x in blacklistedusers)
+            if (blacklist != null)
             {
-                if (x.Contains(nickname))
+                string[] blacklistedusers = blacklist.Split(':');
+                foreach (string x in blacklistedusers)
                 {
-                    blacklistedusers = blacklistedusers.Where(val => val != nickname).ToArray();
-                    string newblacklist = String.Join(":", blacklistedusers);
-                    StreamWriter sw5 = new StreamWriter("blacklist.bin");
-                    sw5.Write(newblacklist);
-                    sw5.Close();
-                    StreamReader sr5 = new StreamReader("blacklist.bin");
-                    returnvalue = sr5.ReadToEnd().Split(':');
-                    sr5.Close();
+                    if (x.Contains(nickname))
+                    {
+                        blacklistedusers = blacklistedusers.Where(val => val != nickname).ToArray();
+                        string newblacklist = String.Join(":", blacklistedusers);
+                        StreamWriter sw5 = new StreamWriter("blacklist.bin");
+                        sw5.Write(newblacklist);
+                        sw5.Close();
+                        StreamReader sr5 = new StreamReader("blacklist.bin");
+                        returnvalue = sr5.ReadToEnd().Split(':');
+                        sr5.Close();
+                    }
                 }
             }
             return returnvalue; 
