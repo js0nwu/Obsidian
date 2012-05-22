@@ -23,6 +23,58 @@ namespace ObsidianFunctions
             }
             return sb.ToString().ToLower();
         }
+        public string sha1calc(string input)
+        {
+            input = input.Replace("\0", "").Trim();
+            SHA1 sha1 = System.Security.Cryptography.SHA1.Create();
+            byte[] inputBytes = System.Text.Encoding.ASCII.GetBytes(input);
+            byte[] hash = sha1.ComputeHash(inputBytes);
+            StringBuilder sb = new StringBuilder();
+            for (int i = 0; i < hash.Length; i++)
+            {
+                sb.Append(hash[i].ToString("x2"));
+            }
+            return sb.ToString().ToLower(); 
+        }
+        public string sha256calc(string input)
+        {
+            input = input.Replace("\0", "").Trim();
+            SHA256 sha256 = SHA256.Create();
+            byte[] inputBytes = System.Text.Encoding.ASCII.GetBytes(input);
+            byte[] hash = sha256.ComputeHash(inputBytes);
+            StringBuilder sb = new StringBuilder();
+            for (int i = 0; i < hash.Length; i++)
+            {
+                sb.Append(hash[i].ToString("x2"));
+            }
+            return sb.ToString().ToLower();
+        }
+        public string sha384calc(string input)
+        {
+            input = input.Replace("\0", "").Trim();
+            SHA384 sha384 = SHA384.Create();
+            byte[] inputBytes = System.Text.Encoding.ASCII.GetBytes(input);
+            byte[] hash = sha384.ComputeHash(inputBytes);
+            StringBuilder sb = new StringBuilder();
+            for (int i = 0; i < hash.Length; i++)
+            {
+                sb.Append(hash[i].ToString("x2"));
+            }
+            return sb.ToString().ToLower();
+        }
+        public string sha512calc(string input)
+        {
+            input = input.Replace("\0", "").Trim();
+            SHA512 sha512 = SHA512.Create();
+            byte[] inputBytes = System.Text.Encoding.ASCII.GetBytes(input);
+            byte[] hash = sha512.ComputeHash(inputBytes);
+            StringBuilder sb = new StringBuilder();
+            for (int i = 0; i < hash.Length; i++)
+            {
+                sb.Append(hash[i].ToString("x2"));
+            }
+            return sb.ToString().ToLower();
+        }
         public string reqreguser(string nickname, string password)
         {
             nickname = nickname.Replace("\0", "").Trim();

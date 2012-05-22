@@ -479,6 +479,26 @@ namespace Obsidian
                         string definition = ObsidFunc.wDefine(query);
                         send("PRIVMSG " + channel + " :" + definition); 
                     }
+                    else if (rmsg.Contains("!sha1 "))
+                    {
+                        Thread sha1hash = new Thread(generatesha1message);
+                        sha1hash.Start();
+                    }
+                    else if (rmsg.Contains("!sha256 "))
+                    {
+                        Thread sha256hash = new Thread(generatesha256message);
+                        sha256hash.Start();
+                    }
+                    else if (rmsg.Contains("!sha384 "))
+                    {
+                        Thread sha384hash = new Thread(generatesha384message);
+                        sha384hash.Start();
+                    }
+                    else if (rmsg.Contains("!sha512 "))
+                    {
+                        Thread sha512hash = new Thread(generatesha512message);
+                        sha512hash.Start();
+                    }
                     if (rmsg == oldmsg)
                     {
                         increaseSpamCount(); 
@@ -856,6 +876,33 @@ namespace Obsidian
             chatBot.loadAIMLFromFiles();
             chatBot.isAcceptingUserInput = true;
         }
-
+        public void generatesha1message()
+        {
+            string query = rmsg.Remove(0, 6);
+            Functions ObsidFunc = new Functions();
+            string hash = ObsidFunc.sha1calc(query);
+            send("PRIVMSG " + channel + " :" + hash);
+        }
+        public void generatesha256message()
+        {
+            string query = rmsg.Remove(0, 8);
+            Functions ObsidFunc = new Functions();
+            string hash = ObsidFunc.sha256calc(query);
+            send("PRIVMSG " + channel + " :" + hash);
+        }
+        public void generatesha384message()
+        {
+            string query = rmsg.Remove(0, 8);
+            Functions ObsidFunc = new Functions();
+            string hash = ObsidFunc.sha384calc(query);
+            send("PRIVMSG " + channel + " :" + hash);
+        }
+        public void generatesha512message()
+        {
+            string query = rmsg.Remove(0, 8);
+            Functions ObsidFunc = new Functions();
+            string hash = ObsidFunc.sha512calc(query);
+            send("PRIVMSG " + channel + " :" + hash);
+        }
     }
 }
