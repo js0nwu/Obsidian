@@ -35,14 +35,14 @@ namespace Obsidian
         string old;
         bool isOperator;
         string ownernick;
-        string oldmail;
+        string oldmsg;
         int spamcount;
         bool isLogging;
         string talkingTo;
         Bot chatBot;
         User chatUser;
         System.Timers.Timer updatetmr;
-        bool canGreet; 
+        bool canGreet;
 
         public Form1()
         {
@@ -90,6 +90,11 @@ namespace Obsidian
             {
                 Thread configUser = new Thread(startUserList);
                 configUser.Start();
+            }
+            if (System.IO.File.Exists("log.bin") == false)
+            {
+                StreamWriter swlog = new StreamWriter("log.bin");
+                swlog.Close(); 
             }
             StreamWriter sw = new StreamWriter(".activeusers");
             sw.Close();
@@ -474,6 +479,32 @@ namespace Obsidian
                         string definition = ObsidFunc.wDefine(query);
                         send("PRIVMSG " + channel + " :" + definition); 
                     }
+                    if (rmsg == oldmsg)
+                    {
+                        increaseSpamCount(); 
+                        if (spamcount >= 4)
+                        {
+                            if (isOperator == true)
+                            {
+                                send("KICK " + channel + " " + rnick + " No Spamming or Repeating one's self");
+                                spamcount = 0;
+                            }
+                            else
+                            {
+                                send("PRIVMSG " + channel + " :Try not to spam or excessively repeat yourself");
+                                spamcount = 0;
+                            }
+                        }
+                        
+
+                    }
+                    if (isLogging == true)
+            {
+                
+                    Thread messagelog = new Thread(logMsg);
+                    messagelog.Start();
+               
+            }
                     detectLang();
                 }
                 else if (mail.Substring(mail.IndexOf(" ") + 1, 4) == "JOIN")
@@ -536,6 +567,7 @@ namespace Obsidian
 
                 }
             }
+            oldMsg(); 
             return mail;
             
         }
@@ -582,6 +614,14 @@ namespace Obsidian
                 farewellnumber = split.Length / 2;
             }
         }
+        public void increaseSpamCount()
+        {
+            spamcount++;
+        }
+        public void oldMsg()
+        {
+            oldmsg = rmsg;
+        }
         public void loadIRCInfo()
         {
             if (System.IO.File.Exists("IRCInfo.bin") == true)
@@ -602,36 +642,11 @@ namespace Obsidian
         private void timer2_Tick(object sender, EventArgs e)
         {
             textBox5.Text = mail;
-            if (isLogging == true)
-            {
-                Thread messagelog = new Thread(logMsg);
-                messagelog.Start();
-            }
-            
         }
         public void ircupdate(object source, System.Timers.ElapsedEventArgs e)
         {
             mail = recv().Replace("\0", "").Trim();
-
-            if (mail == oldmail)
-            {
-                spamcount++;
-                if (spamcount >= 4)
-                {
-                    if (isOperator == true)
-                    {
-                        send("KICK " + channel + " " + rnick + " No Spamming or Repeating one's self");
-                        spamcount = 0;
-                    }
-                    else
-                    {
-                        send("PRIVMSG " + rnick + " :Try not to spam or excessively repeat yourself");
-                        spamcount = 0;
-                    }
-                }
-                
-            }
-            oldmail = mail;
+            
         }
         public void generateMD5message()
         {
