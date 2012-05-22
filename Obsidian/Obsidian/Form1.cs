@@ -43,6 +43,7 @@ namespace Obsidian
         User chatUser;
         System.Timers.Timer updatetmr;
         bool canGreet;
+        string[] blacklist; 
 
         public Form1()
         {
@@ -106,9 +107,15 @@ namespace Obsidian
             {
                 setOwner();
             }
+            if (System.IO.File.Exists("blacklist.bin") == false)
+            {
+                StreamWriter swbl = new StreamWriter("blacklist.bin");
+                swbl.Close(); 
+            }
             isLogging = false;
             talkingTo = "nobody";
             botChat();
+            setBlacklist();
             updatetmr = new System.Timers.Timer(500);
             updatetmr.Elapsed += new System.Timers.ElapsedEventHandler(ircupdate);
             updatetmr.Interval = 500;
@@ -143,361 +150,412 @@ namespace Obsidian
                     rnick = tmparr[0];
                     tmparr = mail.Split(':');
                     rmsg = tmparr[1];
-                    if (rmsg.Contains("!respond") == true)
-                    {
-                        string response = "PRIVMSG " + textBox3.Text + " :Response";
-                        send(response);
-                    }
-                    else if (rmsg.Contains("!greet "))
-                    {
-                        string query = rmsg.Remove(0, 7);
-                        try
-                        {
-                            int queryindex = Int32.Parse(query);
-                            if (queryindex <= greetnumber)
-                            {
-                                FervorLibrary.Library Greeting = new FervorLibrary.Library();
-                                string returngreet = Greeting.greet(queryindex);
+                    bool nickblacklisted = isBlacklisted(rnick);
 
-                                string response = "PRIVMSG " + channel + " :" + returngreet;
-                                send(response);
-                            }
-                            else
+                    if (nickblacklisted == false)
+                    {
+                        if (rmsg.Contains("!respond") == true)
+                        {
+                            string response = "PRIVMSG " + textBox3.Text + " :Response";
+                            send(response);
+                        }
+                        else if (rmsg.Contains("!greet "))
+                        {
+                            string query = rmsg.Remove(0, 7);
+                            try
                             {
-                                send("PRIVMSG " + channel + " :I don't know that many languages!");
+                                int queryindex = Int32.Parse(query);
+                                if (queryindex <= greetnumber)
+                                {
+                                    FervorLibrary.Library Greeting = new FervorLibrary.Library();
+                                    string returngreet = Greeting.greet(queryindex);
+
+                                    string response = "PRIVMSG " + channel + " :" + returngreet;
+                                    send(response);
+                                }
+                                else
+                                {
+                                    send("PRIVMSG " + channel + " :I don't know that many languages!");
+                                }
+                            }
+                            catch (Exception ex)
+                            {
+                                send("PRIVMSG " + channel + " :Something went wrong: " + ex);
+                            }
+
+
+                        }
+                        else if (rmsg.Contains("!farewell "))
+                        {
+                            string query = rmsg.Remove(0, 10);
+                            try
+                            {
+                                int queryindex = Int32.Parse(query);
+                                if (queryindex <= greetnumber)
+                                {
+                                    FervorLibrary.Library Farewelling = new FervorLibrary.Library();
+                                    string returnfarewell = Farewelling.farewell(queryindex);
+                                    string response = "PRIVMSG " + channel + " :" + returnfarewell;
+                                    send(response);
+                                }
+                                else
+                                {
+                                    send("PRIVMSG " + channel + " :I don't know that many languages!");
+                                }
+                            }
+                            catch (Exception ex)
+                            {
+                                send("PRIVMSG " + channel + " :Something went wrong: " + ex);
                             }
                         }
-                        catch (Exception ex)
+                        else if (rmsg.Contains("!md5 "))
                         {
-                            send("PRIVMSG " + channel + " :Something went wrong: " + ex);
+                            Thread md5calc = new Thread(generateMD5message);
+                            md5calc.Start();
+                        }
+                        else if (rmsg.Contains("!register "))
+                        {
+                            Thread requestregistration = new Thread(reqreguser);
+                            requestregistration.Start();
+                        }
+                        else if (rmsg.Contains("!registerlist"))
+                        {
+                            Thread listreg = new Thread(listregs);
+                            listreg.Start();
+                        }
+                        else if (rmsg.Contains("!clearregisterlist"))
+                        {
+                            Thread clearreg = new Thread(clearregs);
+                            clearreg.Start();
+                        }
+                        else if (rmsg.Contains("!active "))
+                        {
+                            Thread activate = new Thread(activateUser);
+                            activate.Start();
+                        }
+                        else if (rmsg.Contains("!deactivate"))
+                        {
+                            Thread deactive = new Thread(deactivateUser);
+                            deactive.Start();
+                        }
+                        else if (rmsg.Contains("!adduser "))
+                        {
+                            System.IO.StreamReader sr = new StreamReader(".activeusers");
+                            string[] users = sr.ReadToEnd().Split(':');
+                            sr.Close();
+                            foreach (string x in users)
+                            {
+                                if (x.Contains(rnick))
+                                {
+                                    string query = rmsg.Remove(0, 9);
+                                    ObsidianFunctions.Functions obsidfunc = new ObsidianFunctions.Functions();
+                                    string list = obsidfunc.addUser(query);
+                                    send("PRIVMSG " + channel + " :" + list);
+                                }
+                            }
                         }
 
-                        
-                    }
-                    else if (rmsg.Contains("!farewell "))
-                    {
-                        string query = rmsg.Remove(0, 10);
-                        try
+                        else if (rmsg.Contains("!removeuser "))
                         {
-                            int queryindex = Int32.Parse(query);
-                            if (queryindex <= greetnumber)
+                            System.IO.StreamReader sr = new StreamReader(".activeusers");
+                            string[] users = sr.ReadToEnd().Split(':');
+                            sr.Close();
+                            foreach (string x in users)
                             {
-                                FervorLibrary.Library Farewelling = new FervorLibrary.Library();
-                                string returnfarewell = Farewelling.farewell(queryindex);
-                                string response = "PRIVMSG " + channel + " :" + returnfarewell;
-                                send(response);
-                            }
-                            else
-                            {
-                                send("PRIVMSG " + channel + " :I don't know that many languages!");
+                                if (x.Contains(rnick))
+                                {
+                                    string query = rmsg.Remove(0, 12);
+                                    ObsidianFunctions.Functions obsidfunc = new ObsidianFunctions.Functions();
+                                    string list = obsidfunc.removeUser(query);
+                                    send("PRIVMSG " + channel + " :" + list);
+                                }
                             }
                         }
-                        catch (Exception ex)
+                        else if (rmsg.Contains("!userlist"))
                         {
-                            send("PRIVMSG " + channel + " :Something went wrong: " + ex);
+                            listUsers();
                         }
-                    }
-                    else if (rmsg.Contains("!md5 "))
-                    {
-                        Thread md5calc = new Thread(generateMD5message);
-                        md5calc.Start();
-                    }
-                    else if (rmsg.Contains("!register "))
-                    {
-                        Thread requestregistration = new Thread(reqreguser);
-                        requestregistration.Start();
-                    }
-                    else if (rmsg.Contains("!registerlist"))
-                    {
-                        Thread listreg = new Thread(listregs);
-                        listreg.Start();
-                    }
-                    else if (rmsg.Contains("!clearregisterlist"))
-                    {
-                        Thread clearreg = new Thread(clearregs);
-                        clearreg.Start();
-                    }
-                    else if (rmsg.Contains("!active "))
-                    {
-                        Thread activate = new Thread(activateUser);
-                        activate.Start();
-                    }
-                    else if (rmsg.Contains("!deactivate"))
-                    {
-                        Thread deactive = new Thread(deactivateUser);
-                        deactive.Start();
-                    }
-                    else if (rmsg.Contains("!adduser "))
-                    {
-                        System.IO.StreamReader sr = new StreamReader(".activeusers");
-                        string[] users = sr.ReadToEnd().Split(':');
-                        sr.Close();
-                        foreach (string x in users)
+                        else if (rmsg.Contains("!botquit"))
                         {
-                            if (x.Contains(rnick))
-                            {
-                                string query = rmsg.Remove(0, 9);
-                                ObsidianFunctions.Functions obsidfunc = new ObsidianFunctions.Functions();
-                                string list = obsidfunc.addUser(query);
-                                send("PRIVMSG " + channel + " :" + list);
-                            }
-                        }
-                    }
-
-                    else if (rmsg.Contains("!removeuser "))
-                    {
-                        System.IO.StreamReader sr = new StreamReader(".activeusers");
-                        string[] users = sr.ReadToEnd().Split(':');
-                        sr.Close();
-                        foreach (string x in users)
-                        {
-                            if (x.Contains(rnick))
-                            {
-                                string query = rmsg.Remove(0, 12);
-                                ObsidianFunctions.Functions obsidfunc = new ObsidianFunctions.Functions();
-                                string list = obsidfunc.removeUser(query);
-                                send("PRIVMSG " + channel + " :" + list);
-                            }
-                        }
-                    }
-                    else if (rmsg.Contains("userlist"))
-                    {
-                        listUsers();
-                    }
-                    else if (rmsg.Contains("!botquit"))
-                    {
-                        bool nickisuser = isActiveUser(rnick);
-                        if (nickisuser == true)
-                        {
-                            send("QUIT");
-                        }
-                        else
-                        {
-                            send("PRIVMSG " + channel + " :Insufficient permissions!");
-                        }
-                    }
-                    else if (rmsg.Contains("!addops "))
-                    {
-                        if (isOperator == true)
-                        {
-                            string query = rmsg.Remove(0, 8);
                             bool nickisuser = isActiveUser(rnick);
                             if (nickisuser == true)
                             {
-                                send("MODE " + channel + " +o " + query);
+                                send("QUIT");
                             }
                             else
                             {
                                 send("PRIVMSG " + channel + " :Insufficient permissions!");
                             }
                         }
-                    }
-                    else if (rmsg.Contains("!removeops "))
-                    {
-                        if (isOperator == true)
+                        else if (rmsg.Contains("!addops "))
                         {
-                            string query = rmsg.Remove(0, 11);
-                            bool nickisuser = isActiveUser(rnick);
-                            if (nickisuser == true)
+                            if (isOperator == true)
                             {
-                                send("MODE " + channel + " -o " + query);
+                                string query = rmsg.Remove(0, 8);
+                                bool nickisuser = isActiveUser(rnick);
+                                if (nickisuser == true)
+                                {
+                                    send("MODE " + channel + " +o " + query);
+                                }
+                                else
+                                {
+                                    send("PRIVMSG " + channel + " :Insufficient permissions!");
+                                }
+                            }
+                        }
+                        else if (rmsg.Contains("!removeops "))
+                        {
+                            if (isOperator == true)
+                            {
+                                string query = rmsg.Remove(0, 11);
+                                bool nickisuser = isActiveUser(rnick);
+                                if (nickisuser == true)
+                                {
+                                    send("MODE " + channel + " -o " + query);
+                                }
+                                else
+                                {
+                                    send("PRIVMSG " + channel + " :Insufficient permissions!");
+                                }
+                            }
+                        }
+                        else if (rmsg.Contains("!kick "))
+                        {
+                            if (isOperator == true)
+                            {
+                                string query = rmsg.Remove(0, 6);
+                                bool nickuser = isActiveUser(rnick);
+                                if (nickuser == true)
+                                {
+                                    send("KICK " + channel + " " + query + " User-requested kick");
+                                }
+                                else
+                                {
+                                    send("PRIVMSG " + channel + " :Insufficient permissions!");
+                                }
+                            }
+                        }
+
+                        else if (rmsg.Contains("!batch "))
+                        {
+                            string query = rmsg.Remove(0, 7);
+                            bool nickuser = isActiveUser(rnick);
+                            if (rnick == ownernick && nickuser == true)
+                            {
+                                ObsidianFunctions.Functions ObsidFunc = new ObsidianFunctions.Functions();
+                                ObsidFunc.batch(query);
+                                send("PRIVMSG " + channel + " :Success!");
                             }
                             else
                             {
-                                send("PRIVMSG " + channel + " :Insufficient permissions!");
+                                send("PRIVMSG " + channel + " :Insufficient Permissions!");
                             }
                         }
-                    }
-                    else if (rmsg.Contains("!kick "))
-                    {
-                        if (isOperator == true)
+                        else if (rmsg.Contains("!log start"))
                         {
-                            string query = rmsg.Remove(0, 6);
                             bool nickuser = isActiveUser(rnick);
                             if (nickuser == true)
                             {
-                                send("KICK " + channel + " " + query + " User-requested kick");
+                                isLogging = true;
+                                send("PRIVMSG " + channel + " :Success!");
+                            }
+                            else
+                            {
+                                send("PRIVMSG " + channel + " :Insufficient Permissions!");
+                            }
+                        }
+                        else if (rmsg.Contains("!log stop"))
+                        {
+                            bool nickuser = isActiveUser(rnick);
+                            if (nickuser == true)
+                            {
+                                isLogging = false;
+                                send("PRIVMSG " + channel + " :Success!");
+                            }
+                            else
+                            {
+                                send("PRIVMSG " + channel + " :Insufficient Permissions!");
+                            }
+                        }
+                        else if (rmsg.Contains("!calc "))
+                        {
+                            ObsidianFunctions.Functions ObsidFunc = new ObsidianFunctions.Functions();
+                            string query = rmsg.Remove(0, 6);
+                            float answer = ObsidFunc.calc(query);
+                            send("PRIVMSG " + channel + " :" + answer.ToString());
+                        }
+                        else if (rmsg.Contains("!isOperator true"))
+                        {
+                            bool nickuser = isActiveUser(rnick);
+                            if (nickuser == true)
+                            {
+                                isOperator = true;
+                                send("PRIVMSG " + channel + " :isOperator = true");
+                            }
+                            else
+                            {
+                                send("PRIVMSG " + channel + " :Insufficient Permissions!");
+                            }
+                        }
+                        else if (rmsg.Contains("!isOperator false"))
+                        {
+                            bool nickuser = isActiveUser(rnick);
+                            if (nickuser == true)
+                            {
+                                isOperator = false;
+                                send("PRIVMSG " + channel + " :isOperator = false");
+                            }
+                            else
+                            {
+                                send("PRIVMSG " + channel + " :Insufficient Permissions!");
+                            }
+                        }
+                        else if (rmsg.Contains("!botchat"))
+                        {
+                            if (talkingTo != "nobody")
+                            {
+                                send("PRIVMSG " + rnick + " :Sorry, I'm already talking with someone");
+                            }
+                            else
+                            {
+                                talkingTo = rnick;
+                                FervorLibrary.Library Greetings = new FervorLibrary.Library();
+                                Random rand = new Random();
+                                int indexgreet = rand.Next(0, greetnumber);
+                                string greeting = Greetings.Greeting(rnick, indexgreet);
+                                send("PRIVMSG " + rnick + " :" + greeting);
+                                botChat();
+                            }
+
+                        }
+                        else if (rmsg.Contains("quit"))
+                        {
+                            if (rnick == talkingTo)
+                            {
+                                talkingTo = "nobody";
+                            }
+                        }
+                        else if (rnick == talkingTo)
+                        {
+
+                            Request r = new Request(rmsg, chatUser, chatBot);
+                            Result res = chatBot.Chat(r);
+                            send("PRIVMSG " + talkingTo + " :" + res.Output);
+
+                        }
+                        else if (rmsg.Contains("!udefine "))
+                        {
+                            string query = rmsg.Remove(0, 9);
+                            ObsidianFunctions.Functions ObsidFunc = new ObsidianFunctions.Functions();
+                            string definition = ObsidFunc.uDefine(query);
+                            send("PRIVMSG " + channel + " :" + definition);
+                        }
+                        else if (rmsg.Contains("!ddefine "))
+                        {
+                            string query = rmsg.Remove(0, 9);
+                            ObsidianFunctions.Functions ObsidFunc = new ObsidianFunctions.Functions();
+                            string definition = ObsidFunc.dDefine(query);
+                            send("PRIVMSG " + channel + " :" + definition);
+                        }
+                        else if (rmsg.Contains("!canGreet true"))
+                        {
+                            bool nickuser = isActiveUser(rnick);
+                            if (nickuser == true)
+                            {
+                                canGreet = true;
+                                send("PRIVMSG " + channel + " :Success!");
                             }
                             else
                             {
                                 send("PRIVMSG " + channel + " :Insufficient permissions!");
                             }
                         }
-                    }
-
-                    else if (rmsg.Contains("!batch "))
-                    {
-                        string query = rmsg.Remove(0, 7);
-                        bool nickuser = isActiveUser(rnick);
-                        if (rnick == ownernick && nickuser == true)
+                        else if (rmsg.Contains("!canGreet false"))
                         {
+                            bool nickuser = isActiveUser(rnick);
+                            if (nickuser == true)
+                            {
+                                canGreet = false;
+                                send("PRIVMSG " + channel + " :Success!");
+                            }
+                            else
+                            {
+                                send("PRIVMSG " + channel + " :Insufficient permissions!");
+                            }
+                        }
+                        else if (rmsg.Contains("!wdefine "))
+                        {
+                            string query = rmsg.Remove(0, 9);
                             ObsidianFunctions.Functions ObsidFunc = new ObsidianFunctions.Functions();
-                            ObsidFunc.batch(query);
-                            send("PRIVMSG " + channel + " :Success!");
+                            string definition = ObsidFunc.wDefine(query);
+                            send("PRIVMSG " + channel + " :" + definition);
                         }
-                        else
+                        else if (rmsg.Contains("!sha1 "))
                         {
-                            send("PRIVMSG " + channel + " :Insufficient Permissions!");
+                            Thread sha1hash = new Thread(generatesha1message);
+                            sha1hash.Start();
                         }
-                    }
-                    else if (rmsg.Contains("!log start"))
-                    {
-                        bool nickuser = isActiveUser(rnick);
-                        if (nickuser == true)
+                        else if (rmsg.Contains("!sha256 "))
                         {
-                            isLogging = true;
-                            send("PRIVMSG " + channel + " :Success!");
+                            Thread sha256hash = new Thread(generatesha256message);
+                            sha256hash.Start();
                         }
-                        else
+                        else if (rmsg.Contains("!sha384 "))
                         {
-                            send("PRIVMSG " + channel + " :Insufficient Permissions!");
+                            Thread sha384hash = new Thread(generatesha384message);
+                            sha384hash.Start();
                         }
-                    }
-                    else if (rmsg.Contains("!log stop"))
-                    {
-                        bool nickuser = isActiveUser(rnick);
-                        if (nickuser == true)
+                        else if (rmsg.Contains("!sha512 "))
                         {
-                            isLogging = false;
-                            send("PRIVMSG " + channel + " :Success!");
+                            Thread sha512hash = new Thread(generatesha512message);
+                            sha512hash.Start();
                         }
-                        else
+                        else if (rmsg.Contains("!blacklistadd "))
                         {
-                            send("PRIVMSG " + channel + " :Insufficient Permissions!");
+                            bool nickuser = isActiveUser(rnick);
+                            if (nickuser == true)
+                            {
+                                string query = rmsg.Remove(0, 14);
+                                Functions ObsidFunc = new Functions();
+                                blacklist = ObsidFunc.addBlacklist(query);
+                                string newlist = String.Join(":", blacklist);
+                                send("PRIVMSG " + channel + " :" + newlist);
+                            }
+                            else
+                            {
+                                send("PRIVMSG " + channel + " :Insufficient Permissions!");
+                            }
                         }
-                    }
-                    else if (rmsg.Contains("!calc "))
-                    {
-                        ObsidianFunctions.Functions ObsidFunc= new ObsidianFunctions.Functions();
-                        string query = rmsg.Remove(0, 6);
-                        float answer = ObsidFunc.calc(query);
-                        send("PRIVMSG " + channel + " :" + answer.ToString()); 
-                    }
-                    else if (rmsg.Contains("!isOperator true"))
-                    {
-                        bool nickuser = isActiveUser(rnick);
-                        if (nickuser == true)
+                        else if (rmsg.Contains("!blacklistremove "))
                         {
-                            isOperator = true;
-                            send("PRIVMSG " + channel + " :isOperator = true");
+                            bool nickuser = isActiveUser(rnick);
+                            if (nickuser == true)
+                            {
+                                string query = rmsg.Remove(0, 17);
+                                Functions ObsidFunc = new Functions();
+                                blacklist = ObsidFunc.removeBlacklist(query);
+                                string newlist = String.Join(":", blacklist);
+                                if (newlist == null || newlist == "")
+                                {
+                                    newlist = "None"; 
+                                }
+                                send("PRIVMSG " + channel + " :" + newlist);
+                            }
+                            else
+                            {
+                                send("PRIVMSG " + channel + ":Insufficient Permissions!");
+                            }
                         }
-                        else
+                        else if (rmsg.Contains("!blacklist"))
                         {
-                            send("PRIVMSG " + channel + " :Insufficient Permissions!");
+                            listBlacklist(); 
                         }
-                    }
-                    else if (rmsg.Contains("!isOperator false"))
-                    {
-                        bool nickuser = isActiveUser(rnick);
-                        if (nickuser == true)
-                        {
-                            isOperator = false;
-                            send("PRIVMSG " + channel + " :isOperator = false"); 
-                        }
-                        else
-                        {
-                            send("PRIVMSG " + channel + " :Insufficient Permissions!");
-                        }
-                    }
-                    else if (rmsg.Contains("!botchat"))
-                    {
-                        if (talkingTo != "nobody")
-                        {
-                            send("PRIVMSG " + rnick + " :Sorry, I'm already talking with someone");
-                        }
-                        else
-                        {
-                            talkingTo = rnick; 
-                            FervorLibrary.Library Greetings = new FervorLibrary.Library();
-                            Random rand = new Random();
-                            int indexgreet = rand.Next(0, greetnumber);
-                            string greeting = Greetings.Greeting(rnick, indexgreet);
-                            send("PRIVMSG " + rnick + " :" + greeting);
-                            botChat(); 
-                        }
-                        
-                    }
-                    else if (rmsg.Contains("quit"))
-                    {
-                        if (rnick == talkingTo)
-                        {
-                            talkingTo = "nobody"; 
-                        }
-                    }
-                    else if (rnick == talkingTo)
-                    {
 
-                        Request r = new Request(rmsg, chatUser, chatBot);
-                        Result res = chatBot.Chat(r);
-                        send("PRIVMSG " + talkingTo + " :" + res.Output);
 
-                    }
-                    else if (rmsg.Contains("!udefine "))
-                    {
-                        string query = rmsg.Remove(0, 9);
-                        ObsidianFunctions.Functions ObsidFunc = new ObsidianFunctions.Functions();
-                        string definition = ObsidFunc.uDefine(query);
-                        send("PRIVMSG " + channel + " :" + definition); 
-                    }
-                    else if (rmsg.Contains("!ddefine "))
-                    {
-                        string query = rmsg.Remove(0, 9);
-                        ObsidianFunctions.Functions ObsidFunc = new ObsidianFunctions.Functions();
-                        string definition = ObsidFunc.dDefine(query);
-                        send("PRIVMSG " + channel + " :" + definition); 
-                    }
-                    else if (rmsg.Contains("!canGreet true"))
-                    {
-                        bool nickuser = isActiveUser(rnick);
-                        if (nickuser == true)
-                        {
-                            canGreet = true;
-                            send("PRIVMSG " + channel + " :Success!");
-                        }
-                        else
-                        {
-                            send("PRIVMSG " + channel + " :Insufficient permissions!");
-                        }
-                    }
-                    else if (rmsg.Contains("!canGreet false"))
-                    {
-                        bool nickuser = isActiveUser(rnick);
-                        if (nickuser == true)
-                        {
-                            canGreet = false;
-                            send("PRIVMSG " + channel + " :Success!");
-                        }
-                        else
-                        {
-                            send("PRIVMSG " + channel + " :Insufficient permissions!");
-                        }
-                    }
-                    else if (rmsg.Contains("!wdefine "))
-                    {
-                        string query = rmsg.Remove(0, 9);
-                        ObsidianFunctions.Functions ObsidFunc = new ObsidianFunctions.Functions();
-                        string definition = ObsidFunc.wDefine(query);
-                        send("PRIVMSG " + channel + " :" + definition); 
-                    }
-                    else if (rmsg.Contains("!sha1 "))
-                    {
-                        Thread sha1hash = new Thread(generatesha1message);
-                        sha1hash.Start();
-                    }
-                    else if (rmsg.Contains("!sha256 "))
-                    {
-                        Thread sha256hash = new Thread(generatesha256message);
-                        sha256hash.Start();
-                    }
-                    else if (rmsg.Contains("!sha384 "))
-                    {
-                        Thread sha384hash = new Thread(generatesha384message);
-                        sha384hash.Start();
-                    }
-                    else if (rmsg.Contains("!sha512 "))
-                    {
-                        Thread sha512hash = new Thread(generatesha512message);
-                        sha512hash.Start();
+
+
+
+                        //commands end
                     }
                     if (rmsg == oldmsg)
                     {
@@ -757,7 +815,7 @@ namespace Obsidian
             sr.Close();
             foreach (string x in registeredusers)
             {
-                if (x.Contains(rnick))
+                if (x == rnick)
                 {
                     string query = rmsg.Remove(0, 8);
                     int indexuser = Array.IndexOf(registeredusers, rnick);
@@ -781,7 +839,7 @@ namespace Obsidian
             sr.Close();
             foreach (string x in listofactiveusers)
             {
-                if (x.Contains(rnick))
+                if (x == rnick)
                 {
                     listofactiveusers = listofactiveusers.Where(val => val != rnick).ToArray();
                     string listuser = null;
@@ -809,7 +867,7 @@ namespace Obsidian
             bool userbool = false;
             foreach (string x in listofactiveusers)
             {
-                if (x.Contains(nickname))
+                if (x == nickname)
                 {
                     userbool = true;
                 }
@@ -903,6 +961,34 @@ namespace Obsidian
             Functions ObsidFunc = new Functions();
             string hash = ObsidFunc.sha512calc(query);
             send("PRIVMSG " + channel + " :" + hash);
+        }
+        public bool isBlacklisted(string name)
+        {
+            bool returnbool = false;
+            foreach (string x in blacklist)
+            {
+                if (x == name)
+                {
+                    returnbool = true;
+                }
+            }
+            return returnbool;
+        }
+        public void setBlacklist()
+        {
+            StreamReader sr = new StreamReader("blacklist.bin");
+            string[] blockedusers = sr.ReadToEnd().Split(':');
+            sr.Close();
+            blacklist = blockedusers; 
+        }
+        public void listBlacklist()
+        {
+            string stringblacklist = String.Join(":", blacklist);
+            if (stringblacklist == "" || stringblacklist == null)
+            {
+                stringblacklist = "None";
+            }
+            send("PRIVMSG " + channel + " :" + stringblacklist); 
         }
     }
 }

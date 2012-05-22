@@ -151,6 +151,44 @@ namespace ObsidianFunctions
             sr3.Close();
             return newregusers;
         }
+        public string[] addBlacklist(string nickname)
+        {
+            nickname = nickname.Replace("\0", "").Trim();
+            StreamReader sr = new StreamReader("blacklist.bin");
+            string blacklist = sr.ReadToEnd();
+            sr.Close();
+            StreamWriter sw = new StreamWriter("blacklist.bin");
+            sw.Write(blacklist + nickname + ":");
+            sw.Close();
+            StreamReader sr2 = new StreamReader("blacklist.bin");
+            string[] newblacklist = sr2.ReadToEnd().Split(':');
+            sr2.Close();
+            return newblacklist;
+        }
+        public string[] removeBlacklist(string nickname)
+        {
+            nickname = nickname.Replace("\0", "").Trim();
+            StreamReader sr = new StreamReader("blacklist.bin");
+            string blacklist = sr.ReadToEnd();
+            sr.Close();
+            string[] blacklistedusers = blacklist.Split(':');
+            string[] returnvalue = null;
+            foreach (string x in blacklistedusers)
+            {
+                if (x.Contains(nickname))
+                {
+                    blacklistedusers = blacklistedusers.Where(val => val != nickname).ToArray();
+                    string newblacklist = String.Join(":", blacklistedusers);
+                    StreamWriter sw5 = new StreamWriter("blacklist.bin");
+                    sw5.Write(newblacklist);
+                    sw5.Close();
+                    StreamReader sr5 = new StreamReader("blacklist.bin");
+                    returnvalue = sr5.ReadToEnd().Split(':');
+                    sr5.Close();
+                }
+            }
+            return returnvalue; 
+        }
         public string removeUser(string nickname)
         {
             nickname = nickname.Replace("\0", "").Trim();
