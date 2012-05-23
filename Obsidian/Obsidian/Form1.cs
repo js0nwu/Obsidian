@@ -43,7 +43,7 @@ namespace Obsidian
         User chatUser;
         System.Timers.Timer updatetmr;
         bool canGreet;
-        string[] blacklist; 
+        string[] blacklist;
 
         public Form1()
         {
@@ -591,7 +591,7 @@ namespace Obsidian
                         string[] tmparr = null;
                         mail = mail.Remove(0, 1);
                         tmparr = mail.Split('!');
-                        string rnick = tmparr[0];
+                        rnick = tmparr[0];
                         if (canGreet == true)
                         {
                         FervorLibrary.Library Greetings = new FervorLibrary.Library();
@@ -608,7 +608,7 @@ namespace Obsidian
                         string[] tmparr = null;
                         mail = mail.Remove(0, 1);
                         tmparr = mail.Split('!');
-                        string rnick = tmparr[0];
+                        rnick = tmparr[0];
                     if (canGreet == true)
                     {
                         FervorLibrary.Library Farewells = new FervorLibrary.Library();
@@ -643,6 +643,16 @@ namespace Obsidian
                         send("PRIVMSG " + channel + " :isOperator = false");
                     }
 
+                }
+                else if (mail.Substring(mail.IndexOf(" ") + 1, 4) == "NICK")
+                {
+                    string[] tmparr = null;
+                    mail = mail.Remove(0, 1);
+                    tmparr = mail.Split('!');
+                    rnick = tmparr[0];
+                    tmparr = mail.Split(':');
+                    rmsg = tmparr[1];
+                    deactivateUser(); 
                 }
             }
             oldMsg(); 
@@ -842,11 +852,7 @@ namespace Obsidian
                 if (x == rnick)
                 {
                     listofactiveusers = listofactiveusers.Where(val => val != rnick).ToArray();
-                    string listuser = null;
-                    foreach (string y in listofactiveusers)
-                    {
-                        listuser = listuser + y + ":";
-                    }
+                    string listuser = String.Join(":", listofactiveusers) + ":";
                     StreamWriter sw = new StreamWriter(".activeusers");
                     sw.Write(listuser);
                     sw.Close();
