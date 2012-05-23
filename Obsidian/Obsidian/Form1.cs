@@ -790,7 +790,10 @@ namespace Obsidian
                     string[] registered = sr2.ReadToEnd().Split('|');
                     string usernames = registered[0];
                     sr2.Close();
-                    
+                    if (usernames == "" || usernames == null)
+                    {
+                        usernames = "None";   
+                    }
                     send("PRIVMSG " + channel + " :" + usernames);
                     
                 }
