@@ -11,7 +11,7 @@ using System.Threading;
 using System.Security.Cryptography;
 using ObsidianFunctions;
 using FervorLibrary;
-using AIMLbot; 
+using AIMLbot;
 
 
 namespace Obsidian
@@ -70,7 +70,7 @@ namespace Obsidian
             send("USER " + nick + " 0 * :ObsidianBot");
             send("JOIN " + channel);
             send("MODE " + nick + " +B");
-            updatetmr.Enabled = true; 
+            updatetmr.Enabled = true;
             timer2.Enabled = true;
             if (textBox6.Text != null)
             {
@@ -95,7 +95,7 @@ namespace Obsidian
             if (System.IO.File.Exists("log.bin") == false)
             {
                 StreamWriter swlog = new StreamWriter("log.bin");
-                swlog.Close(); 
+                swlog.Close();
             }
             StreamWriter sw = new StreamWriter(".activeusers");
             sw.Close();
@@ -110,7 +110,7 @@ namespace Obsidian
             if (System.IO.File.Exists("blacklist.bin") == false)
             {
                 StreamWriter swbl = new StreamWriter("blacklist.bin");
-                swbl.Close(); 
+                swbl.Close();
             }
             isLogging = false;
             talkingTo = "nobody";
@@ -119,7 +119,7 @@ namespace Obsidian
             updatetmr = new System.Timers.Timer(500);
             updatetmr.Elapsed += new System.Timers.ElapsedEventHandler(ircupdate);
             updatetmr.Interval = 500;
-            canGreet = true; 
+            canGreet = true;
         }
 
         public void send(string msg)
@@ -537,7 +537,7 @@ namespace Obsidian
                                 string newlist = String.Join(":", blacklist);
                                 if (newlist == null || newlist == "")
                                 {
-                                    newlist = "None"; 
+                                    newlist = "None";
                                 }
                                 send("PRIVMSG " + channel + " :" + newlist);
                             }
@@ -548,7 +548,7 @@ namespace Obsidian
                         }
                         else if (rmsg.Contains("!blacklist"))
                         {
-                            listBlacklist(); 
+                            listBlacklist();
                         }
 
 
@@ -559,7 +559,7 @@ namespace Obsidian
                     }
                     if (rmsg == oldmsg)
                     {
-                        increaseSpamCount(); 
+                        increaseSpamCount();
                         if (spamcount >= 4)
                         {
                             if (isOperator == true)
@@ -573,27 +573,27 @@ namespace Obsidian
                                 spamcount = 0;
                             }
                         }
-                        
+
 
                     }
                     if (isLogging == true)
-            {
-                
-                    Thread messagelog = new Thread(logMsg);
-                    messagelog.Start();
-               
-            }
+                    {
+
+                        Thread messagelog = new Thread(logMsg);
+                        messagelog.Start();
+
+                    }
                     detectLang();
                 }
                 else if (mail.Substring(mail.IndexOf(" ") + 1, 4) == "JOIN")
                 {
-                    
-                        string[] tmparr = null;
-                        mail = mail.Remove(0, 1);
-                        tmparr = mail.Split('!');
-                        rnick = tmparr[0];
-                        if (canGreet == true)
-                        {
+
+                    string[] tmparr = null;
+                    mail = mail.Remove(0, 1);
+                    tmparr = mail.Split('!');
+                    rnick = tmparr[0];
+                    if (canGreet == true)
+                    {
                         FervorLibrary.Library Greetings = new FervorLibrary.Library();
                         Random rand = new Random();
                         int indexgreet = rand.Next(0, greetnumber);
@@ -604,11 +604,11 @@ namespace Obsidian
                 }
                 else if (mail.Substring(mail.IndexOf(" ") + 1, 4) == "PART" | mail.Substring(mail.IndexOf(" ") + 1, 4) == "QUIT")
                 {
-                    
-                        string[] tmparr = null;
-                        mail = mail.Remove(0, 1);
-                        tmparr = mail.Split('!');
-                        rnick = tmparr[0];
+
+                    string[] tmparr = null;
+                    mail = mail.Remove(0, 1);
+                    tmparr = mail.Split('!');
+                    rnick = tmparr[0];
                     if (canGreet == true)
                     {
                         FervorLibrary.Library Farewells = new FervorLibrary.Library();
@@ -618,13 +618,13 @@ namespace Obsidian
                         string farewellmessage = "PRIVMSG " + textBox3.Text + " :" + farewell;
                         send(farewellmessage);
                     }
-                        Thread deactive = new Thread(deactivateUser);
-                        deactive.Start();
-                        if (rnick == talkingTo)
-                        {
-                            talkingTo = "nobody";
-                        }
-                    
+                    Thread deactive = new Thread(deactivateUser);
+                    deactive.Start();
+                    if (rnick == talkingTo)
+                    {
+                        talkingTo = "nobody";
+                    }
+
                 }
                 else if (mail.Substring(mail.IndexOf(" ") + 1, 4) == "MODE")
                 {
@@ -644,6 +644,16 @@ namespace Obsidian
                     }
 
                 }
+                else if (mail.Substring(mail.IndexOf(" ") + 1, 4) == "KICK")
+                {
+                    string[] tmparr = null;
+                    mail = mail.Remove(0, 1);
+                    tmparr = mail.Split('!');
+                    rnick = tmparr[0];
+                    tmparr = mail.Split(':');
+                    rmsg = tmparr[1];
+                    deactivateUser();
+                }
                 else if (mail.Substring(mail.IndexOf(" ") + 1, 4) == "NICK")
                 {
                     string[] tmparr = null;
@@ -652,12 +662,12 @@ namespace Obsidian
                     rnick = tmparr[0];
                     tmparr = mail.Split(':');
                     rmsg = tmparr[1];
-                    deactivateUser(); 
+                    deactivateUser();
                 }
             }
-            oldMsg(); 
+            oldMsg();
             return mail;
-            
+
         }
 
         public void GreetConfig()
@@ -734,7 +744,7 @@ namespace Obsidian
         public void ircupdate(object source, System.Timers.ElapsedEventArgs e)
         {
             mail = recv().Replace("\0", "").Trim();
-            
+
         }
         public void generateMD5message()
         {
@@ -792,12 +802,12 @@ namespace Obsidian
                     sr2.Close();
                     if (usernames == "" || usernames == null)
                     {
-                        usernames = "None";   
+                        usernames = "None";
                     }
                     send("PRIVMSG " + channel + " :" + usernames);
-                    
+
                 }
-                
+
             }
         }
         public void clearregs()
@@ -815,7 +825,7 @@ namespace Obsidian
                     sw.Close();
                     send("PRIVMSG " + channel + " :Cleared!");
                 }
-                
+
             }
         }
         public void activateUser()
@@ -840,7 +850,7 @@ namespace Obsidian
                         sw.Write(old + rnick + ":");
                         send("PRIVMSG " + channel + " :Success! You are logged in!");
                     }
-                    
+
                     sw.Close();
                 }
             }
@@ -932,11 +942,11 @@ namespace Obsidian
         private void button3_Click(object sender, EventArgs e)
         {
             send(textBox7.Text);
-            textBox7.Text = ""; 
+            textBox7.Text = "";
         }
         public void botChat()
         {
-            
+
             chatBot = new Bot();
             chatBot.loadSettings();
             chatUser = new User(talkingTo, chatBot);
@@ -988,7 +998,7 @@ namespace Obsidian
             StreamReader sr = new StreamReader("blacklist.bin");
             string[] blockedusers = sr.ReadToEnd().Split(':');
             sr.Close();
-            blacklist = blockedusers; 
+            blacklist = blockedusers;
         }
         public void listBlacklist()
         {
@@ -997,7 +1007,7 @@ namespace Obsidian
             {
                 stringblacklist = "None";
             }
-            send("PRIVMSG " + channel + " :" + stringblacklist); 
+            send("PRIVMSG " + channel + " :" + stringblacklist);
         }
     }
 }
