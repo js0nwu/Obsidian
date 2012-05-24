@@ -22,17 +22,23 @@ namespace Obsidian
         {
             
             string ownername = textBox1.Text;
-            string ownerpass = textBox2.Text; 
+            string ownerpass = textBox2.Text;
+            StreamReader sr1 = new StreamReader("users.bin");
+            string oldusers = sr1.ReadToEnd();
+            sr1.Close();
+            StreamReader sr2 = new StreamReader("passwords'bin");
+            string oldpasses = sr2.ReadToEnd();
+            sr2.Close(); 
             StreamWriter sw = new StreamWriter("owner.bin");
             sw.Write(ownername);
             sw.Close();
             StreamWriter sw2 = new StreamWriter("users.bin");
-            sw2.Write(ownername + ":");
+            sw2.Write(oldusers + ownername + ":");
             sw2.Close();
             StreamWriter sw3 = new StreamWriter("passwords.bin");
             Functions ObsidFunc = new Functions();
             string passhash = ObsidFunc.md5calc(ownerpass);
-            sw3.Write(passhash + ":");
+            sw3.Write(oldpasses + passhash + ":");
             sw3.Close(); 
             Form1 mainForm = new Form1();
             mainForm.setOwner();

@@ -764,8 +764,10 @@ namespace Obsidian
         public void startUserList()
         {
             StreamWriter sw1 = new StreamWriter("users.bin");
+            sw1.Write(textBox4.Text);
             sw1.Close();
             StreamWriter sw2 = new StreamWriter("passwords.bin");
+            sw2.Write(textBox6.Text);
             sw2.Close();
             StreamWriter sw3 = new StreamWriter("registers.bin");
             sw3.Write("|");
