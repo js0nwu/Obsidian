@@ -850,7 +850,7 @@ namespace Obsidian
                     if (passcorrect == true)
                     {
                         sw.Write(old + rnick + ":");
-                        send("PRIVMSG " + channel + " :Success! You are logged in!");
+                        send("PRIVMSG " + rnick + " :Success! You are logged in!");
                     }
 
                     sw.Close();
@@ -871,7 +871,7 @@ namespace Obsidian
                     StreamWriter sw = new StreamWriter(".activeusers");
                     sw.Write(listuser);
                     sw.Close();
-                    send("PRIVMSG " + channel + " :User has been deactivated!");
+                    send("PRIVMSG " + rnick + " :User has been deactivated!");
                 }
             }
         }
