@@ -44,6 +44,7 @@ namespace Obsidian
         System.Timers.Timer updatetmr;
         bool canGreet;
         string[] blacklist;
+        Thread updatethread; 
 
         public Form1()
         {
@@ -70,7 +71,7 @@ namespace Obsidian
             send("USER " + nick + " 0 * :ObsidianBot");
             send("JOIN " + channel);
             send("MODE " + nick + " +B");
-            updatetmr.Enabled = true;
+            startupdateTmr(); 
             timer2.Enabled = true;
             if (textBox6.Text != null)
             {
@@ -117,7 +118,7 @@ namespace Obsidian
             botChat();
             setBlacklist();
             updatetmr = new System.Timers.Timer(500);
-            updatetmr.Elapsed += new System.Timers.ElapsedEventHandler(ircupdate);
+            updatetmr.Elapsed += new System.Timers.ElapsedEventHandler(updateTmrWork);
             updatetmr.Interval = 500;
             canGreet = true;
         }
@@ -132,7 +133,7 @@ namespace Obsidian
         {
             byte[] data = new byte[2048];
             sock.Receive(data, 2048, System.Net.Sockets.SocketFlags.None);
-            string mail = System.Text.ASCIIEncoding.UTF8.GetString(data).Replace("\0", "");
+            mail = System.Text.ASCIIEncoding.UTF8.GetString(data).Replace("\0", "");
             if (mail.Contains(" "))
             {
                 if (mail.Substring(0, 4) == "PING")
@@ -578,10 +579,7 @@ namespace Obsidian
                     }
                     if (isLogging == true)
                     {
-
-                        Thread messagelog = new Thread(logMsg);
-                        messagelog.Start();
-
+                        logMsg(); 
                     }
                     detectLang();
                 }
@@ -733,7 +731,6 @@ namespace Obsidian
                 textBox4.Text = IRCInfoSplit[3];
                 textBox6.Text = IRCInfoSplit[4];
                 IRCInfoRead.Close();
-
             }
         }
 
@@ -741,10 +738,10 @@ namespace Obsidian
         {
             textBox5.Text = mail;
         }
-        public void ircupdate(object source, System.Timers.ElapsedEventArgs e)
+        private void ircupdate()
         {
-            mail = recv().Replace("\0", "").Trim();
-
+            mail = recv().Replace("\0", "");
+            
         }
         public void generateMD5message()
         {
@@ -1010,6 +1007,23 @@ namespace Obsidian
                 stringblacklist = "None";
             }
             send("PRIVMSG " + channel + " :" + stringblacklist);
+        }
+        public void startupdateTmr()
+        {
+            updatetmr.Enabled = true;
+        }
+        public void updateTmrWork(object source, System.Timers.ElapsedEventArgs e)
+        {
+            try
+            {
+                updatetmr.Stop();
+                Thread.Sleep(1000);
+                ircupdate();
+            }
+            finally
+            {
+                updatetmr.Start(); 
+            }
         }
     }
 }
