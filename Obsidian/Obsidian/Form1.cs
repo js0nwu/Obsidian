@@ -798,26 +798,27 @@ namespace Obsidian
         }
         public void listregs()
         {
-            System.IO.StreamReader sr = new StreamReader(".activeusers");
-            string[] users = sr.ReadToEnd().Split(':');
-            sr.Close();
-            foreach (string x in users)
+            bool nickuser = isActiveUser(rnick);
+            if (nickuser == true)
             {
-                if (x.Contains(rnick))
+                StreamReader sr = new StreamReader("registers.bin");
+                string[] regusersarray = sr.ReadToEnd().Split('|');
+                string regusers = regusersarray[0];
+                sr.Close();
+                if (regusers == "" || regusers == null)
                 {
-                    StreamReader sr2 = new StreamReader("registers.bin");
-                    string[] registered = sr2.ReadToEnd().Split('|');
-                    string usernames = registered[0];
-                    sr2.Close();
-                    if (usernames == "" || usernames == null)
-                    {
-                        usernames = "None";
-                    }
-                    send("PRIVMSG " + channel + " :" + usernames);
-
+                    regusers = "None";
                 }
-
+                say(channel, regusers);
             }
+            else
+            {
+                say(channel, "Insufficient permissions!");
+            }
+        }
+        public void say(string saychannel, string message)
+        {
+            send("PRIVMSG " + saychannel + " :" + message);
         }
         public void clearregs()
         {

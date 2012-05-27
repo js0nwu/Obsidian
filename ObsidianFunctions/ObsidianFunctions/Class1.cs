@@ -236,6 +236,10 @@ namespace ObsidianFunctions
             StreamReader sr = new StreamReader("users.bin");
             string userlist = sr.ReadLine();
             sr.Close();
+            if (userlist == "" || userlist == null)
+            {
+                userlist = "None";
+            }
             return userlist;
         }
         public void logMsg(string message)
