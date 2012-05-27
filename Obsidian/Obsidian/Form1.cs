@@ -121,6 +121,16 @@ namespace Obsidian
             updatetmr.Elapsed += new System.Timers.ElapsedEventHandler(updateTmrWork);
             updatetmr.Interval = 500;
             canGreet = true;
+            string channeltext;
+            if (textBox3.Text != "")
+            {
+                channeltext = textBox3.Text;
+            }
+            else
+            {
+                channeltext = "<channel>";
+            }
+            textBox7.Text = "PRIVMSG " + channeltext + " :";
         }
 
         public void send(string msg)
@@ -941,7 +951,7 @@ namespace Obsidian
         private void button3_Click(object sender, EventArgs e)
         {
             send(textBox7.Text);
-            textBox7.Text = "";
+            textBox7.Text = "PRIVMSG " + channel + " :";
         }
         public void botChat()
         {
@@ -1017,7 +1027,7 @@ namespace Obsidian
             try
             {
                 updatetmr.Stop();
-                Thread.Sleep(1000);
+                Thread.Sleep(500);
                 ircupdate();
             }
             finally
