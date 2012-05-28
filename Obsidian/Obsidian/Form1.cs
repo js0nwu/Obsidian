@@ -566,15 +566,13 @@ namespace Obsidian
                         else if (rmsg.Contains("!get "))
                         {
                             string query = rmsg.Remove(0, 5);
-                            string[] parsequery = query.Split(new string[] { " some" }, StringSplitOptions.None);
-                            string person = parsequery[0];
-                            if (person == "me")
+                            if (query.Contains("me"))
                             {
-                                person = rnick; 
+                                string query2 = query.Remove(0, 3);
+                                query = rnick + " " + query2; 
                             }
-                            string getobject  = parsequery[1].Remove(0, 1);
                             say(channel, "Let me get that for you!");
-                            say(channel, "\u0001ACTION " + "gives " + person + " some " + getobject + "\u0001");
+                            say(channel, "\u0001ACTION " + "gives " + query + "\u0001");
                             say(channel, "There you go!"); 
                         }
 
