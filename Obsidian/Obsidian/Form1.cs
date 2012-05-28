@@ -566,7 +566,7 @@ namespace Obsidian
                         else if (rmsg.Contains("!get "))
                         {
                             string query = rmsg.Remove(0, 5);
-                            if (query.Contains("me"))
+                            if (query.StartsWith("me "))
                             {
                                 string query2 = query.Remove(0, 3);
                                 query = rnick + " " + query2; 
