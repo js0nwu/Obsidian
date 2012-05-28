@@ -44,7 +44,8 @@ namespace Obsidian
         System.Timers.Timer updatetmr;
         bool canGreet;
         string[] blacklist;
-        Thread updatethread; 
+        Thread updatethread;
+        string ircuserlist; 
 
         public Form1()
         {
@@ -130,8 +131,13 @@ namespace Obsidian
             updatetmr = new System.Timers.Timer(500);
             updatetmr.Elapsed += new System.Timers.ElapsedEventHandler(updateTmrWork);
             updatetmr.Interval = 500;
-            canGreet = true;
-            
+            canGreet = false;
+            if (System.IO.File.Exists("messages.bin") == false)
+            {
+                StreamWriter swmg = new StreamWriter("messages.bin");
+                swmg.Write("|"); 
+                swmg.Close(); 
+            }
             
         }
 
@@ -575,9 +581,53 @@ namespace Obsidian
                             say(channel, "\u0001ACTION " + "gives " + query + "\u0001");
                             say(channel, "There you go!"); 
                         }
+                        else if (rmsg.Contains("!google "))
+                        {
+                            string query = rmsg.Remove(0, 8);
+                            string googleURL = "http://google.com/search?q=" + query;
+                            say(channel, googleURL); 
+                        }
+                        else if (rmsg.Contains("!ircuserlist"))
+                        {
+                            Thread listircusers = new Thread(channelUsers);
+                            listircusers.Start();
+                            Thread saylistircusers = new Thread(saychannelUsers);
+                            saylistircusers.Start(); 
+                        }
+                        else if (rmsg.Contains("!message "))
+                        {
+                            try
+                            {
+                                bool nickuser = isActiveUser(rnick);
+                                if (nickuser == true)
+                                {
 
-
-
+                                    string sender = rnick;
+                                    string query = rmsg.Remove(0, 9);
+                                    string[] parsenick = query.Split('>');
+                                    string recipient = parsenick[0];
+                                    string message = parsenick[1];
+                                    bool nickOnline = isOnline(recipient);
+                                    if (nickOnline == true)
+                                    {
+                                        say(recipient, message);
+                                    }
+                                    else if (nickOnline == false)
+                                    {
+                                        say(sender, "I'll tell " + recipient + " when he or she is online.");
+                                        addMessage(recipient, message);
+                                    }
+                                }
+                                else
+                                {
+                                    say(channel, "Insufficient permissions!");
+                                }
+                            }
+                            catch (Exception ex)
+                            {
+                                say(rnick, ex.ToString());
+                            }
+                        }
 
                         //commands end
                     }
@@ -605,6 +655,11 @@ namespace Obsidian
                         logMsg(); 
                     }
                     detectLang();
+                    bool newMessages = hasMessages(rnick);
+                    if (newMessages == true)
+                    {
+                        sayMessages(rnick);
+                    }
                 }
                 else if (mail.Substring(mail.IndexOf(" ") + 1, 4) == "JOIN")
                 {
@@ -621,6 +676,11 @@ namespace Obsidian
                         string greeting = Greetings.Greeting(rnick, indexgreet);
                         string greetingmessage = "PRIVMSG " + channel + " :" + greeting;
                         send(greetingmessage);
+                    }
+                    bool newMessages = hasMessages(rnick);
+                    if (newMessages == true)
+                    {
+                        sayMessages(rnick);
                     }
                 }
                 else if (mail.Substring(mail.IndexOf(" ") + 1, 4) == "PART" | mail.Substring(mail.IndexOf(" ") + 1, 4) == "QUIT")
@@ -682,8 +742,13 @@ namespace Obsidian
                     tmparr = mail.Split('!');
                     rnick = tmparr[0];
                     tmparr = mail.Split(':');
-                    rmsg = tmparr[1];
+                    string newnick = tmparr[1];
                     deactivateUser();
+                    bool newMessages = hasMessages(newnick);
+                    if (newMessages == true)
+                    {
+                        sayMessages(newnick);
+                    }
                 }
             }
             oldMsg();
@@ -1049,5 +1114,92 @@ namespace Obsidian
                 updatetmr.Start(); 
             }
         }
+        public void channelUsers()
+        {
+            //start me on a new thread
+            send("NAMES " + channel);
+            mail = recv().Replace("\0", "");
+            string rawrespond = mail;
+            rawrespond = rawrespond.Remove(0, 1);
+            string[] tmprrespond = rawrespond.Split(':');
+            ircuserlist = tmprrespond[1].Trim().Replace("@", "").Replace("+", "").Replace("~", "").Replace("&", ""); 
+        }
+        public void saychannelUsers()
+        {
+            //start me on a new thread and at the same time as channelUsers() and make me sleep longer
+            Thread.Sleep(1000);
+            say(channel, ircuserlist);
+        }
+        public bool isOnline(string nickname)
+        {
+            send("NAMES " + channel);
+            mail = recv().Replace("\0", "");
+            string rawrespond = mail;
+            rawrespond = rawrespond.Remove(0, 1);
+            string[] tmprrespond = rawrespond.Split(':');
+            ircuserlist = tmprrespond[1].Trim().Replace("@", "").Replace("+", "").Replace("~", "").Replace("&", "");
+            string[] channeluserarray = ircuserlist.Split(' ');
+            bool nickOnline = false; 
+            foreach (string x in channeluserarray)
+            {
+                if (x == nickname)
+                {
+                    nickOnline = true; 
+                }
+            }
+            return nickOnline; 
+        }
+        public void addMessage(string recipient, string message)
+        {
+            StreamReader sr = new StreamReader("messages.bin");
+            string[] messageread = sr.ReadToEnd().Split('|');
+            sr.Close();
+            string newrecipients = messageread[0] + recipient.Trim() + ":";
+            string newmessages = messageread[1] + message.Trim() + ":";
+            StreamWriter sw = new StreamWriter("messages.bin");
+            sw.Write(newrecipients + "|" + newmessages);
+            sw.Close(); 
+        }
+        public bool hasMessages(string nickname)
+        {
+            StreamReader sr = new StreamReader("messages.bin");
+            string[] messageread = sr.ReadToEnd().Split('|');
+            sr.Close();
+            string[] messageusers = messageread[0].Split(':');
+            bool isRecipient = false;
+            foreach (string x in messageusers)
+            {
+                if (x == nickname)
+                {
+                    isRecipient = true; 
+                }
+            }
+            return isRecipient; 
+        }
+        public void sayMessages(string recipient)
+        {
+            StreamReader sr = new StreamReader("messages.bin");
+            string[] messageread = sr.ReadToEnd().Split('|');
+            sr.Close();
+            string[] messageusers = messageread[0].Split(':');
+            string[] messages = messageread[1].Split(':');
+            foreach (string x in messageusers)
+            {
+                if (x == recipient)
+                {
+                    int recipindex = Array.IndexOf(messageusers, recipient);
+                    say(recipient, messages[recipindex]);
+                    messageusers = messageusers.Where(val => val != recipient).ToArray();
+                    messages = messages.Where(val => val != messages[recipindex]).ToArray();
+                    string newuserlist = String.Join(":", messageusers);
+                    string newmessagelist = String.Join(":", messages);
+                    StreamWriter sw = new StreamWriter("messages.bin");
+                    sw.Write(newuserlist + "|" + newmessagelist);
+                    sw.Close(); 
+                }
+            }
+        }
+
+        
     }
 }
