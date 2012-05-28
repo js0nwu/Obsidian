@@ -77,6 +77,16 @@ namespace Obsidian
             {
                 timer3.Enabled = true;
             }
+            string channeltext;
+            if (textBox3.Text != "")
+            {
+                channeltext = channel;
+            }
+            else
+            {
+                channeltext = "<channel>";
+            }
+            textBox7.Text = "PRIVMSG " + channeltext + " :";
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -121,16 +131,8 @@ namespace Obsidian
             updatetmr.Elapsed += new System.Timers.ElapsedEventHandler(updateTmrWork);
             updatetmr.Interval = 500;
             canGreet = true;
-            string channeltext;
-            if (textBox3.Text != "")
-            {
-                channeltext = textBox3.Text;
-            }
-            else
-            {
-                channeltext = "<channel>";
-            }
-            textBox7.Text = "PRIVMSG " + channeltext + " :";
+            
+            
         }
 
         public void send(string msg)
@@ -167,7 +169,7 @@ namespace Obsidian
                     {
                         if (rmsg.Contains("!respond") == true)
                         {
-                            string response = "PRIVMSG " + textBox3.Text + " :Response";
+                            string response = "PRIVMSG " + channel + " :Response";
                             send(response);
                         }
                         else if (rmsg.Contains("!greet "))
@@ -561,7 +563,20 @@ namespace Obsidian
                         {
                             listBlacklist();
                         }
-
+                        else if (rmsg.Contains("!get "))
+                        {
+                            string query = rmsg.Remove(0, 5);
+                            string[] parsequery = query.Split(new string[] { " some" }, StringSplitOptions.None);
+                            string person = parsequery[0];
+                            if (person == "me")
+                            {
+                                person = rnick; 
+                            }
+                            string getobject  = parsequery[1].Remove(0, 1);
+                            say(channel, "Let me get that for you!");
+                            say(channel, "\u0001ACTION " + "gives " + person + " some " + getobject + "\u0001");
+                            say(channel, "There you go!"); 
+                        }
 
 
 
@@ -606,7 +621,7 @@ namespace Obsidian
                         Random rand = new Random();
                         int indexgreet = rand.Next(0, greetnumber);
                         string greeting = Greetings.Greeting(rnick, indexgreet);
-                        string greetingmessage = "PRIVMSG " + textBox3.Text + " :" + greeting;
+                        string greetingmessage = "PRIVMSG " + channel + " :" + greeting;
                         send(greetingmessage);
                     }
                 }
@@ -623,7 +638,7 @@ namespace Obsidian
                         Random rand = new Random();
                         int indexfarewell = rand.Next(0, farewellnumber);
                         string farewell = Farewells.Farewell(rnick, indexfarewell);
-                        string farewellmessage = "PRIVMSG " + textBox3.Text + " :" + farewell;
+                        string farewellmessage = "PRIVMSG " + channel + " :" + farewell;
                         send(farewellmessage);
                     }
                     Thread deactive = new Thread(deactivateUser);
