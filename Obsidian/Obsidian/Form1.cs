@@ -611,6 +611,7 @@ namespace Obsidian
                                     if (nickOnline == true)
                                     {
                                         say(recipient, message);
+                                        say(sender, "Message sent!"); 
                                     }
                                     else if (nickOnline == false)
                                     {
@@ -1189,15 +1190,15 @@ namespace Obsidian
                 {
                     int recipindex = Array.IndexOf(messageusers, recipient);
                     say(recipient, messages[recipindex]);
-                    messageusers = messageusers.Where(val => val != recipient).ToArray();
                     messages = messages.Where(val => val != messages[recipindex]).ToArray();
-                    string newuserlist = String.Join(":", messageusers);
-                    string newmessagelist = String.Join(":", messages);
-                    StreamWriter sw = new StreamWriter("messages.bin");
-                    sw.Write(newuserlist + "|" + newmessagelist);
-                    sw.Close(); 
                 }
             }
+            messageusers = messageusers.Where(val => val != recipient).ToArray();
+            string newuserlist = String.Join(":", messageusers);
+            string newmessagelist = String.Join(":", messages);
+            StreamWriter sw = new StreamWriter("messages.bin");
+            sw.Write(newuserlist + "|" + newmessagelist);
+            sw.Close(); 
         }
 
         
