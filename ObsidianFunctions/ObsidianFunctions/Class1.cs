@@ -262,35 +262,42 @@ namespace ObsidianFunctions
         }
         public float calc(string equation)
         {
-            string[] rawsplit = equation.Split(')');
-            string sfirstterm = rawsplit[0].Remove(0, 1);
-            string ssecondterm = rawsplit[1].Remove(0, 2);
-            string soperator = rawsplit[1].Substring(0, 1);
-            float answer; 
-            float firstterm = float.Parse(sfirstterm);
-            float secondterm = float.Parse(ssecondterm);
-            char operation = soperator[0];
-            if (operation == '+')
+            try
             {
-                answer = firstterm + secondterm;
+                string[] rawsplit = equation.Split(')');
+                string sfirstterm = rawsplit[0].Remove(0, 1);
+                string ssecondterm = rawsplit[1].Remove(0, 2);
+                string soperator = rawsplit[1].Substring(0, 1);
+                float answer;
+                float firstterm = float.Parse(sfirstterm);
+                float secondterm = float.Parse(ssecondterm);
+                char operation = soperator[0];
+                if (operation == '+')
+                {
+                    answer = firstterm + secondterm;
+                }
+                else if (operation == '-')
+                {
+                    answer = firstterm - secondterm;
+                }
+                else if (operation == '*' || operation == 'x')
+                {
+                    answer = firstterm * secondterm;
+                }
+                else if (operation == '/')
+                {
+                    answer = firstterm / secondterm;
+                }
+                else
+                {
+                    answer = 9001.0F;
+                }
+                return answer;
             }
-            else if (operation == '-')
+            catch (Exception ex)
             {
-                answer = firstterm - secondterm;
+                return 9001F; 
             }
-            else if (operation == '*' || operation == 'x')
-            {
-                answer = firstterm * secondterm;
-            }
-            else if (operation == '/')
-            {
-                answer = firstterm / secondterm;
-            }
-            else
-            {
-                answer = 9001.0F;
-            }
-            return answer; 
         }
         public string uDefine(string term)
         {

@@ -3,3 +3,8 @@ C:\Users\PillyBuilt7\Documents\Visual Studio 2010\Projects\ObsidianFunctions\Obs
 C:\Users\PillyBuilt7\Documents\Visual Studio 2010\Projects\ObsidianFunctions\ObsidianFunctions\obj\Debug\ResolveAssemblyReference.cache
 C:\Users\PillyBuilt7\Documents\Visual Studio 2010\Projects\ObsidianFunctions\ObsidianFunctions\obj\Debug\ObsidianFunctions.dll
 C:\Users\PillyBuilt7\Documents\Visual Studio 2010\Projects\ObsidianFunctions\ObsidianFunctions\obj\Debug\ObsidianFunctions.pdb
+C:\Users\PillyBuilt7\Obsidian\ObsidianFunctions\ObsidianFunctions\bin\Debug\ObsidianFunctions.dll
+C:\Users\PillyBuilt7\Obsidian\ObsidianFunctions\ObsidianFunctions\bin\Debug\ObsidianFunctions.pdb
+C:\Users\PillyBuilt7\Obsidian\ObsidianFunctions\ObsidianFunctions\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\PillyBuilt7\Obsidian\ObsidianFunctions\ObsidianFunctions\obj\Debug\ObsidianFunctions.dll
+C:\Users\PillyBuilt7\Obsidian\ObsidianFunctions\ObsidianFunctions\obj\Debug\ObsidianFunctions.pdb

@@ -13,3 +13,18 @@ C:\Users\PillyBuilt7\documents\visual studio 2010\Projects\Obsidian\Obsidian\bin
 C:\Users\PillyBuilt7\documents\visual studio 2010\Projects\Obsidian\Obsidian\bin\Debug\FervorLibrary.pdb
 C:\Users\PillyBuilt7\documents\visual studio 2010\Projects\Obsidian\Obsidian\obj\x86\Debug\Obsidian.ownerConfig.resources
 C:\Users\PillyBuilt7\documents\visual studio 2010\Projects\Obsidian\Obsidian\bin\Debug\AIMLbot.dll
+C:\Users\PillyBuilt7\Obsidian\Obsidian\Obsidian\obj\x86\Debug\Obsidian.exe
+C:\Users\PillyBuilt7\Obsidian\Obsidian\Obsidian\obj\x86\Debug\Obsidian.pdb
+C:\Users\PillyBuilt7\Obsidian\Obsidian\Obsidian\bin\Debug\Obsidian.exe
+C:\Users\PillyBuilt7\Obsidian\Obsidian\Obsidian\bin\Debug\Obsidian.pdb
+C:\Users\PillyBuilt7\Obsidian\Obsidian\Obsidian\bin\Debug\AIMLbot.dll
+C:\Users\PillyBuilt7\Obsidian\Obsidian\Obsidian\bin\Debug\FervorLibrary.dll
+C:\Users\PillyBuilt7\Obsidian\Obsidian\Obsidian\bin\Debug\ObsidianFunctions.dll
+C:\Users\PillyBuilt7\Obsidian\Obsidian\Obsidian\bin\Debug\FervorLibrary.pdb
+C:\Users\PillyBuilt7\Obsidian\Obsidian\Obsidian\bin\Debug\ObsidianFunctions.pdb
+C:\Users\PillyBuilt7\Obsidian\Obsidian\Obsidian\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\PillyBuilt7\Obsidian\Obsidian\Obsidian\obj\x86\Debug\Obsidian.Form1.resources
+C:\Users\PillyBuilt7\Obsidian\Obsidian\Obsidian\obj\x86\Debug\Obsidian.ownerConfig.resources
+C:\Users\PillyBuilt7\Obsidian\Obsidian\Obsidian\obj\x86\Debug\Obsidian.Properties.Resources.resources
+C:\Users\PillyBuilt7\Obsidian\Obsidian\Obsidian\obj\x86\Debug\GenerateResource.read.1.tlog
+C:\Users\PillyBuilt7\Obsidian\Obsidian\Obsidian\obj\x86\Debug\GenerateResource.write.1.tlog

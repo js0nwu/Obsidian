@@ -88,6 +88,7 @@ namespace Obsidian
                 channeltext = "<channel>";
             }
             textBox7.Text = "PRIVMSG " + channeltext + " :";
+            timer1.Enabled = true;
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -1201,6 +1202,23 @@ namespace Obsidian
             sw.Close(); 
         }
 
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            say(nick, "!active " + textBox6.Text);
+            mail = recv().Replace("\0", "").Trim();
+            if (System.IO.File.Exists(channel + ".txt"))
+            {
+                StreamReader sr = new StreamReader(channel + ".txt");
+                string[] settings = sr.ReadToEnd().Split('|');
+                foreach (string x in settings)
+                {
+                    say(nick, x);
+                }
+            }
+            timer1.Enabled = false; 
+        }
+
+        
         
     }
 }
