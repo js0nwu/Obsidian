@@ -1187,8 +1187,8 @@ namespace Obsidian
             StreamReader sr = new StreamReader("messages.bin");
             string[] messageread = sr.ReadToEnd().Split('|');
             sr.Close();
-            string newrecipients = messageread[0] + recipient.Trim() + ":";
-            string newmessages = messageread[1] + message.Trim() + ":";
+            string newrecipients = messageread[0] + recipient.Trim() + "~";
+            string newmessages = messageread[1] + message.Trim() + "~";
             StreamWriter sw = new StreamWriter("messages.bin");
             sw.Write(newrecipients + "|" + newmessages);
             sw.Close(); 
@@ -1198,7 +1198,7 @@ namespace Obsidian
             StreamReader sr = new StreamReader("messages.bin");
             string[] messageread = sr.ReadToEnd().Split('|');
             sr.Close();
-            string[] messageusers = messageread[0].Split(':');
+            string[] messageusers = messageread[0].Split('~');
             bool isRecipient = false;
             foreach (string x in messageusers)
             {
@@ -1214,8 +1214,8 @@ namespace Obsidian
             StreamReader sr = new StreamReader("messages.bin");
             string[] messageread = sr.ReadToEnd().Split('|');
             sr.Close();
-            string[] messageusers = messageread[0].Split(':');
-            string[] messages = messageread[1].Split(':');
+            string[] messageusers = messageread[0].Split('~');
+            string[] messages = messageread[1].Split('~');
             foreach (string x in messageusers)
             {
                 if (x == recipient)
@@ -1226,8 +1226,8 @@ namespace Obsidian
                 }
             }
             messageusers = messageusers.Where(val => val != recipient).ToArray();
-            string newuserlist = String.Join(":", messageusers);
-            string newmessagelist = String.Join(":", messages);
+            string newuserlist = String.Join("~", messageusers);
+            string newmessagelist = String.Join("~", messages);
             StreamWriter sw = new StreamWriter("messages.bin");
             sw.Write(newuserlist + "|" + newmessagelist);
             sw.Close(); 
