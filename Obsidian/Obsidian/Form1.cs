@@ -609,7 +609,7 @@ namespace Obsidian
                                     string query = rmsg.Remove(0, 9);
                                     string[] parsenick = query.Split('>');
                                     string recipient = parsenick[0];
-                                    string message = parsenick[1];
+                                    string message = "<" + sender + ">" + parsenick[1];
                                     bool nickOnline = isOnline(recipient);
                                     if (nickOnline == true)
                                     {
