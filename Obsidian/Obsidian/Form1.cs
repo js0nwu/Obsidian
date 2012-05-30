@@ -601,15 +601,11 @@ namespace Obsidian
                         {
                             try
                             {
-                                bool nickuser = isActiveUser(rnick);
-                                if (nickuser == true)
-                                {
-
                                     string sender = rnick;
                                     string query = rmsg.Remove(0, 9);
                                     string[] parsenick = query.Split('>');
                                     string recipient = parsenick[0];
-                                    string message = "<" + sender + ">" + parsenick[1];
+                                    string message = "<" + sender + ">" + parsenick[1].Replace("~", "");
                                     bool nickOnline = isOnline(recipient);
                                     if (nickOnline == true)
                                     {
@@ -621,11 +617,7 @@ namespace Obsidian
                                         say(sender, "I'll tell " + recipient + " when he or she is online.");
                                         addMessage(recipient, message);
                                     }
-                                }
-                                else
-                                {
-                                    say(channel, "Insufficient permissions!");
-                                }
+                                
                             }
                             catch (Exception ex)
                             {
