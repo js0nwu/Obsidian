@@ -45,7 +45,8 @@ namespace Obsidian
         bool canGreet;
         string[] blacklist;
         Thread updatethread;
-        string ircuserlist; 
+        string ircuserlist;
+        bool controlSpam; 
 
         public Form1()
         {
@@ -133,6 +134,7 @@ namespace Obsidian
             updatetmr.Elapsed += new System.Timers.ElapsedEventHandler(updateTmrWork);
             updatetmr.Interval = 500;
             canGreet = false;
+            controlSpam = false; 
             if (System.IO.File.Exists("messages.bin") == false)
             {
                 StreamWriter swmg = new StreamWriter("messages.bin");
@@ -630,27 +632,55 @@ namespace Obsidian
                                 say(rnick, ex.ToString());
                             }
                         }
-
-                        //commands end
-                    }
-                    if (rmsg == oldmsg)
-                    {
-                        increaseSpamCount();
-                        if (spamcount >= 4)
+                        else if (rmsg.Contains("!spamControl true"))
                         {
-                            if (isOperator == true)
+                            bool nickuser = isActiveUser(rnick);
+                            if (nickuser == true)
                             {
-                                send("KICK " + channel + " " + rnick + " No Spamming or Repeating one's self");
-                                spamcount = 0;
+                                controlSpam = true;
+                                say(channel, "spamControl = true");
                             }
                             else
                             {
-                                send("PRIVMSG " + channel + " :Try not to spam or excessively repeat yourself");
-                                spamcount = 0;
+                                say(rnick, "Insufficient permissions!");
                             }
                         }
+                        else if (rmsg.Contains("!spamControl false"))
+                        {
+                            bool nickuser = isActiveUser(rnick);
+                            if (nickuser == true)
+                            {
+                                controlSpam = false;
+                                say(channel, "spamControl = false");
+                            }
+                            else
+                            {
+                                say(rnick, "Insufficient permissions!");
+                            }
+                        }
+                        //commands end
+                    }
+                    if (controlSpam == true)
+                    {
+                        if (rmsg == oldmsg)
+                        {
+                            increaseSpamCount();
+                            if (spamcount >= 4)
+                            {
+                                if (isOperator == true)
+                                {
+                                    send("KICK " + channel + " " + rnick + " No Spamming or Repeating one's self");
+                                    spamcount = 0;
+                                }
+                                else
+                                {
+                                    send("PRIVMSG " + channel + " :Try not to spam or excessively repeat yourself");
+                                    spamcount = 0;
+                                }
+                            }
 
 
+                        }
                     }
                     if (isLogging == true)
                     {
