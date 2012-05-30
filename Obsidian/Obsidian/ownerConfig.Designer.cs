@@ -74,6 +74,7 @@
             // 
             this.textBox2.Location = new System.Drawing.Point(12, 64);
             this.textBox2.Name = "textBox2";
+            this.textBox2.PasswordChar = '*';
             this.textBox2.Size = new System.Drawing.Size(260, 20);
             this.textBox2.TabIndex = 4;
             // 
@@ -91,7 +92,6 @@
             this.MinimizeBox = false;
             this.Name = "ownerConfig";
             this.Text = "ownerConfig";
-            this.Load += new System.EventHandler(this.ownerConfig_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

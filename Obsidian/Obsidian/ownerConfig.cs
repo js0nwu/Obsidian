@@ -26,7 +26,7 @@ namespace Obsidian
             StreamReader sr1 = new StreamReader("users.bin");
             string oldusers = sr1.ReadToEnd();
             sr1.Close();
-            StreamReader sr2 = new StreamReader("passwords'bin");
+            StreamReader sr2 = new StreamReader("passwords.bin");
             string oldpasses = sr2.ReadToEnd();
             sr2.Close(); 
             StreamWriter sw = new StreamWriter("owner.bin");
@@ -45,9 +45,5 @@ namespace Obsidian
             this.Hide();
         }
 
-        private void ownerConfig_Load(object sender, EventArgs e)
-        {
-            
-        }
     }
 }

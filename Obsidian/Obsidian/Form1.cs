@@ -851,10 +851,11 @@ namespace Obsidian
         public void startUserList()
         {
             StreamWriter sw1 = new StreamWriter("users.bin");
-            sw1.Write(textBox4.Text);
+            sw1.Write(textBox4.Text + ":");
             sw1.Close();
+            Functions ObsidFunc = new Functions();
             StreamWriter sw2 = new StreamWriter("passwords.bin");
-            sw2.Write(textBox6.Text);
+            sw2.Write(ObsidFunc.md5calc(textBox6.Text) + ":");
             sw2.Close();
             StreamWriter sw3 = new StreamWriter("registers.bin");
             sw3.Write("|");
@@ -986,7 +987,7 @@ namespace Obsidian
         public void ownerConfiguration()
         {
             ownerConfig form2 = new ownerConfig();
-            form2.Show();
+            form2.ShowDialog(); 
         }
         public void setOwner()
         {
@@ -1212,7 +1213,8 @@ namespace Obsidian
                 string[] settings = sr.ReadToEnd().Split('|');
                 foreach (string x in settings)
                 {
-                    say(nick, x);
+                    send(x);
+                    mail = recv().Replace("\0", "");
                 }
             }
             timer1.Enabled = false; 
