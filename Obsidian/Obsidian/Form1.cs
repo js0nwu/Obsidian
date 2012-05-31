@@ -736,13 +736,13 @@ namespace Obsidian
                     mail = mail.Replace("\0", "").Trim();
                     int nameopslength = nick.Length + 3;
                     string action = mail.Substring(mail.Length - nameopslength);
-                    if (action.StartsWith("+o") | action.StartsWith("+r"))
+                    if (action.StartsWith("+o") | action.StartsWith("+r") | action.StartsWith("+h"))
                     {
                         isOperator = true;
                         send("PRIVMSG " + channel + " :isOperator = true");
 
                     }
-                    else if (action.StartsWith("-o") | action.StartsWith("-r"))
+                    else if (action.StartsWith("-o") | action.StartsWith("-r") | action.StartsWith("-h"))
                     {
                         isOperator = false;
                         send("PRIVMSG " + channel + " :isOperator = false");
@@ -1147,7 +1147,7 @@ namespace Obsidian
             string rawrespond = mail;
             rawrespond = rawrespond.Remove(0, 1);
             string[] tmprrespond = rawrespond.Split(':');
-            ircuserlist = tmprrespond[1].Trim().Replace("@", "").Replace("+", "").Replace("~", "").Replace("&", ""); 
+            ircuserlist = tmprrespond[1].Trim().Replace("@", "").Replace("+", "").Replace("~", "").Replace("&", "").Replace("%", ""); 
         }
         public void saychannelUsers()
         {
@@ -1162,7 +1162,7 @@ namespace Obsidian
             string rawrespond = mail;
             rawrespond = rawrespond.Remove(0, 1);
             string[] tmprrespond = rawrespond.Split(':');
-            ircuserlist = tmprrespond[1].Trim().Replace("@", "").Replace("+", "").Replace("~", "").Replace("&", "");
+            ircuserlist = tmprrespond[1].Trim().Replace("@", "").Replace("+", "").Replace("~", "").Replace("&", "").Replace("%", "");
             string[] channeluserarray = ircuserlist.Split(' ');
             bool nickOnline = false; 
             foreach (string x in channeluserarray)
