@@ -650,6 +650,18 @@ namespace Obsidian
                                 say(rnick, "Insufficient permissions!");
                             }
                         }
+                        else if (rmsg.Contains("forcequit"))
+                        {
+                            bool nickuser = isActiveUser(rnick);
+                            if (nickuser == true)
+                            {
+                                talkingTo = "nobody";
+                            }
+                            else
+                            {
+                                say(rnick, "Insufficient permissions!"); 
+                            }
+                        }
                         //commands end
                     }
                     if (controlSpam == true)
