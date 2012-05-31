@@ -1025,7 +1025,7 @@ namespace Obsidian
                 string[] badlist = sr.ReadToEnd().Split(':');
                 foreach (string x in badlist)
                 {
-                    if (rmsg.Contains(x) == true)
+                    if (rmsg.ToLower().Contains(x.ToLower()) == true)
                     {
                         if (isOperator == true)
                         {
