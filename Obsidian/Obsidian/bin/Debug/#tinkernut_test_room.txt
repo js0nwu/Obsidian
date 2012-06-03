@@ -1,0 +1,1 @@
+PRIVMSG ObsidianBot :!canGreet false|PRIVMSG ObsidianBot :!isOperator false|PRIVMSG ObsidianBot :!log start|PRIVMSG ObsidianBot :!spamControl true
