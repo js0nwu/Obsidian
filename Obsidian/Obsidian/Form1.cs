@@ -189,7 +189,7 @@ namespace Obsidian
                                 int queryindex = Int32.Parse(query);
                                 if (queryindex <= greetnumber)
                                 {
-                                    FervorLibrary.Library Greeting = new FervorLibrary.Library();
+                                    ObsidianFunctions.Functions Greeting = new ObsidianFunctions.Functions();
                                     string returngreet = Greeting.greet(queryindex);
 
                                     string response = "PRIVMSG " + channel + " :" + returngreet;
@@ -215,7 +215,7 @@ namespace Obsidian
                                 int queryindex = Int32.Parse(query);
                                 if (queryindex <= greetnumber)
                                 {
-                                    FervorLibrary.Library Farewelling = new FervorLibrary.Library();
+                                    ObsidianFunctions.Functions Farewelling = new ObsidianFunctions.Functions();
                                     string returnfarewell = Farewelling.farewell(queryindex);
                                     string response = "PRIVMSG " + channel + " :" + returnfarewell;
                                     send(response);
@@ -441,7 +441,7 @@ namespace Obsidian
                             else
                             {
                                 talkingTo = rnick;
-                                FervorLibrary.Library Greetings = new FervorLibrary.Library();
+                                ObsidianFunctions.Functions Greetings = new ObsidianFunctions.Functions();
                                 Random rand = new Random();
                                 int indexgreet = rand.Next(0, greetnumber);
                                 string greeting = Greetings.Greeting(rnick, indexgreet);
@@ -706,7 +706,7 @@ namespace Obsidian
                     rnick = tmparr[0];
                     if (canGreet == true)
                     {
-                        FervorLibrary.Library Greetings = new FervorLibrary.Library();
+                        ObsidianFunctions.Functions Greetings = new ObsidianFunctions.Functions();
                         Random rand = new Random();
                         int indexgreet = rand.Next(0, greetnumber);
                         string greeting = Greetings.Greeting(rnick, indexgreet);
@@ -728,7 +728,7 @@ namespace Obsidian
                     rnick = tmparr[0];
                     if (canGreet == true)
                     {
-                        FervorLibrary.Library Farewells = new FervorLibrary.Library();
+                        ObsidianFunctions.Functions Farewells = new ObsidianFunctions.Functions();
                         Random rand = new Random();
                         int indexfarewell = rand.Next(0, farewellnumber);
                         string farewell = Farewells.Farewell(rnick, indexfarewell);
