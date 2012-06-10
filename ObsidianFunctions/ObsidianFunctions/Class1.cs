@@ -5,6 +5,9 @@ using System.Text;
 using System.Security.Cryptography;
 using System.IO;
 using System.IO.Compression;
+using System.Diagnostics;
+using Microsoft.CSharp;
+using System.CodeDom.Compiler;
 
 namespace ObsidianFunctions
 {
@@ -364,6 +367,26 @@ namespace ObsidianFunctions
                 return ex.ToString(); 
             }
         }
-
+        public string CSCompile(string csfile)
+        {
+            CompilerParameters Params = new CompilerParameters();
+            Params.GenerateExecutable = true;
+            Params.ReferencedAssemblies.Add("System.dll");
+            Params.ReferencedAssemblies.Add("FervorLibrary.dll"); 
+            Params.ReferencedAssemblies.Add("ObsidianFunctions.dll");
+            Params.OutputAssembly = csfile.Replace(".cs", ".exe");
+            StreamReader sr = new StreamReader(csfile);
+            string cscode = sr.ReadToEnd();
+            sr.Close(); 
+            CompilerResults Results = new CSharpCodeProvider().CompileAssemblyFromSource(Params, cscode);
+            if (Results.Errors.Count > 0)
+            {
+                return String.Join(",", Results.Errors.ToString());
+            }
+            else
+            {
+                return "Compile success!"; 
+            }
+        }
     }
 }

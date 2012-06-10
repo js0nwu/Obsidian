@@ -367,6 +367,21 @@ namespace Obsidian
                                 send("PRIVMSG " + channel + " :Insufficient Permissions!");
                             }
                         }
+                        else if (rmsg.Contains("!cscompile "))
+                        {
+                            string query = rmsg.Remove(0, 11).Replace("\0", "").Trim();
+                            bool nickuser = isActiveUser(rnick);
+                            if (rnick == ownernick && nickuser == true)
+                            {
+                                ObsidianFunctions.Functions ObsidFunc = new Functions();
+                                say(channel, ObsidFunc.CSCompile(query));
+
+                            }
+                            else
+                            {
+                                send("PRIVMSG " + channel + " :Insufficient Permissions!");
+                            }
+                        }
                         else if (rmsg.Contains("!log start"))
                         {
                             bool nickuser = isActiveUser(rnick);
@@ -572,46 +587,46 @@ namespace Obsidian
                             if (query.StartsWith("me "))
                             {
                                 string query2 = query.Remove(0, 3);
-                                query = rnick + " " + query2; 
+                                query = rnick + " " + query2;
                             }
                             say(channel, "Let me get that for you!");
                             say(channel, "\u0001ACTION " + "gives " + query + "\u0001");
-                            say(channel, "There you go!"); 
+                            say(channel, "There you go!");
                         }
                         else if (rmsg.Contains("!google "))
                         {
                             string query = rmsg.Remove(0, 8);
                             string googleURL = "http://google.com/search?q=" + query;
-                            say(channel, googleURL); 
+                            say(channel, googleURL);
                         }
                         else if (rmsg.Contains("!ircuserlist"))
                         {
                             Thread listircusers = new Thread(channelUsers);
                             listircusers.Start();
                             Thread saylistircusers = new Thread(saychannelUsers);
-                            saylistircusers.Start(); 
+                            saylistircusers.Start();
                         }
                         else if (rmsg.Contains("!message "))
                         {
                             try
                             {
-                                    string sender = rnick;
-                                    string query = rmsg.Remove(0, 9);
-                                    string[] parsenick = query.Split('>');
-                                    string recipient = parsenick[0];
-                                    string message = "<" + sender + ">" + parsenick[1].Replace("~", "");
-                                    bool nickOnline = isOnline(recipient);
-                                    if (nickOnline == true)
-                                    {
-                                        say(recipient, message);
-                                        say(sender, "Message sent!"); 
-                                    }
-                                    else if (nickOnline == false)
-                                    {
-                                        say(sender, "I'll tell " + recipient + " when he or she is online.");
-                                        addMessage(recipient, message);
-                                    }
-                                
+                                string sender = rnick;
+                                string query = rmsg.Remove(0, 9);
+                                string[] parsenick = query.Split('>');
+                                string recipient = parsenick[0];
+                                string message = "<" + sender + ">" + parsenick[1].Replace("~", "");
+                                bool nickOnline = isOnline(recipient);
+                                if (nickOnline == true)
+                                {
+                                    say(recipient, message);
+                                    say(sender, "Message sent!");
+                                }
+                                else if (nickOnline == false)
+                                {
+                                    say(sender, "I'll tell " + recipient + " when he or she is online.");
+                                    addMessage(recipient, message);
+                                }
+
                             }
                             catch (Exception ex)
                             {
@@ -653,7 +668,7 @@ namespace Obsidian
                             }
                             else
                             {
-                                say(rnick, "Insufficient permissions!"); 
+                                say(rnick, "Insufficient permissions!");
                             }
                         }
                         //commands end
