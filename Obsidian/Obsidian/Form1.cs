@@ -189,7 +189,7 @@ namespace Obsidian
                                 int queryindex = Int32.Parse(query);
                                 if (queryindex <= greetnumber)
                                 {
-                                    ObsidianFunctions.Functions Greeting = new ObsidianFunctions.Functions();
+                                    FervorLibrary.Library Greeting = new FervorLibrary.Library();
                                     string returngreet = Greeting.greet(queryindex);
 
                                     string response = "PRIVMSG " + channel + " :" + returngreet;
@@ -215,7 +215,7 @@ namespace Obsidian
                                 int queryindex = Int32.Parse(query);
                                 if (queryindex <= greetnumber)
                                 {
-                                    ObsidianFunctions.Functions Farewelling = new ObsidianFunctions.Functions();
+                                    FervorLibrary.Library Farewelling = new FervorLibrary.Library();
                                     string returnfarewell = Farewelling.farewell(queryindex);
                                     string response = "PRIVMSG " + channel + " :" + returnfarewell;
                                     send(response);
@@ -232,33 +232,27 @@ namespace Obsidian
                         }
                         else if (rmsg.Contains("!md5 "))
                         {
-                            Thread md5calc = new Thread(generateMD5message);
-                            md5calc.Start();
+                            generateMD5message (); 
                         }
                         else if (rmsg.Contains("!register "))
                         {
-                            Thread requestregistration = new Thread(reqreguser);
-                            requestregistration.Start();
+                            reqreguser (); 
                         }
                         else if (rmsg.Contains("!registerlist"))
                         {
-                            Thread listreg = new Thread(listregs);
-                            listreg.Start();
+                            listregs (); 
                         }
                         else if (rmsg.Contains("!clearregisterlist"))
                         {
-                            Thread clearreg = new Thread(clearregs);
-                            clearreg.Start();
+                            clearregs (); 
                         }
                         else if (rmsg.Contains("!active "))
                         {
-                            Thread activate = new Thread(activateUser);
-                            activate.Start();
+                            activateUser (); 
                         }
                         else if (rmsg.Contains("!deactivate"))
                         {
-                            Thread deactive = new Thread(deactivateUser);
-                            deactive.Start();
+                            deactivateUser (); 
                         }
                         else if (rmsg.Contains("!adduser "))
                         {
@@ -441,7 +435,7 @@ namespace Obsidian
                             else
                             {
                                 talkingTo = rnick;
-                                ObsidianFunctions.Functions Greetings = new ObsidianFunctions.Functions();
+                                FervorLibrary.Library Greetings = new FervorLibrary.Library();
                                 Random rand = new Random();
                                 int indexgreet = rand.Next(0, greetnumber);
                                 string greeting = Greetings.Greeting(rnick, indexgreet);
@@ -706,7 +700,7 @@ namespace Obsidian
                     rnick = tmparr[0];
                     if (canGreet == true)
                     {
-                        ObsidianFunctions.Functions Greetings = new ObsidianFunctions.Functions();
+                        FervorLibrary.Library Greetings = new FervorLibrary.Library();
                         Random rand = new Random();
                         int indexgreet = rand.Next(0, greetnumber);
                         string greeting = Greetings.Greeting(rnick, indexgreet);
@@ -728,7 +722,7 @@ namespace Obsidian
                     rnick = tmparr[0];
                     if (canGreet == true)
                     {
-                        ObsidianFunctions.Functions Farewells = new ObsidianFunctions.Functions();
+                        FervorLibrary.Library Farewells = new FervorLibrary.Library();
                         Random rand = new Random();
                         int indexfarewell = rand.Next(0, farewellnumber);
                         string farewell = Farewells.Farewell(rnick, indexfarewell);
