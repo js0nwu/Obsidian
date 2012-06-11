@@ -21,20 +21,15 @@ namespace Obsidian
         int port;
         string buf;
         string nick;
-        string owner;
         string server;
         string channel;
         System.Net.Sockets.Socket sock;
         string mail;
-        int greetnumber;
         string rmsg;
-        int farewellnumber;
         string password;
         bool isregistered;
         string rnick;
         string old;
-        bool isOperator;
-        string ownernick;
         string oldmsg;
         int spamcount;
         bool isLogging;
@@ -46,7 +41,8 @@ namespace Obsidian
         string[] blacklist;
         Thread updatethread;
         string ircuserlist;
-        bool controlSpam; 
+        bool controlSpam;
+        string owner; 
 
         public Form1()
         {
@@ -64,6 +60,7 @@ namespace Obsidian
             channel = textBox3.Text;
             nick = textBox4.Text;
             password = textBox6.Text;
+            ObsidianFunctions.Functions ObsidFunc = new ObsidianFunctions.Functions(); 
             owner = "Obsidian";
             System.Net.IPHostEntry ipHostInfo = System.Net.Dns.GetHostEntry(server);
             System.Net.IPEndPoint EP = new System.Net.IPEndPoint(ipHostInfo.AddressList[0], port);
@@ -96,7 +93,6 @@ namespace Obsidian
         {
             spamcount = 0;
             loadIRCInfo();
-            isOperator = false;
             Thread configGreet = new Thread(GreetConfig);
             configGreet.Start();
             Thread configFarewell = new Thread(FarewellConfig);
@@ -116,10 +112,6 @@ namespace Obsidian
             if (System.IO.File.Exists("owner.bin") == false)
             {
                 ownerConfiguration();
-            }
-            else
-            {
-                setOwner();
             }
             if (System.IO.File.Exists("blacklist.bin") == false)
             {
@@ -187,7 +179,8 @@ namespace Obsidian
                             try
                             {
                                 int queryindex = Int32.Parse(query);
-                                if (queryindex <= greetnumber)
+                                FervorLibrary.Library FervLib = new FervorLibrary.Library();
+                                if (queryindex <= FervLib.greetnumber)
                                 {
                                     FervorLibrary.Library Greeting = new FervorLibrary.Library();
                                     string returngreet = Greeting.greet(queryindex);
@@ -213,7 +206,8 @@ namespace Obsidian
                             try
                             {
                                 int queryindex = Int32.Parse(query);
-                                if (queryindex <= greetnumber)
+                                FervorLibrary.Library FervLib = new FervorLibrary.Library();
+                                if (queryindex <= FervLib.farewellnumber)
                                 {
                                     FervorLibrary.Library Farewelling = new FervorLibrary.Library();
                                     string returnfarewell = Farewelling.farewell(queryindex);
@@ -232,27 +226,27 @@ namespace Obsidian
                         }
                         else if (rmsg.Contains("!md5 "))
                         {
-                            generateMD5message (); 
+                            generateMD5message();
                         }
                         else if (rmsg.Contains("!register "))
                         {
-                            reqreguser (); 
+                            reqreguser();
                         }
                         else if (rmsg.Contains("!registerlist"))
                         {
-                            listregs (); 
+                            listregs();
                         }
                         else if (rmsg.Contains("!clearregisterlist"))
                         {
-                            clearregs (); 
+                            clearregs();
                         }
                         else if (rmsg.Contains("!active "))
                         {
-                            activateUser (); 
+                            activateUser();
                         }
                         else if (rmsg.Contains("!deactivate"))
                         {
-                            deactivateUser (); 
+                            deactivateUser();
                         }
                         else if (rmsg.Contains("!adduser "))
                         {
@@ -305,10 +299,11 @@ namespace Obsidian
                         }
                         else if (rmsg.Contains("!addops "))
                         {
-                            if (isOperator == true)
+                            ObsidianFunctions.Functions ObsidFunc = new ObsidianFunctions.Functions();
+                            if (ObsidFunc.isOperator() == true)
                             {
                                 string query = rmsg.Remove(0, 8);
-                                bool nickisuser = isActiveUser(rnick);
+                                bool nickisuser = ObsidFunc.isActiveUser(rnick);
                                 if (nickisuser == true)
                                 {
                                     send("MODE " + channel + " +o " + query);
@@ -321,7 +316,8 @@ namespace Obsidian
                         }
                         else if (rmsg.Contains("!removeops "))
                         {
-                            if (isOperator == true)
+                            ObsidianFunctions.Functions ObsidFunc = new ObsidianFunctions.Functions();
+                            if (ObsidFunc.isOperator() == true)
                             {
                                 string query = rmsg.Remove(0, 11);
                                 bool nickisuser = isActiveUser(rnick);
@@ -337,7 +333,8 @@ namespace Obsidian
                         }
                         else if (rmsg.Contains("!kick "))
                         {
-                            if (isOperator == true)
+                            ObsidianFunctions.Functions ObsidFunc = new ObsidianFunctions.Functions();
+                            if (ObsidFunc.isOperator() == true)
                             {
                                 string query = rmsg.Remove(0, 6);
                                 bool nickuser = isActiveUser(rnick);
@@ -356,9 +353,9 @@ namespace Obsidian
                         {
                             string query = rmsg.Remove(0, 7);
                             bool nickuser = isActiveUser(rnick);
-                            if (rnick == ownernick && nickuser == true)
+                            ObsidianFunctions.Functions ObsidFunc = new ObsidianFunctions.Functions();
+                            if (rnick == ObsidFunc.ownernick() && nickuser == true)
                             {
-                                ObsidianFunctions.Functions ObsidFunc = new ObsidianFunctions.Functions();
                                 ObsidFunc.batch(query);
                                 send("PRIVMSG " + channel + " :Success!");
                             }
@@ -369,11 +366,11 @@ namespace Obsidian
                         }
                         else if (rmsg.Contains("!cscompile "))
                         {
+                            ObsidianFunctions.Functions ObsidFunc = new ObsidianFunctions.Functions();
                             string query = rmsg.Remove(0, 11).Replace("\0", "").Trim();
-                            bool nickuser = isActiveUser(rnick);
-                            if (rnick == ownernick && nickuser == true)
+                            bool nickuser = ObsidFunc.isActiveUser(rnick);
+                            if (rnick == ObsidFunc.ownernick() && nickuser == true)
                             {
-                                ObsidianFunctions.Functions ObsidFunc = new Functions();
                                 say(channel, ObsidFunc.CSCompile(query));
 
                             }
@@ -384,10 +381,11 @@ namespace Obsidian
                         }
                         else if (rmsg.Contains("!log start"))
                         {
+                            ObsidianFunctions.Functions ObsidFunc = new ObsidianFunctions.Functions();
                             bool nickuser = isActiveUser(rnick);
                             if (nickuser == true)
                             {
-                                isLogging = true;
+                                ObsidFunc.logTrue(); 
                                 send("PRIVMSG " + channel + " :Success!");
                             }
                             else
@@ -397,10 +395,11 @@ namespace Obsidian
                         }
                         else if (rmsg.Contains("!log stop"))
                         {
+                            ObsidianFunctions.Functions ObsidFunc = new ObsidianFunctions.Functions();
                             bool nickuser = isActiveUser(rnick);
                             if (nickuser == true)
                             {
-                                isLogging = false;
+                                ObsidFunc.logFalse(); 
                                 send("PRIVMSG " + channel + " :Success!");
                             }
                             else
@@ -420,7 +419,8 @@ namespace Obsidian
                             bool nickuser = isActiveUser(rnick);
                             if (nickuser == true)
                             {
-                                isOperator = true;
+                                ObsidianFunctions.Functions ObsidFunc = new ObsidianFunctions.Functions();
+                                ObsidFunc.opTrue();
                                 send("PRIVMSG " + channel + " :isOperator = true");
                             }
                             else
@@ -433,7 +433,8 @@ namespace Obsidian
                             bool nickuser = isActiveUser(rnick);
                             if (nickuser == true)
                             {
-                                isOperator = false;
+                                ObsidianFunctions.Functions ObsidFunc = new ObsidianFunctions.Functions();
+                                ObsidFunc.opFalse();
                                 send("PRIVMSG " + channel + " :isOperator = false");
                             }
                             else
@@ -452,7 +453,7 @@ namespace Obsidian
                                 talkingTo = rnick;
                                 FervorLibrary.Library Greetings = new FervorLibrary.Library();
                                 Random rand = new Random();
-                                int indexgreet = rand.Next(0, greetnumber);
+                                int indexgreet = rand.Next(0, Greetings.greetnumber);
                                 string greeting = Greetings.Greeting(rnick, indexgreet);
                                 send("PRIVMSG " + rnick + " :" + greeting);
                                 botChat();
@@ -680,7 +681,8 @@ namespace Obsidian
                             increaseSpamCount();
                             if (spamcount >= 4)
                             {
-                                if (isOperator == true)
+                                ObsidianFunctions.Functions ObsidFunc = new ObsidianFunctions.Functions();
+                                if (ObsidFunc.isOperator() == true)
                                 {
                                     send("KICK " + channel + " " + rnick + " No Spamming or Repeating one's self");
                                     spamcount = 0;
@@ -695,7 +697,8 @@ namespace Obsidian
 
                         }
                     }
-                    if (isLogging == true)
+                    ObsidianFunctions.Functions Obsid = new ObsidianFunctions.Functions();
+                    if (Obsid.isLogging() == true)
                     {
                         logMsg(); 
                     }
@@ -717,7 +720,7 @@ namespace Obsidian
                     {
                         FervorLibrary.Library Greetings = new FervorLibrary.Library();
                         Random rand = new Random();
-                        int indexgreet = rand.Next(0, greetnumber);
+                        int indexgreet = rand.Next(0, Greetings.greetnumber);
                         string greeting = Greetings.Greeting(rnick, indexgreet);
                         string greetingmessage = "PRIVMSG " + channel + " :" + greeting;
                         send(greetingmessage);
@@ -739,7 +742,8 @@ namespace Obsidian
                     {
                         FervorLibrary.Library Farewells = new FervorLibrary.Library();
                         Random rand = new Random();
-                        int indexfarewell = rand.Next(0, farewellnumber);
+                        FervorLibrary.Library FervLib = new FervorLibrary.Library();
+                        int indexfarewell = rand.Next(0, FervLib.farewellnumber);
                         string farewell = Farewells.Farewell(rnick, indexfarewell);
                         string farewellmessage = "PRIVMSG " + channel + " :" + farewell;
                         send(farewellmessage);
@@ -759,13 +763,15 @@ namespace Obsidian
                     string action = mail.Substring(mail.Length - nameopslength);
                     if (action.StartsWith("+o") | action.StartsWith("+r") | action.StartsWith("+h"))
                     {
-                        isOperator = true;
+                        ObsidianFunctions.Functions ObsidFunc = new ObsidianFunctions.Functions();
+                        ObsidFunc.opTrue(); 
                         send("PRIVMSG " + channel + " :isOperator = true");
 
                     }
                     else if (action.StartsWith("-o") | action.StartsWith("-r") | action.StartsWith("-h"))
                     {
-                        isOperator = false;
+                        ObsidianFunctions.Functions ObsidFunc = new ObsidianFunctions.Functions();
+                        ObsidFunc.opFalse(); 
                         send("PRIVMSG " + channel + " :isOperator = false");
                     }
 
@@ -812,14 +818,16 @@ namespace Obsidian
                 System.IO.StreamReader greetread = new System.IO.StreamReader("greet.bin");
                 string greetraw = greetread.ReadToEnd();
                 string[] split = greetraw.Split(',');
-                greetnumber = split.Length / 2;
+                FervorLibrary.Library FervLib = new FervorLibrary.Library();
+                FervLib.greetnumber = split.Length / 2;
             }
             else if (System.IO.File.Exists("greet.bin") == true)
             {
                 System.IO.StreamReader greetread = new System.IO.StreamReader("greet.bin");
                 string greetraw = greetread.ReadToEnd();
                 string[] split = greetraw.Split(',');
-                greetnumber = split.Length / 2;
+                FervorLibrary.Library FervLib = new FervorLibrary.Library();
+                FervLib.greetnumber = split.Length / 2;
             }
         }
         public void FarewellConfig()
@@ -833,14 +841,16 @@ namespace Obsidian
                 System.IO.StreamReader farewellread = new System.IO.StreamReader("farewell.bin");
                 string farewellraw = farewellread.ReadToEnd();
                 string[] split = farewellraw.Split(',');
-                farewellnumber = split.Length / 2;
+                FervorLibrary.Library FervLib = new FervorLibrary.Library();
+                FervLib.farewellnumber = split.Length / 2;
             }
             else if (System.IO.File.Exists("farewell.bin") == true)
             {
                 System.IO.StreamReader farewellread = new System.IO.StreamReader("farewell.bin");
                 string farewellraw = farewellread.ReadToEnd();
                 string[] split = farewellraw.Split(',');
-                farewellnumber = split.Length / 2;
+                FervorLibrary.Library FervLib = new FervorLibrary.Library();
+                FervLib.farewellnumber = split.Length / 2;
             }
         }
         public void increaseSpamCount()
@@ -1032,12 +1042,6 @@ namespace Obsidian
             ownerConfig form2 = new ownerConfig();
             form2.ShowDialog(); 
         }
-        public void setOwner()
-        {
-            StreamReader sr = new StreamReader("owner.bin");
-            ownernick = sr.ReadToEnd();
-
-        }
         public void detectLang()
         {
             if (System.IO.File.Exists("badlang.bin") == true)
@@ -1048,7 +1052,8 @@ namespace Obsidian
                 {
                     if (rmsg.ToLower().Contains(x.ToLower()) == true)
                     {
-                        if (isOperator == true)
+                        ObsidianFunctions.Functions ObsidFunc = new ObsidianFunctions.Functions();
+                        if (ObsidFunc.isOperator() == true)
                         {
                             send("KICK " + channel + " " + rnick + " No bad language allowed!");
                         }

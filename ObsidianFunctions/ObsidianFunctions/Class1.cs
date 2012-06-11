@@ -13,6 +13,60 @@ namespace ObsidianFunctions
 {
     public class Functions
     {
+
+        public bool isOperator()
+        {
+            if (System.IO.File.Exists("ops"))
+            {
+                return true;
+            }
+            else
+            {
+                return false; 
+            }
+        }
+        public void opTrue()
+        {
+            StreamWriter sw = new StreamWriter("ops");
+            sw.Close(); 
+        }
+        public void opFalse()
+        {
+            if (System.IO.File.Exists("ops"))
+            {
+                System.IO.File.Delete("ops");
+            }
+        }
+        public bool isLogging()
+        {
+            if (System.IO.File.Exists("log"))
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+        public void logTrue()
+        {
+            StreamWriter sw = new StreamWriter("log");
+            sw.Close();
+        }
+        public void logFalse()
+        {
+            if (System.IO.File.Exists("log"))
+            {
+                System.IO.File.Delete("log");
+            }
+        }
+        public string ownernick()
+        {
+            StreamReader sr = new StreamReader("owner.bin");
+            string owner = sr.ReadToEnd().Trim();
+            sr.Close();
+            return owner; 
+        }
         public string md5calc(string input)
         {
             input = input.Replace("\0", "").Trim();
@@ -369,24 +423,47 @@ namespace ObsidianFunctions
         }
         public string CSCompile(string csfile)
         {
-            CompilerParameters Params = new CompilerParameters();
-            Params.GenerateExecutable = true;
-            Params.ReferencedAssemblies.Add("System.dll");
-            Params.ReferencedAssemblies.Add("FervorLibrary.dll"); 
-            Params.ReferencedAssemblies.Add("ObsidianFunctions.dll");
-            Params.OutputAssembly = csfile.Replace(".cs", ".exe");
-            StreamReader sr = new StreamReader(csfile);
-            string cscode = sr.ReadToEnd();
-            sr.Close(); 
-            CompilerResults Results = new CSharpCodeProvider().CompileAssemblyFromSource(Params, cscode);
-            if (Results.Errors.Count > 0)
+            try
             {
-                return String.Join(",", Results.Errors.ToString());
+                CompilerParameters Params = new CompilerParameters();
+                Params.GenerateExecutable = true;
+                Params.ReferencedAssemblies.Add("System.dll");
+                Params.ReferencedAssemblies.Add("FervorLibrary.dll");
+                Params.ReferencedAssemblies.Add("ObsidianFunctions.dll");
+                Params.ReferencedAssemblies.Add("AIMLBot.dll");
+                Params.OutputAssembly = csfile.Replace(".cs", ".exe");
+                StreamReader sr = new StreamReader(csfile);
+                string cscode = sr.ReadToEnd();
+                sr.Close();
+                CompilerResults Results = new CSharpCodeProvider().CompileAssemblyFromSource(Params, cscode);
+                if (Results.Errors.Count > 0)
+                {
+                    return String.Join(",", Results.Errors.ToString());
+                }
+                else
+                {
+                    return "Compile success!";
+                }
             }
-            else
+            catch (Exception ex)
             {
-                return "Compile success!"; 
+                return ex.ToString(); 
             }
+        }
+        public bool isActiveUser(string nickname)
+        {
+            StreamReader sr = new StreamReader(".activeusers");
+            string[] listofactiveusers = sr.ReadToEnd().Split(':');
+            sr.Close();
+            bool userbool = false;
+            foreach (string x in listofactiveusers)
+            {
+                if (x == nickname)
+                {
+                    userbool = true;
+                }
+            }
+            return userbool;
         }
     }
 }

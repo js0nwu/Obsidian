@@ -40,8 +40,6 @@ namespace Obsidian
             string passhash = ObsidFunc.md5calc(ownerpass);
             sw3.Write(oldpasses + passhash + ":");
             sw3.Close(); 
-            Form1 mainForm = new Form1();
-            mainForm.setOwner();
             this.Hide();
         }
 

@@ -1,17 +1,29 @@
+using System;
+using FervorLibrary;
+using ObsidianFunctions;
+
 namespace CodeCompile
 {
     class Program
     {
         static void Main(string[] args)
         {
-            System.Console.WriteLine(args.Length);
-            System.Console.WriteLine("CodeDOM test");
-            System.Console.WriteLine("Line 2");
-            ObsidianFunctions.Functions ObsidFunc = new ObsidianFunctions.Functions();
-            System.Console.WriteLine(ObsidFunc.md5calc("test"));
-            //System.Console.WriteLine(args[0]);
-            FervorLibrary.Library FervLib = new FervorLibrary.Library();
-            System.Console.WriteLine(FervLib.greet(0)); 
+            string channel = args[0];
+            string rnick = args[1];
+            string rmsg = args[2];
+            try
+            {
+                string query = rmsg.Remove(0, 7);
+                int queryindex = System.Int32.Parse(query);
+                FervorLibrary.Library Greeting = new FervorLibrary.Library();
+                string returngreet = Greeting.greet(queryindex);
+                string response = "PRIVMSG " + channel + " :" + returngreet;
+                System.Console.WriteLine(response);
+            }
+            catch (Exception ex)
+            {
+                System.Console.WriteLine(ex); 
+            }
         }
     }
 }

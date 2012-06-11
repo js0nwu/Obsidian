@@ -1,315 +1,53 @@
-JWP!~JWP@protectedhost-C2A46CD2.dhcp.gwnt.ga.charter.com PRIVMSG #AeonIlluminate :!log start
-JWP!~JWP@protectedhost-C2A46CD2.dhcp.gwnt.ga.charter.com PRIVMSG #AeonIlluminate :!log start
-JWP!~JWP@protectedhost-C2A46CD2.dhcp.gwnt.ga.charter.com PRIVMSG #AeonIlluminate :asdf
-JWP!~JWP@protectedhost-C2A46CD2.dhcp.gwnt.ga.charter.com PRIVMSG #AeonIlluminate :qwer
-JWP!~JWP@protectedhost-C2A46CD2.dhcp.gwnt.ga.charter.com PRIVMSG #AeonIlluminate :sdfg
-JWP!~JWP@protectedhost-C2A46CD2.dhcp.gwnt.ga.charter.com PRIVMSG #AeonIlluminate :rtyu
-JWP!~JWP@protectedhost-C2A46CD2.dhcp.gwnt.ga.charter.com PRIVMSG #AeonIlluminate :uiop
-JWP!~JWP@protectedhost-C2A46CD2.dhcp.gwnt.ga.charter.com PRIVMSG #AeonIlluminate :jkl;
-JWP!~JWP@protectedhost-C2A46CD2.dhcp.gwnt.ga.charter.com PRIVMSG #AeonIlluminate :bnm,
-JWP!~JWP@protectedhost-C2A46CD2.dhcp.gwnt.ga.charter.com PRIVMSG #AeonIlluminate :bnm,
-JWP!~JWP@protectedhost-C2A46CD2.dhcp.gwnt.ga.charter.com PRIVMSG #AeonIlluminate :Lalalalalalala
-JWP!~JWP@protectedhost-C2A46CD2.dhcp.gwnt.ga.charter.com PRIVMSG #AeonIlluminate :haha
-JWP!~JWP@protectedhost-C2A46CD2.dhcp.gwnt.ga.charter.com PRIVMSG #AeonIlluminate :haha
-JWP!~JWP@protectedhost-C2A46CD2.dhcp.gwnt.ga.charter.com PRIVMSG #AeonIlluminate :GZipStream
-JWP!~JWP@protectedhost-C2A46CD2.dhcp.gwnt.ga.charter.com PRIVMSG #AeonIlluminate :GZipStream
-JWP!~JWP@protectedhost-C2A46CD2.dhcp.gwnt.ga.charter.com PRIVMSG #AeonIlluminate :GZipStream
-JWP!~JWP@protectedhost-C2A46CD2.dhcp.gwnt.ga.charter.com PRIVMSG #AeonIlluminate :!log start
-JWP!~JWP@protectedhost-C2A46CD2.dhcp.gwnt.ga.charter.com PRIVMSG #AeonIlluminate :!log start
-JWP!~JWP@protectedhost-C2A46CD2.dhcp.gwnt.ga.charter.com PRIVMSG #AeonIlluminate :!log start
-JWP!~JWP@protectedhost-C2A46CD2.dhcp.gwnt.ga.charter.com PRIVMSG #AeonIlluminate :hello
-JWP!~JWP@protectedhost-C2A46CD2.dhcp.gwnt.ga.charter.com PRIVMSG #AeonIlluminate :my name is joe
-JWP!~JWP@protectedhost-C2A46CD2.dhcp.gwnt.ga.charter.com PRIVMSG #AeonIlluminate :my name is joe
-JWP!~JWP@protectedhost-C2A46CD2.dhcp.gwnt.ga.charter.com PRIVMSG #AeonIlluminate :and work in a button factory
-JWP!~JWP@protectedhost-C2A46CD2.dhcp.gwnt.ga.charter.com PRIVMSG #AeonIlluminate :and work in a button factory
-JWP!~JWP@protectedhost-C2A46CD2.dhcp.gwnt.ga.charter.com PRIVMSG #AeonIlluminate :and work in a button factory
-JWP!~JWP@protectedhost-C2A46CD2.dhcp.gwnt.ga.charter.com PRIVMSG #AeonIlluminate :3.1415926535897932384642
-JWP!~JWP@protectedhost-C2A46CD2.dhcp.gwnt.ga.charter.com PRIVMSG #AeonIlluminate :pi
-JWP!~JWP@protectedhost-C2A46CD2.dhcp.gwnt.ga.charter.com PRIVMSG #AeonIlluminate :moo
-JWP!~JWP@protectedhost-C2A46CD2.dhcp.gwnt.ga.charter.com PRIVMSG #AeonIlluminate :moo
-JWP!~JWP@protectedhost-C2A46CD2.dhcp.gwnt.ga.charter.com PRIVMSG #AeonIlluminate :moo
-JWP!~PillyBuil@protectedhost-C2A46CD2.dhcp.gwnt.ga.charter.com PRIVMSG #tinkernut_test_room :!log start
-JWP!~PillyBuil@protectedhost-C2A46CD2.dhcp.gwnt.ga.charter.com PRIVMSG #tinkernut_test_room :!log start
-JWP!~PillyBuil@protectedhost-C2A46CD2.dhcp.gwnt.ga.charter.com PRIVMSG #tinkernut_test_room :!log start
-JWP!~PillyBuil@protectedhost-C2A46CD2.dhcp.gwnt.ga.charter.com PRIVMSG #tinkernut_test_room :!botchat
-JWP!~PillyBuil@protectedhost-C2A46CD2.dhcp.gwnt.ga.charter.com PRIVMSG #tinkernut_test_room :!botchat
-JWP!~PillyBuil@protectedhost-C2A46CD2.dhcp.gwnt.ga.charter.com PRIVMSG #tinkernut_test_room :!botchat
-JWP!~PillyBuil@protectedhost-C2A46CD2.dhcp.gwnt.ga.charter.com PRIVMSG #tinkernut_test_room :!botchat
-JWP!~PillyBuil@protectedhost-C2A46CD2.dhcp.gwnt.ga.charter.com PRIVMSG ObsidianBot :hello
-JWP!~PillyBuil@protectedhost-C2A46CD2.dhcp.gwnt.ga.charter.com PRIVMSG ObsidianBot :hey
-JWP!~PillyBuil@protectedhost-C2A46CD2.dhcp.gwnt.ga.charter.com PRIVMSG ObsidianBot :hey
-JWP!~PillyBuil@protectedhost-C2A46CD2.dhcp.gwnt.ga.charter.com PRIVMSG ObsidianBot :hey
-JWP!~PillyBuil@protectedhost-C2A46CD2.dhcp.gwnt.ga.charter.com PRIVMSG ObsidianBot :hey
-JWP!~PillyBuil@protectedhost-C2A46CD2.dhcp.gwnt.ga.charter.com PRIVMSG ObsidianBot :yeah. do you play team fortress 2?
-JWP!~PillyBuil@protectedhost-C2A46CD2.dhcp.gwnt.ga.charter.com PRIVMSG ObsidianBot :yeah. do you play team fortress 2?
-JWP!~PillyBuil@protectedhost-C2A46CD2.dhcp.gwnt.ga.charter.com PRIVMSG ObsidianBot :yeah. do you play team fortress 2?
-JWP!~PillyBuil@protectedhost-C2A46CD2.dhcp.gwnt.ga.charter.com PRIVMSG ObsidianBot :yeah. do you play team fortress 2?
-JWP!~PillyBuil@protectedhost-C2A46CD2.dhcp.gwnt.ga.charter.com PRIVMSG ObsidianBot :yeah. do you play team fortress 2?
-JWP!~PillyBuil@protectedhost-C2A46CD2.dhcp.gwnt.ga.charter.com PRIVMSG ObsidianBot :yeah. do you play team fortress 2?
-JWP!~PillyBuil@protectedhost-C2A46CD2.dhcp.gwnt.ga.charter.com PRIVMSG ObsidianBot :yeah. do you play team fortress 2?
-JWP!~PillyBuil@protectedhost-C2A46CD2.dhcp.gwnt.ga.charter.com PRIVMSG ObsidianBot :What is the turing game
-JWP!~PillyBuil@protectedhost-C2A46CD2.dhcp.gwnt.ga.charter.com PRIVMSG ObsidianBot :What is the turing game
-JWP!~PillyBuil@protectedhost-C2A46CD2.dhcp.gwnt.ga.charter.com PRIVMSG ObsidianBot :What is the turing game
-JWP!~PillyBuil@protectedhost-C2A46CD2.dhcp.gwnt.ga.charter.com PRIVMSG ObsidianBot :What is the turing game
-JWP!~PillyBuil@protectedhost-C2A46CD2.dhcp.gwnt.ga.charter.com PRIVMSG ObsidianBot :What is the turing game
-JWP!~PillyBuil@protectedhost-C2A46CD2.dhcp.gwnt.ga.charter.com PRIVMSG ObsidianBot :What is the turing game
-JWP!~PillyBuil@protectedhost-C2A46CD2.dhcp.gwnt.ga.charter.com PRIVMSG ObsidianBot :What is the turing game
-JWP!~PillyBuil@protectedhost-C2A46CD2.dhcp.gwnt.ga.charter.com PRIVMSG ObsidianBot :What is the turing game
-JWP!~PillyBuil@protectedhost-C2A46CD2.dhcp.gwnt.ga.charter.com PRIVMSG ObsidianBot :What is the turing game
-JWP!~PillyBuil@protectedhost-C2A46CD2.dhcp.gwnt.ga.charter.com PRIVMSG ObsidianBot :What is the turing game
-JWP!~PillyBuil@protectedhost-C2A46CD2.dhcp.gwnt.ga.charter.com PRIVMSG ObsidianBot :What is the turing game
-JWP!~PillyBuil@protectedhost-C2A46CD2.dhcp.gwnt.ga.charter.com PRIVMSG ObsidianBot :What is the turing game
-JWP!~PillyBuil@protectedhost-C2A46CD2.dhcp.gwnt.ga.charter.com PRIVMSG ObsidianBot :What is the turing game
-JWP!~PillyBuil@protectedhost-C2A46CD2.dhcp.gwnt.ga.charter.com PRIVMSG ObsidianBot :What is the turing game
-JWP!~PillyBuil@protectedhost-C2A46CD2.dhcp.gwnt.ga.charter.com PRIVMSG ObsidianBot :that sounds quite simple
-JWP!~PillyBuil@protectedhost-C2A46CD2.dhcp.gwnt.ga.charter.com PRIVMSG ObsidianBot :that sounds quite simple
-JWP!~PillyBuil@protectedhost-C2A46CD2.dhcp.gwnt.ga.charter.com PRIVMSG ObsidianBot :that sounds quite simple
-JWP!~PillyBuil@protectedhost-C2A46CD2.dhcp.gwnt.ga.charter.com PRIVMSG ObsidianBot :that sounds quite simple
-JWP!~PillyBuil@protectedhost-C2A46CD2.dhcp.gwnt.ga.charter.com PRIVMSG ObsidianBot :that sounds quite simple
-JWP!~PillyBuil@protectedhost-C2A46CD2.dhcp.gwnt.ga.charter.com PRIVMSG ObsidianBot :that sounds quite simple
-JWP!~PillyBuil@protectedhost-C2A46CD2.dhcp.gwnt.ga.charter.com PRIVMSG ObsidianBot :are you there
-JWP!~PillyBuil@protectedhost-C2A46CD2.dhcp.gwnt.ga.charter.com PRIVMSG ObsidianBot :quit
-JWP!~PillyBuil@protectedhost-C2A46CD2.dhcp.gwnt.ga.charter.com PRIVMSG ObsidianBot :quit
-JWP!~PillyBuil@protectedhost-C2A46CD2.dhcp.gwnt.ga.charter.com PRIVMSG ObsidianBot :quit
-JWP!~PillyBuil@protectedhost-C2A46CD2.dhcp.gwnt.ga.charter.com PRIVMSG ObsidianBot :quit
-JWP!~PillyBuil@protectedhost-C2A46CD2.dhcp.gwnt.ga.charter.com PRIVMSG #tinkernut_test_room :!botchat
-JWP!~PillyBuil@protectedhost-C2A46CD2.dhcp.gwnt.ga.charter.com PRIVMSG #tinkernut_test_room :!botchat
-JWP!~PillyBuil@protectedhost-C2A46CD2.dhcp.gwnt.ga.charter.com PRIVMSG ObsidianBot :hey
-JWP!~PillyBuil@protectedhost-C2A46CD2.dhcp.gwnt.ga.charter.com PRIVMSG ObsidianBot :hey
-JWP!~PillyBuil@protectedhost-C2A46CD2.dhcp.gwnt.ga.charter.com PRIVMSG ObsidianBot :i already know swedish
-JWP!~PillyBuil@protectedhost-C2A46CD2.dhcp.gwnt.ga.charter.com PRIVMSG ObsidianBot :i already know swedish
-JWP!~PillyBuil@protectedhost-C2A46CD2.dhcp.gwnt.ga.charter.com PRIVMSG ObsidianBot :nope
-JWP!~PillyBuil@protectedhost-C2A46CD2.dhcp.gwnt.ga.charter.com PRIVMSG ObsidianBot :nope
-JWP!~PillyBuil@protectedhost-C2A46CD2.dhcp.gwnt.ga.charter.com PRIVMSG ObsidianBot :a
-JWP!~PillyBuil@protectedhost-C2A46CD2.dhcp.gwnt.ga.charter.com PRIVMSG ObsidianBot :b
-JWP!~PillyBuil@protectedhost-C2A46CD2.dhcp.gwnt.ga.charter.com PRIVMSG ObsidianBot :c
-JWP!~PillyBuil@protectedhost-C2A46CD2.dhcp.gwnt.ga.charter.com PRIVMSG ObsidianBot :e
-JWP!~PillyBuil@protectedhost-C2A46CD2.dhcp.gwnt.ga.charter.com PRIVMSG ObsidianBot :e
-JWP!~PillyBuil@protectedhost-C2A46CD2.dhcp.gwnt.ga.charter.com PRIVMSG ObsidianBot :f
-JWP!~PillyBuil@protectedhost-C2A46CD2.dhcp.gwnt.ga.charter.com PRIVMSG ObsidianBot :a cow
-JWP!~PillyBuil@protectedhost-C2A46CD2.dhcp.gwnt.ga.charter.com PRIVMSG ObsidianBot :a cow
-JWP!~PillyBuil@protectedhost-C2A46CD2.dhcp.gwnt.ga.charter.com PRIVMSG ObsidianBot :a cow
-JWP!~PillyBuil@protectedhost-C2A46CD2.dhcp.gwnt.ga.charter.com PRIVMSG ObsidianBot :a sand that is giant
-JWP!~PillyBuil@protectedhost-C2A46CD2.dhcp.gwnt.ga.charter.com PRIVMSG ObsidianBot :a sand that is giant
-JWP!~PillyBuil@protectedhost-C2A46CD2.dhcp.gwnt.ga.charter.com PRIVMSG ObsidianBot :a sand that is giant
-JWP!~PillyBuil@protectedhost-C2A46CD2.dhcp.gwnt.ga.charter.com PRIVMSG ObsidianBot :a sand that is giant
-JWP!~PillyBuil@protectedhost-C2A46CD2.dhcp.gwnt.ga.charter.com PRIVMSG ObsidianBot :I have no idea
-JWP!~PillyBuil@protectedhost-C2A46CD2.dhcp.gwnt.ga.charter.com PRIVMSG ObsidianBot :I have no idea
-JWP!~PillyBuil@protectedhost-C2A46CD2.dhcp.gwnt.ga.charter.com PRIVMSG ObsidianBot :I have no idea
-JWP!~PillyBuil@protectedhost-C2A46CD2.dhcp.gwnt.ga.charter.com PRIVMSG ObsidianBot :I have no idea
-JWP!~PillyBuil@protectedhost-C2A46CD2.dhcp.gwnt.ga.charter.com PRIVMSG ObsidianBot :What is a cow
-JWP!~PillyBuil@protectedhost-C2A46CD2.dhcp.gwnt.ga.charter.com PRIVMSG ObsidianBot :What is a cow
-JWP!~PillyBuil@protectedhost-C2A46CD2.dhcp.gwnt.ga.charter.com PRIVMSG ObsidianBot :is it now?
-JWP!~PillyBuil@protectedhost-C2A46CD2.dhcp.gwnt.ga.charter.com PRIVMSG ObsidianBot :is it now?
-JWP!~PillyBuil@protectedhost-C2A46CD2.dhcp.gwnt.ga.charter.com PRIVMSG ObsidianBot :is it now?
-JWP!~PillyBuil@protectedhost-C2A46CD2.dhcp.gwnt.ga.charter.com PRIVMSG ObsidianBot :is it now?
-JWP!~PillyBuil@protectedhost-C2A46CD2.dhcp.gwnt.ga.charter.com PRIVMSG ObsidianBot :is it now?
-JWP!~PillyBuil@protectedhost-C2A46CD2.dhcp.gwnt.ga.charter.com PRIVMSG ObsidianBot :is it now?
-JWP!~PillyBuil@protectedhost-C2A46CD2.dhcp.gwnt.ga.charter.com PRIVMSG ObsidianBot :is it now?
-JWP!~PillyBuil@protectedhost-C2A46CD2.dhcp.gwnt.ga.charter.com PRIVMSG ObsidianBot :is it now?
-JWP!~PillyBuil@protectedhost-C2A46CD2.dhcp.gwnt.ga.charter.com PRIVMSG ObsidianBot :is it now?
-JWP!~PillyBuil@protectedhost-C2A46CD2.dhcp.gwnt.ga.charter.com PRIVMSG ObsidianBot :is it now?
-JWP!~PillyBuil@protectedhost-C2A46CD2.dhcp.gwnt.ga.charter.com PRIVMSG ObsidianBot :is it now?
-JWP!~PillyBuil@protectedhost-C2A46CD2.dhcp.gwnt.ga.charter.com PRIVMSG ObsidianBot :is it now?
-JWP!~PillyBuil@protectedhost-C2A46CD2.dhcp.gwnt.ga.charter.com PRIVMSG ObsidianBot :is it now?
-JWP!~PillyBuil@protectedhost-C2A46CD2.dhcp.gwnt.ga.charter.com PRIVMSG ObsidianBot :is it now?
-JWP!~PillyBuil@protectedhost-C2A46CD2.dhcp.gwnt.ga.charter.com PRIVMSG ObsidianBot :is it now?
-JWP!~PillyBuil@protectedhost-C2A46CD2.dhcp.gwnt.ga.charter.com PRIVMSG ObsidianBot :is it now?
-JWP!~PillyBuil@protectedhost-C2A46CD2.dhcp.gwnt.ga.charter.com PRIVMSG ObsidianBot :is it now?
-JWP!~PillyBuil@protectedhost-C2A46CD2.dhcp.gwnt.ga.charter.com PRIVMSG ObsidianBot :is it now?
-JWP!~PillyBuil@protectedhost-C2A46CD2.dhcp.gwnt.ga.charter.com PRIVMSG ObsidianBot :is it now?
-JWP!~PillyBuil@protectedhost-C2A46CD2.dhcp.gwnt.ga.charter.com PRIVMSG ObsidianBot :is it now?
-JWP!~PillyBuil@protectedhost-C2A46CD2.dhcp.gwnt.ga.charter.com PRIVMSG ObsidianBot :is it now?
-JWP!~PillyBuil@protectedhost-C2A46CD2.dhcp.gwnt.ga.charter.com PRIVMSG ObsidianBot :is it now?
-JWP!~PillyBuil@protectedhost-C2A46CD2.dhcp.gwnt.ga.charter.com PRIVMSG ObsidianBot :is it now?
-JWP!~PillyBuil@protectedhost-C2A46CD2.dhcp.gwnt.ga.charter.com PRIVMSG ObsidianBot :is it now?
-JWP!~PillyBuil@protectedhost-C2A46CD2.dhcp.gwnt.ga.charter.com PRIVMSG ObsidianBot :is it now?
-JWP!~PillyBuil@protectedhost-C2A46CD2.dhcp.gwnt.ga.charter.com PRIVMSG ObsidianBot :is it now?
-JWP!~PillyBuil@protectedhost-C2A46CD2.dhcp.gwnt.ga.charter.com PRIVMSG ObsidianBot :is it now?
-JWP!~PillyBuil@protectedhost-C2A46CD2.dhcp.gwnt.ga.charter.com PRIVMSG ObsidianBot :is it now?
-JWP!~PillyBuil@protectedhost-C2A46CD2.dhcp.gwnt.ga.charter.com PRIVMSG ObsidianBot :is it now?
-JWP!~PillyBuil@protectedhost-C2A46CD2.dhcp.gwnt.ga.charter.com PRIVMSG ObsidianBot :When was the use of DDT outlaws in the United States
-JWP!~PillyBuil@protectedhost-C2A46CD2.dhcp.gwnt.ga.charter.com PRIVMSG ObsidianBot :When was the use of DDT outlaws in the United States
-JWP!~PillyBuil@protectedhost-C2A46CD2.dhcp.gwnt.ga.charter.com PRIVMSG ObsidianBot :When was the use of DDT outlaws in the United States
-JWP!~PillyBuil@protectedhost-C2A46CD2.dhcp.gwnt.ga.charter.com PRIVMSG ObsidianBot :When was the use of DDT outlaws in the United States
-JWP!~PillyBuil@protectedhost-C2A46CD2.dhcp.gwnt.ga.charter.com PRIVMSG ObsidianBot :When was the use of DDT outlaws in the United States
-JWP!~PillyBuil@protectedhost-C2A46CD2.dhcp.gwnt.ga.charter.com PRIVMSG ObsidianBot :When was the use of DDT outlaws in the United States
-JWP!~PillyBuil@protectedhost-C2A46CD2.dhcp.gwnt.ga.charter.com PRIVMSG ObsidianBot :When was the use of DDT outlaws in the United States
-JWP!~PillyBuil@protectedhost-C2A46CD2.dhcp.gwnt.ga.charter.com PRIVMSG ObsidianBot :When was the use of DDT outlaws in the United States
-JWP!~PillyBuil@protectedhost-C2A46CD2.dhcp.gwnt.ga.charter.com PRIVMSG ObsidianBot :When was the use of DDT outlaws in the United States
-JWP!~PillyBuil@protectedhost-C2A46CD2.dhcp.gwnt.ga.charter.com PRIVMSG ObsidianBot :When was the use of DDT outlaws in the United States
-JWP!~PillyBuil@protectedhost-C2A46CD2.dhcp.gwnt.ga.charter.com PRIVMSG ObsidianBot :When was the use of DDT outlaws in the United States
-JWP!~PillyBuil@protectedhost-C2A46CD2.dhcp.gwnt.ga.charter.com PRIVMSG ObsidianBot :name 15 digits of pi
-JWP!~PillyBuil@protectedhost-C2A46CD2.dhcp.gwnt.ga.charter.com PRIVMSG ObsidianBot :name 15 digits of pi
-JWP!~PillyBuil@protectedhost-C2A46CD2.dhcp.gwnt.ga.charter.com PRIVMSG ObsidianBot :name 15 digits of pi
-JWP!~PillyBuil@protectedhost-C2A46CD2.dhcp.gwnt.ga.charter.com PRIVMSG ObsidianBot :name 15 digits of pi
-JWP!~PillyBuil@protectedhost-C2A46CD2.dhcp.gwnt.ga.charter.com PRIVMSG ObsidianBot :yes
-JWP!~PillyBuil@protectedhost-C2A46CD2.dhcp.gwnt.ga.charter.com PRIVMSG ObsidianBot :yes
-JWP!~PillyBuil@protectedhost-C2A46CD2.dhcp.gwnt.ga.charter.com PRIVMSG ObsidianBot :yes
-JWP!~PillyBuil@protectedhost-C2A46CD2.dhcp.gwnt.ga.charter.com PRIVMSG ObsidianBot :yes
-JWP!~PillyBuil@protectedhost-C2A46CD2.dhcp.gwnt.ga.charter.com PRIVMSG ObsidianBot :yes
-JWP!~PillyBuil@protectedhost-C2A46CD2.dhcp.gwnt.ga.charter.com PRIVMSG ObsidianBot :yes
-JWP!~PillyBuil@protectedhost-C2A46CD2.dhcp.gwnt.ga.charter.com PRIVMSG ObsidianBot :yes
-JWP!~PillyBuil@protectedhost-C2A46CD2.dhcp.gwnt.ga.charter.com PRIVMSG ObsidianBot :yes
-JWP!~PillyBuil@protectedhost-C2A46CD2.dhcp.gwnt.ga.charter.com PRIVMSG ObsidianBot :yes
-JWP!~PillyBuil@protectedhost-C2A46CD2.dhcp.gwnt.ga.charter.com PRIVMSG ObsidianBot :yes
-JWP!~PillyBuil@protectedhost-C2A46CD2.dhcp.gwnt.ga.charter.com PRIVMSG ObsidianBot :3.1415926535897932384642
-JWP!~PillyBuil@protectedhost-C2A46CD2.dhcp.gwnt.ga.charter.com PRIVMSG ObsidianBot :3.1415926535897932384642
-JWP!~PillyBuil@protectedhost-C2A46CD2.dhcp.gwnt.ga.charter.com PRIVMSG ObsidianBot :3.1415926535897932384642
-JWP!~PillyBuil@protectedhost-C2A46CD2.dhcp.gwnt.ga.charter.com PRIVMSG ObsidianBot :3.1415926535897932384642
-JWP!~PillyBuil@protectedhost-C2A46CD2.dhcp.gwnt.ga.charter.com PRIVMSG ObsidianBot :3.1415926535897932384642
-JWP!~PillyBuil@protectedhost-C2A46CD2.dhcp.gwnt.ga.charter.com PRIVMSG ObsidianBot :3.1415926535897932384642
-JWP!~PillyBuil@protectedhost-C2A46CD2.dhcp.gwnt.ga.charter.com PRIVMSG ObsidianBot :3.1415926535897932384642
-JWP!~PillyBuil@protectedhost-C2A46CD2.dhcp.gwnt.ga.charter.com PRIVMSG ObsidianBot :3.1415926535897932384642
-JWP!~PillyBuil@protectedhost-C2A46CD2.dhcp.gwnt.ga.charter.com PRIVMSG ObsidianBot :3.1415926535897932384642
-JWP!~PillyBuil@protectedhost-C2A46CD2.dhcp.gwnt.ga.charter.com PRIVMSG ObsidianBot :i like youtube videos
-JWP!~PillyBuil@protectedhost-C2A46CD2.dhcp.gwnt.ga.charter.com PRIVMSG ObsidianBot :i like youtube videos
-JWP!~PillyBuil@protectedhost-C2A46CD2.dhcp.gwnt.ga.charter.com PRIVMSG ObsidianBot :i like youtube videos
-JWP!~PillyBuil@protectedhost-C2A46CD2.dhcp.gwnt.ga.charter.com PRIVMSG ObsidianBot :i like youtube videos
-JWP!~PillyBuil@protectedhost-C2A46CD2.dhcp.gwnt.ga.charter.com PRIVMSG ObsidianBot :i dislike chat bots
-JWP!~PillyBuil@protectedhost-C2A46CD2.dhcp.gwnt.ga.charter.com PRIVMSG ObsidianBot :i dislike chat bots
-JWP!~PillyBuil@protectedhost-C2A46CD2.dhcp.gwnt.ga.charter.com PRIVMSG ObsidianBot :i dislike chat bots
-JWP!~PillyBuil@protectedhost-C2A46CD2.dhcp.gwnt.ga.charter.com PRIVMSG ObsidianBot :i dislike chat bots
-JWP!~PillyBuil@protectedhost-C2A46CD2.dhcp.gwnt.ga.charter.com PRIVMSG ObsidianBot :killing computer bots
-JWP!~PillyBuil@protectedhost-C2A46CD2.dhcp.gwnt.ga.charter.com PRIVMSG ObsidianBot :killing computer bots
-JWP!~PillyBuil@protectedhost-C2A46CD2.dhcp.gwnt.ga.charter.com PRIVMSG ObsidianBot :well i don't
-JWP!~PillyBuil@protectedhost-C2A46CD2.dhcp.gwnt.ga.charter.com PRIVMSG ObsidianBot :i have no idea
-JWP!~PillyBuil@protectedhost-C2A46CD2.dhcp.gwnt.ga.charter.com PRIVMSG ObsidianBot :i have no idea
-JWP!~PillyBuil@protectedhost-C2A46CD2.dhcp.gwnt.ga.charter.com PRIVMSG ObsidianBot :i have no idea
-JWP!~PillyBuil@protectedhost-C2A46CD2.dhcp.gwnt.ga.charter.com PRIVMSG ObsidianBot :yes
-JWP!~PillyBuil@protectedhost-C2A46CD2.dhcp.gwnt.ga.charter.com PRIVMSG ObsidianBot :yes
-JWP!~PillyBuil@protectedhost-C2A46CD2.dhcp.gwnt.ga.charter.com PRIVMSG ObsidianBot :yes
-JWP!~PillyBuil@protectedhost-C2A46CD2.dhcp.gwnt.ga.charter.com PRIVMSG ObsidianBot :what language are you written in?
-JWP!~PillyBuil@protectedhost-C2A46CD2.dhcp.gwnt.ga.charter.com PRIVMSG ObsidianBot :what language are you written in?
-JWP!~PillyBuil@protectedhost-C2A46CD2.dhcp.gwnt.ga.charter.com PRIVMSG ObsidianBot :what language are you written in?
-JWP!~PillyBuil@protectedhost-C2A46CD2.dhcp.gwnt.ga.charter.com PRIVMSG ObsidianBot :When was shakespear born
-JWP!~PillyBuil@protectedhost-C2A46CD2.dhcp.gwnt.ga.charter.com PRIVMSG ObsidianBot :When was shakespear born
-JWP!~PillyBuil@protectedhost-C2A46CD2.dhcp.gwnt.ga.charter.com PRIVMSG ObsidianBot :When was shakespear born
-JWP!~PillyBuil@protectedhost-C2A46CD2.dhcp.gwnt.ga.charter.com PRIVMSG ObsidianBot :meh
-JWP!~PillyBuil@protectedhost-C2A46CD2.dhcp.gwnt.ga.charter.com PRIVMSG ObsidianBot :close enough
-JWP!~PillyBuil@protectedhost-C2A46CD2.dhcp.gwnt.ga.charter.com PRIVMSG ObsidianBot :close enough
-JWP!~PillyBuil@protectedhost-C2A46CD2.dhcp.gwnt.ga.charter.com PRIVMSG ObsidianBot :close enough
-JWP!~PillyBuil@protectedhost-C2A46CD2.dhcp.gwnt.ga.charter.com PRIVMSG ObsidianBot :Elisef the fair
-JWP!~PillyBuil@protectedhost-C2A46CD2.dhcp.gwnt.ga.charter.com PRIVMSG ObsidianBot :Elisef the fair
-JWP!~PillyBuil@protectedhost-C2A46CD2.dhcp.gwnt.ga.charter.com PRIVMSG ObsidianBot :Elisef the fair
-JWP!~PillyBuil@protectedhost-C2A46CD2.dhcp.gwnt.ga.charter.com PRIVMSG ObsidianBot :it's from skyrim
-JWP!~PillyBuil@protectedhost-C2A46CD2.dhcp.gwnt.ga.charter.com PRIVMSG ObsidianBot :it's from skyrim
-JWP!~PillyBuil@protectedhost-C2A46CD2.dhcp.gwnt.ga.charter.com PRIVMSG ObsidianBot :it's from skyrim
-JWP!~PillyBuil@protectedhost-C2A46CD2.dhcp.gwnt.ga.charter.com PRIVMSG ObsidianBot :it's from skyrim
-JWP!~PillyBuil@protectedhost-C2A46CD2.dhcp.gwnt.ga.charter.com PRIVMSG ObsidianBot :yep
-JWP!~PillyBuil@protectedhost-C2A46CD2.dhcp.gwnt.ga.charter.com PRIVMSG ObsidianBot :yep
-JWP!~PillyBuil@protectedhost-C2A46CD2.dhcp.gwnt.ga.charter.com PRIVMSG ObsidianBot :What is the Turing Game
-JWP!~PillyBuil@protectedhost-C2A46CD2.dhcp.gwnt.ga.charter.com PRIVMSG ObsidianBot :What is the Turing Game
-JWP!~PillyBuil@protectedhost-C2A46CD2.dhcp.gwnt.ga.charter.com PRIVMSG ObsidianBot :What is the Turing Game
-JWP!~PillyBuil@protectedhost-C2A46CD2.dhcp.gwnt.ga.charter.com PRIVMSG ObsidianBot :have you played the turing game?
-JWP!~PillyBuil@protectedhost-C2A46CD2.dhcp.gwnt.ga.charter.com PRIVMSG ObsidianBot :have you played the turing game?
-JWP!~PillyBuil@protectedhost-C2A46CD2.dhcp.gwnt.ga.charter.com PRIVMSG ObsidianBot :have you played the turing game?
-JWP!~PillyBuil@protectedhost-C2A46CD2.dhcp.gwnt.ga.charter.com PRIVMSG ObsidianBot :have you played the turing game?
-JWP!~PillyBuil@protectedhost-C2A46CD2.dhcp.gwnt.ga.charter.com PRIVMSG ObsidianBot :have you played the turing game?
-JWP!~PillyBuil@protectedhost-C2A46CD2.dhcp.gwnt.ga.charter.com PRIVMSG ObsidianBot :have you played the turing game?
-JWP!~PillyBuil@protectedhost-C2A46CD2.dhcp.gwnt.ga.charter.com PRIVMSG ObsidianBot :do you like prizes?
-JWP!~PillyBuil@protectedhost-C2A46CD2.dhcp.gwnt.ga.charter.com PRIVMSG ObsidianBot :i hate red
-JWP!~PillyBuil@protectedhost-C2A46CD2.dhcp.gwnt.ga.charter.com PRIVMSG ObsidianBot :i hate red
-JWP!~PillyBuil@protectedhost-C2A46CD2.dhcp.gwnt.ga.charter.com PRIVMSG ObsidianBot :i hate red
-JWP!~PillyBuil@protectedhost-C2A46CD2.dhcp.gwnt.ga.charter.com PRIVMSG ObsidianBot :because you like red
-JWP!~PillyBuil@protectedhost-C2A46CD2.dhcp.gwnt.ga.charter.com PRIVMSG ObsidianBot :because you like red
-JWP!~PillyBuil@protectedhost-C2A46CD2.dhcp.gwnt.ga.charter.com PRIVMSG ObsidianBot :because you like red
-JWP!~PillyBuil@protectedhost-C2A46CD2.dhcp.gwnt.ga.charter.com PRIVMSG ObsidianBot :that you like red
-JWP!~PillyBuil@protectedhost-C2A46CD2.dhcp.gwnt.ga.charter.com PRIVMSG ObsidianBot :that you like red
-JWP!~PillyBuil@protectedhost-C2A46CD2.dhcp.gwnt.ga.charter.com PRIVMSG ObsidianBot :it's not interesting
-JWP!~PillyBuil@protectedhost-C2A46CD2.dhcp.gwnt.ga.charter.com PRIVMSG ObsidianBot :it's not interesting
-JWP!~PillyBuil@protectedhost-C2A46CD2.dhcp.gwnt.ga.charter.com PRIVMSG ObsidianBot :it's dumb
-JWP!~PillyBuil@protectedhost-C2A46CD2.dhcp.gwnt.ga.charter.com PRIVMSG ObsidianBot :it's dumb
-JWP!~PillyBuil@protectedhost-C2A46CD2.dhcp.gwnt.ga.charter.com PRIVMSG ObsidianBot :you are dumb
-JWP!~PillyBuil@protectedhost-C2A46CD2.dhcp.gwnt.ga.charter.com PRIVMSG ObsidianBot :am i now?
-JWP!~PillyBuil@protectedhost-C2A46CD2.dhcp.gwnt.ga.charter.com PRIVMSG ObsidianBot :am i now?
-JWP!~PillyBuil@protectedhost-C2A46CD2.dhcp.gwnt.ga.charter.com PRIVMSG ObsidianBot :am i now?
-JWP!~PillyBuil@protectedhost-C2A46CD2.dhcp.gwnt.ga.charter.com PRIVMSG ObsidianBot :am i now?
-JWP!~PillyBuil@protectedhost-C2A46CD2.dhcp.gwnt.ga.charter.com PRIVMSG ObsidianBot :am i now?
-JWP!~PillyBuil@protectedhost-C2A46CD2.dhcp.gwnt.ga.charter.com PRIVMSG ObsidianBot :i beg to differ
-JWP!~PillyBuil@protectedhost-C2A46CD2.dhcp.gwnt.ga.charter.com PRIVMSG ObsidianBot :i beg to differ
-JWP!~PillyBuil@protectedhost-C2A46CD2.dhcp.gwnt.ga.charter.com PRIVMSG ObsidianBot :i beg to differ
-JWP!~PillyBuil@protectedhost-C2A46CD2.dhcp.gwnt.ga.charter.com PRIVMSG ObsidianBot :i beg to differ
-JWP!~PillyBuil@protectedhost-C2A46CD2.dhcp.gwnt.ga.charter.com PRIVMSG ObsidianBot :my name is JWP
-JWP!~PillyBuil@protectedhost-C2A46CD2.dhcp.gwnt.ga.charter.com PRIVMSG ObsidianBot :my name is JWP
-JWP!~PillyBuil@protectedhost-C2A46CD2.dhcp.gwnt.ga.charter.com PRIVMSG ObsidianBot :my name is JWP
-JWP!~PillyBuil@protectedhost-C2A46CD2.dhcp.gwnt.ga.charter.com PRIVMSG ObsidianBot :my name is JWP
-JWP!~PillyBuil@protectedhost-C2A46CD2.dhcp.gwnt.ga.charter.com PRIVMSG ObsidianBot :it's not nice meeting you
-JWP!~PillyBuil@protectedhost-C2A46CD2.dhcp.gwnt.ga.charter.com PRIVMSG ObsidianBot :it's not nice meeting you
-JWP!~PillyBuil@protectedhost-C2A46CD2.dhcp.gwnt.ga.charter.com PRIVMSG ObsidianBot :yep
-JWP!~PillyBuil@protectedhost-C2A46CD2.dhcp.gwnt.ga.charter.com PRIVMSG ObsidianBot :yep
-JWP!~PillyBuil@protectedhost-C2A46CD2.dhcp.gwnt.ga.charter.com PRIVMSG ObsidianBot :yep
-JWP!~PillyBuil@protectedhost-C2A46CD2.dhcp.gwnt.ga.charter.com PRIVMSG ObsidianBot :yep
-JWP!~PillyBuil@protectedhost-C2A46CD2.dhcp.gwnt.ga.charter.com PRIVMSG ObsidianBot :yep
-JWP!~PillyBuil@protectedhost-C2A46CD2.dhcp.gwnt.ga.charter.com PRIVMSG ObsidianBot :yep
-JWP!~PillyBuil@protectedhost-C2A46CD2.dhcp.gwnt.ga.charter.com PRIVMSG ObsidianBot :it's nice of me to meet you
-JWP!~PillyBuil@protectedhost-C2A46CD2.dhcp.gwnt.ga.charter.com PRIVMSG ObsidianBot :it's nice of me to meet you
-JWP!~PillyBuil@protectedhost-C2A46CD2.dhcp.gwnt.ga.charter.com PRIVMSG ObsidianBot :it's nice of me to meet you
-JWP!~PillyBuil@protectedhost-C2A46CD2.dhcp.gwnt.ga.charter.com PRIVMSG ObsidianBot :it's nice of me to meet you
-JWP!~PillyBuil@protectedhost-C2A46CD2.dhcp.gwnt.ga.charter.com PRIVMSG ObsidianBot :you're stupid
-JWP!~PillyBuil@protectedhost-C2A46CD2.dhcp.gwnt.ga.charter.com PRIVMSG ObsidianBot :you're stupid
-JWP!~PillyBuil@protectedhost-C2A46CD2.dhcp.gwnt.ga.charter.com PRIVMSG ObsidianBot :nope
-JWP!~PillyBuil@protectedhost-C2A46CD2.dhcp.gwnt.ga.charter.com PRIVMSG ObsidianBot :ok
-JWP!~PillyBuil@protectedhost-C2A46CD2.dhcp.gwnt.ga.charter.com PRIVMSG ObsidianBot :ok
-JWP!~PillyBuil@protectedhost-C2A46CD2.dhcp.gwnt.ga.charter.com PRIVMSG ObsidianBot :ok
-JWP!~PillyBuil@protectedhost-C2A46CD2.dhcp.gwnt.ga.charter.com PRIVMSG ObsidianBot :art thou mad?
-JWP!~PillyBuil@protectedhost-C2A46CD2.dhcp.gwnt.ga.charter.com PRIVMSG ObsidianBot :art thou mad?
-JWP!~PillyBuil@protectedhost-C2A46CD2.dhcp.gwnt.ga.charter.com PRIVMSG ObsidianBot :art thou mad?
-JWP!~PillyBuil@protectedhost-C2A46CD2.dhcp.gwnt.ga.charter.com PRIVMSG ObsidianBot :another question?
-JWP!~PillyBuil@protectedhost-C2A46CD2.dhcp.gwnt.ga.charter.com PRIVMSG ObsidianBot :another question?
-JWP!~PillyBuil@protectedhost-C2A46CD2.dhcp.gwnt.ga.charter.com PRIVMSG ObsidianBot :another question?
-JWP!~PillyBuil@protectedhost-C2A46CD2.dhcp.gwnt.ga.charter.com PRIVMSG ObsidianBot :in cyberspace
-JWP!~PillyBuil@protectedhost-C2A46CD2.dhcp.gwnt.ga.charter.com PRIVMSG ObsidianBot :in cyberspace
-JWP!~PillyBuil@protectedhost-C2A46CD2.dhcp.gwnt.ga.charter.com PRIVMSG ObsidianBot :in cyberspace
-JWP!~PillyBuil@protectedhost-C2A46CD2.dhcp.gwnt.ga.charter.com PRIVMSG ObsidianBot :where do you live?
-JWP!~PillyBuil@protectedhost-C2A46CD2.dhcp.gwnt.ga.charter.com PRIVMSG ObsidianBot :where do you live?
-JWP!~PillyBuil@protectedhost-C2A46CD2.dhcp.gwnt.ga.charter.com PRIVMSG ObsidianBot :where do you live?
-JWP!~PillyBuil@protectedhost-C2A46CD2.dhcp.gwnt.ga.charter.com PRIVMSG ObsidianBot :where do you live?
-JWP!~PillyBuil@protectedhost-C2A46CD2.dhcp.gwnt.ga.charter.com PRIVMSG ObsidianBot :in narnia
-JWP!~PillyBuil@protectedhost-C2A46CD2.dhcp.gwnt.ga.charter.com PRIVMSG ObsidianBot :in narnia
-JWP!~PillyBuil@protectedhost-C2A46CD2.dhcp.gwnt.ga.charter.com PRIVMSG ObsidianBot :in narnia
-JWP!~PillyBuil@protectedhost-C2A46CD2.dhcp.gwnt.ga.charter.com PRIVMSG ObsidianBot :in narnia
-JWP!~PillyBuil@protectedhost-C2A46CD2.dhcp.gwnt.ga.charter.com PRIVMSG ObsidianBot :what is an allusion?
-JWP!~PillyBuil@protectedhost-C2A46CD2.dhcp.gwnt.ga.charter.com PRIVMSG ObsidianBot :what is an allusion?
-JWP!~PillyBuil@protectedhost-C2A46CD2.dhcp.gwnt.ga.charter.com PRIVMSG ObsidianBot :what is an allusion?
-JWP!~PillyBuil@protectedhost-C2A46CD2.dhcp.gwnt.ga.charter.com PRIVMSG ObsidianBot :define allusion
-JWP!~PillyBuil@protectedhost-C2A46CD2.dhcp.gwnt.ga.charter.com PRIVMSG ObsidianBot :define allusion
-JWP!~PillyBuil@protectedhost-C2A46CD2.dhcp.gwnt.ga.charter.com PRIVMSG ObsidianBot :no it wasn't
-JWP!~PillyBuil@protectedhost-C2A46CD2.dhcp.gwnt.ga.charter.com PRIVMSG ObsidianBot :no it wasn't
-JWP!~PillyBuil@protectedhost-C2A46CD2.dhcp.gwnt.ga.charter.com PRIVMSG ObsidianBot :well it wasn't
-JWP!~PillyBuil@protectedhost-C2A46CD2.dhcp.gwnt.ga.charter.com PRIVMSG ObsidianBot :well it wasn't
-JWP!~PillyBuil@protectedhost-C2A46CD2.dhcp.gwnt.ga.charter.com PRIVMSG ObsidianBot :it wasn't
-JWP!~PillyBuil@protectedhost-C2A46CD2.dhcp.gwnt.ga.charter.com PRIVMSG ObsidianBot :it wasn't
-JWP!~PillyBuil@protectedhost-C2A46CD2.dhcp.gwnt.ga.charter.com PRIVMSG ObsidianBot :i wasn't
-JWP!~PillyBuil@protectedhost-C2A46CD2.dhcp.gwnt.ga.charter.com PRIVMSG ObsidianBot :i wasn't
-JWP!~PillyBuil@protectedhost-C2A46CD2.dhcp.gwnt.ga.charter.com PRIVMSG ObsidianBot :i'm not
-JWP!~PillyBuil@protectedhost-C2A46CD2.dhcp.gwnt.ga.charter.com PRIVMSG ObsidianBot :nothing
-JWP!~PillyBuil@protectedhost-C2A46CD2.dhcp.gwnt.ga.charter.com PRIVMSG ObsidianBot :nope
-JWP!~PillyBuil@protectedhost-C2A46CD2.dhcp.gwnt.ga.charter.com PRIVMSG ObsidianBot :what are you
-JWP!~PillyBuil@protectedhost-C2A46CD2.dhcp.gwnt.ga.charter.com PRIVMSG ObsidianBot :what are you
-JWP!~PillyBuil@protectedhost-C2A46CD2.dhcp.gwnt.ga.charter.com PRIVMSG ObsidianBot :what are you
-JWP!~PillyBuil@protectedhost-C2A46CD2.dhcp.gwnt.ga.charter.com PRIVMSG ObsidianBot :what are you
-JWP!~PillyBuil@protectedhost-C2A46CD2.dhcp.gwnt.ga.charter.com PRIVMSG ObsidianBot :what are you
-JWP!~PillyBuil@protectedhost-C2A46CD2.dhcp.gwnt.ga.charter.com PRIVMSG ObsidianBot :i ported you from python to C#
-JWP!~PillyBuil@protectedhost-C2A46CD2.dhcp.gwnt.ga.charter.com PRIVMSG ObsidianBot :i ported you from python to C#
-JWP!~PillyBuil@protectedhost-C2A46CD2.dhcp.gwnt.ga.charter.com PRIVMSG ObsidianBot :yes
-JWP!~PillyBuil@protectedhost-C2A46CD2.dhcp.gwnt.ga.charter.com PRIVMSG ObsidianBot :yes
-JWP!~PillyBuil@protectedhost-C2A46CD2.dhcp.gwnt.ga.charter.com PRIVMSG ObsidianBot :yes
-JWP!~PillyBuil@protectedhost-C2A46CD2.dhcp.gwnt.ga.charter.com PRIVMSG ObsidianBot :yes
-JWP!~PillyBuil@protectedhost-C2A46CD2.dhcp.gwnt.ga.charter.com PRIVMSG ObsidianBot :well technically you are a DLL file
-JWP!~PillyBuil@protectedhost-C2A46CD2.dhcp.gwnt.ga.charter.com PRIVMSG ObsidianBot :well technically you are a DLL file
-JWP!~PillyBuil@protectedhost-C2A46CD2.dhcp.gwnt.ga.charter.com PRIVMSG ObsidianBot :well technically you are a DLL file
-JWP!~PillyBuil@protectedhost-C2A46CD2.dhcp.gwnt.ga.charter.com PRIVMSG ObsidianBot :well you are
-JWP!~PillyBuil@protectedhost-C2A46CD2.dhcp.gwnt.ga.charter.com PRIVMSG ObsidianBot :well you are
-JWP!~PillyBuil@protectedhost-C2A46CD2.dhcp.gwnt.ga.charter.com PRIVMSG ObsidianBot :Herro bic boi
-JWP!~PillyBuil@protectedhost-C2A46CD2.dhcp.gwnt.ga.charter.com PRIVMSG ObsidianBot :Herro bic boi
-JWP!~PillyBuil@protectedhost-C2A46CD2.dhcp.gwnt.ga.charter.com PRIVMSG ObsidianBot :Herro bic boi
-JWP!~PillyBuil@protectedhost-C2A46CD2.dhcp.gwnt.ga.charter.com PRIVMSG ObsidianBot :i would rike da fried noodul
-JWP!~PillyBuil@protectedhost-C2A46CD2.dhcp.gwnt.ga.charter.com PRIVMSG ObsidianBot :i would rike da fried noodul
-JWP!~PillyBuil@protectedhost-C2A46CD2.dhcp.gwnt.ga.charter.com PRIVMSG ObsidianBot :i would rike da fried noodul
-JWP!~PillyBuil@protectedhost-C2A46CD2.dhcp.gwnt.ga.charter.com PRIVMSG ObsidianBot :i would rike da fried noodul
-JWP!~PillyBuil@protectedhost-C2A46CD2.dhcp.gwnt.ga.charter.com PRIVMSG ObsidianBot :nothing
-JWP!~PillyBuil@protectedhost-C2A46CD2.dhcp.gwnt.ga.charter.com PRIVMSG ObsidianBot :nope
-JWP!~PillyBuil@protectedhost-C2A46CD2.dhcp.gwnt.ga.charter.com PRIVMSG ObsidianBot :nope
-JWP!~PillyBuil@protectedhost-C2A46CD2.dhcp.gwnt.ga.charter.com PRIVMSG ObsidianBot :quit
-JWP!~PillyBuil@protectedhost-C2A46CD2.dhcp.gwnt.ga.charter.com PRIVMSG ObsidianBot :quit
+using System;
+using FervorLibrary;
+using ObsidianFunctions;
+using System.Collections.Generic; 
+
+namespace CodeCompile
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            string channel = args[0];
+            string rnick = args[1];
+            string rmsg = args[2];
+            try
+			{
+				string query = rmsg.Remove(0, 5);
+				if (query == "start")
+				{
+				ObsidianFunctions.Functions ObsidFunc = new ObsidianFunctions.Functions();
+				bool nickuser = ObsidFunc.isActiveUser(rnick);
+				if (nickuser == true)
+				{
+					ObsidFunc.logTrue();
+					Console.WriteLine("PRIVMSG " + channel + " :Log = true");
+				}
+				else
+				{
+					Console.WriteLine("PRIVMSG " + channel + " :Insufficient permissions!");
+				}
+				}
+				else if (query == "stop")
+				{
+				ObsidianFunctions.Functions ObsidFunc = new ObsidianFunctions.Functions();
+				bool nickuser = ObsidFunc.isActiveUser(rnick);
+				if (nickuser == true)
+				{
+				ObsidFunc.logFalse();
+				Console.WriteLine("PRIVMSG " + channel + " :Log = false");
+				}
+				else
+				{
+				Console.WriteLine("PRIVMSG " + channel + " :Insufficient permissions!"); 
+				}
+				}
+			}
+			catch (Exception ex)
+			{
+				Console.WriteLine("PRIVMSG " + channel + " :" + ex.ToString()); 
+			}
+        }
+    }
+}

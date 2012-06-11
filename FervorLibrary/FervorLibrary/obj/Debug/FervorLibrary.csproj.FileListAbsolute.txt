@@ -3,3 +3,8 @@ C:\Users\PillyBuilt7\Documents\Visual Studio 2010\Projects\FervorLibrary\FervorL
 C:\Users\PillyBuilt7\Documents\Visual Studio 2010\Projects\FervorLibrary\FervorLibrary\obj\Debug\ResolveAssemblyReference.cache
 C:\Users\PillyBuilt7\Documents\Visual Studio 2010\Projects\FervorLibrary\FervorLibrary\obj\Debug\FervorLibrary.dll
 C:\Users\PillyBuilt7\Documents\Visual Studio 2010\Projects\FervorLibrary\FervorLibrary\obj\Debug\FervorLibrary.pdb
+C:\Users\PillyBuilt7\Obsidian\FervorLibrary\FervorLibrary\bin\Debug\FervorLibrary.dll
+C:\Users\PillyBuilt7\Obsidian\FervorLibrary\FervorLibrary\bin\Debug\FervorLibrary.pdb
+C:\Users\PillyBuilt7\Obsidian\FervorLibrary\FervorLibrary\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\PillyBuilt7\Obsidian\FervorLibrary\FervorLibrary\obj\Debug\FervorLibrary.dll
+C:\Users\PillyBuilt7\Obsidian\FervorLibrary\FervorLibrary\obj\Debug\FervorLibrary.pdb

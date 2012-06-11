@@ -7,6 +7,8 @@ namespace FervorLibrary
 {
     public class Library
     {
+        public int greetnumber;
+        public int farewellnumber; 
         public string Greeting(string name, int index)
         {
             System.IO.StreamReader greetreader = new System.IO.StreamReader("greet.bin");
