@@ -13,7 +13,34 @@ namespace ObsidianFunctions
 {
     public class Functions
     {
-
+		
+		public void settalkingTo(string nickname)
+		{
+			StreamWriter sw = new StreamWriter("talkingTo.bin");
+			sw.Write (nickname);
+			sw.Close ();
+		}
+		public string talkingTo()
+		{
+			if (System.IO.File.Exists ("talkingTo.bin"))
+			{
+				StreamReader sr = new StreamReader("talkingTo.bin");
+				string name = sr.ReadToEnd ().Trim ();
+				sr.Close ();
+				return name;
+			}
+			else
+			{
+				return "nobody"; 
+			}
+		}
+		public void cleartalkingTo()
+		{
+			if (File.Exists ("talkingTo.bin"))
+			{
+				File.Delete ("talkingTo.bin");	
+			}
+		}
         public bool isOperator()
         {
             if (System.IO.File.Exists("ops"))

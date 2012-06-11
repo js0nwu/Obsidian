@@ -444,19 +444,21 @@ namespace Obsidian
                         }
                         else if (rmsg.Contains("!botchat"))
                         {
-                            if (talkingTo != "nobody")
+							ObsidianFunctions.Functions ObsidFunc = new ObsidianFunctions.Functions();
+                            if (ObsidFunc.talkingTo() != "nobody")
                             {
                                 send("PRIVMSG " + rnick + " :Sorry, I'm already talking with someone");
                             }
                             else
                             {
-                                talkingTo = rnick;
+                                ObsidFunc.settalkingTo(rnick);
                                 FervorLibrary.Library Greetings = new FervorLibrary.Library();
                                 Random rand = new Random();
                                 int indexgreet = rand.Next(0, Greetings.greetnumber);
                                 string greeting = Greetings.Greeting(rnick, indexgreet);
                                 send("PRIVMSG " + rnick + " :" + greeting);
                                 botChat();
+
                             }
 
                         }
