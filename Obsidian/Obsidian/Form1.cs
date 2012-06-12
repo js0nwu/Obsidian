@@ -53,6 +53,7 @@ namespace Obsidian
 
         private void button1_Click(object sender, EventArgs e)
         {
+            button1.Enabled = false;
             string IRCInfo = textBox1.Text + "|" + textBox2.Text + "|" + textBox3.Text + "|" + textBox4.Text + "|" + textBox6.Text;
             System.IO.StreamWriter IRCInfoWrite = new System.IO.StreamWriter("IRCInfo.bin");
             IRCInfoWrite.Write(IRCInfo);
