@@ -85,6 +85,29 @@ namespace FervorLibrary
             string farewelllang = farewells[index];
             return farewelllang;
         }
+        public bool canGreet()
+        {
+            if (System.IO.File.Exists("canGreet"))
+            {
+                return true;
+            }
+            else
+            {
+                return false; 
+            }
+        }
+        public void greetTrue()
+        {
+            System.IO.StreamWriter sw = new System.IO.StreamWriter("canGreet");
+            sw.Close();
+        }
+        public void greetFalse()
+        {
+            if (System.IO.File.Exists("canGreet"))
+            {
+                System.IO.File.Delete("canGreet");
 
+            }
+        }
     }
 }

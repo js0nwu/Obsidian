@@ -15,15 +15,23 @@ AIMLbot.User chatUser;
 string channel = args[0];
 string rnick = args[1];
 string rmsg = args[2];
-ObsidianFunctions.Functions ObsidFunc = new ObsidianFunctions.Functions(); 
-chatBot = new AIMLbot.Bot();
-chatBot.loadSettings();
-chatUser = new AIMLbot.User(ObsidFunc.talkingTo(), chatBot);
-chatBot.loadAIMLFromFiles();
-chatBot.isAcceptingUserInput = true; 
-AIMLbot.Request r = new AIMLbot.Request(rmsg, chatUser, chatBot); 
-AIMLbot.Result res = chatBot.Chat(r);
-Console.WriteLine("PRIVMSG " + ObsidFunc.talkingTo() + " :" + res.Output); 
+try
+{
+    string query = rmsg.Remove(0, 9);
+        ObsidianFunctions.Functions ObsidFunc = new ObsidianFunctions.Functions();
+        chatBot = new AIMLbot.Bot();
+        chatBot.loadSettings();
+        chatUser = new AIMLbot.User(rnick, chatBot);
+        chatBot.loadAIMLFromFiles();
+        chatBot.isAcceptingUserInput = true;
+        AIMLbot.Request r = new AIMLbot.Request(query, chatUser, chatBot);
+        AIMLbot.Result res = chatBot.Chat(r);
+        Console.WriteLine("PRIVMSG " + rnick + " :" + res.Output);
+}
+catch (Exception ex)
+{
+    Console.WriteLine("PRIVMSG " + rnick + " :" + ex.ToString()); 
+}
 }
 }
 }

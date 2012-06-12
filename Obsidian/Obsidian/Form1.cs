@@ -147,9 +147,9 @@ namespace Obsidian
                 {
                     executableCommands.Add(x.Replace(".exe", ""));
                 }
-                else if (x.EndsWith(".jar"))
+                else if (x.EndsWith(".class"))
                 {
-                    javaCommands.Add(x.Replace(".jar", "")); 
+                    javaCommands.Add(x.Replace(".class", "")); 
                 }
             }
         }
@@ -192,13 +192,22 @@ namespace Obsidian
                             string response = "PRIVMSG " + channel + " :Response";
                             send(response);
                         }
-                        else if (rmsg.Contains("!javaexec ") == true)
+                        else if (rmsg.Contains("!classexec ") == true)
                         {
                             ObsidianFunctions.Functions ObsidFunc = new ObsidianFunctions.Functions();
                             if (rnick == ObsidFunc.ownernick() && ObsidFunc.isActiveUser(rnick) == true)
                             {
                                 string query = rmsg.Remove(0, 10).Trim();
-                                send(ObsidFunc.javaExec(query, channel, rnick, rmsg));
+                                send(ObsidFunc.classExec(query, channel, rnick, rmsg));
+                            }
+                        }
+                        else if (rmsg.Contains("!jarexec ") == true)
+                        {
+                            ObsidianFunctions.Functions ObsidFunc = new ObsidianFunctions.Functions();
+                            if (rnick == ObsidFunc.ownernick() && ObsidFunc.isActiveUser(rnick) == true)
+                            {
+                                string query = rmsg.Remove(0, 9).Trim();
+                                send(ObsidFunc.jarExec(query, channel, rnick, rmsg));
                             }
                         }
                         else if (rmsg.Contains("!greet "))
@@ -479,7 +488,7 @@ namespace Obsidian
                             }
                             else
                             {
-                                ObsidFunc.settalkingTo(rnick); 
+                                ObsidFunc.settalkingTo(rnick);
                                 FervorLibrary.Library Greetings = new FervorLibrary.Library();
                                 Random rand = new Random();
                                 int indexgreet = rand.Next(0, Greetings.greetnumber);
@@ -494,10 +503,10 @@ namespace Obsidian
                             ObsidianFunctions.Functions ObsidFunc = new ObsidianFunctions.Functions();
                             if (rnick == ObsidFunc.talkingTo())
                             {
-                                ObsidFunc.settalkingTo("nobody"); 
+                                ObsidFunc.settalkingTo("nobody");
                             }
                         }
-                        
+
                         else if (rnick == ObsidBot.talkingTo())
                         {
 
@@ -696,7 +705,7 @@ namespace Obsidian
                             bool nickuser = isActiveUser(rnick);
                             if (nickuser == true)
                             {
-                                ObsidBot.settalkingTo("nobody"); 
+                                ObsidBot.settalkingTo("nobody");
                             }
                             else
                             {

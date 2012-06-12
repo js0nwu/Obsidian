@@ -52,7 +52,7 @@ namespace ObsidianFunctions
                 File.Delete("talkingTo.bin");
             }
         }
-        public string javaExec(string filename, string channel, string rnick, string rmsg)
+        public string classExec(string filename, string channel, string rnick, string rmsg)
         {
             try
             {
@@ -68,6 +68,24 @@ namespace ObsidianFunctions
             catch (Exception ex)
             {
                 return ex.ToString(); 
+            }
+        }
+        public string jarExec(string filename, string channel, string rnick, string rmsg)
+        {
+            try
+            {
+                Process javaProcess = new Process();
+                javaProcess.StartInfo.FileName = "ikvm.exe";
+                javaProcess.StartInfo.Arguments = "-jar " + filename + " " + channel + " " + rnick + " " + "\"" + rmsg + "\"";
+                javaProcess.StartInfo.UseShellExecute = false;
+                javaProcess.StartInfo.RedirectStandardOutput = true;
+                javaProcess.Start();
+                javaProcess.WaitForExit();
+                return javaProcess.StandardOutput.ReadToEnd();
+            }
+            catch (Exception ex)
+            {
+                return ex.ToString();
             }
         }
         public void opTrue()
