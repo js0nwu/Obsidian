@@ -8,3 +8,13 @@ C:\Users\PillyBuilt7\Obsidian\FervorLibrary\FervorLibrary\bin\Release\FervorLibr
 C:\Users\PillyBuilt7\Obsidian\FervorLibrary\FervorLibrary\obj\Release\ResolveAssemblyReference.cache
 C:\Users\PillyBuilt7\Obsidian\FervorLibrary\FervorLibrary\obj\Release\FervorLibrary.dll
 C:\Users\PillyBuilt7\Obsidian\FervorLibrary\FervorLibrary\obj\Release\FervorLibrary.pdb
+E:\Obsidian\FervorLibrary\FervorLibrary\bin\Release\FervorLibrary.dll
+E:\Obsidian\FervorLibrary\FervorLibrary\bin\Release\FervorLibrary.pdb
+E:\Obsidian\FervorLibrary\FervorLibrary\obj\Release\ResolveAssemblyReference.cache
+E:\Obsidian\FervorLibrary\FervorLibrary\obj\Release\FervorLibrary.dll
+E:\Obsidian\FervorLibrary\FervorLibrary\obj\Release\FervorLibrary.pdb
+C:\Users\Staff\Desktop\Obsidian\FervorLibrary\FervorLibrary\bin\Release\FervorLibrary.dll
+C:\Users\Staff\Desktop\Obsidian\FervorLibrary\FervorLibrary\bin\Release\FervorLibrary.pdb
+C:\Users\Staff\Desktop\Obsidian\FervorLibrary\FervorLibrary\obj\Release\ResolveAssemblyReference.cache
+C:\Users\Staff\Desktop\Obsidian\FervorLibrary\FervorLibrary\obj\Release\FervorLibrary.dll
+C:\Users\Staff\Desktop\Obsidian\FervorLibrary\FervorLibrary\obj\Release\FervorLibrary.pdb

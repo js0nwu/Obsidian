@@ -33,7 +33,6 @@ namespace Obsidian
         string oldmsg;
         int spamcount;
         bool isLogging;
-        string talkingTo;
         Bot chatBot;
         User chatUser;
         System.Timers.Timer updatetmr;
@@ -43,6 +42,9 @@ namespace Obsidian
         string ircuserlist;
         bool controlSpam;
         string owner; 
+        List<string> executableCommands = new List<string>();
+        List<string> compileCommands = new List<string>();
+        List<string> javaCommands = new List<string>(); 
 
         public Form1()
         {
@@ -119,7 +121,8 @@ namespace Obsidian
                 swbl.Close();
             }
             isLogging = false;
-            talkingTo = "nobody";
+            ObsidianFunctions.Functions ObsidFunc = new ObsidianFunctions.Functions();
+            ObsidFunc.settalkingTo("nobody"); 
             botChat();
             setBlacklist();
             updatetmr = new System.Timers.Timer(500);
@@ -133,7 +136,22 @@ namespace Obsidian
                 swmg.Write("|"); 
                 swmg.Close(); 
             }
-            
+            string[] directoryFiles = Directory.GetFiles(Directory.GetCurrentDirectory());
+            foreach (string x in directoryFiles)
+            {
+                if (x.EndsWith(".cs"))
+                {
+                    compileCommands.Add(x.Replace(".cs", ""));
+                }
+                else if (x.EndsWith(".exe"))
+                {
+                    executableCommands.Add(x.Replace(".exe", ""));
+                }
+                else if (x.EndsWith(".jar"))
+                {
+                    javaCommands.Add(x.Replace(".jar", "")); 
+                }
+            }
         }
 
         public void send(string msg)
@@ -165,13 +183,23 @@ namespace Obsidian
                     tmparr = mail.Split(':');
                     rmsg = tmparr[1];
                     bool nickblacklisted = isBlacklisted(rnick);
-
+                    ObsidianFunctions.Functions ObsidBot = new ObsidianFunctions.Functions();
                     if (nickblacklisted == false)
                     {
+                        
                         if (rmsg.Contains("!respond") == true)
                         {
                             string response = "PRIVMSG " + channel + " :Response";
                             send(response);
+                        }
+                        else if (rmsg.Contains("!javaexec ") == true)
+                        {
+                            ObsidianFunctions.Functions ObsidFunc = new ObsidianFunctions.Functions();
+                            if (rnick == ObsidFunc.ownernick() && ObsidFunc.isActiveUser(rnick) == true)
+                            {
+                                string query = rmsg.Remove(0, 10).Trim();
+                                send(ObsidFunc.javaExec(query, channel, rnick, rmsg));
+                            }
                         }
                         else if (rmsg.Contains("!greet "))
                         {
@@ -385,7 +413,7 @@ namespace Obsidian
                             bool nickuser = isActiveUser(rnick);
                             if (nickuser == true)
                             {
-                                ObsidFunc.logTrue(); 
+                                ObsidFunc.logTrue();
                                 send("PRIVMSG " + channel + " :Success!");
                             }
                             else
@@ -399,7 +427,7 @@ namespace Obsidian
                             bool nickuser = isActiveUser(rnick);
                             if (nickuser == true)
                             {
-                                ObsidFunc.logFalse(); 
+                                ObsidFunc.logFalse();
                                 send("PRIVMSG " + channel + " :Success!");
                             }
                             else
@@ -444,37 +472,38 @@ namespace Obsidian
                         }
                         else if (rmsg.Contains("!botchat"))
                         {
-							ObsidianFunctions.Functions ObsidFunc = new ObsidianFunctions.Functions();
+                            ObsidianFunctions.Functions ObsidFunc = new ObsidianFunctions.Functions();
                             if (ObsidFunc.talkingTo() != "nobody")
                             {
                                 send("PRIVMSG " + rnick + " :Sorry, I'm already talking with someone");
                             }
                             else
                             {
-                                ObsidFunc.settalkingTo(rnick);
+                                ObsidFunc.settalkingTo(rnick); 
                                 FervorLibrary.Library Greetings = new FervorLibrary.Library();
                                 Random rand = new Random();
                                 int indexgreet = rand.Next(0, Greetings.greetnumber);
                                 string greeting = Greetings.Greeting(rnick, indexgreet);
                                 send("PRIVMSG " + rnick + " :" + greeting);
                                 botChat();
-
                             }
 
                         }
                         else if (rmsg.Contains("quit"))
                         {
-                            if (rnick == talkingTo)
+                            ObsidianFunctions.Functions ObsidFunc = new ObsidianFunctions.Functions();
+                            if (rnick == ObsidFunc.talkingTo())
                             {
-                                talkingTo = "nobody";
+                                ObsidFunc.settalkingTo("nobody"); 
                             }
                         }
-                        else if (rnick == talkingTo)
+                        
+                        else if (rnick == ObsidBot.talkingTo())
                         {
 
                             Request r = new Request(rmsg, chatUser, chatBot);
                             Result res = chatBot.Chat(r);
-                            send("PRIVMSG " + talkingTo + " :" + res.Output);
+                            send("PRIVMSG " + ObsidBot.talkingTo() + " :" + res.Output);
 
                         }
                         else if (rmsg.Contains("!udefine "))
@@ -667,7 +696,7 @@ namespace Obsidian
                             bool nickuser = isActiveUser(rnick);
                             if (nickuser == true)
                             {
-                                talkingTo = "nobody";
+                                ObsidBot.settalkingTo("nobody"); 
                             }
                             else
                             {
@@ -752,9 +781,10 @@ namespace Obsidian
                     }
                     Thread deactive = new Thread(deactivateUser);
                     deactive.Start();
-                    if (rnick == talkingTo)
+                    ObsidianFunctions.Functions ObsidBot = new ObsidianFunctions.Functions();
+                    if (rnick == ObsidBot.talkingTo())
                     {
-                        talkingTo = "nobody";
+                        ObsidBot.settalkingTo("nobody"); 
                     }
 
                 }
@@ -1087,10 +1117,10 @@ namespace Obsidian
         }
         public void botChat()
         {
-
+            ObsidianFunctions.Functions ObsidFunc = new ObsidianFunctions.Functions();
             chatBot = new Bot();
             chatBot.loadSettings();
-            chatUser = new User(talkingTo, chatBot);
+            chatUser = new User(ObsidFunc.talkingTo(), chatBot);
             chatBot.loadAIMLFromFiles();
             chatBot.isAcceptingUserInput = true;
         }
@@ -1269,8 +1299,6 @@ namespace Obsidian
             }
             timer1.Enabled = false; 
         }
-
-        
         
     }
 }

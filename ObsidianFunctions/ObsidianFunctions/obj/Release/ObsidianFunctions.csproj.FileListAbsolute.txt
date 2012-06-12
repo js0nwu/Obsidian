@@ -13,3 +13,13 @@ C:\Users\PillyBuilt7\Obsidian\ObsidianFunctions\ObsidianFunctions\bin\Release\Ob
 C:\Users\PillyBuilt7\Obsidian\ObsidianFunctions\ObsidianFunctions\obj\Release\ResolveAssemblyReference.cache
 C:\Users\PillyBuilt7\Obsidian\ObsidianFunctions\ObsidianFunctions\obj\Release\ObsidianFunctions.dll
 C:\Users\PillyBuilt7\Obsidian\ObsidianFunctions\ObsidianFunctions\obj\Release\ObsidianFunctions.pdb
+E:\Obsidian\ObsidianFunctions\ObsidianFunctions\bin\Release\ObsidianFunctions.dll
+E:\Obsidian\ObsidianFunctions\ObsidianFunctions\bin\Release\ObsidianFunctions.pdb
+E:\Obsidian\ObsidianFunctions\ObsidianFunctions\obj\Release\ResolveAssemblyReference.cache
+E:\Obsidian\ObsidianFunctions\ObsidianFunctions\obj\Release\ObsidianFunctions.dll
+E:\Obsidian\ObsidianFunctions\ObsidianFunctions\obj\Release\ObsidianFunctions.pdb
+C:\Users\Staff\Desktop\Obsidian\ObsidianFunctions\ObsidianFunctions\bin\Release\ObsidianFunctions.dll
+C:\Users\Staff\Desktop\Obsidian\ObsidianFunctions\ObsidianFunctions\bin\Release\ObsidianFunctions.pdb
+C:\Users\Staff\Desktop\Obsidian\ObsidianFunctions\ObsidianFunctions\obj\Release\ResolveAssemblyReference.cache
+C:\Users\Staff\Desktop\Obsidian\ObsidianFunctions\ObsidianFunctions\obj\Release\ObsidianFunctions.dll
+C:\Users\Staff\Desktop\Obsidian\ObsidianFunctions\ObsidianFunctions\obj\Release\ObsidianFunctions.pdb

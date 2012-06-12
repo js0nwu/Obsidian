@@ -13,34 +13,7 @@ namespace ObsidianFunctions
 {
     public class Functions
     {
-		
-		public void settalkingTo(string nickname)
-		{
-			StreamWriter sw = new StreamWriter("talkingTo.bin");
-			sw.Write (nickname);
-			sw.Close ();
-		}
-		public string talkingTo()
-		{
-			if (System.IO.File.Exists ("talkingTo.bin"))
-			{
-				StreamReader sr = new StreamReader("talkingTo.bin");
-				string name = sr.ReadToEnd ().Trim ();
-				sr.Close ();
-				return name;
-			}
-			else
-			{
-				return "nobody"; 
-			}
-		}
-		public void cleartalkingTo()
-		{
-			if (File.Exists ("talkingTo.bin"))
-			{
-				File.Delete ("talkingTo.bin");	
-			}
-		}
+
         public bool isOperator()
         {
             if (System.IO.File.Exists("ops"))
@@ -50,6 +23,51 @@ namespace ObsidianFunctions
             else
             {
                 return false; 
+            }
+        }
+        public void settalkingTo(string nickname)
+        {
+            StreamWriter sw = new StreamWriter("talkingTo.bin");
+            sw.Write(nickname);
+            sw.Close();
+        }
+        public string talkingTo()
+        {
+            if (System.IO.File.Exists("talkingTo.bin"))
+            {
+                StreamReader sr = new StreamReader("talkingTo.bin");
+                string name = sr.ReadToEnd().Trim();
+                sr.Close();
+                return name;
+            }
+            else
+            {
+                return "nobody";
+            }
+        }
+        public void cleartalkingTo()
+        {
+            if (File.Exists("talkingTo.bin"))
+            {
+                File.Delete("talkingTo.bin");
+            }
+        }
+        public string javaExec(string filename, string channel, string rnick, string rmsg)
+        {
+            try
+            {
+                Process javaProcess = new Process();
+                javaProcess.StartInfo.FileName = "ikvm.exe";
+                javaProcess.StartInfo.Arguments = filename + " " + channel + " " + rnick + " " + "\"" + rmsg + "\"";
+                javaProcess.StartInfo.UseShellExecute = false;
+                javaProcess.StartInfo.RedirectStandardOutput = true;
+                javaProcess.Start();
+                javaProcess.WaitForExit();
+                return javaProcess.StandardOutput.ReadToEnd();
+            }
+            catch (Exception ex)
+            {
+                return ex.ToString(); 
             }
         }
         public void opTrue()
