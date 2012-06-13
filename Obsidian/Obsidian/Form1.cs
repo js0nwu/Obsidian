@@ -40,11 +40,11 @@ namespace Obsidian
         string[] blacklist;
         Thread updatethread;
         string ircuserlist;
-        string owner; 
-        List<string> executableCommands = new List<string>();
-        List<string> compileCommands = new List<string>();
-        List<string> classCommands = new List<string>();
-        List<string> jarCommands = new List<string>(); 
+        string owner;
+        HashSet<string> executableCommands = new HashSet<string>();
+        HashSet<string> compileCommands = new HashSet<string>();
+        HashSet<string> classCommands = new HashSet<string>();
+        HashSet<string> jarCommands = new HashSet<string>(); 
 
         public Form1()
         {
@@ -88,7 +88,7 @@ namespace Obsidian
                 channeltext = "<channel>";
             }
             textBox7.Text = "PRIVMSG " + channeltext + " :";
-            timer1.Enabled = true;
+            //timer1.Enabled = true;
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -135,28 +135,39 @@ namespace Obsidian
                 swmg.Write("|"); 
                 swmg.Close(); 
             }
+            configHashSet(); 
+        }
+        public void configHashSet()
+        {
             string[] directoryFiles = Directory.GetFiles(Directory.GetCurrentDirectory());
             foreach (string x in directoryFiles)
             {
                 if (x.EndsWith(".cs"))
                 {
-                    compileCommands.Add(x.Replace(".cs", ""));
+                    string[] filepath = x.Split('\\');
+                    string filename = filepath[filepath.Length - 1];
+                    compileCommands.Add(filename);
                 }
                 else if (x.EndsWith(".exe"))
                 {
-                    executableCommands.Add(x.Replace(".exe", ""));
+                    string[] filename = x.Split('\\');
+                    string executable = filename[filename.Length - 1];
+                    executableCommands.Add(executable.Replace(".exe", ""));
                 }
                 else if (x.EndsWith(".class"))
                 {
-                    classCommands.Add(x.Replace(".class", "")); 
+                    string[] filepath = x.Split('\\');
+                    string filename = filepath[filepath.Length - 1];
+                    classCommands.Add(filename.Replace(".class", ""));
                 }
                 else if (x.EndsWith(".jar"))
                 {
-                    jarCommands.Add(x); 
+                    string[] filepath = x.Split('\\');
+                    string filename = filepath[filepath.Length - 1];
+                    jarCommands.Add(filename);
                 }
             }
         }
-
         public void send(string msg)
         {
             msg += "\r\n";
@@ -184,12 +195,47 @@ namespace Obsidian
                     tmparr = mail.Split('!');
                     rnick = tmparr[0];
                     tmparr = mail.Split(':');
-                    rmsg = tmparr[1];
+                    rmsg = tmparr[1].Trim() ;
                     bool nickblacklisted = isBlacklisted(rnick);
                     ObsidianFunctions.Functions ObsidBot = new ObsidianFunctions.Functions();
+                    //MessageBox.Show("privmsg"); 
                     if (nickblacklisted == false)
                     {
-                        
+                        foreach (string command in executableCommands)
+                        {
+                            if (rmsg.Contains("!" + command) == true)
+                            {
+                                ObsidianFunctions.Functions ObsidFunc = new ObsidianFunctions.Functions();
+                                send(ObsidFunc.exeExec(command + ".exe", channel, rnick, rmsg)); 
+                            }
+                        }
+                        foreach (string command in jarCommands)
+                        {
+                            if (rmsg.Contains("!" + command.Replace(".jar", "")))
+                            {
+                                ObsidianFunctions.Functions ObsidFunc = new ObsidianFunctions.Functions();
+                                send(ObsidFunc.jarExec(command, channel, rnick, rmsg));
+                            }
+                        }
+                        foreach (string command in classCommands)
+                        {
+                            if (rmsg.Contains("!" + command) == true)
+                            {
+                                ObsidianFunctions.Functions ObsidFunc = new ObsidianFunctions.Functions();
+                                send(ObsidFunc.classExec(command, channel, rnick, rmsg));
+                            }
+                        }
+                        foreach (string command in compileCommands)
+                        {
+                            if (rmsg.Contains("!" + command.Replace(".cs", "")) && File.Exists(command.Replace(".cs", "") + ".exe") == false)
+                            {
+                                send("PRIVMSG " + channel + " :Command not compiled! Compiling...");
+                                ObsidianFunctions.Functions ObsidFunc = new ObsidianFunctions.Functions();
+                                send(ObsidFunc.CSCompileRun(command, channel, rnick, rmsg));
+                                configHashSet(); 
+                            }
+                        }
+                        /*
                         if (rmsg.Contains("!respond") == true)
                         {
                             string response = "PRIVMSG " + channel + " :Response";
@@ -220,7 +266,7 @@ namespace Obsidian
                             {
                                 string query = rmsg.Remove(0, 9).Trim();
                                 string[] qSplit = query.Split(' ');
-                                string file = qSplit[0].Remove(0, 1) + ".exe"; 
+                                string file = qSplit[0].Remove(0, 1) + ".exe";
                                 send(ObsidFunc.exeExec(file, channel, rnick, query));
                             }
                         }
@@ -728,8 +774,10 @@ namespace Obsidian
                                 say(rnick, "Insufficient permissions!");
                             }
                         }
-                        //commands end
+                         */
+                      //  commands end
                     }
+                    
                     if (ObsidBot.controlSpam() == true)
                     {
                         if (rmsg == oldmsg)
@@ -753,6 +801,7 @@ namespace Obsidian
 
                         }
                     }
+                      
                     ObsidianFunctions.Functions Obsid = new ObsidianFunctions.Functions();
                     if (Obsid.isLogging() == true)
                     {

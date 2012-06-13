@@ -561,6 +561,43 @@ namespace ObsidianFunctions
                 return ex.ToString(); 
             }
         }
+        public string CSCompileRun(string csfile, string channel, string rnick, string rmsg)
+        {
+            try
+            {
+                CompilerParameters Params = new CompilerParameters();
+                Params.GenerateExecutable = true;
+                Params.ReferencedAssemblies.Add("System.dll");
+                Params.ReferencedAssemblies.Add("FervorLibrary.dll");
+                Params.ReferencedAssemblies.Add("ObsidianFunctions.dll");
+                Params.ReferencedAssemblies.Add("AIMLBot.dll");
+                Params.OutputAssembly = csfile.Replace(".cs", ".exe");
+                StreamReader sr = new StreamReader(csfile);
+                string cscode = sr.ReadToEnd();
+                sr.Close();
+                CompilerResults Results = new CSharpCodeProvider().CompileAssemblyFromSource(Params, cscode);
+                if (Results.Errors.Count > 0)
+                {
+                    return String.Join(",", Results.Errors.ToString());
+                }
+                else
+                {
+                    Process csProcess = new Process();
+                    csProcess.StartInfo.FileName = csfile.Replace(".cs", ".exe");
+                    csProcess.StartInfo.Arguments = channel + " " + rnick + " " + "\"" + rmsg + "\"";
+                    csProcess.StartInfo.UseShellExecute = false;
+                    csProcess.StartInfo.RedirectStandardOutput = true;
+                    csProcess.Start();
+                    csProcess.WaitForExit();
+                    return csProcess.StandardOutput.ReadToEnd();
+                }
+
+            }
+            catch (Exception ex)
+            {
+                return ex.ToString();
+            }
+        }
         public bool isActiveUser(string nickname)
         {
             StreamReader sr = new StreamReader(".activeusers");

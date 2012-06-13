@@ -1,3 +1,4 @@
 C# IRC Bot for IRC Channel moderation. 
 http://www.tinkernut.com/wiki/page/ObsidianBot
-This uses AIMLBot and code from jakash3
+This uses AIMLBot and code from jakash3.
+It also uses the IKVM Java to .NET Utility to execute java Jar and Class commands.
