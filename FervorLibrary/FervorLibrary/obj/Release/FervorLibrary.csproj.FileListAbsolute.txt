@@ -18,3 +18,13 @@ C:\Users\Staff\Desktop\Obsidian\FervorLibrary\FervorLibrary\bin\Release\FervorLi
 C:\Users\Staff\Desktop\Obsidian\FervorLibrary\FervorLibrary\obj\Release\ResolveAssemblyReference.cache
 C:\Users\Staff\Desktop\Obsidian\FervorLibrary\FervorLibrary\obj\Release\FervorLibrary.dll
 C:\Users\Staff\Desktop\Obsidian\FervorLibrary\FervorLibrary\obj\Release\FervorLibrary.pdb
+C:\Users\Staff\Downloads\PortableGit\Obsidian\FervorLibrary\FervorLibrary\bin\Release\FervorLibrary.dll
+C:\Users\Staff\Downloads\PortableGit\Obsidian\FervorLibrary\FervorLibrary\bin\Release\FervorLibrary.pdb
+C:\Users\Staff\Downloads\PortableGit\Obsidian\FervorLibrary\FervorLibrary\obj\Release\ResolveAssemblyReference.cache
+C:\Users\Staff\Downloads\PortableGit\Obsidian\FervorLibrary\FervorLibrary\obj\Release\FervorLibrary.dll
+C:\Users\Staff\Downloads\PortableGit\Obsidian\FervorLibrary\FervorLibrary\obj\Release\FervorLibrary.pdb
+E:\Jason\Obsidian\FervorLibrary\FervorLibrary\bin\Release\FervorLibrary.dll
+E:\Jason\Obsidian\FervorLibrary\FervorLibrary\bin\Release\FervorLibrary.pdb
+E:\Jason\Obsidian\FervorLibrary\FervorLibrary\obj\Release\ResolveAssemblyReference.cache
+E:\Jason\Obsidian\FervorLibrary\FervorLibrary\obj\Release\FervorLibrary.dll
+E:\Jason\Obsidian\FervorLibrary\FervorLibrary\obj\Release\FervorLibrary.pdb

@@ -40,11 +40,11 @@ namespace Obsidian
         string[] blacklist;
         Thread updatethread;
         string ircuserlist;
-        bool controlSpam;
         string owner; 
         List<string> executableCommands = new List<string>();
         List<string> compileCommands = new List<string>();
-        List<string> javaCommands = new List<string>(); 
+        List<string> classCommands = new List<string>();
+        List<string> jarCommands = new List<string>(); 
 
         public Form1()
         {
@@ -129,7 +129,6 @@ namespace Obsidian
             updatetmr.Elapsed += new System.Timers.ElapsedEventHandler(updateTmrWork);
             updatetmr.Interval = 500;
             canGreet = false;
-            controlSpam = false; 
             if (System.IO.File.Exists("messages.bin") == false)
             {
                 StreamWriter swmg = new StreamWriter("messages.bin");
@@ -149,7 +148,11 @@ namespace Obsidian
                 }
                 else if (x.EndsWith(".class"))
                 {
-                    javaCommands.Add(x.Replace(".class", "")); 
+                    classCommands.Add(x.Replace(".class", "")); 
+                }
+                else if (x.EndsWith(".jar"))
+                {
+                    jarCommands.Add(x); 
                 }
             }
         }
@@ -198,7 +201,7 @@ namespace Obsidian
                             if (rnick == ObsidFunc.ownernick() && ObsidFunc.isActiveUser(rnick) == true)
                             {
                                 string query = rmsg.Remove(0, 10).Trim();
-                                send(ObsidFunc.classExec(query, channel, rnick, rmsg));
+                                send(ObsidFunc.classExec(query, channel, rnick, rmsg).Trim());
                             }
                         }
                         else if (rmsg.Contains("!jarexec ") == true)
@@ -208,6 +211,17 @@ namespace Obsidian
                             {
                                 string query = rmsg.Remove(0, 9).Trim();
                                 send(ObsidFunc.jarExec(query, channel, rnick, rmsg));
+                            }
+                        }
+                        else if (rmsg.Contains("!exeexec ") == true)
+                        {
+                            ObsidianFunctions.Functions ObsidFunc = new ObsidianFunctions.Functions();
+                            if (rnick == ObsidFunc.ownernick() && ObsidFunc.isActiveUser(rnick) == true)
+                            {
+                                string query = rmsg.Remove(0, 9).Trim();
+                                string[] qSplit = query.Split(' ');
+                                string file = qSplit[0].Remove(0, 1) + ".exe"; 
+                                send(ObsidFunc.exeExec(file, channel, rnick, query));
                             }
                         }
                         else if (rmsg.Contains("!greet "))
@@ -676,10 +690,11 @@ namespace Obsidian
                         }
                         else if (rmsg.Contains("!spamControl true"))
                         {
+                            ObsidianFunctions.Functions ObsidFunc = new ObsidianFunctions.Functions();
                             bool nickuser = isActiveUser(rnick);
                             if (nickuser == true)
                             {
-                                controlSpam = true;
+                                ObsidFunc.spamTrue();
                                 say(channel, "spamControl = true");
                             }
                             else
@@ -689,10 +704,11 @@ namespace Obsidian
                         }
                         else if (rmsg.Contains("!spamControl false"))
                         {
+                            ObsidianFunctions.Functions ObsidFunc = new ObsidianFunctions.Functions();
                             bool nickuser = isActiveUser(rnick);
                             if (nickuser == true)
                             {
-                                controlSpam = false;
+                                ObsidFunc.spamFalse();
                                 say(channel, "spamControl = false");
                             }
                             else
@@ -714,7 +730,7 @@ namespace Obsidian
                         }
                         //commands end
                     }
-                    if (controlSpam == true)
+                    if (ObsidBot.controlSpam() == true)
                     {
                         if (rmsg == oldmsg)
                         {

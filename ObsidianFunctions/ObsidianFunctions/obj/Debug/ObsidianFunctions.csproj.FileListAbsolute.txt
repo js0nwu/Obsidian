@@ -18,3 +18,13 @@ C:\Users\Staff\Desktop\Obsidian\ObsidianFunctions\ObsidianFunctions\bin\Debug\Ob
 C:\Users\Staff\Desktop\Obsidian\ObsidianFunctions\ObsidianFunctions\obj\Debug\ResolveAssemblyReference.cache
 C:\Users\Staff\Desktop\Obsidian\ObsidianFunctions\ObsidianFunctions\obj\Debug\ObsidianFunctions.dll
 C:\Users\Staff\Desktop\Obsidian\ObsidianFunctions\ObsidianFunctions\obj\Debug\ObsidianFunctions.pdb
+C:\Users\Staff\Downloads\PortableGit\Obsidian\ObsidianFunctions\ObsidianFunctions\bin\Debug\ObsidianFunctions.dll
+C:\Users\Staff\Downloads\PortableGit\Obsidian\ObsidianFunctions\ObsidianFunctions\bin\Debug\ObsidianFunctions.pdb
+C:\Users\Staff\Downloads\PortableGit\Obsidian\ObsidianFunctions\ObsidianFunctions\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Staff\Downloads\PortableGit\Obsidian\ObsidianFunctions\ObsidianFunctions\obj\Debug\ObsidianFunctions.dll
+C:\Users\Staff\Downloads\PortableGit\Obsidian\ObsidianFunctions\ObsidianFunctions\obj\Debug\ObsidianFunctions.pdb
+E:\Jason\Obsidian\ObsidianFunctions\ObsidianFunctions\bin\Debug\ObsidianFunctions.dll
+E:\Jason\Obsidian\ObsidianFunctions\ObsidianFunctions\bin\Debug\ObsidianFunctions.pdb
+E:\Jason\Obsidian\ObsidianFunctions\ObsidianFunctions\obj\Debug\ResolveAssemblyReference.cache
+E:\Jason\Obsidian\ObsidianFunctions\ObsidianFunctions\obj\Debug\ObsidianFunctions.dll
+E:\Jason\Obsidian\ObsidianFunctions\ObsidianFunctions\obj\Debug\ObsidianFunctions.pdb

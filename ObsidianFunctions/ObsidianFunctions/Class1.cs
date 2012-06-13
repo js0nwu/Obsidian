@@ -13,7 +13,29 @@ namespace ObsidianFunctions
 {
     public class Functions
     {
-
+        public bool controlSpam()
+        {
+            if (File.Exists("spam"))
+            {
+                return true;
+            }
+            else
+            {
+                return false; 
+            }
+        }
+        public void spamTrue()
+        {
+            StreamWriter sw = new StreamWriter("spam");
+            sw.Close(); 
+        }
+        public void spamFalse()
+        {
+            if (File.Exists("spam"))
+            {
+                File.Delete("spam");
+            }
+        }
         public bool isOperator()
         {
             if (System.IO.File.Exists("ops"))
@@ -50,6 +72,25 @@ namespace ObsidianFunctions
             if (File.Exists("talkingTo.bin"))
             {
                 File.Delete("talkingTo.bin");
+            }
+        }
+        public string exeExec(string filename, string channel, string rnick, string rmsg)
+        {
+            try
+            {
+                Process exeProcess = new Process();
+                exeProcess.StartInfo.FileName = filename;
+                exeProcess.StartInfo.Arguments = channel + " " + rnick + " " + "\"" + rmsg + "\"" ;
+                exeProcess.StartInfo.UseShellExecute = false;
+                exeProcess.StartInfo.RedirectStandardOutput = true;
+                exeProcess.Start();
+                exeProcess.WaitForExit();
+                return exeProcess.StandardOutput.ReadToEnd().Trim() ;
+
+            }
+            catch (Exception ex)
+            {
+                return ex.ToString();
             }
         }
         public string classExec(string filename, string channel, string rnick, string rmsg)
@@ -310,6 +351,13 @@ namespace ObsidianFunctions
                     }
                 }
             }
+            return returnvalue; 
+        }
+        public string[] blacklist()
+        {
+            StreamReader sr = new StreamReader("blacklist.bin");
+            string[] returnvalue = sr.ReadToEnd().Split(':');
+            sr.Close();
             return returnvalue; 
         }
         public string removeUser(string nickname)
