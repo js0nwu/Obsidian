@@ -33,3 +33,8 @@ F:\Jason\Obsidian\ObsidianFunctions\ObsidianFunctions\bin\Debug\ObsidianFunction
 F:\Jason\Obsidian\ObsidianFunctions\ObsidianFunctions\obj\Debug\ResolveAssemblyReference.cache
 F:\Jason\Obsidian\ObsidianFunctions\ObsidianFunctions\obj\Debug\ObsidianFunctions.dll
 F:\Jason\Obsidian\ObsidianFunctions\ObsidianFunctions\obj\Debug\ObsidianFunctions.pdb
+C:\Users\Pilly-i7\Obsidian\ObsidianFunctions\ObsidianFunctions\bin\Debug\ObsidianFunctions.dll
+C:\Users\Pilly-i7\Obsidian\ObsidianFunctions\ObsidianFunctions\bin\Debug\ObsidianFunctions.pdb
+C:\Users\Pilly-i7\Obsidian\ObsidianFunctions\ObsidianFunctions\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Pilly-i7\Obsidian\ObsidianFunctions\ObsidianFunctions\obj\Debug\ObsidianFunctions.dll
+C:\Users\Pilly-i7\Obsidian\ObsidianFunctions\ObsidianFunctions\obj\Debug\ObsidianFunctions.pdb

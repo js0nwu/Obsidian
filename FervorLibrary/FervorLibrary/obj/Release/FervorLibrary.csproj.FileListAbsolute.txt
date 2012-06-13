@@ -33,3 +33,8 @@ F:\Jason\Obsidian\FervorLibrary\FervorLibrary\bin\Release\FervorLibrary.pdb
 F:\Jason\Obsidian\FervorLibrary\FervorLibrary\obj\Release\ResolveAssemblyReference.cache
 F:\Jason\Obsidian\FervorLibrary\FervorLibrary\obj\Release\FervorLibrary.dll
 F:\Jason\Obsidian\FervorLibrary\FervorLibrary\obj\Release\FervorLibrary.pdb
+C:\Users\Pilly-i7\Obsidian\FervorLibrary\FervorLibrary\bin\Release\FervorLibrary.dll
+C:\Users\Pilly-i7\Obsidian\FervorLibrary\FervorLibrary\bin\Release\FervorLibrary.pdb
+C:\Users\Pilly-i7\Obsidian\FervorLibrary\FervorLibrary\obj\Release\ResolveAssemblyReference.cache
+C:\Users\Pilly-i7\Obsidian\FervorLibrary\FervorLibrary\obj\Release\FervorLibrary.dll
+C:\Users\Pilly-i7\Obsidian\FervorLibrary\FervorLibrary\obj\Release\FervorLibrary.pdb

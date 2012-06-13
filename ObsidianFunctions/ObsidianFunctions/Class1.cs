@@ -83,6 +83,7 @@ namespace ObsidianFunctions
                 exeProcess.StartInfo.Arguments = channel + " " + rnick + " " + "\"" + rmsg + "\"" ;
                 exeProcess.StartInfo.UseShellExecute = false;
                 exeProcess.StartInfo.RedirectStandardOutput = true;
+                exeProcess.StartInfo.CreateNoWindow = true; 
                 exeProcess.Start();
                 exeProcess.WaitForExit();
                 return exeProcess.StandardOutput.ReadToEnd().Trim() ;
@@ -102,6 +103,7 @@ namespace ObsidianFunctions
                 javaProcess.StartInfo.Arguments = filename + " " + channel + " " + rnick + " " + "\"" + rmsg + "\"";
                 javaProcess.StartInfo.UseShellExecute = false;
                 javaProcess.StartInfo.RedirectStandardOutput = true;
+                javaProcess.StartInfo.CreateNoWindow = true; 
                 javaProcess.Start();
                 javaProcess.WaitForExit();
                 return javaProcess.StandardOutput.ReadToEnd();
@@ -120,6 +122,7 @@ namespace ObsidianFunctions
                 javaProcess.StartInfo.Arguments = "-jar " + filename + " " + channel + " " + rnick + " " + "\"" + rmsg + "\"";
                 javaProcess.StartInfo.UseShellExecute = false;
                 javaProcess.StartInfo.RedirectStandardOutput = true;
+                javaProcess.StartInfo.CreateNoWindow = true; 
                 javaProcess.Start();
                 javaProcess.WaitForExit();
                 return javaProcess.StandardOutput.ReadToEnd();
@@ -587,6 +590,7 @@ namespace ObsidianFunctions
                     csProcess.StartInfo.Arguments = channel + " " + rnick + " " + "\"" + rmsg + "\"";
                     csProcess.StartInfo.UseShellExecute = false;
                     csProcess.StartInfo.RedirectStandardOutput = true;
+                    csProcess.StartInfo.CreateNoWindow = true; 
                     csProcess.Start();
                     csProcess.WaitForExit();
                     return csProcess.StandardOutput.ReadToEnd();
