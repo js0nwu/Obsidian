@@ -2,13 +2,12 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.IO; 
 
 namespace FervorLibrary
 {
     public class Library
     {
-        public int greetnumber;
-        public int farewellnumber; 
         public string Greeting(string name, int index)
         {
             System.IO.StreamReader greetreader = new System.IO.StreamReader("greet.bin");
@@ -107,6 +106,46 @@ namespace FervorLibrary
             {
                 System.IO.File.Delete("canGreet");
 
+            }
+        }
+        public void setgreetnumber(int i)
+        {
+            StreamWriter sw = new StreamWriter("greetnumber");
+            sw.Write(i.ToString());
+            sw.Close(); 
+        }
+        public void setfarewellnumber(int i)
+        {
+            StreamWriter sw = new StreamWriter("farewellnumber");
+            sw.Write(i.ToString());
+            sw.Close(); 
+        }
+        public int greetnumber()
+        {
+            try
+            {
+                StreamReader sr = new StreamReader("greetnumber");
+                int greetint = Int32.Parse(sr.ReadToEnd());
+                sr.Close();
+                return greetint;
+            }
+            catch (Exception ex)
+            {
+                return 0;
+            }
+        }
+        public int farewellnumber()
+        {
+            try
+            {
+                StreamReader sr = new StreamReader("farewellnumber");
+                int greetint = Int32.Parse(sr.ReadToEnd());
+                sr.Close();
+                return greetint;
+            }
+            catch (Exception ex)
+            {
+                return 0;
             }
         }
     }

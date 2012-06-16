@@ -5,21 +5,21 @@ using System.Collections.Generic;
 
 namespace CodeCompile
 {
-    class Program
-    {
-        static void Main(string[] args)
-        {
-            string channel = args[0];
-            string rnick = args[1];
-            string rmsg = args[2];
-            try
-			{
-			
-			}
-			catch (Exception ex)
-			{
-				Console.WriteLine("PRIVMSG " + channel + " :" + ex.ToString()); 
-			}
-        }
-    }
+class Program
+{
+static void Main(string[] args)
+{
+string channel = args[0];
+string rnick = args[1];
+string rmsg = args[2];
+try
+{
+
+}
+catch (Exception ex)
+{
+Console.WriteLine("PRIVMSG " + channel + " :" + ex.ToString()); 
+}
+}
+}
 }

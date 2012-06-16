@@ -17,7 +17,9 @@ string rnick = args[1];
 string rmsg = args[2];
 try
 {
-    string query = rmsg.Remove(0, 9);
+    if (rmsg.StartsWith("!") == false)
+    {
+        string query = rmsg;
         ObsidianFunctions.Functions ObsidFunc = new ObsidianFunctions.Functions();
         chatBot = new AIMLbot.Bot();
         chatBot.loadSettings();
@@ -27,6 +29,7 @@ try
         AIMLbot.Request r = new AIMLbot.Request(query, chatUser, chatBot);
         AIMLbot.Result res = chatBot.Chat(r);
         Console.WriteLine("PRIVMSG " + rnick + " :" + res.Output);
+    }
 }
 catch (Exception ex)
 {

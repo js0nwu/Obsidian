@@ -13,6 +13,104 @@ namespace ObsidianFunctions
 {
     public class Functions
     {
+        public string addMessage(string sender, string recipient, string message)
+        {
+            try
+            {
+                message += "<" + sender + ">"; 
+                StreamReader sr = new StreamReader("messages.bin");
+                string[] messageread = sr.ReadToEnd().Split('|');
+                sr.Close();
+                string newrecipients = messageread[0] + recipient.Trim() + "~";
+                string newmessages = messageread[1] + message.Trim() + "~";
+                StreamWriter sw = new StreamWriter("messages.bin");
+                sw.Write(newrecipients + "|" + newmessages);
+                sw.Close();
+                return "Message added!"; 
+            }
+            catch (Exception ex)
+            {
+                return ex.ToString();
+            }
+        }
+        public string[] sayMessages(string recipient)
+        {
+            StreamReader sr = new StreamReader("messages.bin");
+            string[] messageread = sr.ReadToEnd().Split('|');
+            sr.Close();
+            string[] messageusers = messageread[0].Split('~');
+            string[] messages = messageread[1].Split('~');
+            List<string> returnList = new List<string>();
+            foreach (string x in messageusers)
+            {
+                if (x == recipient)
+                {
+                    int recipindex = Array.IndexOf(messageusers, recipient);
+                    string returnstring = "PRIVMSG " + recipient + " :" + messages[recipindex];
+                    returnList.Add(returnstring);
+                    messages = messages.Where(val => val != messages[recipindex]).ToArray(); 
+                }
+            }
+            messageusers = messageusers.Where(val => val != recipient).ToArray();
+            string newuserlist = String.Join("~", messageusers);
+            string newmessagelist = String.Join("~", messages);
+            StreamWriter sw = new StreamWriter("messages.bin");
+            sw.Write(newuserlist + "|" + newmessagelist);
+            sw.Close(); 
+            return returnList.ToArray(); 
+        }
+        public bool hasMessages(string nickname)
+        {
+            StreamReader sr = new StreamReader("messages.bin");
+            string[] messageread = sr.ReadToEnd().Split('|');
+            sr.Close();
+            string[] messageusers = messageread[0].Split('~');
+            bool isRecipient = false;
+            foreach (string x in messageusers)
+            {
+                if (x == nickname)
+                {
+                    isRecipient = true; 
+                }
+            }
+            return isRecipient; 
+        }
+        public string setNames(string message)
+        {
+            StreamWriter sw = new StreamWriter("channelnames.bin");
+            sw.Write(String.Join(":", message.Trim().Replace("@", "").Replace("+", "").Replace("~", "").Replace("&", "").Replace("%", "").Split(' ')));
+            sw.Close();
+            return String.Join(":", message.Trim().Replace("@", "").Replace("+", "").Replace("~", "").Replace("&", "").Replace("%", "").Split(' '));
+        }
+        public bool isOnline(string rnick)
+        {
+            StreamReader sr = new StreamReader("channelnames.bin");
+            string[] srread = sr.ReadToEnd().Split(':');
+            sr.Close();
+            bool nickone = false; 
+            foreach (string x in srread)
+            {
+                if (x == rnick)
+                {
+                    nickone = true; 
+                }
+            }
+            return nickone; 
+        }
+        public string channelNames()
+        {
+            if (File.Exists("channelnames.bin"))
+            {
+                StreamReader sr = new StreamReader("channelnames.bin");
+                string channelnames = sr.ReadToEnd();
+                sr.Close();
+                return channelnames;
+            }
+            else
+            {
+                return "Channel names file does not exist!"; 
+            }
+        }
         public bool controlSpam()
         {
             if (File.Exists("spam"))
@@ -616,6 +714,69 @@ namespace ObsidianFunctions
                 }
             }
             return userbool;
+        }
+        public string active(string rnick, string rmsg)
+        {
+            try
+            {
+                System.IO.StreamReader sr2 = new System.IO.StreamReader(".activeusers");
+                string old = sr2.ReadToEnd();
+                sr2.Close();
+                System.IO.StreamReader sr = new System.IO.StreamReader("users.bin");
+                string[] registeredusers = sr.ReadToEnd().Split(':');
+                sr.Close();
+                string returnvalue = "Log in failed!";
+                foreach (string x in registeredusers)
+                {
+                    if (x == rnick)
+                    {
+                        string query = rmsg.Remove(0, 8);
+                        int indexuser = Array.IndexOf(registeredusers, rnick);
+                        ObsidianFunctions.Functions ObsidFunc = new ObsidianFunctions.Functions();
+                        bool passcorrect = ObsidFunc.isVerified(indexuser, query);
+                        System.IO.StreamWriter sw = new System.IO.StreamWriter(".activeusers");
+                        if (passcorrect == true)
+                        {
+                            sw.Write(old + rnick + ":");
+                            returnvalue = "Success! You are logged in!";
+                        }
+                        sw.Close();
+                    }
+                }
+                return returnvalue; 
+            }
+            catch (Exception ex)
+            {
+                return ex.ToString();
+            }
+        }
+        public string deactivate(string rnick, string rmsg)
+        {
+            try
+            {
+                System.IO.StreamReader sr = new System.IO.StreamReader(".activeusers");
+                string[] temp = sr.ReadToEnd().Split(':');
+                List<string> activelist = new List<string>(temp);
+                sr.Close();
+                string returnvalue = "Deactivate failed!";
+                foreach (string x in activelist)
+                {
+                    if (x == rnick)
+                    {
+                        string[] listofactiveusers = activelist.ToArray();
+                        string listuser = String.Join(":", listofactiveusers) + ":";
+                        System.IO.StreamWriter sw = new System.IO.StreamWriter(".activeusers");
+                        sw.Write(listuser);
+                        sw.Close();
+                        returnvalue = "User has been deactivated!";
+                    }
+                }
+                return returnvalue; 
+            }
+            catch (Exception ex)
+            {
+                return ex.ToString();
+            }
         }
     }
 }
