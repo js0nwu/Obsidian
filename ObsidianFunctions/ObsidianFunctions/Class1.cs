@@ -21,7 +21,7 @@ namespace ObsidianFunctions
                 StreamReader sr = new StreamReader("messages.bin");
                 string[] messageread = sr.ReadToEnd().Split('|');
                 sr.Close();
-                string newrecipients = messageread[0] + recipient.Trim() + "~";
+                string newrecipients = messageread[0] + recipient.Trim().ToLower() + "~";
                 string newmessages = messageread[1] + message.Trim() + "~";
                 StreamWriter sw = new StreamWriter("messages.bin");
                 sw.Write(newrecipients + "|" + newmessages);
@@ -35,29 +35,29 @@ namespace ObsidianFunctions
         }
         public string[] sayMessages(string recipient)
         {
-            StreamReader sr = new StreamReader("messages.bin");
-            string[] messageread = sr.ReadToEnd().Split('|');
-            sr.Close();
-            string[] messageusers = messageread[0].Split('~');
-            string[] messages = messageread[1].Split('~');
-            List<string> returnList = new List<string>();
-            foreach (string x in messageusers)
-            {
-                if (x == recipient)
+                StreamReader sr = new StreamReader("messages.bin");
+                string[] messageread = sr.ReadToEnd().Split('|');
+                sr.Close();
+                string[] messageusers = messageread[0].Split('~');
+                string[] messages = messageread[1].Split('~');
+                List<string> returnList = new List<string>();
+                foreach (string x in messageusers)
                 {
-                    int recipindex = Array.IndexOf(messageusers, recipient);
-                    string returnstring = "PRIVMSG " + recipient + " :" + messages[recipindex];
-                    returnList.Add(returnstring);
-                    messages = messages.Where(val => val != messages[recipindex]).ToArray(); 
+                    if (x.ToLower() == recipient.ToLower())
+                    {
+                        int recipindex = Array.IndexOf(messageusers, recipient.ToLower());
+                        string returnstring = "PRIVMSG " + recipient.ToLower() + " :" + messages[recipindex];
+                        returnList.Add(returnstring);
+                        messages = messages.Where(val => val != messages[recipindex]).ToArray();
+                    }
                 }
-            }
-            messageusers = messageusers.Where(val => val != recipient).ToArray();
-            string newuserlist = String.Join("~", messageusers);
-            string newmessagelist = String.Join("~", messages);
-            StreamWriter sw = new StreamWriter("messages.bin");
-            sw.Write(newuserlist + "|" + newmessagelist);
-            sw.Close(); 
-            return returnList.ToArray(); 
+                messageusers = messageusers.Where(val => val != recipient).ToArray();
+                string newuserlist = String.Join("~", messageusers);
+                string newmessagelist = String.Join("~", messages);
+                StreamWriter sw = new StreamWriter("messages.bin");
+                sw.Write(newuserlist + "|" + newmessagelist);
+                sw.Close();
+                return returnList.ToArray();
         }
         public bool hasMessages(string nickname)
         {
@@ -68,7 +68,7 @@ namespace ObsidianFunctions
             bool isRecipient = false;
             foreach (string x in messageusers)
             {
-                if (x == nickname)
+                if (x.ToLower() == nickname.ToLower())
                 {
                     isRecipient = true; 
                 }
@@ -90,7 +90,7 @@ namespace ObsidianFunctions
             bool nickone = false; 
             foreach (string x in srread)
             {
-                if (x == rnick)
+                if (x.ToLower() == rnick.ToLower())
                 {
                     nickone = true; 
                 }
@@ -758,7 +758,7 @@ namespace ObsidianFunctions
                 string[] temp = sr.ReadToEnd().Split(':');
                 List<string> activelist = new List<string>(temp);
                 sr.Close();
-                string returnvalue = "Deactivate failed!";
+                string returnvalue = "";
                 foreach (string x in activelist)
                 {
                     if (x == rnick)

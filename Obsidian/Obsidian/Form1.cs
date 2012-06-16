@@ -312,6 +312,7 @@ namespace Obsidian
                             send(x); 
                         }
                     }
+                    say(nick, "!names"); 
                 }
                 else if (mail.Substring(mail.IndexOf(" ") + 1, 4) == "PART" || mail.Substring(mail.IndexOf(" ") + 1, 4) == "QUIT")
                 {
@@ -335,7 +336,7 @@ namespace Obsidian
                     {
                         ObsidBot.settalkingTo("nobody"); 
                     }
-
+                    say(nick, "!names"); 
                 }
                 else if (mail.Substring(mail.IndexOf(" ") + 1, 4) == "MODE")
                 {
