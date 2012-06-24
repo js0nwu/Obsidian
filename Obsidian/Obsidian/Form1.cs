@@ -235,7 +235,7 @@ namespace Obsidian
                         }
                         foreach (string command in compileCommands)
                         {
-                            if (rmsg.Contains("!" + command.Replace(".cs", "")) && File.Exists(command.Replace(".cs", ".exe")) == false)
+                            if (rmsg.Contains("!" + command.Replace(".cs", "")) && executableCommands.Contains(command.Replace(".cs", ".exe")) == false)
                             {
                                 ObsidianFunctions.Functions ObsidFunc = new ObsidianFunctions.Functions();
                                 send(ObsidFunc.CSCompileRun(command, channel, rnick, rmsg));
