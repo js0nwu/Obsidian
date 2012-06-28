@@ -46,6 +46,7 @@ namespace Obsidian
         HashSet<string> compileCommands = new HashSet<string>();
         HashSet<string> classCommands = new HashSet<string>();
         HashSet<string> jarCommands = new HashSet<string>(); 
+        HashSet<string> javaCommands = new HashSet<string>(); 
 
         public Form1()
         {
@@ -172,6 +173,12 @@ namespace Obsidian
                     string filename = filepath[filepath.Length - 1];
                     jarCommands.Add(filename);
                 }
+                else if (x.EndsWith(".java"))
+                {
+                    string[] filepath = x.Split('\\');
+                    string filename = filepath[filepath.Length - 1];
+                    javaCommands.Add(filename); 
+                }
             }
         }
         public void send(string msg)
@@ -239,6 +246,15 @@ namespace Obsidian
                             {
                                 ObsidianFunctions.Functions ObsidFunc = new ObsidianFunctions.Functions();
                                 send(ObsidFunc.CSCompileRun(command, channel, rnick, rmsg));
+                                configHashSet(); 
+                            }
+                        }
+                        foreach (string command in javaCommands)
+                        {
+                            if (rmsg.Contains("!" + command.Replace(".java", "")) && classCommands.Contains(command.Replace(".java", ".class")) == false)
+                            {
+                                ObsidianFunctions.Functions ObsidFunc = new ObsidianFunctions.Functions();
+                                send(ObsidFunc.JavaCompileRun(command, channel, rnick, rmsg));
                                 configHashSet(); 
                             }
                         }
@@ -609,4 +625,5 @@ namespace Obsidian
         }
         
     }
+
 }

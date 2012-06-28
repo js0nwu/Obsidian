@@ -662,6 +662,55 @@ namespace ObsidianFunctions
                 return ex.ToString(); 
             }
         }
+        public string JavaCompile(string javafile)
+        {
+            try
+            {
+                Process javaProcess = new Process();
+                javaProcess.StartInfo.FileName = "ikvm.exe";
+                javaProcess.StartInfo.Arguments = "-jar " + "ecj.jar " + javafile;
+                javaProcess.StartInfo.UseShellExecute = false;
+                javaProcess.StartInfo.RedirectStandardOutput = true;
+                javaProcess.StartInfo.CreateNoWindow = true;
+                javaProcess.Start();
+                javaProcess.WaitForExit();
+                string output = javaProcess.StandardOutput.ReadToEnd();
+                return "Compile success!"; 
+            }
+            catch (Exception ex)
+            {
+                return ex.ToString();
+            }
+        }
+        public string JavaCompileRun(string javafile, string channel, string rnick, string rmsg)
+        {
+            try
+            {
+                Process javaProcess = new Process();
+                javaProcess.StartInfo.FileName = "ikvm.exe";
+                javaProcess.StartInfo.Arguments = "-jar " + "ecj.jar " + javafile;
+                javaProcess.StartInfo.UseShellExecute = false;
+                javaProcess.StartInfo.RedirectStandardOutput = true;
+                javaProcess.StartInfo.CreateNoWindow = true;
+                javaProcess.Start();
+                javaProcess.WaitForExit();
+                string output = javaProcess.StandardOutput.ReadToEnd();
+                Process javaexeProcess = new Process();
+                javaexeProcess.StartInfo.FileName = "ikvm.exe";
+                javaexeProcess.StartInfo.Arguments = javafile.Replace(".java", "") + " " + channel + " " + rnick + " \"" + rmsg + "\"";
+                javaexeProcess.StartInfo.UseShellExecute = false;
+                javaexeProcess.StartInfo.RedirectStandardOutput = true;
+                javaexeProcess.StartInfo.CreateNoWindow = true;
+                javaexeProcess.Start();
+                javaexeProcess.WaitForExit();
+                string runoutput = javaexeProcess.StandardOutput.ReadToEnd();
+                return runoutput; 
+            }
+            catch (Exception ex)
+            {
+                return ex.ToString();
+            }
+        }
         public string CSCompileRun(string csfile, string channel, string rnick, string rmsg)
         {
             try
@@ -778,5 +827,7 @@ namespace ObsidianFunctions
                 return ex.ToString();
             }
         }
+
     }
+
 }
