@@ -1,0 +1,5 @@
+Apri-rice is a Java-based IRC bot.
+
+It's purpose is to offer various services to channel owners
+and to be very flexible for developers.
+Using a very solid IRC library, Jerklib: http://jerklib.sourceforge.net/

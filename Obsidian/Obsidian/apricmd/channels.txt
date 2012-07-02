@@ -1,0 +1,3 @@
+|| Lines starting with || are ignored. Format this like so : irc.server.com/#someChannel
+|| A config file for the channel will be generated, in which you can then edit the nick and password.
+irc.geekshed.net/#AeonIlluminate
