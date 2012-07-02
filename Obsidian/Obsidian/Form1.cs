@@ -421,7 +421,7 @@ namespace Obsidian
             if (System.IO.File.Exists("greet.bin") == false)
             {
                 System.IO.StreamWriter greetwrite = new System.IO.StreamWriter("greet.bin");
-                greetwrite.Write("Hallo,Ahalan,Ni Hao,Ahoj,Goddag,Goede dag,Hello,Bonjour,Guten Tag,Aloha,Shalom,Namaste,Dia dhuit,Ciao,Kon-nichiwa,Zdravstvuyte,Hola,Hej,Sawubona~");
+                greetwrite.Write("Hallo,Ahlan,Ni Hao,Ahoj,Goddag,Goede dag,Hello,Bonjour,Guten Tag,Aloha,Shalom,Namaste,Dia dhuit,Ciao,Kon-nichiwa,Zdrasti,Hola,Hej,Sawubona~");
                 greetwrite.Write("Afrikaans,Arabic,Chinese,Czech,Danish,Dutch,English,French,German,Hawaiian,Hebrew,Hindi,Irish,Italian,Japanese,Russian,Spanish,Swedish,Zulu");
                 greetwrite.Close();
                 System.IO.StreamReader greetread = new System.IO.StreamReader("greet.bin");
