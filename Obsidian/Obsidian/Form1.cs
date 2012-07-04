@@ -210,7 +210,15 @@ namespace Obsidian
                     tmparr = mail.Split(':');
                     rmsg = tmparr[1].Trim() ;
                     string sayingto = Regex.Split(mail, "PRIVMSG ")[1].Split(':')[0].Substring(0, Regex.Split(mail, "PRIVMSG ")[1].Split(':')[0].Length - 1);
-
+                    string commandName;
+                    if (rmsg.Contains(" "))
+                    {
+                        commandName = rmsg.Substring(0, rmsg.IndexOf(' '));
+                    }
+                    else
+                    {
+                        commandName = rmsg; 
+                    }
                     bool nickblacklisted = isBlacklisted(rnick);
                     ObsidianFunctions.Functions ObsidBot = new ObsidianFunctions.Functions();
                     //MessageBox.Show("privmsg"); 
@@ -218,7 +226,7 @@ namespace Obsidian
                     {
                         foreach (string command in executableCommands)
                         {
-                            if (rmsg.StartsWith("!" + command) == true)
+                            if (commandName == "!" + command)
                             {
                                 ObsidianFunctions.Functions ObsidFunc = new ObsidianFunctions.Functions();
                                 send(ObsidFunc.exeExec(command + ".exe", channel, rnick, rmsg)); 
@@ -226,7 +234,7 @@ namespace Obsidian
                         }
                         foreach (string command in jarCommands)
                         {
-                            if (rmsg.StartsWith("!" + command.Replace(".jar", "")))
+                            if (commandName == "!" + command.Replace(".jar", ""))
                             {
                                 ObsidianFunctions.Functions ObsidFunc = new ObsidianFunctions.Functions();
                                 send(ObsidFunc.jarExec(command, channel, rnick, rmsg));
@@ -234,7 +242,7 @@ namespace Obsidian
                         }
                         foreach (string command in classCommands)
                         {
-                            if (rmsg.StartsWith("!" + command) == true)
+                            if (rmsg.StartsWith("!" + command))
                             {
                                 ObsidianFunctions.Functions ObsidFunc = new ObsidianFunctions.Functions();
                                 send(ObsidFunc.classExec(command, channel, rnick, rmsg));
@@ -242,7 +250,7 @@ namespace Obsidian
                         }
                         foreach (string command in compileCommands)
                         {
-                            if (rmsg.StartsWith("!" + command.Replace(".cs", "")) && executableCommands.Contains(command.Replace(".cs", ".exe")) == false)
+                            if (commandName == "!" + command.Replace(".cs", ""))
                             {
                                 ObsidianFunctions.Functions ObsidFunc = new ObsidianFunctions.Functions();
                                 send(ObsidFunc.CSCompileRun(command, channel, rnick, rmsg));
@@ -251,7 +259,7 @@ namespace Obsidian
                         }
                         foreach (string command in javaCommands)
                         {
-                            if (rmsg.StartsWith("!" + command.Replace(".java", "")) && classCommands.Contains(command.Replace(".java", ".class")) == false)
+                            if (commandName == "!" + command.Replace(".java", ""))
                             {
                                 ObsidianFunctions.Functions ObsidFunc = new ObsidianFunctions.Functions();
                                 send(ObsidFunc.JavaCompileRun(command, channel, rnick, rmsg));
