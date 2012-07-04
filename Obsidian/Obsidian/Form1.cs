@@ -218,7 +218,7 @@ namespace Obsidian
                     {
                         foreach (string command in executableCommands)
                         {
-                            if (rmsg.Contains("!" + command) == true)
+                            if (rmsg.StartsWith("!" + command) == true)
                             {
                                 ObsidianFunctions.Functions ObsidFunc = new ObsidianFunctions.Functions();
                                 send(ObsidFunc.exeExec(command + ".exe", channel, rnick, rmsg)); 
@@ -226,7 +226,7 @@ namespace Obsidian
                         }
                         foreach (string command in jarCommands)
                         {
-                            if (rmsg.Contains("!" + command.Replace(".jar", "")))
+                            if (rmsg.StartsWith("!" + command.Replace(".jar", "")))
                             {
                                 ObsidianFunctions.Functions ObsidFunc = new ObsidianFunctions.Functions();
                                 send(ObsidFunc.jarExec(command, channel, rnick, rmsg));
@@ -234,7 +234,7 @@ namespace Obsidian
                         }
                         foreach (string command in classCommands)
                         {
-                            if (rmsg.Contains("!" + command) == true)
+                            if (rmsg.StartsWith("!" + command) == true)
                             {
                                 ObsidianFunctions.Functions ObsidFunc = new ObsidianFunctions.Functions();
                                 send(ObsidFunc.classExec(command, channel, rnick, rmsg));
@@ -242,7 +242,7 @@ namespace Obsidian
                         }
                         foreach (string command in compileCommands)
                         {
-                            if (rmsg.Contains("!" + command.Replace(".cs", "")) && executableCommands.Contains(command.Replace(".cs", ".exe")) == false)
+                            if (rmsg.StartsWith("!" + command.Replace(".cs", "")) && executableCommands.Contains(command.Replace(".cs", ".exe")) == false)
                             {
                                 ObsidianFunctions.Functions ObsidFunc = new ObsidianFunctions.Functions();
                                 send(ObsidFunc.CSCompileRun(command, channel, rnick, rmsg));
@@ -251,7 +251,7 @@ namespace Obsidian
                         }
                         foreach (string command in javaCommands)
                         {
-                            if (rmsg.Contains("!" + command.Replace(".java", "")) && classCommands.Contains(command.Replace(".java", ".class")) == false)
+                            if (rmsg.StartsWith("!" + command.Replace(".java", "")) && classCommands.Contains(command.Replace(".java", ".class")) == false)
                             {
                                 ObsidianFunctions.Functions ObsidFunc = new ObsidianFunctions.Functions();
                                 send(ObsidFunc.JavaCompileRun(command, channel, rnick, rmsg));
