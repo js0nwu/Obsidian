@@ -662,6 +662,33 @@ namespace ObsidianFunctions
                 return ex.ToString(); 
             }
         }
+        
+        public string batchExec(string batchFile, string[] findStrings, string[] replaceStrings)
+        {
+        	try
+        	{
+	        	StreamReader sr = new StreamReader(batchFile);
+	        	string batchRead = sr.ReadToEnd(); 
+	        	sr.Close();
+	        	for (int i = 0; i < findStrings.Length; i++)
+	        	{
+	        		batchFile.Replace(findStrings[i], replaceStrings[i]);
+	        	}
+	        	Process batchProcess = new Process();
+	        	batchProcess.StartInfo.FileName = batchFile;
+	        	batchProcess.StartInfo.UseShellExecute = false;
+	        	batchProcess.StartInfo.RedirectStandardOutput = true;
+	        	batchProcess.StartInfo.CreateNoWindow = true;
+	        	batchProcess.Start();
+	        	batchProcess.WaitForExit();
+	        	return batchProcess.StandardOutput.ReadToEnd(); 
+        	}
+        	catch (Exception ex)
+        	{
+        		return ex.ToString();
+        	}
+        	
+        }
         public string JavaCompile(string javafile)
         {
             try

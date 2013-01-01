@@ -18,3 +18,8 @@ E:\Jason\Obsidian\FervorLibrary\FervorLibrary\bin\Debug\FervorLibrary.pdb
 E:\Jason\Obsidian\FervorLibrary\FervorLibrary\obj\Debug\ResolveAssemblyReference.cache
 E:\Jason\Obsidian\FervorLibrary\FervorLibrary\obj\Debug\FervorLibrary.dll
 E:\Jason\Obsidian\FervorLibrary\FervorLibrary\obj\Debug\FervorLibrary.pdb
+C:\Users\pilly\Documents\GitHub\Obsidian\FervorLibrary\FervorLibrary\bin\Debug\FervorLibrary.dll
+C:\Users\pilly\Documents\GitHub\Obsidian\FervorLibrary\FervorLibrary\bin\Debug\FervorLibrary.pdb
+C:\Users\pilly\Documents\GitHub\Obsidian\FervorLibrary\FervorLibrary\obj\Debug\FervorLibrary.csprojResolveAssemblyReference.cache
+C:\Users\pilly\Documents\GitHub\Obsidian\FervorLibrary\FervorLibrary\obj\Debug\FervorLibrary.dll
+C:\Users\pilly\Documents\GitHub\Obsidian\FervorLibrary\FervorLibrary\obj\Debug\FervorLibrary.pdb

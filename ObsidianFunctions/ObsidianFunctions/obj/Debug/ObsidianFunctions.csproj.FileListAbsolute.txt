@@ -38,3 +38,8 @@ C:\Users\Pilly-i7\Obsidian\ObsidianFunctions\ObsidianFunctions\bin\Debug\Obsidia
 C:\Users\Pilly-i7\Obsidian\ObsidianFunctions\ObsidianFunctions\obj\Debug\ResolveAssemblyReference.cache
 C:\Users\Pilly-i7\Obsidian\ObsidianFunctions\ObsidianFunctions\obj\Debug\ObsidianFunctions.dll
 C:\Users\Pilly-i7\Obsidian\ObsidianFunctions\ObsidianFunctions\obj\Debug\ObsidianFunctions.pdb
+C:\Users\pilly\Documents\GitHub\Obsidian\ObsidianFunctions\ObsidianFunctions\bin\Debug\ObsidianFunctions.dll
+C:\Users\pilly\Documents\GitHub\Obsidian\ObsidianFunctions\ObsidianFunctions\bin\Debug\ObsidianFunctions.pdb
+C:\Users\pilly\Documents\GitHub\Obsidian\ObsidianFunctions\ObsidianFunctions\obj\Debug\ObsidianFunctions.csprojResolveAssemblyReference.cache
+C:\Users\pilly\Documents\GitHub\Obsidian\ObsidianFunctions\ObsidianFunctions\obj\Debug\ObsidianFunctions.dll
+C:\Users\pilly\Documents\GitHub\Obsidian\ObsidianFunctions\ObsidianFunctions\obj\Debug\ObsidianFunctions.pdb

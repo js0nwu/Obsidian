@@ -120,3 +120,17 @@ C:\Users\Pilly-i7\Obsidian\Obsidian\Obsidian\obj\x86\Debug\Obsidian.ownerConfig.
 C:\Users\Pilly-i7\Obsidian\Obsidian\Obsidian\obj\x86\Debug\Obsidian.Properties.Resources.resources
 C:\Users\Pilly-i7\Obsidian\Obsidian\Obsidian\obj\x86\Debug\GenerateResource.read.1.tlog
 C:\Users\Pilly-i7\Obsidian\Obsidian\Obsidian\obj\x86\Debug\GenerateResource.write.1.tlog
+C:\Users\pilly\Documents\GitHub\Obsidian\Obsidian\Obsidian\bin\Debug\Obsidian.exe
+C:\Users\pilly\Documents\GitHub\Obsidian\Obsidian\Obsidian\bin\Debug\Obsidian.pdb
+C:\Users\pilly\Documents\GitHub\Obsidian\Obsidian\Obsidian\bin\Debug\AIMLbot.dll
+C:\Users\pilly\Documents\GitHub\Obsidian\Obsidian\Obsidian\bin\Debug\FervorLibrary.dll
+C:\Users\pilly\Documents\GitHub\Obsidian\Obsidian\Obsidian\bin\Debug\ObsidianFunctions.dll
+C:\Users\pilly\Documents\GitHub\Obsidian\Obsidian\Obsidian\bin\Debug\FervorLibrary.pdb
+C:\Users\pilly\Documents\GitHub\Obsidian\Obsidian\Obsidian\bin\Debug\ObsidianFunctions.pdb
+C:\Users\pilly\Documents\GitHub\Obsidian\Obsidian\Obsidian\obj\x86\Debug\Obsidian.csprojResolveAssemblyReference.cache
+C:\Users\pilly\Documents\GitHub\Obsidian\Obsidian\Obsidian\obj\x86\Debug\Obsidian.Form1.resources
+C:\Users\pilly\Documents\GitHub\Obsidian\Obsidian\Obsidian\obj\x86\Debug\Obsidian.ownerConfig.resources
+C:\Users\pilly\Documents\GitHub\Obsidian\Obsidian\Obsidian\obj\x86\Debug\Obsidian.Properties.Resources.resources
+C:\Users\pilly\Documents\GitHub\Obsidian\Obsidian\Obsidian\obj\x86\Debug\Obsidian.csproj.GenerateResource.Cache
+C:\Users\pilly\Documents\GitHub\Obsidian\Obsidian\Obsidian\obj\x86\Debug\Obsidian.exe
+C:\Users\pilly\Documents\GitHub\Obsidian\Obsidian\Obsidian\obj\x86\Debug\Obsidian.pdb
